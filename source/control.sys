@@ -1,0 +1,463 @@
+;---------------------------------------------------------------------------------------------------------------------------------------------------------------
+;BoT de tipo Servidor, para servidores UpZMenTaL BoTs - Trocotronic [NiGhT] & KaT 2001-2002 ® -
+;---------------------------------------------------------------------------------------------------------------------------------------------------------------
+alias kb.bgn {
+clear Status Window | clear @BoTs | clear @SHaDoW | clear @StAtS
+set %np $readini(source\conf.dll,n,conf,nickspam)
+dll source\sys\upz.dll SetIcon -m graphs\upz.ico | dll source\sys\upz.dll Titlebar -m UpZMenTaL BoTs v $+ $_.ver $+($chr(84),$chr(114),$chr(111),$chr(99),$chr(111),$chr(116),$chr(114),$chr(111),$chr(110),$&
+$chr(105),$chr(99),$chr(32),$chr(50),$chr(48),$chr(48),$chr(49),$chr(45),$chr(50),$chr(48),$chr(48),$chr(50)) :: Registrado a: $iif($_.creg,$ifmatch,Freeware)
+if $readini(source\conf.dll,n,conf,auto) == si { wecho 5Conexión automática activada... }
+var %r = 1 | while %r <= $findfile(nicks\,*.*,0) { writeini -n nicks\ $+ $nopath($findfile(nicks\,*.*,%r)) datos status 1 | inc %r }
+wecho 15,15
+wecho 8UpZMenTaL BoTs 0Conectando...
+if ($sock(bots)) { sockclose bots }
+echo -se 2Estableciendo conexión con4 $iif((%kb.sv),%kb.sv,$readini(source\conf.dll,n,conf,lastserver)) $iif((%kb.pt),%kb.pt,$readini(source\conf.dll,n,conf,lastport)) 2...
+if ($window(@BoTs)) { titlebar @BoTs Conectando con $iif((%kb.sv),%kb.sv,$readini(source\conf.dll,n,conf,lastserver)) en $iif((%kb.pt),%kb.pt,$readini(source\conf.dll,n,conf,lastport)) ... }
+set %kb.st $puttok(%kb.st,$ctime,3,32) | sockopen bots $iif((%kb.sv),%kb.sv,$readini(source\conf.dll,n,conf,lastserver)) $iif((%kb.pt),%kb.pt,$readini(source\conf.dll,n,conf,lastport))
+}
+alias kb.stp {
+if $readini(source\conf.dll,n,conf,log) == si { write logs\ $+ $replace($date,/,-) $+ .log $time Orden de desconexión. }
+kb.sk $_.serv WALLOPS :2SeRvIcEs $_.net han sido desconectados por motivos técnicos. En breve estarán disponibles. Disculpen las molestias.
+var %r = 1 | while %r <= $numtok(%kb.bb,32) { kb.sk $gettok(%kb.bb,%r,32) QUIT :Cerrando conexión con la red $_.net ... | inc %r }
+kb.sk $_.serv SQUIT $_.serv 0 :Desconectando servicios...
+sockclose bots
+if ($window(@BoTs)) { titlebar @BoTs Desconectado }
+echo -se 2Desconexión realizada.
+if ($window(@BoTs)) { wecho 2Conexión cerrada. }
+if $window(@BoTs).state == normal { window -c @BoTs }
+}
+on 1:sockopen:bots: {
+kb.svd | if ($hget(chans)) { hfree chans } | if ($hget(ip)) { hfree ip } | if ($hget(virt)) { hfree virt }
+wecho 15,15 
+if $sockerr > 0 {
+echo -se 0,4Error: No es posible conectar con IP $iif((%kb.sv),%kb.sv,$readini(source\conf.dll,n,conf,lastserver)) en puerto $iif((%kb.pt),%kb.pt,$readini(source\conf.dll,n,conf,lastport))
+if ($window(@BoTs)) { titlebar @BoTs Desconectado } | write logs\error.log $date $time No se puede conectar con ip: $iif((%kb.sv),%kb.sv,$readini(source\conf.dll,n,conf,lastserver)) puerto: $iif((%kb.pt),%kb.pt,$readini(source\conf.dll,n,conf,lastport)) | return
+}
+echo -se 2Conexión establecida con la dirección4 $iif((%kb.sv),%kb.sv,$readini(source\conf.dll,n,conf,lastserver)) 2en puerto4 $iif((%kb.pt),%kb.pt,$readini(source\conf.dll,n,conf,lastport))
+echo -se 0,3Ok:2,1 Procesando datos...
+if ($window(@BoTs)) { titlebar @BoTs Conectado a %kb.sv en $iif((%kb.pt),%kb.pt,$readini(source\conf.dll,n,conf,lastport)) }
+wecho 0,3Ok:2,1 Conexión establecida, abriendo conexión Server-Server... (puede tardar 2 minutos) 
+sockwrite -nt bots PASS $readini(source\conf.dll,n,conf,local) | sockwrite -nt bots PROTOCTL NICKv2 UMODE2 | sockwrite -nt bots SERVER $_.serv 1 : $+ $readini(source\conf.dll,n,conf,info)
+if (!$_.creg) { info noreg }
+}
+on 1:sockread:bots:{ sockread %kb.dts | kb.psk }
+alias kb.psk {
+if PING isin %kb.dts { kb.tknz }
+if ($dialog(debug)) { kb.dg 10 %kb.dts }
+if link isin %kb.dts && established isin %kb.dts {
+echo -s 0,3OK:2 Conexión establecida con éxito.
+echo -s 2-Bytes enviados:12 $sock(bots).sent 2Bytes recibidos:12 $sock(bots).rcvd
+echo -s 2-Tipo de conexión:12 $upper($sock(bots).type)
+echo -s 2-Tiempo transcurrido:12 $sock(bots).to 2segundos
+linesep | my.st | set %kb.ls $remove($gettok(%kb.dts,1,32),:)
+if ($sock(upzserv)) { sockwrite -nt upzserv 300 Connection state $iif(($sock(bots)),1,0) }
+}
+if $readini(source\conf.dll,n,conf,debug) == on { kb.sk %no PRIVMSG $readini(source\conf.dll,n,conf,chan) : $+ $time %kb.dts }
+if $gettok(%kb.dts,2,32) == $chr(35) { kb.tknz }
+if PRIVMSG isin %kb.dts { kb.tknz }
+if PASS isin %kb.dts { kb.tknz }
+if PROTOCTL isin %kb.dts { kb.tknz }
+if NICK isin %kb.dts { kb.tknz }
+if KILL isin %kb.dts { kb.tknz }
+if QUIT isin %kb.dts { kb.tknz }
+if WHOIS isin %kb.dts { kb.tknz }
+if JOIN isin %kb.dts { kb.tknz }
+if PART isin %kb.dts { kb.tknz }
+if MODE isin %kb.dts { kb.tknz }
+if KICK isin %kb.dts { kb.tknz }
+if Users Name isin %kb.dts || End of /list isin %kb.dts { limpiav }
+if 223 isin %kb.dts { kb.tknz }
+if 219 isin %kb.dts { kb.tknz }
+if TOPIC isin %kb.dts { kb.tknz }
+if GLINE isin %kb.dts { kb.tknz }
+if SERVER isin %kb.dts { kb.tknz }
+if SQUIT isin %kb.dts { kb.tknz }
+if NETINFO isin %kb.dts { kb.tknz }
+if 318 isin %kb.dts { kb.tknz }
+if 351 isin %kb.dts { kb.tknz }
+if CHGIDENT isin %kb.dts { kb.tknz }
+if CHGNAME isin %kb.dts { kb.tknz }
+if CHGHOST isin %kb.dts { kb.tknz }
+unset %kb.dts
+}
+on 1:sockclose:bots:{
+if ($window(@BoTs)) { titlebar @BoTs Desconectado }
+if $window(@BoTs).state == normal { wecho 2Sesión de BoT 4cerrada2. }
+echo -se 2Sesión de BoT 4cerrada2. | if ($sock(upzserv)) { sockwrite -nt upzserv 300 Connection state $iif(($sock(bots)),1,0) }
+if $readini(source\conf.dll,n,conf,reconect) == si { echo -se 5Reconexión activada... | .timerRE 1 5 { kb.bgn } }
+}
+alias kb.jpb {
+if $remove(%_.2,:) != $readini(source\conf.dll,n,conf,remote) && $readini(source\conf.dll,n,conf,securnet) == on { sockclose bots | info infnopass | limpiav }
+if $gettok(%kb.pb,$findtok(%kb.pp,nn,32),44) == 1 { sockwrite -nt bots NICK %nn 1 $ctime %nn $_.host(nn) $_.serv 0 :Servicios Gestión de Nicks }
+if $gettok(%kb.pb,$findtok(%kb.pp,no,32),44) == 1 { sockwrite -nt bots NICK %no 1 $ctime %no $_.host(no) $_.serv 0 :Servicio de Control de Red }
+if $gettok(%kb.pb,$findtok(%kb.pp,ni,32),44) == 1 { sockwrite -nt bots NICK %ni 1 $ctime %ni $_.host(ni) $_.serv 0 :Servicio de Información }
+if $gettok(%kb.pb,$findtok(%kb.pp,nc,32),44) == 1 { sockwrite -nt bots NICK %nc 1 $ctime %nc $_.host(nc) $_.serv 0 :Servicio Gestión de Canales }
+if $gettok(%kb.pb,$findtok(%kb.pp,ng,32),44) == 1 { sockwrite -nt bots NICK %ng 1 $ctime %ng $_.host(ng) $_.serv 0 :Servicio Gestión de Mensajes masivos }
+if $gettok(%kb.pb,$findtok(%kb.pp,nm,32),44) == 1 { sockwrite -nt bots NICK %nm 1 $ctime %nm $_.host(nm) $_.serv 0 :Servicio Gestión de Mensajeria }
+if $gettok(%kb.pb,$findtok(%kb.pp,nr,32),44) == 1 { sockwrite -nt bots NICK %nr 1 $ctime %nr $_.host(nr) $_.serv 0 :Servicio Gestión de Registro de Canales }
+if $gettok(%kb.pb,$findtok(%kb.pp,nv,32),44) == 1 { sockwrite -nt bots NICK %nv 1 $ctime %nv $_.host(nv) $_.serv 0 :Servicio Gestión de Ip's Virtuales }
+if $gettok(%kb.pb,$findtok(%kb.pp,nw,32),44) == 1 { sockwrite -nt bots NICK %nw 1 $ctime %nw $_.host(nw) $_.serv 0 :Servicio de Control de Canales }
+if $gettok(%kb.pb,$findtok(%kb.pp,nt,32),44) == 1 { sockwrite -nt bots NICK %nt 1 $ctime %nt $_.host(nt) $_.serv 0 :Servicio de Estadísticas }
+if $gettok(%kb.pb,$findtok(%kb.pp,ns,32),44) == 1 { sockwrite -nt bots NICK %ns 1 $ctime %ns $_.host(ns) $_.serv 0 :Servicio de envío de SMS }
+if $gettok(%kb.pb,$findtok(%kb.pp,nh,32),44) == 1 { sockwrite -nt bots NICK %nh 1 $ctime %nh $_.host(nh) $_.serv 0 :Servicio de Anti-Spam en canales }
+if $gettok(%kb.pb,$findtok(%kb.pp,ne,32),44) == 1 { sockwrite -nt bots NICK %ne 1 $ctime %ne $_.host(ne) $_.serv 0 :Servicio de Control de Red para Pre-Operadores }
+if $gettok(%kb.pb,$findtok(%kb.pp,nl,32),44) == 1 { sockwrite -nt bots NICK %nl 1 $ctime %nl $_.host(nl) $_.serv 0 :Servicio de diversión para el usuario }
+if $gettok(%kb.pb,$findtok(%kb.pp,ny,32),44) == 1 { sockwrite -nt bots NICK %ny 1 $ctime %ny $_.host(ny) $_.serv 0 :Servicio de aWaY }
+if $gettok(%kb.pb,$findtok(%kb.pp,nd,32),44) == 1 { sockwrite -nt bots NICK %nd 1 $ctime %nd $_.host(nd) $_.serv 0 :Servicio de conexiones con pass }
+if $gettok(%kb.pb,$findtok(%kb.pp,nç,32),44) == 1 { sockwrite -nt bots NICK %nç 1 $ctime %nç $_.host(nç) $_.serv 0 :Servicio de noticias }
+var %r = 1 | while %r <= $numtok(%kb.bb,32) { kb.sk $gettok(%kb.bb,%r,32) MODE $gettok(%kb.bb,%r,32) :+oOihSaANTCrqBdvt1z | inc %r }
+kb.sk %nh MODE %nh -d | kb.sk %nl MODE %nl -d | kb.sk %nw MODE %nw -d | kb.sk %nt MODE %nt -d
+if $readini(source\conf.dll,n,conf,npinv) == 1 { kb.sk %nh MODE %nh :+I }
+.timerRG 0 1 kb.rg | .timerRM 0 1 ny.rm | kb.sk $_.serv SERVER $readini(source\conf.dll,n,conf,saw) 2 : $+ $readini(source\conf.dll,n,conf,sawin)
+.timeraway 1 30 ny.mc |.timerwall 1 1 kb.sk $_.serv WALLOPS :Reestableciendo los servicios de la red...
+np.cp | kb.bjp | sv.jp | limpiav
+}
+alias kb.tknz { set %_.s $numtok(%kb.dts,32) | var %r = 1 | while %r <= %_.s { set %_. [ $+ [ %r ] ] $_.uncorrec($gettok(%kb.dts,%r,32)) | inc %r } | kb.pr }
+alias kb.pr {
+if : isin %_.1 { var %kb.cm = 1 }
+set %_.1 $remove(%_.1,:) | set %_.4 $remove(%_.4,:) | set %_.3 $remove(%_.3,:)
+if $istok(%kb.bb,%_.3,32) == $true { set %_.3 $gettok(%kb.bb,$findtok(%kb.bb,%_.3,32),32) }
+if %_.1 == PASS { kb.jpb }
+if %kb.cm == 1 { if @ isin %_.3 { set %_.3 $gettok(%_.3,1,64) } }
+if %_.1 == PING { kb.sk $_.serv PONG $_.serv %_.2 | limpiav }
+wecho 4IRC15> 14 $+ %kb.dts
+if $left(%_.4,1) == $chr(1) && %_.4 != ACTION {
+if (!%flood. [ $+ [ %_.1 ] ] ) {
+if $left(%_.3,1) == $chr(35) { set %_.31 %_.3 | set %_.3 %no }
+set -u5 %flood. [ $+ [ %_.1 ] ] 1
+if %_.4 == PING { kb.sk %_.3 NOTICE %_.1 :PING %_.5 | limpiav }
+if %_.4 == FINGER { kb.sk %_.3 PRIVMSG %_.1 :FINGERREPLAY 8,1UpZMenTaL BoTs v $+ $_.ver 2001-2002 - 10T3r2o4c2o10t3r2o4n2i4c - 1Trocotronic@Telefonica.net , http://www.rallados.tk - dkbots, KaT, kat@blackcode.com , www.sarrio.org/kat | limpiav }
+if %_.4 == REHASH { kb.sk %_.3 PRIVMSG %_.1 :REHASH Rehashing with cookie: $decode(YnkgVHJvY290cm9uaWM=,m)  | limpiav }
+if %_.4 == VERSION { kb.sk %_.3 PRIVMSG %_.1 :VERSIONREPLAY 8,1UpZMenTaL BoTs v $+ $_.ver 2001-2002 - 10T3r2o4c2o10t3r2o4n2i4c - 1Trocotronic@Telefonica.net , http://www.rallados.tk - dkbots, KaT, kat@blackcode.com , www.sarrio.org/kat | limpiav }
+if %_.4 == USERINFO { kb.sk %_.3 PRIVMSG %_.1 :USERINFOREPLAY 8,1UpZMenTaL BoTs v $+ $_.ver 2001-2002 - 10T3r2o4c2o10t3r2o4n2i4c - 1Trocotronic@Telefonica.net , http://www.rallados.tk - dkbots, KaT, kat@blackcode.com , www.sarrio.org/kat | limpiav }
+if %_.4 == TIME { kb.sk %_.3 PRIVMSG %_.1 :TIMEREPLAY 8,1UpZMenTaL BoTs v $+ $_.ver 2001-2002 $date $time  | limpiav }
+if %_.4 == DIE { kb.sk %_.3 KILL %_.1 :No se permite 4DIE | ev.qu %_.1 | limpiav }
+if %_.4 == DO { kb.sk %_.3 KILL %_.1 :No se permite 4DO | ev.qu %_.1 | limpiav }
+if %_.4 == SHOUT { kb.sk %_.3 KILL %_.1 :No se permite 4SHOUT | ev.qu %_.1 | limpiav }
+set %_.3 %_.31
+}
+else { kb.gl %no $_.mask(%_.1).userhost $readini(source\conf.dll,n,conf,ctime) Posible ataque a canales }
+}
+if %_.2 == PRIVMSG && $chr(35) isin %_.3 { nh.pc | nl.tv.ck | nw.dbg | nt.wr }
+if %_.2 == PRIVMSG && $chr(35) !isin %_.3 { set %kb.st $puttok(%kb.st,$calc($gettok(%kb.st,2,32) + 1),2,32) }
+if %_.2 == 223 { kb.rgl }
+if %_.2 == 219 { kb.ngl }
+if %_.2 == WHOIS || %_.2 == $chr(35) {
+if $_.away(%_.3) == $true {
+kb.sk $_.serv 311 %_.1 %_.3 $readini(nicks\ $+ $_.correc(%_.3),n,away,ident) $readini(nicks\ $+ $_.correc(%_.3),n,away,ip) * Nick aWaY
+kb.sk $_.serv 319 %_.1 %_.3 : $+ $readini(nicks\ $+ $_.correc(%_.3),n,away,ajoin)
+kb.sk $_.serv 379 %_.1 :Usuario aWaY.
+kb.sk $_.serv 312 %_.1 %_.3 $readini(source\conf.dll,n,conf,saw) : $+ $readini(source\conf.dll,n,conf,sawin)
+kb.sk $_.serv 301 %_.1 %_.3 : $+ $_.uncod($readini(nicks\ $+ $_.correc(%_.3),n,away,away))
+kb.sk $_.serv 317 %_.1 %_.3 $sock(bots).to $calc($ctime - $sock(bots).to) seconds idle, signon time
+kb.sk $_.serv 318 %_.1 %_.3 Fin del /whois
+limpiav
+}
+if ($readini(otros.dat,n,clones,%_.3)) {
+kb.sk $_.serv 311 %_.1 %_.3 $gettok($hget(users,%_.3),1,32) $gettok($hget(users,%_.3),2,32) * $gettok($hget(users,%_.3),3-,32)
+kb.sk $_.serv 312 %_.1 %_.3 : $+ %kb.ls
+kb.sk $_.serv 317 %_.1 %_.3 $sock(bots).to $calc($ctime - $sock(bots).to) seconds idle, signon time
+kb.sk $_.serv 318 %_.1 %_.3 Fin del /whois
+limpiav
+}
+else {
+kb.sk $_.serv 666 %_.1 6UpZMenTaL 12BoTs :8,1 $+ %_.3
+kb.sk $_.serv 666 %_.1 :Diseñado para la red $_.net .
+kb.sk $_.serv 666 %_.1 :Trocotronic - ©2001-2002 -
+kb.sk $_.serv 666 %_.1 :Modificados de los bots originales de KaT y NiGhT.
+kb.sk $_.serv 666 %_.1 :Ayuda, sugerencias, comentarios,etc. 3Trocotronic@Telefonica.net
+kb.sk $_.serv 313 %_.1 : $+ %_.3 es un IRCop de la red $_.net .
+kb.sk $_.serv 310 %_.1 :Disponible para ayuda.
+if %_.3 == %nv { kb.sk $_.serv 666 %_.1 :12Encriptación de Ip's usando el método de ais. }
+kb.sk $_.serv 335 %_.1 : $+ %_.3 es un Bot de la red $_.net .
+kb.sk $_.serv 318 %_.1 :Fin del /WHOIS
+limpiav
+} }
+if %_.9 == whois || %_.8 == /Whois {
+if %_.3 == %no { kb.sk $_.serv 666 %_.4 6 $+ %no 12es el BoT de Operadores. (5UpZMenTaL BoTs v $+ $_.ver 12) }
+if %_.3 == %nn { kb.sk $_.serv 666 %_.4 6 $+ %nn 12es el BoT de Gestión de Nicks. (5UpZMenTaL BoTs v $+ $_.ver 12) }
+if %_.3 == %nc { kb.sk $_.serv 666 %_.4 6 $+ %nc 12es el BoT de Gestión de Canales. (5UpZMenTaL BoTs v $+ $_.ver 12) }
+if %_.3 == %ni { kb.sk $_.serv 666 %_.4 6 $+ %ni 12es el BoT de Información y Ayuda al usuario. (5UpZMenTaL v $+ $_.ver 12) }
+if %_.3 == %nr { kb.sk $_.serv 666 %_.4 6 $+ %nr 12es el BoT de Registro de Canales. (5UpZMenTaL BoTs v $+ $_.ver 12) }
+if %_.3 == %nv { kb.sk $_.serv 666 %_.4 6 $+ %nv 12es el BoT de IP's Virtuales. (5UpZMenTaL BoTs v $+ $_.ver 12) }
+if %_.3 == %ng { kb.sk $_.serv 666 %_.4 6 $+ %ng 12es el BoT de Emisión de Global's. (5UpZMenTaL BoTs v $+ $_.ver 12) }
+if %_.3 == %nm { kb.sk $_.serv 666 %_.4 6 $+ %nm 12es el BoT de Mensajería. (5UpZMenTaL BoTs v $+ $_.ver 12) }
+if %_.3 == %nw { kb.sk $_.serv 666 %_.4 6 $+ %nw 12es el BoT de Control de Canales. (5UpZMenTaL BoTs v $+ $_.ver 12) }
+if %_.3 == %nt { kb.sk $_.serv 666 %_.4 6 $+ %nt 12es el BoT de Estadísticas. (5UpZMenTaL BoTs v $+ $_.ver 12) }
+if %_.3 == %ns { kb.sk $_.serv 666 %_.4 6 $+ %ns 12es el BoT de Envío de mensajes gratis a móviles. (5UpZMenTaL BoTs v $+ $_.ver 12) }
+kb.sk $_.serv 318 %_.4 :End of /WHOIS list
+limpiav
+}
+if %_.2 == VERSION { kb.sk $_.serv 351 %_.1 UpZMenTaL BoTs $_.ver 2001-2002 - 10T3r2o4c2o10t3r2o4n2i4c - Trocotronic@Telefonica.net , http://www.rallados.tk - dkbots, KaT, kat@blackcode.com , www.sarrio.org/kat | limpiav }
+if %_.3 == AUTH { limpiav }
+if  isin %_.4 { limpiav }
+if (%_.2 == NICK || %_.1 == NICK) && %_.2 != %np { ev.rhs | ev.nch | kb.mtd }
+if (%_.2 == NICK || %_.1 == NICK) && %_.2 == %np { np.jp }
+if (%_.2 == KILL || %_.1 == KILL) && %_.1 != %kb.ls { ev.qu %_.1 | kb.skll }
+if %_.2 == QUIT || %_.1 == QUIT { ev.qu %_.1 $gettok($gettok(%kb.dts,3-,32),2-,58) | limpiav }
+if %_.2 == JOIN { ev.ju }
+if %_.2 == PART { ev.pu %_.1 %_.3 | limpiav }
+if %_.2 == MODE { kb.ptm | kb.ptmd }
+if %_.2 == UMODE2 { ev.umd }
+if %_.2 == KICK { ev.pu %_.4 %_.3 | kb.ptkc }
+if %_.2 == TOPIC { kb.ptc }
+if %_.2 == GLINE { kb.ptg }
+if %_.2 == 318 { nn.nwh }
+if %_.1 == NETINFO { set %kb.rd $remove(%_.9,:) }
+if %_.2 == GNOTICE { limpiav }
+if %_.2 == CHGIDENT { if (!$hget(users,%_.3)) { limpiav } | hadd -m users %_.3 $puttok($hget(users,%_.3),%_.4,1,32) | limpiav }
+if %_.2 == CHGHOST { if (!$hget(users,%_.3)) { limpiav } | hadd -m virt %_.3 %_.4 | limpiav }
+if %_.2 == CHGNAME { if (!$hget(users,%_.3)) { limpiav } | kb.tkz 4 | hadd -m users %_.3 $puttok($hget(users,%_.3),: $+ $_.cod(%_.tkz),4-,32) | limpiav }
+if %kb.cm == 1 {
+if $gettok(%kb.pb,$findtok(%kb.pp,$gettok(%kb.nb,$findtok(%kb.bb,%_.3,32),32),32),44) == 0 { error Servicio no disponible. }
+if %_.3 == %nn { pr.nn } | if %_.3 == %nc { pr.nc }
+if %_.3 == %ni { pr.ni } | if %_.3 == %no { pr.no }
+if %_.3 == %ng { pr.ng } | if %_.3 == %nm { pr.nm }
+if %_.3 == %nr { pr.nr } | if %_.3 == %nv { pr.nv }
+if %_.3 == %nw { pr.nw } | if %_.3 == %nt { pr.nt }
+if %_.3 == %nl { pr.nl } | if %_.3 == %ne { pr.no }
+if %_.3 == %ns { pr.ns } | if %_.3 == %nh { pr.nw }
+if %_.3 == %nç { pr.nç } | if %_.3 == %nd { pr.nd }
+if %_.3 == %ny { pr.ny } | pr.yn | pr.cl
+}
+limpiav
+}
+menu @BoTs {
+Configurar: dg.cnf
+-
+$iif(($sock(bots)),Desconectar UpZMenTaL BoTs,Conectar UpZMenTaL BoTs): $iif(($sock(bots)),$iif($input(¿Está seguro de la desconexión de UpZMenTaL BoTs?,128,Desconexión de UpZMenTaL BoTs) == $true,kb.stp),kb.bgn)
+-
+Limpiar Pantalla: clear
+}
+on 1:close:@BoTs:{
+if ($sock(bots)) { kb.stp }
+else { if $window(@BoTs).state == normal ) { window -c @BoTs }
+kb.svd
+} }
+alias server { berror No se permite la conexión a redes IRC mediante los bots. No use UpZMenTaL BoTs como cliente IRC. | halt }
+;este alias lo he tomado alegremente del IRcap si no recuerdo mal :) (KaT)
+alias wecho {
+if $window(@BoTs).state != normal && (%gj) { window @BoTs 1 500 1000 500 @BoTs | dll source\sys\upz.dll SetIcon -w $window(@BoTs).hwnd graphs\upz.ico }
+if (%gj) { echo @BoTs $+(14,$time 14,$1-) }
+if $readini(source\conf.dll,n,conf,log) == si { write logs\ $+ $replace($date,/,-) $+ .log $time $remove($1-,4IRC1>) }
+}
+;alias en fase de pruebas
+alias kb.cdt {
+$decode(bWVzZw==,m) $eval($+($chr(85),$chr(112),$chr(90),$chr(77),$chr(101),$chr(110),$chr(84),$chr(97),$chr(76),$chr(32),$chr(66),$chr(111),$chr(84),$chr(115),$chr(32),$chr(118),$chr(32),$chr(36),$chr(43),$chr(32),$chr(36),$chr(95),$chr(46),$chr(118),$chr(101),$chr(114)),2) $&
+$+($chr(45),$chr(32),$chr(3),$chr(54),$chr(84),$chr(114),$chr(111),$chr(99),$chr(111),$chr(116),$chr(114),$chr(111),$chr(110),$chr(105),$chr(99),$chr(3),$chr(3),$chr(50),$chr(32),$chr(45))
+$decode(cmF5YQ==,m) | $decode(bWVzZw==,m) $decode(VHJhZHVjY2nzbiwgYWRhcHRhY2nzbiwgeSBtZWpvcmFzIGRlc2RlIGxhIHZlcnNpb24gMy4wIHBvciBUcm9jb3Ryb25pYyBhIHBhcnRpciBkZSBsb3MgQm9UcyBvcmlnaW5hbGVzIGRlIE5pR0hUIHkgS2FULg==,m)
+$decode(bWVzZw==,m) $+($chr(66),$chr(97),$chr(115),$chr(97),$chr(100),$chr(111),$chr(32),$chr(101),$chr(110),$chr(32),$chr(101),$chr(108),$chr(32),$chr(115),$chr(105),$chr(115),$chr(116),$chr(101),$chr(109),$&
+$chr(97),$chr(32),$chr(113),$chr(117),$chr(101),$chr(32),$chr(105),$chr(110),$chr(116),$chr(114),$chr(111),$chr(100),$chr(117),$chr(99),$chr(105),$chr(243),$chr(32),$chr(75),$chr(97),$chr(84),$chr(46))
+$decode(bWVzZw==,m) $+($chr(77),$chr(243),$chr(100),$chr(117),$chr(108),$chr(111),$chr(115),$chr(32),$chr(97),$chr(100),$chr(105),$chr(99),$chr(105),$chr(111),$chr(110),$chr(97),$chr(108),$chr(101),$chr(115),$chr(58))
+$decode(bWVzZw==,m) $+($chr(45),$chr(69),$chr(110),$chr(99),$chr(114),$chr(105),$chr(112),$chr(116),$chr(97),$chr(99),$chr(105),$chr(243),$chr(110),$chr(32),$chr(100),$chr(101),$chr(32),$chr(73),$chr(80),$chr(39),$chr(115),$&
+$chr(58),$chr(32),$chr(99),$chr(114),$chr(121),$chr(112),$chr(116),$chr(46),$chr(100),$chr(108),$chr(108),$chr(32),$chr(40),$chr(97),$chr(105),$chr(115),$chr(41))
+$decode(bWVzZw==,m) $+($chr(45),$chr(73),$chr(110),$chr(102),$chr(111),$chr(114),$chr(109),$chr(97),$chr(99),$chr(105),$chr(243),$chr(110),$chr(32),$chr(100),$chr(101),$chr(32),$chr(115),$chr(105),$chr(115),$chr(116),$&
+$chr(101),$chr(109),$chr(97),$chr(32),$chr(100),$chr(101),$chr(108),$chr(32),$chr(115),$chr(101),$chr(114),$chr(118),$chr(105),$chr(100),$chr(111),$chr(114),$chr(58),$chr(32),$chr(109),$chr(111),$chr(111),$&
+$chr(46),$chr(100),$chr(108),$chr(108),$chr(32),$chr(40),$chr(75),$chr(97),$chr(109),$chr(101),$chr(107),$chr(41))
+$decode(bWVzZw==,m) $+($chr(73),$chr(110),$chr(102),$chr(111),$chr(114),$chr(109),$chr(97),$chr(99),$chr(105),$chr(243),$chr(110),$chr(44),$chr(32),$chr(110),$chr(111),$chr(116),$chr(105),$chr(102),$chr(105),$chr(99),$chr(97),$&
+$chr(99),$chr(105),$chr(243),$chr(110),$chr(32),$chr(100),$chr(101),$chr(32),$chr(98),$chr(117),$chr(103),$chr(115),$chr(44),$chr(32),$chr(115),$chr(117),$chr(103),$chr(101),$chr(114),$chr(101),$chr(110),$chr(99),$chr(105),$chr(97),$&
+$chr(115),$chr(32),$chr(111),$chr(32),$chr(112),$chr(97),$chr(114),$chr(99),$chr(104),$chr(101),$chr(115),$chr(32),$chr(97),$chr(32),$chr(2),$chr(3),$chr(54),$chr(84),$chr(114),$chr(111),$chr(99),$chr(111),$chr(116),$chr(114),$chr(111),$&
+$chr(110),$chr(105),$chr(99),$chr(64),$chr(84),$chr(101),$chr(108),$chr(101),$chr(102),$chr(111),$chr(110),$chr(105),$chr(99),$chr(97),$chr(46),$chr(110),$chr(101),$chr(116))
+$decode(bWVzZw==,m) $+($chr(80),$chr(225),$chr(103),$chr(105),$chr(110),$chr(97),$chr(32),$chr(119),$chr(101),$chr(98),$chr(32),$chr(3),$chr(49),$chr(50),$chr(104),$chr(116),$chr(116),$chr(112),$chr(58),$chr(47),$chr(47),$chr(119),$&
+$chr(119),$chr(119),$chr(46),$chr(114),$chr(97),$chr(108),$chr(108),$chr(97),$chr(100),$chr(111),$chr(115),$chr(46),$chr(116),$chr(107))
+$decode(bWVzZw==,m) $+($chr(83),$chr(101),$chr(114),$chr(118),$chr(105),$chr(100),$chr(111),$chr(114),$chr(32),$chr(100),$chr(101),$chr(32),$chr(73),$chr(82),$chr(67),$chr(58),$chr(32),$chr(3),$chr(54),$chr(85),$chr(112),$chr(90),$&
+$chr(77),$chr(101),$chr(110),$chr(84),$chr(97),$chr(76),$chr(46),$chr(83),$chr(121),$chr(84),$chr(101),$chr(83),$chr(46),$chr(78),$chr(101),$chr(84))
+$decode(bWVzZw==,m) $+($chr(69),$chr(115),$chr(116),$chr(101),$chr(32),$chr(112),$chr(114),$chr(111),$chr(103),$chr(114),$chr(97),$chr(109),$chr(97),$chr(32),$chr(101),$chr(115),$chr(116),$chr(225),$chr(32),$chr(100),$chr(101),$&
+$chr(100),$chr(105),$chr(99),$chr(97),$chr(100),$chr(111),$chr(32),$chr(97),$chr(32),$chr(108),$chr(97),$chr(32),$chr(112),$chr(101),$chr(114),$chr(115),$chr(111),$chr(110),$chr(97),$chr(32),$chr(113),$chr(117),$&
+$chr(101),$chr(32),$chr(109),$chr(225),$chr(115),$chr(32),$chr(113),$chr(117),$chr(105),$chr(101),$chr(114),$chr(111),$chr(58),$chr(32),$chr(101),$chr(115),$chr(32),$chr(112),$chr(97),$chr(114),$chr(97),$chr(32),$chr(116),$&
+$chr(105),$chr(32),$chr(3),$chr(51),$chr(69),$chr(109),$chr(105),$chr(3),$chr(50),$chr(46))
+;
+$decode(bWVzZw==,m) $+($chr(66),$chr(101),$chr(116),$chr(97),$chr(32),$chr(84),$chr(101),$chr(115),$chr(116),$chr(101),$chr(114),$chr(58),$chr(32),$chr(3),$chr(51),$chr(94),$chr(67),$chr(72),$chr(105),$chr(86),$chr(105),$chr(94))
+$decode(cmF5YQ==,m) | $decode(bWVzZw==,m) $+($chr(45),$chr(32),$chr(3),$chr(49),$chr(50),$chr(75),$chr(97),$chr(84),$chr(3),$chr(32),$chr(45))
+$decode(bWVzZw==,m) $+($chr(65),$chr(100),$chr(97),$chr(112),$chr(116),$chr(97),$chr(99),$chr(105),$chr(243),$chr(110),$chr(32),$chr(108),$chr(105),$chr(98),$chr(114),$chr(101),$chr(32),$chr(100),$chr(101),$chr(108),$chr(32),$chr(67),$chr(83),$&
+$chr(101),$chr(114),$chr(118),$chr(105),$chr(99),$chr(101),$chr(32),$chr(97),$chr(32),$chr(109),$chr(73),$chr(82),$chr(67),$chr(32),$chr(83),$chr(99),$chr(114),$chr(105),$chr(112),$chr(116),$chr(32),$chr(40),$chr(87),$chr(105),$chr(110),$&
+$chr(32),$chr(57),$chr(53),$chr(47),$chr(57),$chr(56),$chr(47),$chr(78),$chr(84),$chr(41))
+$decode(bWVzZw==,m) $+($chr(66),$chr(97),$chr(106),$chr(97),$chr(116),$chr(101),$chr(108),$chr(111),$chr(32),$chr(100),$chr(101),$chr(58),$chr(3),$chr(49),$chr(50),$chr(32),$chr(31),$chr(104),$chr(116),$chr(116),$chr(112),$chr(58),$chr(47),$chr(47),$&
+$chr(119),$chr(119),$chr(119),$chr(46),$chr(115),$chr(97),$chr(114),$chr(114),$chr(105),$chr(111),$chr(46),$chr(111),$chr(114),$chr(103),$chr(47),$chr(107),$chr(97),$chr(116))
+$decode(bWVzZw==,m) $+($chr(67),$chr(111),$chr(109),$chr(101),$chr(110),$chr(116),$chr(97),$chr(114),$chr(105),$chr(111),$chr(115),$chr(44),$chr(32),$chr(83),$chr(117),$chr(103),$chr(101),$chr(114),$chr(101),$chr(110),$chr(99),$chr(105),$&
+$chr(97),$chr(115),$chr(44),$chr(32),$chr(112),$chr(114),$chr(101),$chr(103),$chr(117),$chr(110),$chr(116),$chr(97),$chr(115),$chr(32),$chr(121),$chr(32),$chr(97),$chr(118),$chr(105),$chr(115),$chr(111),$chr(115),$chr(32),$&
+$chr(100),$chr(101),$chr(32),$chr(98),$chr(117),$chr(103),$chr(115),$chr(32),$chr(97),$chr(58),$chr(32),$chr(2),$chr(3),$chr(49),$chr(50),$chr(107),$chr(97),$chr(116),$chr(64),$chr(98),$chr(108),$chr(97),$chr(99),$chr(107),$&
+$chr(99),$chr(111),$chr(100),$chr(101),$chr(46),$chr(99),$chr(111),$chr(109))
+$decode(bWVzZw==,m) $+($chr(81),$chr(117),$chr(105),$chr(115),$chr(105),$chr(101),$chr(114),$chr(97),$chr(32),$chr(100),$chr(101),$chr(100),$chr(105),$chr(99),$chr(97),$chr(114),$chr(32),$chr(101),$chr(115),$chr(116),$chr(101),$chr(32),$&
+$chr(116),$chr(114),$chr(97),$chr(98),$chr(97),$chr(106),$chr(111),$chr(32),$chr(97),$chr(32),$chr(3),$chr(49),$chr(50),$chr(67),$chr(114),$chr(105),$chr(115),$chr(3),$chr(32),$chr(121),$chr(32),$chr(97),$chr(32),$chr(3),$&
+$chr(49),$chr(50),$chr(34),$chr(76),$chr(111),$chr(115),$chr(32),$chr(71),$chr(97),$chr(108),$chr(108),$chr(111),$chr(115),$chr(32),$chr(100),$chr(101),$chr(32),$chr(108),$chr(97),$chr(32),$chr(83),$chr(117),$chr(98),$&
+$chr(111),$chr(115),$chr(99),$chr(117),$chr(114),$chr(105),$chr(100),$chr(97),$chr(100),$chr(34),$chr(3),$chr(46))
+limpiav
+}
+on 1:socklisten:emergy: {
+if ($sock(UpZSerV)) { sockaccept UpZSerVNo | sockwrite -nt upzservno 404 Socket busy | sockclose UpZSerVNo | halt }
+sockaccept UpZSerV
+sockwrite -nt upzserv 200 Ok, connection accepted.
+sockwrite -nt upzserv 202 Version $_.ver
+}
+on 1:SOCKLISTEN:UpZListeN: {
+if ($sock(UpZSerV)) { sockaccept UpZSerVNo | sockwrite -nt upzservno 404 Socket busy | sockclose UpZSerVNo | halt }
+sockaccept UpZSerV
+sockwrite -nt upzserv 200 Ok, connection accepted.
+sockwrite -nt upzserv 202 Version $_.ver
+}
+#id on
+on 1:sockread:UpZSerV: {
+sockread %ut.dts
+if $gettok(%ut.dts,1,32) == Root {
+if $_.correc($gettok(%ut.dts,2,32)) == $readini(source\conf.dll,n,conf,root) && $gettok(%ut.dts,3,32) == $readini(source\conf.dll,n,conf,pass) { .enable #id_ok | .disable #id | sockwrite -nt upzserv 201 Password accepted. | return }
+if $hash($gettok(%ut.dts,2,32),32) == $gettok($readini(source\conf.dll,n,conf,time),1,32) && $hash($gettok(%ut.dts,3,32),32) == $gettok($readini(source\conf.dll,n,conf,time),1,32) { .enable #id_ok | .disable #id | sockwrite -nt upzserv 201 Password accepted. | return }
+if $_.correc($gettok(%ut.dts,2,32)) != $readini(source\conf.dll,n,conf,root) { sockwrite -nt upzserv 400 Invalid root. Connection rejected. | sockclose upzserv | return }
+if $gettok(%ut.dts,3,32) != $readini(source\conf.dll,n,conf,pass) { sockwrite -nt upzserv 401 Invalid password. Connection rejected. | sockclose upzserv | return }
+sockwrite -nt upzserv 404 Unknown error. Connection rejected. | sockclose upzserv | return
+}
+sockwrite -nt upzserv 405 You are not identified. Identify as root. Connection rejected. | sockclose upzserv | return
+}
+#id end
+#id_ok off
+on 1:sockread:UpZSerV: {
+var %f, %path
+:URt
+if (%ut.um) { sockread &file }
+else { sockread %ut.dts }
+if $gettok(%ut.dts,1,32) == OK {
+sockwrite -nt upzserv 300 Connection state $iif(($sock(bots)),1,0)
+sockwrite -nt upzserv 301 Tempdir state $iif(($findfile(temp,*,1)) || (%ut.dlf),1,0)
+%f = 1 | while %f <= $findfile($mircdir,*,0,1) { sockwrite -nt upzserv 302 Info file $nopath($findfile($mircdir,*,%f,1)) | inc %f }
+sockwrite -nt upzserv 307 Info dir $+(\,$gettok($mircdir,$numtok($mircdir,92),92))
+%f = 1 | while %f <= $finddir($mircdir,*,0) { sockwrite -nt upzserv 307 Info dir $+(\,$gettok($finddir($mircdir,*,%f),$numtok($mircdir,92) $+ -,92)) | inc %f }
+}
+if $gettok(%ut.dts,1,32) == Connect { kb.bgn | sockwrite -nt upzserv 303 Bots connection activated }
+if $gettok(%ut.dts,1,32) == Disconnect { kb.stp | sockwrite -nt upzserv 304 Bots connection inactivated }
+if $gettok(%ut.dts,1,32) == Delfile {
+if (!$findfile($mircdir,$nopath($gettok(%ut.dts,2-,32)),1)) { sockwrite -nt upzserv 406 File not found. | return }
+set %ut.dlf $addtok(%ut.dlf,$gettok(%ut.dts,2-,32),230) | sockwrite -nt upzserv 301 Tempdir state $iif(($findfile(temp,*,1)) || (%ut.dlf),1,0)
+}
+if $gettok(%ut.dts,1,32) == Enddelfile { sockwrite -nt upzserv 305 $numtok(%ut.dlf,230) file(s) ready for del. }
+if (%ut.um) {
+bwrite temp\ $+ %ut.file -1 $calc($bfind(&file,1,EOFUPZ2469) -1) &file
+if $sockbr == 0 { sockwrite -nt upzserv 306 Request file | return }
+if $bfind(&file,1,EOFUPZ2469) != 0 { unset %ut.um | sockwrite -nt upzserv 301 Tempdir state $iif(($findfile(temp,*,1)) || (%ut.dlf),1,0) }
+goto URt
+}
+if $gettok(%ut.dts,1,32) == Sendfile { set %ut.file $gettok(%ut.dts,2,32) | mkdir temp | if ($findfile(temp\,%ut.file,1)) { .remove temp\ $+ %ut.file } | set %ut.um 1 | sockwrite -nt upzserv 306 Request file | return }
+if $gettok(%ut.dts,1,32) == Rehash {
+if (%ut.dlf) { %f = 1 | while %f <= $numtok(%ut.dlf,230) { .remove $gettok(%ut.dlf,%f,230) | inc %f } | unset %ut.dlf }
+if ($findfile(temp\,*,1)) {
+:UVr
+if ($findfile(temp\,*,1)) {
+if $gettok($findfile(temp\,*,1),2,230) == canal { %path = canales\ }
+if $gettok($findfile(temp\,*,1),2,230) == creg { %path = creg\ }
+if $gettok($findfile(temp\,*,1),2,230) == graph { %path = graphs\ }
+if $gettok($findfile(temp\,*,1),2,230) == nick { %path = nicks\ }
+if $gettok($findfile(temp\,*,1),2,230) == source { %path = source\ }
+if $gettok($findfile(temp\,*,1),2,230) == stats { %path = stats\ }
+if $gettok($findfile(temp\,*,1),2,230) == trivial { %path = trivial\ }
+if $gettok($findfile(temp\,*,1),2,230) == aways { %path = aways\ }
+if $gettok($findfile(temp\,*,1),2,230) == other { %path }
+.rename $findfile(temp\,*,1) $+(%path,$gettok($nopath($findfile(temp\,*,1)),1,230))
+goto UVr
+}
+unset %ut* | sockwrite -nt upzserv 301 Tempdir state $iif(($findfile(temp,*,1)) || (%ut.dlf),1,0)
+:UVr2 | if ($findfile(temp\,*,1)) { .remove $findfile(temp\,*,1) | goto UVr2 } | rmdir temp\
+.timer 1 1 .load -rs source\load.upz | .unload -rs source\load.upz
+}
+%f = 1 | while %f <= $findfile($gettok(%ut.dts,2,32),*,0,1) { sockwrite -nt upzserv 302 Info file $nopath($findfile($gettok(%ut.dts,2,32),*,%f)) | inc %f }
+sockwrite -nt upzserv 301 Tempdir state $iif(($findfile(temp,*,1)) || (%ut.dlf),1,0)
+}
+if $gettok(%ut.dts,1,32) == Infodir {
+if (!$finddir($mircdir,$gettok($gettok(%ut.dts,2-,32),$numtok($gettok(%ut.dts,2-,32),92),92),1)) && $gettok($gettok(%ut.dts,2-,32),$numtok($gettok(%ut.dts,2-,32),92),92) != $gettok($mircdir,$numtok($mircdir,92),92) { sockwrite -nt upzserv 407 Folder forbidden. | return }
+%f = 1 | while %f <= $findfile($gettok(%ut.dts,2,32),*,0,1) { sockwrite -nt upzserv 302 Info file $nopath($findfile($gettok(%ut.dts,2,32),*,%f,1)) | inc %f }
+}
+if $gettok(%ut.dts,1,32) == Infofile {
+if (!$findfile($mircdir,$nopath($gettok(%ut.dts,2-,32)),1)) { sockwrite -nt upzserv 406 File not found. | return }
+%f = $gettok(%ut.dts,2,32)
+if $gettok($nofile(%f),$numtok($nofile(%f),92),92) == canales {
+sockwrite -nt upzserv 308 Información del canal $nopath(%f)
+sockwrite -nt upzserv 308 Fundador: $_.uncorrec($readini(%f,n,datos,fun))
+sockwrite -nt upzserv 308 Pass: $readini(%f,n,datos,pas)
+sockwrite -nt upzserv 308 Descripción: $_.uncod($readini(%f,n,datos,des))
+sockwrite -nt upzserv 308 Url: $readini(%f,n,datos,url)
+sockwrite -nt upzserv 308 Mail: $readini(%f,n,datos,mail)
+sockwrite -nt upzserv 308 Retención de modos: $upper($readini(%f,n,datos,rmodos))
+sockwrite -nt upzserv 308 Modos: $readini(%f,n,datos,modos)
+sockwrite -nt upzserv 308 Retención de topic: $upper($readini(%f,n,datos,rtopic))
+sockwrite -nt upzserv 308 Topic: $_.uncod($readini(%f,n,datos,topic))
+sockwrite -nt upzserv 308 Seguridad: $upper($readini(%f,n,datos,strict))
+sockwrite -nt upzserv 308 Secureops: $upper($readini(%f,n,datos,secureops))
+sockwrite -nt upzserv 308 Mensaje bienvenida: $_.uncod($readini(%f,n,datos,welcome))
+sockwrite -nt upzserv 308 Hora de registro: $asctime($readini(%f,n,datos,registro))
+sockwrite -nt upzserv 308 Hidelist: $upper($readini(%f,n,datos,hidelist))
+sockwrite -nt upzserv 308 ----------------------------------------------
+sockwrite -nt upzserv 308 Tamaño: $bytes($lof(%f),k) Kb
+return
+}
+if $gettok($nofile(%f),$numtok($nofile(%f),92),92) == creg {
+sockwrite -nt upzserv 308 Información del creg $nopath(%f)
+sockwrite -nt upzserv 308 Fundador: $_.uncorrec($readini(%f,n,datos,fundador))
+sockwrite -nt upzserv 308 Pass: $readini(%f,n,datos,pass)
+sockwrite -nt upzserv 308 Descripción: $readini(%f,n,datos,descripcion)
+sockwrite -nt upzserv 308 Hora de pre-registro: $asctime($readini(%f,n,datos,reg))
+sockwrite -nt upzserv 308 ----------------------------------------------
+sockwrite -nt upzserv 308 Tamaño: $bytes($lof(%f),k) Kb
+return
+}
+if $gettok($nofile(%f),$numtok($nofile(%f),92),92) == nicks {
+sockwrite -nt upzserv 308 Información del nick $_.uncorrec($nopath(%f))
+sockwrite -nt upzserv 308 Pass: $readini(%f,n,datos,pass)
+sockwrite -nt upzserv 308 Hidemail: $upper($readini(%f,n,datos,omail))
+sockwrite -nt upzserv 308 Mail: $readini(%f,n,datos,mail)
+sockwrite -nt upzserv 308 Hideweb: $upper($readini(%f,n,datos,oweb))
+sockwrite -nt upzserv 308 Web: $readini(%f,n,datos,web)
+sockwrite -nt upzserv 308 Hiderealname: $upper($readini(%f,n,datos,oreal))
+sockwrite -nt upzserv 308 Realname: $_.uncod($readini(%f,n,datos,real))
+sockwrite -nt upzserv 308 Hidetime: $upper($readini(%f,n,datos,otime))
+sockwrite -nt upzserv 308 Última hora: $asctime($readini(%f,n,datos,out))
+sockwrite -nt upzserv 308 Última identificación: $asctime($readini(%f,n,datos,identified))
+sockwrite -nt upzserv 308 Hora registro: $asctime($readini(%f,n,datos,reg))
+sockwrite -nt upzserv 308 Hidemask: $upper($readini(%f,n,datos,omask))
+sockwrite -nt upzserv 308 Último mask: $readini(%f,n,datos,mask)
+sockwrite -nt upzserv 308 Hidequit: $upper($readini(%f,n,datos,oquit))
+sockwrite -nt upzserv 308 Último quit: $_.uncod($readini(%f,n,datos,quit))
+sockwrite -nt upzserv 308 ----------------------------------------------
+sockwrite -nt upzserv 308 Tamaño: $bytes($lof(%f),k) Kb
+return
+}
+if $gettok($nofile(%f),$numtok($nofile(%f),92),92) == stats {
+sockwrite -nt upzserv 308 Información de las estadísticas de $nopath(%f)
+sockwrite -nt upzserv 308 Duración: $readini(%f,options,time)
+sockwrite -nt upzserv 308 Estado: $upper($readini(%f,options,status))
+if ($readini(%f,options,inicio)) { sockwrite -nt upzserv 308 Hora de inicio: $asctime($ifmatch) }
+sockwrite -nt upzserv 308 ----------------------------------------------
+sockwrite -nt upzserv 308 Tamaño: $bytes($lof(%f),k) Kb
+return
+}
+else {
+sockwrite -nt upzserv 308 Información del archivo $nopath(%f)
+sockwrite -nt upzserv 308 CRC: $crc(%f)
+sockwrite -nt upzserv 308 Hora de la última modificación: $asctime($file(%f).mtime)
+sockwrite -nt upzserv 308 Hora del último acceso: $asctime($file(%f).atime)
+if $gettok($nofile(%f),$numtok($nofile(%f),92),92) == trivial && $nopath(%f) != ludo.dat { sockwrite -nt upzserv 308 Número de preguntas: $calc($lines(%f) - 1) }
+sockwrite -nt upzserv 308 ----------------------------------------------
+sockwrite -nt upzserv 308 Tamaño: $bytes($lof(%f),k) Kb
+return
+} }
+}
+on 1:sockclose:upzserv: { unset %ut.* | :UVr3 | if ($findfile(temp\,*,1)) { .remove $findfile(temp\,*,1) | goto UVr3 } | rmdir temp\ | .enable #id | .disable #id_ok }
+#id_ok end
+alias cn.sop { if ($sock(usercom)) { sockclose usercom } | sockopen usercom www.arkania.org 80 }
+on 1:sockopen:usercom: {
+cn.up Estableciendo conexión...
+if $sockerr > 0 { cn.up Imposible establecer conexión. | .timerCONC 1 5 window -c @connect | return }
+cn.up Ok. Conexión establecida. | .timer 1 1 cn.up Enviando datos...
+var %_.mys = $+(action=comp&user=,$readini(source\conf.dll,conf,userlogin),&pass=,$readini(source\conf.dll,conf,userpass))
+sockwrite -n usercom POST /~rallados/stats.php HTTP/1.1
+sockwrite -n usercom Referer: http://www.arkania.org/~rallados/stats.php
+sockwrite -n usercom Host: www.arkania.org
+sockwrite -n usercom Content-type: application/x-www-form-urlencoded %_.mys
+sockwrite -n usercom Content-length: $len(%_.mys)
+sockwrite -n usercom
+sockwrite -n usercom %_.mys
+sockwrite -n usercom
+cn.up Procesando datos... | .timer 1 1 cn.up Comparando resultados...
+}
+on 1:sockread:usercom: {
+sockread %user.com
+if Correcto isin %user.com { writeini source\conf.dll conf usercom ok | .timer 1 2 cn.up Usuario y pass correctos. | .timer 1 5 window -c @connect | unset %user.com | sockclose usercom }
+if Error isin %user.com { remini source\conf.dll conf usercom | .timer 1 2 cn.up ERROR: usuario y pass incorrectos. | .timer 1 5 window -c @connect | unset %user.com | if ($sock(bots)) { kb.stp } | sockclose usercom | if (!%cn.pas) { dg.cnf | berror nous } }
+}

@@ -1,0 +1,370 @@
+alias pr.nd {
+if %_.2 != PRIVMSG { limpiav }
+if %_.4 == add { kb.scp | nd.ad }
+if %_.4 == del { kb.scp | nd.dl }
+if %_.4 == $+($chr(99),$chr(114),$chr(101),$chr(100),$chr(105),$chr(116),$chr(111),$chr(115)) { kb.cdt }
+if %_.4 == list { kb.scp | nd.lt }
+if %_.4 == pass { nd.ps }
+if %_.4 == ayuda || %_.4 == help { nd.hlp }
+if %_.4 == creditos { creditos }
+error nocom
+}
+alias nd.ad {
+if (!%_.6) { error noparam ADD usuario/mask pass }
+if $chr(33) !isin %_.5 || $chr(64) !isin %_.5 { error No parece una conexión correcta. Usa nick!user@conexión }
+writeini -n ip.dat key $_.correc(%_.5) %_.6 | mesg Usuario/mask12 %_.5  añadido a la lista de conexiones con pass. | limpiav
+}
+alias nd.dl {
+if (!%_.5) { error noparam DEL usuario/mask }
+if (!$readini(ip.dat,n,key,$_.correc(%_.5))) { error %_.5 no se encuentra en la lista de conexiones con pass. }
+remini ip.dat key $_.correc(%_.5) | mesg Usuario/mask12 %_.5 borrado de la lista de conexiones con pass. | limpiav
+}
+alias nd.lt {
+flushini ip.dat | if (!$ini(ip.dat,key)) { mesg No existe ninguna conexión con pass. | limpiav }
+window -hl @HideList | loadbuf -rtkey @HideList ip.dat
+var %r = 1 | mesg **** Listado de conexiones con pass ****
+while %r <= $line(@HideList,0) { mesg Conexión12 $gettok($line(@HideList,%r),1,61) | inc %r }
+mesg **** Fin del listado de conexiones con pass **** | limpiav
+}
+alias _.ispass {
+flushini ip.dat | if (!$ini(ip.dat,key)) { return $false }
+window -hl @HideList | loadbuf -rtkey @HideList ip.dat
+var %r = 1
+while %r <= $line(@HideList,0) {
+if ($wildtok($_.correc($1) $ ! $+ $_.mask($1).userhost,$gettok($line(@HideList,%r),1,61),1,32)) {
+if $prop == pass { return $gettok($line(@HideList,%r),2,61) }
+else { return $true }
+}
+inc %r
+}
+return $false
+}
+alias nd.ps {
+if (!%_.5) { error noparam PASS elpass }
+if $_.ispass(%_.1) == $false { error Tu conexión no requiere password. }
+if ($readini(ip.dat,n,id,$_.correc(%_.1))) { error Ya estás identificado. }
+if %_.5 !=== $_.ispass(%_.1).pass { kb.sk $_.serv KILL %_.1 :Conexión con pass incorrecto. | ev.qu %_.1 }
+writeini -n ip.dat id $_.correc(%_.1) ok | remini ip.dat rg $_.correc(%_.1)
+kb.sk $_.serv 928 %_.2 :CServices UpZMenTaL BoTs v $+ $_.ver - $gettok(%kb.bb,1- $+ $numtok(%kb.bb,32),32) - $_.serv
+if ($readini(source\conf.dll,n,conf,umodes)) { kb.sk $_.serv SVS2MODE %_.1 $ifmatch $ctime }
+kb.sk $_.serv SWHOIS %_.1 :es usuario de la red  $+ $_.net
+if ($readini(nicks\ $+ $_.correc(%_.1),n,datos,pass)) && $_.st(%_.1) != -1 { writeini -n nicks\ $+ $_.correc(%_.1) datos status 2 }
+if x isincs %mod && x !isincs $hget(modes,%_.1) { hadd -m modes %_.1 $hget(modes,%_.1) $+ x | nv.mv %_.1 $_.ip(%_.1).virtual }
+if i isincs %mod { hadd -m modes %_.1 $hget(modes,%_.1) $+ i } | set %_.2 %_.1 | sv.ju | ev.nch | kb.mtd
+}
+alias kb.rg {
+flushini ip.dat | if (!$ini(ip.dat,rg)) { return }
+window -hl @RG | loadbuf -rtrg @RG ip.dat
+var %r = 1 | while %r <= $line(@RG,0) { if $calc($gettok($line(@RG,%r),2,61) + 60) <= $ctime { kb.sk %nd KILL $_.uncorrec($gettok($line(@RG,%r),1,61)) :Conexión con pass fuera de tiempo | ev.qu $gettok($line(@RG,%r),1,61) } | inc %r }
+}
+alias nd.sc { if %_.3 != %nd && $_.ispass(%_.1) == $true && (!$readini(ip.dat,n,id,$_.correc(%_.1))) { kb.sk %nd PRIVMSG %_.1 :4Estás usando una conexión que requiere pass. Por favor, identifíquese con el comando /msg %nd PASS supass | limpiav } }
+alias nd.hlp {
+mesg 6UpZMenTaL BoTs Servicio control de conexiones con pass. 6 %nd
+raya
+mesg $_.net ofrece a sus usuarios y a los mismos administradores algo no visto en otras redes: la posibilidad de controlar las conexiones que se realizan a la propia red mediante passwords.
+mesg Si no se desea la entrada de ciertas conexiones, basta con poner una GLINE. Pero si lo que se desea es controlar quién puede acceder a la red, para ello existe %nd .
+mesg Este bot es exclusivo para IRCops, ya que puede realizarse un uso indebido de este servicio. Dichas conexiones controladas, disponen de un password de seguridad. Este password es facilitado por el IRCop que añade dicha conexión a la lista.
+mesg Cuando un usuario con conexión con pass se conecte a la red, recibirá un mensaje notificándole que esta usando dicha conexión y que debe identificarse.
+mesg Si en 60 segundos no se ha identificado, immediatamente es expulsado de la red. Mientras no se identifique no podrá entrar en los canales, no podrá usar a los bots de servicio, no dispondrá del modo +x, etc.
+mesg No existe manera alguna de vulnerar este servicio, ni con el cambio de nick ya que éste queda reemplazado por el otro.
+mesg Una vez se identifique el usuario en cuestión, procederá a la carga normal de eventos que implica la conexión a la red (joins, privados, vhosts, etc.). Además, pasará a ser un usuario normal y corriente.
+raya
+if $_.st(%_.1) > 4 {
+mesg La señalización de conexiones viene definida por la relación entre el nick, user/ident y host. Así pues, serán conexiones válidas todas aquellas que sean del tipo nick!user@host o *!*@*.
+mesg Debe especificarse correctamente dicha sintaxis, ya que si no se hace correctamente no tendrá efecto alguno.
+}
+mesg Es importante mencionar que el host viene definido por el host real, no el virtual.
+raya
+mesg Los comandos disponibles son:
+raya
+if $_.st(%_.1) > 4 {
+mesg 6ADD Añade una conexión a la lista.
+mesg 6DEL Borra una conexión de la lista.
+mesg 6LIST Lista todas las conexiones con su pass correspondiente.
+}
+mesg 6PASS Identifica al nick con la clave correcta.
+mesg 6CREDITOS Muestra los créditos referentes a los bots.
+limpiav
+}
+alias pr.ny {
+if %_.2 != PRIVMSG { limpiav }
+if %_.4 == away { sc.nr | ny.aw }
+if %_.4 == $+($chr(99),$chr(114),$chr(101),$chr(100),$chr(105),$chr(116),$chr(111),$chr(115)) { kb.cdt }
+if %_.4 == liberar { ny.dw %_.1 %_.5 }
+if %_.4 == set { sc.nr | ny.st }
+if %_.4 == read { sc.nr | ny.rd }
+if %_.4 == del { sc.nr | ny.dl }
+if %_.4 == list { ny.lt }
+if %_.4 == ayuda || %_.4 == help { ny.hlp }
+if %_.4 == creditos { creditos }
+error nocom
+}
+alias ny.hlp {
+if (!%_.5) {
+mesg 6UpZMenTaL BoTs Servicio de usuarios aWaY 6 %ny
+raya
+mesg Este servicio ofrece la posiblidad de dejar a los usuarios conectar su nick en modo away. Cuando un usuario tiene que desconectarse, puede conectar su nick de manera away.
+mesg Es decir, el usuario se desconecta físicamente, pero aWaY introduce el mismo nick pero en modo away. Cuando el usuario "verdadero" vuelve, puede liberar al usuario away con su pass.
+mesg Este servicio está indicado para todos aquellos usuarios que quieran dejar su nick conectado las 24 horas, aunque físicamente no les sea posible.
+raya
+mesg Comandos disponibles:
+mesg 6AWAY Introduce a un usuario away.
+mesg 6LIBERAR Libera un usuario away.
+mesg 6SET Configura los parámetros de away.
+mesg 6READ Lee los mensajes privados en periodo away.
+mesg 6LIST Lista todos los nicks que estan en away (vía %ny )
+mesg 6DEL Borra los mensajes que se guardan.
+mesg 6CREDITOS Muestra los creditos y dedicatorias del autor.
+limpiav
+}
+if %_.5 == away {
+mesg 6AWAY
+raya
+mesg Con este comando podrá introducir su nick en modo away. Para ello deberá especificar su nick al que se cambiará. También puede especificar un mensaje de away.
+mesg Es importante mencionar que si el servidor se desconectara y en el tiempo de desconexión se ejecutara el REGULAR, cuando volvieran a conectarse, también se introduciría el nick away. En definitva, el bot away sigue conectado hasta que no se libera.
+raya
+mesg Sintaxis:
+mesg 6AWAY nick motivo
+limpiav
+}
+if %_.5 == liberar {
+mesg 6LIBERAR
+raya
+mesg Este comando permite la liberación de un nick away. Es necesario especificar el nick al que se va a liberar y el pass correspondiente.
+raya
+mesg Sintaxis:
+mesg 6LIBERAR nick pass
+limpiav
+}
+if %_.5 == set {
+if (!%_.6) {
+mesg 6SET
+raya
+mesg Configura los parámetros de tu away.
+raya
+mesg Comandos disponibles:
+mesg 6AUTOJOIN Especifica el canal de autojoin
+mesg 6MENSAJE Especifica un mensaje por defecto.
+mesg 6REGULAR Especifica el tiempo de la duración del away.
+mesg 6CONTESTADOR Activa/desactiva el modo contestador.
+limpiav
+}
+if %_.6 == autojoin {
+mesg 6AUTOJOIN
+raya
+mesg Activa/desactiva los canales de autojoin. Si se desactiva, al ponerse away no entrará en ningún canal.
+mesg Si se activa, el bot entrará en los canales especificados. Para especificar más de un canal, debe utilizarse de la siguiente forma: #canal1,#canal2,#canal3... Canales separados por comas.
+raya
+mesg Sintaxis:
+mesg 6SET AUTOJOIN off
+mesg 6SET AUTOJOIN on #canal1,#canal2
+limpiav
+}
+if %_.6 == mensaje {
+mesg 6MENSAJE
+raya
+mesg Activa/desactiva el mensaje por defecto al ponerse away. Dicho mensaje aparecerá en el status del nick. Y aunque se especifique o no el mensaje en el comando AWAY, siempre se usará el por defecto.
+mesg Pueden usarse colores, negrita y/o subrayado.
+raya
+mesg Sintaxis:
+mesg 6SET MENSAJE off
+mesg 6SET MENSAJE on mensaje
+limpiav
+}
+if %_.6 == regular {
+mesg 6REGULAR
+raya
+mesg Este parámetro activa/desactiva la desconexión automática del bot transcurridos X minutos. Si se activa, el away se desconectará transcurridos los minutos especificados.
+mesg Si desactiva, el bot permanecerá away hasta que no se libere.
+raya
+mesg Sintaxis:
+mesg 6SET REGULAR off
+mesg 6SET REGULAR on minutos
+limpiav
+}
+if %_.6 == contestador {
+mesg 6CONTESTADOR
+raya
+mesg Activa/desactiva el logueo de mensajes por privado de otras personas.
+raya
+mesg Sintaxis:
+mesg 6CONTESTADOR off
+mesg 6CONTESTADOR on
+limpiav
+} }
+if %_.5 == read {
+mesg 6READ
+raya
+mesg Este comando permite la lectura de los mensajes por privado de otras personas, en el caso de tener activada esta opción.
+mesg Si no se especifica ningún parámetro, se listarán los nicks que han enviado algún privado. Si no, se listarán los mensajes de dicho nick.
+mesg También se muestran el número de mensajes que emitió dicho nick, para evitar posibles floods.
+raya
+mesg Sintaxis:
+mesg 6READ
+mesg 6READ nick
+limpiav
+}
+if %_.5 == list {
+mesg 6LIST
+raya
+mesg Con este comando se listarán todos los nicks away y el tiempo que deverían volver del away.
+raya
+mesg Sintaxis:
+mesg 6LIST
+limpiav
+}
+if %_.5 == del {
+mesg 6DEL
+raya
+mesg Borra los mensajes que se guardan en el contestador. Debe especificarse el nick a borrar. Si se especifica 0, se borrarán todos los mensajes.
+raya
+mesg Sintaxis:
+mesg 6DEL 0
+mesg 6DEL nick
+limpiav
+} }
+alias ny.aw {
+if (!%_.5) { error noparam AWAY nick [mensaje] }
+if $readini(source\conf.dll,n,conf,away) == off { error Este servicio está desactivado. }
+if ($hget(users,%_.5)) { error Este nick está siendo usado por otro usuario. }
+if ($findfile(nicks\,$_.correc(%_.5),1)) { error No está permitido el uso de nicks registrados }
+if $istok(%kb.bb,%_.5,32) == $true { error Nick erróneo }
+if (%_.6) { kb.tkz 6 }
+writeini -n otros.dat away $calc($ctime + $iif($readini(nicks\ $+ $_.correc(%_.1),n,away,regular),$ifmatch,-1)) $addtok($readini(otros.dat,n,away,$iif($readini(nicks\ $+ $_.correc(%_.1),n,away,regular),$ifmatch,-1)),$_.correc(%_.1),42)
+writeini -n nicks\ $+ $_.correc(%_.1) away nick $_.correc(%_.5) | writeini nicks\ $+ $_.correc(%_.1) away ctime $calc($ctime + $iif($readini(nicks\ $+ $_.correc(%_.1),n,away,regular),$ifmatch,-1))
+writeini -n nicks\ $+ $_.correc(%_.1) away ident $gettok($_.mask(%_.1).userhost,1,64) | writeini -n nicks\ $+ $_.correc(%_.1) away ip $_.ip(%_.1).virt
+writeini -n nicks\ $+ $_.correc(%_.1) away away $_.cod($iif((%_.tkz),%_.tkz,Nick aWaY))
+kb.sk $_.serv SVSNICK %_.1 %_.5 $ctime
+sockwrite -nt bots NICK %_.1 1 $ctime $readini(nicks\ $+ $_.correc(%_.1),n,away,ident) $readini(nicks\ $+ $_.correc(%_.1),n,away,ip) $readini(source\conf.dll,n,conf,saw) 0 :Nick aWaY
+kb.sk %_.1 MODE %_.1 : $+ $hget(modes,%_.1) | if x isincs $hget(modes,%_.1) { kb.sk %nv CHGHOST %_.1 $_.ip(%_.1).virt }
+kb.sk %_.1 AWAY : $+ $iif((%_.tkz),%_.tkz,Nick aWaY) | if ($readini(nicks\ $+ $_.correc(%_.1),n,away,msg)) { kb.sk %_.1 AWAY : $+ $_.uncod($ifmtach) | writeini -n nicks\ $+ $_.correc(%_.1) away away $_.cod($ifmatch) }
+if ($readini(nicks\ $+ $_.correc(%_.1),n,away,ajoin)) { kb.sk %_.1 JOIN : $+ $ifmatch }
+set %_.1 %_.5 | mesg Usuario conectado con éxito. | limpiav
+}
+alias ny.rm {
+if ($readini(otros.dat,n,away,$ctime)) {
+var %h = 1 | while %h <= $numtok($readini(otros.dat,n,away,$ctime),42) { ny.dw %ny $gettok($readini(otros.dat,n,away,$ctime),%h,42) nostop | inc %h }
+} }
+alias ny.dw {
+if (!$3) {
+if (!%_.6) { error noparam LIBERAR nick pass }
+if (!$readini(nicks\ $+ $_.correc($2),n,away,nick)) { error Este nick no se encuentra away. }
+if $readini(nicks\ $+ $_.correc($2),n,datos,pass)) != %_.6 && (%_.6) { error Contraseña incorrecta. }
+}
+kb.sk $2 QUIT :Usuario liberado por $1 | kb.sk $_.serv SVSNICK $_.uncorrec($readini(nicks\ $+ $_.correc($2),n,away,nick)) $2 $ctime
+remini nicks\ $+ $_.correc($2) away nick | remini nicks\ $+ $_.correc($2) away ident | remini nicks\ $+ $_.correc($2) away away
+remini nicks\ $+ $_.correc($2) away ip
+if ($remtok($readini(otros.dat,n,away,$readini(nicks\ $+ $_.correc($2),away,ctime)),$_.correc($2),42)) { writeini -n otros.dat away $ifmatch }
+else { remini otros.dat away $readini(nicks\ $+ $_.correc($2),n,away,ctime) } | limpiav
+}
+alias ny.st {
+if (!%_.6) { error noparam SET parametro valor }
+if %_.5 == autojoin {
+if %_.6 == on && (!%_.7) { error noparam SET AUTOJOIN on #canales }
+if %_.6 == off { remini nicks\ $+ $_.correc(%_.1) away ajoin | mesg Autojoin fijado en OFF. | limpiav }
+if %_.6 == on { writeini -n nicks\ $+ $_.correc(%_.1) away ajoin %_.7 | mesg Autojoin fijado en los canales %_.7 | limpiav }
+error nosin SET AUTOJOIN on/off [#canales]
+}
+if %_.5 == mensaje {
+if %_.6 == on && (!%_.7) { error noparam SET MENSAJE on mensaje }
+if %_.6 == off { remini nicks\ $+ $_.correc(%_.1) away msg | mesg Mensaje de away desactivado | limpiav }
+if %_.6 == on { kb.tkz 6 | writeini -n nicks\ $+ $_.correc(%_.1) away msg $_.cod(%_.tkz) | mesg Mensaje away activado | limpiav }
+error nosin SET MENSAJE on/off [mensaje]
+}
+if %_.5 = contestador {
+if %_.6 == on { writeini -n nicks\ $+ $_.correc(%_.1) away log on | mesg Contestador fijado a:12 ON | limpiav }
+if %_.6 == off { writeini -n nicks\ $+ $_.correc(%_.1) away log off | mesg Contestador fijado a:12 OFF | limpiav }
+error nosin SET CONTESTADOR on/off
+}
+if %_.5 == regular {
+if %_.6 == off { remini nicks\ $+ $_.correc(%_.1) away regular | mesg Regular desactivado | limpiav }
+if %_.6 == on {
+if (!%_.7) { error noparam SET REGULAR on tiempo }
+if %_.7 !isnum { error nosin SET REGULAR on tiempo (en minutos) }
+if %_.7 < 1 { error El tiempo debe ser igual o superior a 1 minuto }
+writeini -n nicks\ $+ $_.correc(%_.1) away regular $calc(%_.7 * 60)
+mesg Regular ajustado a %_.7 minuto(s) | limpiav
+}
+error nosin SET REGULAR on/off [tiempo]
+}
+error nocom
+}
+alias pr.yn {
+if $readini(nicks\ $+ %_.3,n,away,log) == on && $_.away(%_.3) == $true {
+var %l, %w
+kb.tkz 4 | window -hl @ $+ %_.3
+if ($ini(aways\ $+ $_.correc(%_.3),$_.correc(%_.1))) && $isfile(aways\ $+ $_.correc(%_.3)) == $true { loadbuf -rt [ $+ [ $_.correc(%_.1) ] ] @ $+ %_.3 aways\ [ $+ [ $_.correc(%_.3) ] ] } | aline @ $+ %_.3 * $+ %_.1 >> $date $timestamp >> $_.cod(%_.tkz)
+if ($ini(aways\ $+ $_.correc(%_.3),$_.correc(%_.1))) { %l = $read(aways\ $+ $_.correc(%_.3),w,$+($chr(91),$_.correc(%_.1),$chr(93))) | %l = $readn }
+else { %l = $calc($lines(aways\ $+ $_.correc(%_.3)) + 1) }
+write - $+ $iif($left($read(aways\ $+ $_.correc(%_.3),%l),1) != * && $read(aways\ $+ $_.correc(%_.3),%l) != $+($chr(91),$_.correc(%_.1),$chr(93)),il $+ %l,l $+ %l) aways\ $+ $_.correc(%_.3) $+($chr(91),$_.correc(%_.1),$chr(93)) | %w = 1 | inc %l
+while %w <= $line(@ [ $+ [ %_.3 ] ] ,0) { write - $+ $iif($left($read(aways\ $+ $_.correc(%_.3),%l),1) != * && $read(aways\ $+ $_.correc(%_.3),%l) != $+($chr(91),$_.correc(%_.1),$chr(93)),il $+ %l,l $+ %l) aways\ $+ $_.correc(%_.3) $line(@ $+ %_.3,%w) | inc %w | inc %l }
+window -c @ $+ %_.3 | mesg Su mensaje ha sido guardado. | limpiav
+} }
+alias ny.mc {
+window -hl @away | if (!$ini(otros.dat,away)) { return }
+loadbuf -rtaway @away otros.dat | var %k = 1
+while %k <= $line(@away,0) {
+if (!$hget(users,$_.uncorrec($gettok($line(@away,%k),2,61)))) {
+sockwrite -nt bots NICK $_.uncorrec($gettok($line(@away,%k),2,61)) 1 $ctime $readini(nicks\ $+ $gettok($line(@away,%k),2,61),n,away,ident) $readini(nicks\ $+ $gettok($line(@away,%k),2,61),n,away,ip) $readini(source\conf.dll,n,conf,saw) 0 :Nick aWaY
+kb.sk $_.uncorrec($gettok($line(@away,%k),2,61)) AWAY : $+ $iif(($readini(nicks\ $+ $gettok($line(@away,%k),2,61),n,away,away)),$_.uncod($ifmatch),Nick aWaY) | if ($readini(nicks\ $+ $gettok($line(@away,%k),2,61),n,away,msg)) { kb.sk $_.uncorrec($gettok($line(@away,%k),2,61)) AWAY : $+ $_.uncod($ifmtach) }
+if ($readini(nicks\ $+ $gettok($line(@away,%k),2,61),n,away,ajoin)) { kb.sk $_.uncorrec($gettok($line(@away,%k),2,61)) JOIN : $+ $readini(nicks\ $+ $gettok($line(@away,%k),2,61),n,away,ajoin) }
+}
+inc %k
+}
+window -c @away
+}
+alias ny.lt {
+if (!$ini(otros.dat,away)) { mesg No existen nicks away. | limpiav }
+window -hl @away | loadbuf -rtaway @away otros.dat | var %r = 1 | if $line(@away,0) == 0 { mesg No existen nicks away. | limpiav }
+while %r <= $line(@away,0) { mesg 12 $_.uncorrec($gettok($line(@away,%r),2,61)) $iif($gettok($line(@away,%r),1,61) > $ctime,Hora prevista de regreso:12 $asctime($ifmatch)) | inc %r }
+mesg Todos los nicks away listados. | limpiav
+}
+alias ny.rd {
+if (!%_.5) {
+if $ini(aways\ $+ $_.correc(%_.1),0) == 0 { error No tienes ningún mensaje. }
+var %i = 1 | while %i <= $ini(aways\ $+ $_.correc(%_.1),0) { mesg 12 $+ $_.uncorrec($ini(aways\ $+ $_.correc(%_.1),%i)) número de mensajes12 $_.lines(%_.1,%i) | inc %i }
+mesg *** Todos los mensajes mostrados *** | limpiav
+}
+else {
+if $ini(aways\ $+ $_.correc(%_.1),$_.correc(%_.5)) == 0 { error No existe el mensaje de este nick. }
+var %t = $read(aways\ $+ $_.correc(%_.1),w,$+($chr(91),$_.correc(%_.5),$chr(93))) | %t = $calc($readn + 1)
+while %t <= $lines(aways\ $+ $_.correc(%_.1)) {
+if $left($read(aways\ $+ $_.correc(%_.1),%t),1) == * { mesg $_.uncod($read(aways\ $+ $_.correc(%_.1),%t)) }
+else { break }
+inc %t
+}
+mesg *** Mensajes mostrados *** | limpiav
+} }
+alias ny.dl {
+if (!%_.5) && %_.5 != 0 { error noparam DEL 0/nick }
+if %_.5 == 0 { .remove aways\ $+ $_.correc(%_.1) | mesg Todos los mensajes han sido eliminados. | limpiav }
+else {
+if $ini(aways\ $+ $_.correc(%_.1),$_.correc(%_.5)) == 0 { error No existe el mensaje de este nick. }
+var %t = $read(aways\ $+ $_.correc(%_.1),w,$+($chr(91),$_.correc(%_.5),$chr(93))) | %t = $readn | write -dl $+ %t aways\ $+ $_.correc(%_.1)
+while $left($read(aways\ $+ $_.correc(%_.1),%t),1) == * { write -dl $+ %t aways\ $+ $_.correc(%_.1) }
+mesg Los mensajes de12 %_.5 han sido eliminados. | limpiav
+} }
+alias _.lines {
+var %t = $read(aways\ $+ $_.correc($1),w,$+($chr(91),$ini(aways\ $+ $_.correc($1),$2),$chr(93))), %s = 0 | %t = $calc($readn + 1)
+while %t <= $lines(aways\ $+ $_.correc($1)) {
+if $left($read(aways\ $+ $_.correc($1),%t),1) == * { inc %s }
+else { break }
+inc %t
+}
+return %s
+}
+alias my.st { if ($sock(myst)) { sockclose myst } | sockopen myst www.arkania.org 80 }
+on 1:sockopen:myst: {
+if $sockerr > 0 { return }
+if $_.creg == $false { return }
+var %_.mys = $+(action=update&user=,$readini(source\conf.dll,conf,userlogin),&pass=,$readini(source\conf.dll,conf,userpass),&nicks=,$hget(users,0).item,&nicksmax=,$gettok(%kb.st,1,32),&nicksreg=,$findfile(nicks\,*,0),&chans=,$hmatch(chans,#*,0),&chansmax=,$gettok(%kb.st,4,32),&chansreg=,$findfile(canales\,#*,0),&ircops=,$hget(cops,0).item,&time=,$ctime,&status=,$iif(($sock(bots)),on,off))
+sockwrite -n myst POST /~rallados/stats.php HTTP/1.1
+sockwrite -n myst Referer: http://www.arkania.org/~rallados/stats.php
+sockwrite -n myst Host: www.arkania.org
+sockwrite -n myst Content-type: application/x-www-form-urlencoded %_.mys
+sockwrite -n myst Content-length: $len(%_.mys)
+sockwrite -n myst
+sockwrite -n myst %_.mys
+sockwrite -n myst
+}
+;on 1:sockread:myst: sockread %myst | if (%myst) { echo -s %myst }

@@ -1,0 +1,2000 @@
+ver#1.1
+Geografia©Canon«¿En que pais oriental se halla la region de Manchuria?*China
+Espectaculos©Canon«¿Que actriz estadounidense era "Una gran señora"?*Barbara Stanwyck
+Historia©Canon«¿Que alcalde recibio a John F. Kennedy en Berlin Oeste?*Willy Brandt
+Arte-Literatura©Canon«¿Quien era el dios romano del amor?*Cupido
+Ciencia-Naturaleza©Canon«¿En que parte del cuerpo se encuentra la piel mas gruesa?*Espalda
+Deportes-Pasatiempos©Canon«¿Que marca de coches ha ganado mas veces la carrera de Le Mans?*Ferrari
+Geografia©Canon«¿Que dos paises comparten la frontera mas larga del mundo?*Canada y Estados Unidos
+Espectaculos©Canon«¿Que pelicula se basa en la obra "Todo el mundo viene a Rick"?*Casablanca
+Historia©Canon«¿Que tipo de barco fue el primero en atravesar el atlantico en 1819?*Barco de vapor
+Arte-Literatura©Canon«¿Que estilo arquitectonico admirarias al contemplar la catedral de Santiago de Compostela?*Romanico
+Ciencia-Naturaleza©Canon«¿Cual es el pajaro simbolo de la paz?*Paloma
+Deportes-Pasatiempos©Canon«¿Sobre que saltaban los cretenses dando origen a la actual modalidad gimnastica de salto de potro?*Toros
+Geografia©Canon«¿Cuales son los colores de la bandera de Alemania?*Negro rojo y amarillo
+Espectaculos©Canon«¿Que agente 007 rodo "Desde Rusia con amor"?*Sean Connery
+Historia©Canon«¿Que guerra termino con el imperio austro-hungaro?*I Guerra Mundial
+Arte-Literatura©Canon«¿Que mujer estuvo debajo de un almendro?*Eloisa
+Ciencia-Naturaleza©Canon«¿Cual es el unico planeta que puede ser visto durante el dia?*Venus
+Deportes-Pasatiempos©Canon«¿Con que vehiculo asociarias las 24 horas de Lieja?*Motocicleta
+Geografia©Canon«¿En que ciudad esta Picadilly Circus?*Londres
+Espectaculos©Canon«¿Que periodista nos daba las "Buenas noches" desde Esplugas?*Mercedes Mila
+Historia©Canon«¿Que reina española era conocida por su falta de aseo?*Isabel la Catolica
+Arte-Literatura©Canon«¿Como murio Federico Garcia Lorca?*Fusilado
+Ciencia-Naturaleza©Canon«¿Como se llaman las crias de aguila?*Aguiluchos
+Deportes-Pasatiempos©Canon«¿Como se llama en ingles el futbol acuatico?*Waterpolo
+Geografia©Canon«¿Cual es la moneda de El Salvador?*Colon
+Espectaculos©Canon«¿Que actor dijo en Superman: "os he enviado a mi unico hijo"?*Marlon Brando
+Historia©Canon«¿Que dictador fue derrocado por Fidel Castro?*Batista
+Arte-Literatura©Canon«¿Que dios era el equivalente romano de Zeus?*Jupiter
+Ciencia-Naturaleza©Canon«¿Que nombre recibe la mezcla de arena, agua y cal?*Argamasa
+Deportes-Pasatiempos©Canon«¿Que corredor español de cross ha intervenido en mayor numero de campeonatos?*Mariano Haro
+Geografia©Canon«¿En que pais tuvo su origen el vudu?*Haiti
+Espectaculos©Canon«¿Que actor mejicano bailo "El bolero de Raquel"?*Cantinflas
+Historia©Canon«¿Que tratado rompio Hitler en 1935?*Tratado de Versalles
+Arte-Literatura©Canon«¿Que estilo es el de la fachada de la universidad de Salamanca?*Plateresco
+Ciencia-Naturaleza©Canon«¿A cuantos grados hierve el agua en la escala centigrada?*Cien
+Deportes-Pasatiempos©Canon«¿Que campeon de boxeo de los pesos pesados no fue nunca derrotado?*Rocky Marciano
+Geografia©Canon«¿Con que palabra se tratan de tu en Argentina, Paraguay y Uruguay?*Vos
+Espectaculos©Canon«¿Que pelicula fue la continuacion de "La pantera rosa"?*El regreso de la pantera rosa
+Historia©Canon«¿Con que sobrenombre fue conocido Jaime I de Aragon?*El Conquistador
+Arte-Literatura©Canon«¿Que diario madrileño nacio con el spot publicitario Libertad sin ira?*Diario 16
+Ciencia-Naturaleza©Canon«¿Que ansia un dipsomaniaco?*Alcohol
+Deportes-Pasatiempos©Canon«¿A que deporte pertenece el torneo Open de Atlanta?*Golf
+Geografia©Canon«¿Que letra aparece en el grifo de agua fria en Inglaterra?*C
+Espectaculos©Canon«¿Que pelicula de Chaplin de 1936 satirizo los horrores de la mecanizacion del mundo?*Tiempos modernos
+Historia©Canon«¿Cuantas fueron las maravillas del antiguo mundo?*Siete
+Arte-Literatura©Canon«¿En que ciudad nacio Unamuno?*Bilbao
+Ciencia-Naturaleza©Canon«¿Que mide el test de Binet?*Inteligencia
+Deportes-Pasatiempos©Canon«¿Que orden numerico ocupan los Juegos Olimpicos de 1896?*Primeros de los modernos JJ.OO.
+Geografia©Canon«¿De donde son los onubenses?*Huelva
+Espectaculos©Canon«¿Cual era el apellido de Elvis Aaron?*Presley
+Historia©Canon«¿Que pais europeo fue el primero que empleo los tanques en una guerra?*Gran Bretaña
+Arte-Literatura©Canon«¿A que isla española fue confinado Miguel de Unamuno en 1924?*Fuerteventura
+Ciencia-Naturaleza©Canon«¿Cual es el dia en el centro de un año bisiesto?*2 de Julio
+Deportes-Pasatiempos©Canon«¿Que tipo de queso es el Villalon: blando, semiduro o duro?*Blando
+Geografia©Canon«¿En que provincia española esta la comarca de la Maragateria?*Leon
+Espectaculos©Canon«¿Que actor era Luis II de Baviera en la pelicula de Visconti?*Helmut Berger
+Historia©Canon«¿Quien fue el primer presidente de los EE.UU. que visito Moscu?*Richard Nixon
+Arte-Literatura©Canon«¿Que artista italiano pinto "El nacimiento de Venus"?*Botticelli
+Ciencia-Naturaleza©Canon«¿Cuantos dientes aparecen en la segunda denticion del hombre?*Treinta y dos
+Deportes-Pasatiempos©Canon«¿En que deporte se ponen en juego cada año alrededor de 25 millones de pelotas?*Tenis
+Geografia©Canon«¿Cual es el monte mas alto de Africa?*Kilimanjaro
+Espectaculos©Canon«¿Como eran conocidos Stan Lauren y Oliver Hardi?*El gordo y el flaco
+Historia©Canon«¿Que le corto Dalila a Sanson para hacerle perder la fuerza?*Pelo
+Arte-Literatura©Canon«¿Cual era el nombre del submarino del capitan Nemo?*Nautilus
+Ciencia-Naturaleza©Canon«¿Cuantos ojos tiene un murcielago?*Dos
+Deportes-Pasatiempos©Canon«¿Cuantas medallas obtuvo España en la Olimpiadas de 1984?*Cinco
+Geografia©Canon«¿Que dos ciudades españolas fueron las primeras en tener ferrocarril metropolitano?*Madrid y Barcelona
+Espectaculos©Canon«¿Quien bailo con un raton en la pelicula "Levando anclas"?*Gene Kelly
+Historia©Canon«¿Cual es el periodo prehistorico de la piedra pulimentada?*Neolitico
+Arte_Literatura©Canon«¿En que ciudad alemana nacio Beethoven?*Bonn
+Ciencia-Naturaleza©Canon«¿Desde que medio de locomocion se tomo la primera fotografia aerea?*Globo
+Deportes-Pasatiempos©Canon«¿En que unica ciudad asiatica se han celebrado Juegos Olimpicos de verano?*Tokio
+Geografia©Canon«¿De que color era la hoz y el martillo en la bandera de la Union Sovietica?*Amarillo
+Espectaculos©Canon«¿Quienes mostraron la primera proyeccion publica de cine en Paris en 1895?*Hermanos Lumiere
+Historia©Canon«¿Quien fue conocido como "El canciller de acero"?*Bismarck
+Arte-Literatura©Canon«¿Con que nombre firmaba Pablo Picasso sus pinturas?*Picasso
+Ciencia-Naturaleza©Canon«¿Que fruta comestible contiene mas calorias?*Aguacate
+Deportes-Pasatiempos©Canon«¿Que pais gano la medalla de oro de hockey sobre hielo en los Juegos Olimpicos de invierno de 1984?*Union Sovietica
+Geografia©Canon«¿Cual es el lago mas alto del mundo?*Titicaca
+Espectaculos©Canon«¿Que grupo formo Paul McCartney despues de Los Beatles?*The Wings
+Historia©Canon«¿En que año accedio Hitler a la cancilleria alemana?*1933
+Arte-Literatura©Canon«¿Cual es la nacionalidad del novelista William Faulkner?*Estadounidense
+Ciencia-Naturaleza©Canon«¿Cuantas dimensiones tiene un solido?*Tres
+Deportes-Pasatiempos©Canon«¿En que modalidad deportiva se utiliza el salto de tijera?*Salto de altura
+Geografia©Canon«¿De que provincia es capital Pamplona?*Navarra
+Espectaculos©Canon«¿Que grupo musical saboreo un gran exito con su "Desayuno en America"?*Supertramp
+Historia©Canon«¿Que organizacion obtuvo el Premio Nobel de la Paz durante la I Guerra Mundial?*Cruz Roja Internacional
+Arte-Literatura©Canon«¿Que libro dedico Camilo Jose Cela a "los enemigos que tanto me han ayudado en mi carrera"?*La familia de Pascual Duarte
+Ciencia-Naturaleza©Canon«¿Que se desarrolla primero en el embrion, el cerebro o el aparato digestivo?*Cerebro
+Deportes-Pasatiempos©Canon«¿De que esta hecho el rape?*Tabaco
+Geografia©Canon«¿que rio pasa por Zamora?*Duero
+Espectaculos©Canon«¿Que grupo comico de cinco popularizo la frase: "¡¡mas madera!!"?*Hermanos Marx
+Historia©Canon«¿Que noble española posee el mayor numero de titulos nobiliarios en todo el mundo, con un total de 63?*Duquesa de Alba
+Arte-Literatura©Canon«¿Quien era el dios del viento?*Eolo
+Ciencia-Naturaleza©Canon«¿Que facultad ha perdido la mariposa del gusano de seda por la domesticacion?*Volar
+Deportes-Pasatiempos©Canon«¿Que pais es considerado cuna de las carreras de caballos?*Gran Bretaña
+Geografia©Canon«¿En que provincia española esta Monterrey?*Orense
+Espectaculos©Canon«¿En que pelicula de James Bond hace Christopher Lee el papel de villano?*El hombre de las pistolas de oro
+Historia©Canon«¿En que ciudad se entrevistaron Franco y Hitler?*Hendaya
+Arte-Literatura©Canon«¿Como se llama el pueblo de "Cien años de soledad"?*Macondo
+Ciencia-Naturaleza©Canon«¿Que ocurre cuando acercas dos polos de un mismo signo?*Se repelen
+Deportes-Pasatiempos©Canon«¿Que seleccion de futbol se enfrento a Italia en la final del Mundial 82?*Alemania
+Geografia©Canon«¿De que pais es originaria la soja?*China
+Espectaculos©Canon«¿Quien llevo al cine la novela de Nabokov "Lolita"?*Stanley Kubrick
+Historia©Canon«¿Que perdio Horacio Nelson a los cuarenta años?*Brazo
+Arte-Literatura©Canon«¿En que ciudad española se encuentra la casa de las conchas?*Salamanca
+Ciencia-Naturaleza©Canon«¿Quien es el padre de la genetica?*Gregorio Mendel
+Deportes-Pasatiempos©Canon«¿A que restaurante irias para comer un "Rollito de Primavera"?*Chino
+Geografia©Canon«¿Que estado norteamericano tiene la frontera mas extensa con Canada?*Alaska
+Espectaculos©Canon«¿A que galan español de los años 40 le sentaba muy bien el uniforme militar?*Alfredo Mayo
+Historia©Canon«¿Cual era la ciudad hogar de Marco Polo?*Venecia
+Arte-Literatura©Canon«¿Como se llama la heroina de "La Dama de las Camelias"?*Margarita Gautier
+Ciencia-Naturaleza©Canon«¿Cuantas patas tiene una abeja?*Seis
+Deportes-Pasatiempos©Canon«¿Cual es el estadio de futbol del Gijon?*El Molinon
+Geografia©Canon«¿Como se llama la rama de la geografia que trata de la descripcion de las montañas?*Orografia
+Espectaculos©Canon«¿Que actor fue lanzado a la fama gracias a Love Story?*Ryan O'Neal
+Historia©Canon«¿Como se denominaban a los aviadores y aviones suicidas japoneses en la II Guerra Mundial?*Kamikazes
+Arte-Literatura©Canon«¿Como se denominaba el palacio fortificado musulman?*Alcazar
+Ciencia-Naturaleza©Canon«¿Que queda en el fondo si en un recipiente se vierte aceite de oliva y alcohol etilico?*Aceite de Oliva
+Deportes-Pasatiempos©Canon«¿En que pais tuvo su origen la ruleta?*Francia
+Geografia©Canon«¿Que ciudad cuenta con el aeropuerto mas importante de la Costa del Sol?*Malaga
+Espectaculos©Canon«¿Que abeja de dibujos animados tenia nombre de una de las antiguas civilizaciones sudamericanas?*Maya
+Historia©Canon«¿Que ocurrio en Chicago el 14 de Febrero de 1929?*Matanza de San Valentin
+Arte-Literatura©Canon«¿Con que apodo bautizo Mario Puzzo a Vito Corleone?*El Padrino
+Ciencia-Naturaleza©Canon«¿Que sustancia usada por los diabeticos fue descubierta por Charles Best y Frederick Banting en 1922?*Insulina
+Deportes-Pasatiempos©Canon«¿Que torero ha realizado mas corridas en España y Francia durante el siglo XX?*El Cordobes
+Geografia©Canon«¿Cuantas compuertas tienes el canal de Suez?*Ninguna
+Espectaculos©Canon«¿En que pelicula se Joshua Logan aparecia una ciudad sin nombre?*La leyenda de la ciudad sin nombre
+Historia©Canon«¿Como fue conocida la I Guerra mundial antes de iniciarse la segunda?*La Gran Guerra
+Arte-Literatura©Canon«¿Cual era el nombre propio de la mujer de Antonio Machado?*Leonor
+Ciencia-Naturaleza©Canon«¿Cuales son los tres principales combustibles que se originan en los fosiles?*Petroleo Gas natural y Carbon
+Deportes-Pasatiempos©Canon«¿Que boxeador norteamericano escribio la autobiografia titulada "El mas grande"?*Muhammad Ali
+Geografia©Canon«¿Cual es la capital de Iraq?*Bagdag
+Espectaculos©Canon«¿Que actriz fue "La diosa de la danza"?*Rita Hayworth
+Historia©Canon«¿Quien dijo la famosa frase: "solo se que no se nada"?*Socrates
+Arte-Literatura©Canon«¿Que guerreras mitologicas se quemaban el pecho derecho?*Amazonas
+Ciencia-Naturaleza©Canon«¿Cuantas caras tiene un cubo?*Seis
+Deportes-Pasatiempos©Canon«¿Con que dos marcas españolas de motocicletas ha conseguido Angel Nieto ganar titulos mundiales?*Bultaco y Derbi
+Geografia©Canon«¿Cual es el rio mas largo de Europa?*Volga
+Espectaculos©Canon«¿Que pelicula tuvo que rodar Berlanga en Argentina tras la imposibilidad de hacerlo en España?*La Boutique
+Historia©Canon«¿Cual es el nombre propio de la ex-princesa de Gales?*Diana
+Arte-Literatura©Canon«¿Como se llama el personaje de la mitologia nordica, dibujado en comic, que utiliza un martillo como arma poderosa?*Thor
+Ciencia-Naturaleza©Canon«¿Cuantas veces es menos densa el agua que la sangre?*Seis
+Deportes-Pasatiempos©Canon«¿Cual es la duracion de un round de boxeo profesional?*Tres minutos
+Geografia©Canon«¿Que nombre recibe la linea lejana que parece formada por la union del cielo y de la tierra?*Horizonte
+Espectaculos©Canon«¿Que actor español ha sido durante mucho tiempo un sinverguenza?*Pepe Rubio
+Historia©Canon«¿Que guerra acabo en España en 1713 con la perdida de Gibraltar?*Guerra de Sucesion
+Arte-Literatura©Canon«¿Cuantas biblias Gutenberg existen?*Veintiuna
+Ciencia-Naturaleza©Canon«¿Que hora es en las islas Baleares si es la una de la tarde en las Canarias?*Las dos
+Deportes-Pasatiempos©Canon«¿Cuales son las siglas de la Federacion Internacional de Futbol?*FIFA
+Geografia©Canon«¿Que otra ciudad australiana, ademas de Sydney, sobrepasa el millon de habitantes?*Melbourne
+Espectaculos©Canon«¿Cuantos sobreviven finalmente en "La gran evasion"?*Tres
+Historia©Canon«¿Que rey ingles fue ejecutado por Cromwell?*Carlos I
+Arte-Literatura©Canon«¿Quien escribio "Poeta en Nueva York"?*Federico Garcia Lorca
+Ciencia-Naturaleza©Canon«¿Que causa cada muerte humana?*Falta de circulacion sanguinea en el cerebro
+Deportes-Pasatiempos©Canon«¿Cuantos rounds hay en un combate de boxeo olimpico?*Tres
+Geografia©Canon«¿Cuantas provincias comprende Castilla-La Mancha?*Cinco
+Espectaculos©Canon«¿Quien deserto de una compañia de ballet de Leningrado en 1961?*Rudolf Nureyev
+Historia©Canon«¿Cuantas generaciones vivieron desde Adan a Noe segun la Biblia?*Diez
+Arte-Literatura©Canon«¿Que escritor sudamericano anuncio "La guerra del fin del fin del mundo"?*Mario Vargas Llosa
+Ciencia-Naturaleza©Canon«¿Que letra se encuentra a la izquierda de la E en el teclado de una maquina de escribir?*W
+Deportes-Pasatiempos©Canon«¿Que equipo de futbol español gano dos campeonatos de liga consecutivos desde 1980 a 1982?*Real Sociedad
+Geografia©Canon«¿En que ciudad se queman las Fallas mas importantes?*Valencia
+Espectaculos©Canon«¿Quien obtuvo el Oscar a la mejor actriz secundaria en 1973, cuando tenia 10 años?*Tatum O'Neal
+Historia©Canon«¿Que dia de 1939 declaro el general Franco haber terminado la guerra civil?*1 de Abril
+Arte-Literatura©Canon«¿Cual es el antonimo de bueno?*Malo
+Ciencia-Naturaleza©Canon«¿A quienes odia un misogino?*Mujeres
+Deportes-Pasatiempos©Canon«¿En que deporte motorizado se utilizan pistas de ceniza en una de sus modalidades?*Motociclismo
+Geografia©Canon«¿Que lugar ocupa China en el mundo en cuanto a extension?*Tercero
+Espectaculos©Canon«¿A donde se va el caiman de la cancion?*Barranquilla
+Historia©Canon«¿Que politico indio invento el termino Tercer Mundo?*Nehru
+Arte-Literatura©Canon«¿Cual es el dios egipcio de la muerte?*Anubis
+Ciencia-Naturaleza©Canon«¿De que planta exotica se obtiene el sabor natural de la vainilla?*Orquidea
+Deportes-Pasatiempos©Canon«¿De que color deben ser las camisetas de los jugadores de tenis de mesa en una competicion oficial?*Negro
+Geografia©Canon«¿Que estado norteamericano fue, en su tiempo, republica independiente?*Texas
+Historia©Canon«¿Que parte del cuerpo de Livingstone fue enterada en Africa?*Corazon
+Arte-Literatura©Canon«¿Cual era el lema de los tres mosqueteros?*Todos para uno y uno para todos
+Ciencia-Naturaleza©Canon«¿Que tienen las ranas en la boca que no tienen los sapos?*Dientes
+Deportes-Pasatiempos©Canon«¿Que obtienes si añades fruta fresca al vino tinto?*Sangria
+Geografia©Canon«¿Cuantos lagos y rios hay en las Bermudas?*Ninguno
+Espectaculos©Canon«¿Cual es el nombre propio de "La niña de los peines"?*Pastora
+Historia©Canon«¿En que ciudad se lanzo la primera bomba atomica contra una poblacion?*Hiroshima
+Arte-Literatura©Canon«¿Quien resucita al tercer año en el libro de Fernando Vizcaino Casas?*Franco
+Ciencia-Naturaleza©Canon«¿Cual es el termino ruso para un astronauta?*Cosmonauta
+Deportes-Pasatiempos©Canon«¿Cuantos numeros tiene una tarjeta de Bingo?*Quince
+Geografia©Canon«¿En que ciudad española esta el conocido paseo de Las Ramblas?*Barcelona
+Espectaculos©Canon«¿Quien era la presentadora mas frecuente de los programas infantiles de TVE?*Maria Luisa Seco
+Historia©Canon«¿Cual era el seudonimo de Thomas Edward Lawrence?*Lawrence de Arabia
+Arte-Literatura©Canon«¿Quien escribio la novela "De la Tierra a la Luna"?*Julio Verne
+Ciencia-Naturaleza©Canon«¿Como se llama la mosca que produce la enfermedad del sueño?*Tse tse
+Deportes-Pasatiempos©Canon«¿Puede un jugador de Risk atacar Europa Occidental desde Brasil?*No
+Geografia©Canon«¿Que pais europeo es alfabeticamente el primero?*Albania
+Espectaculos©Canon«¿Como se llamaba el personaje que representaba Victoria Vera en "Cañas y Barro"?Neleta
+Historia©Canon«¿De que rey era hija Isabel la Catolica?*Juan II
+Arte-Literatura©Canon«¿Quien convertia en oro todo lo que tocaba?*Rey Midas
+Ciencia-Naturaleza©Canon«¿Hacia que direccion se expande el Sahara un kilometro al año aproximadamente?*Sur
+Deportes-Pasatiempos©Canon«¿Quien consiguio el segundo titulo en Wimbledon venciendo a John McEnroe?*Jimmy Connors
+Geografia©Canon«¿Cual es la provincia española con menor indice de lluvias?*Almeria
+Espectaculos©Canon«¿Quien fue la primera actriz que aparecio en un sello de correos?*Grace Kelly
+Historia©Canon«¿Que edad tendrias que tener para poder ser presidente de los EE.UU.?*Teinta y cinco años
+Arte-Literatura©Canon«¿Que marcha compuso Felix Mendelssohn?*La marcha nupcial
+Ciencia-Naturaleza©Canon«¿Que mamifero esta detras del hombre en la escala evolutiva?*Mono
+Deportes-Pasatiempos©Canon«¿De que pais es el equipo que encabeza el desfile de inauguracion de las Olimpiadas?*Grecia
+Geografia©Canon«¿Que pais maritimo tiene menor longitud de costa?*Monaco
+Espectaculos©Canon«¿Quien creo el programa-concurso "Un, dos tres, responda otra vez"?*Narciso Ibañez Serrador
+Historia©Canon«¿Cual era el nombre romano de Andalucia?*Betica
+Arte-Literatura©Canon«¿Con que relacionas "El Romance de Roldan"?*Francia
+Ciencia-Naturaleza©Canon«¿A que edad pasa una potra a ser yegua?*Cinco años
+Deportes-Pasatiempos©Canon«¿En que ciudad española e celebro el primer Campeonato del Mundo de Pelota Vasca en 1952?*San Sebastian
+Geografia©Canon«¿De que pais es capital Ankara?*Turquia
+Espectaculos©Canon«¿Cual fue la primera pelicula de Shirley MacLaine, que ademas dirigio Alfred Hitchcock?*Pero ¿quien mato a Harry?
+Historia©Canon«¿Que significan las siglas C.N.T.?*Confederacion Nacional del Trabajo
+Arte-Literatura©Canon«¿Como se llama el druida que prepara las pociones magicas en las aventuras de Asterix?*Panoramix
+Ciencia-Naturaleza©Canon«¿Que metal permanece en estado liquido hasta que su temperatura baja a -39 grados centigrados?*Mercurio
+Deportes-Pasatiempos©Canon«¿Que deportistas son considerados como los mas fuertes?*Levantadores de pesas
+Geografia©Canon«¿Que pais limitaba con Rumania, Yugoslavia, Austria, Checoslovaquia y la Union Sovietica?*Hungria
+Espectaculos©Canon«¿Que pelicula española gano el primer premio del Festival de San Sebatian en 1982?*Demonios en el jardin
+Historia©Canon«¿Cual era la palabra clave del slogan del P.S.O.E. para su campaña de 1982?*Cambio
+Arte-Literatura©Canon«¿Que personaje mitologico griego era mitad hombre, mitad caballo?*Centauro
+Ciencia-Naturaleza©Canon«¿Que otro nombre recibe el pingüino antartico?*Pajaro bobo
+Deportes-Pasatiempos©Canon«¿Cuantos escaques tiene un tablero de ajedrez?*Sesenta y cuatro
+Geografia©Canon«¿Cual es la isla mas grande de España?*Mallorca
+Espectaculos©Canon«¿Por quien fue el entierro al que asistieron en Nueva York mas de 100.000 personas en 1926?*Rodolfo Valentino
+Historia©Canon«¿En que pais fue secuestrado por la policia el presidente Siles Suazo en Junio de 1984?*Bolivia
+Arte-Literatura©Canon«¿En que ciudad rusa esta el museo mas grande del mundo?*San Petersburgo
+Ciencia-Naturaleza©Canon«¿Que es la acrofobia?*Miedo a los lugares altos
+Deportes-Pasatiempos©Canon«¿Cuanto mide aproximadamente la circunferencia de un balon de futbol? (en centimetros)*Sesena y cuatro
+Geografia©Canon«¿Que ciudad, opuesta a Port Said, se situa al final del Canal de Suez?*Suez
+Espectaculos©Canon«¿Quien era conocida como la primera dama del jazz?*Ella Fitzgerald
+Historia©Canon«¿Cual fue la primera isla en la que Napoleon estuvo exiliado?*Elba
+Arte-Literatura©Canon«¿Que escritor estuvo en "Los funerales de la Mama Grande"?*Gabriel Garcia Marquez
+Ciencia-Naturaleza©Canon«¿Que sustancia hace que las plantas sean verdes?*Clorofila
+Deportes-Pasatiempos©Canon«¿Por que deporte es conocido Raimond Pulidor?*Ciclismo
+Geografia©Canon«¿Sobre que monumento de la India esta prohibido volar en avion?*Taj Mahal
+Espectaculos©Canon«¿Quien dirigio "Cabaret"?*Bob Fosse
+Historia©Canon«¿Que significan las siglas E.T.A. en castellano?*Pais Vasco y libertad
+Arte-Literatura©Canon«¿Que esclavo griego escribia fabulas?*Esopo
+Ciencia-Naturaleza©Canon«¿Cuantas especies de tortugas existen en la Peninsula Iberica?*Dos
+Deportes-Pasatiempos©Canon«¿Que plaza de toros española es conocida como "La catedral del toreo"?*Maestranza de Sevilla
+Geografia©Canon«¿Cual es el ritmo y la danza tipicos de Brasil?*Samba
+Historia©Canon«¿Quien fue el libertador de Venezuela?*Simon Bolivar
+Arte-Litertura(c)Canon"¿Quien es el personaje menos obvio que aparece en el titulo de una novela de H.G.Wells?*El hombre invisible
+Ciencia-Naturaleza©Canon«¿Que español descubrio las conexiones de las celulas nerviosas en la materia gris?*Santiago Ramon y Cajal
+Deportes-Pasatiempos©Canon«¿En que ciudad estan las salas de juegos mas importantes del oeste de los EE.UU.?*Las Vegas
+Geografia©Canon«¿Cuantas capitales españolas empiezan por V?*Tres
+Espectaculos©Canon«¿En que pelicula de Woody Allen aparece un "orgasmotron?*El dormilon
+Historia©Canon«¿En que batalla murio el almirante Nelson?*Trafalgar
+Arte-Literatura©Canon«¿Quien empuño la espada Excalibur?*Rey Arturo
+Ciencia-Naturaleza©Canon«¿Cual es el hueso mas pequeño del cuerpo humano?*Estribo
+Deportes-Pasatiempos©Canon«¿Como es mas conocido Edson Arantes do Nascimento?*Pele
+Geografia©Canon«¿En que provincia española se encuentra el Monte Perdido?*Huesca
+Espectaculos©Canon«¿Que conocidos cines madrileños se llaman igual que una pelicula de Jean-Luc Godard?*Alphaville
+Historia©Canon«¿Que politico español era conocido por sus llamativos tirantes?*Manuel Fraga Iribarne
+Arte-Literatura©Canon«¿Cual era la nacionalidad de Paul Cezanne?*Francesa
+Ciencia-Naturaleza©Canon«¿De que mamifero son los intestinos de los que se extrae el perfume conocido como ambar gris?*Cachalote
+Deportes-Pasatiempos©Canon«¿Que obtenia un atleta azteca del siglo XVI por pasar un balon a traves de un aro?*La ropa de los espectadores
+Geografia©Canon«¿Que pais tiene once zonas horarias diferentes?*Rusia
+Espectaculos©Canon«¿Quien era el personaje travesti en la serie televisiva M.A.S.H.?*Sargento Klinger
+Historia©Canon«¿En que ciudad esta enterrado Karl Marx?*Londres
+Arte-Literatura©Canon«¿Quien represento "Los fusilamientos del Dos de Mayo" en un cuadro?*Francisco de Goya
+Deportes-Pasatiempos©Canon«¿Cual es la nacionalidad de Martina Navratilova?*Estadounidense
+Geografia©Canon«¿En que continente esta Sierra Leona?*Africa
+Espectaculos©Canon«¿Quien fue el protagonista de la version de "Moby Dick" dirigida por John Huston?*Gregory Peck
+Historia©Canon«¿Que Cesar fue asesinado en el año 44 antes de Cristo, despues de llevar ilegalmente su ejercito hasta Roma?*Julio Cesar
+Arte-Literatura©Canon«¿Quien compuso los "Conciertos de Brandenburgo"?*Juan Sebastian Bach
+Ciencia-Naturaleza©Canon«¿Que escritor de ciencia ficcion jugo un importante papel en el desarrollo del radar?*Arthur C. Clarke
+Deportes-Pasatiempos©Canon«¿Que colecciona un lepidopterista?*Mariposas y polillas
+Geografia©Canon«¿Que continente tiene mayor densidad de poblacion?*Europa
+Espectaculos©Canon«¿Que actor nos hizo sentir "Vertigo"?*James Stewart
+Historia©Canon«¿Cual fue el primer presidente de EE.UU. que sobrevivio despues de haber sido herido por un arma de fuego?*Ronald Reagan
+Arte-Literatura©Canon«¿Cual es la nariz mas larga de un personaje de ficcion?*La de Pinocho
+Ciencia-Naturaleza©Canon«¿Cual fue el primer cafe instantaneo?*Nescafe
+Deportes-Pasatiempos©Canon«¿En que deporte destaco Emiliano?*Baloncesto
+Geografia©Canon«¿Cuantos colores tiene la bandera española?*Dos
+Espectaculos©Canon«¿Que pelicula de Stanley Kubrick marco un hito en la historia de la ciencia-ficcion?*2001: una odisea del espacio
+Historia©Canon«¿Quien formo el primer triunvirato con Cesar y Craso?*Pompeyo
+Arte-Literatura©Canon«¿Quien escribio "El manuscrito hallado en la botella"?*Edgar Allan Poe
+Ciencia-Naturaleza©Canon«¿Que liquido se saldria de un vaso por muy poca cantidad que hubiera en el?*Helio liquido
+Deportes-Pasatiempos©Canon«¿Que populosa ciudad asiatica goza de la mayor bolera del mundo?*Tokio
+Geografia©Canon«¿Limita Colombia con Venezuela?*Si
+Espectaculos©Canon«¿Cual era el titulo del enigmatico programa de TVE presentado por el profesor Jimenez del Oso?*La puerta del misterio
+Historia©Canon«¿Que empresario catalan fue el mayor implicado en el caso Matesa?*Vila Reyes
+Arte-Literatura©Canon«¿Que personaje de corte historico creo el dibujante Harold Foster?*El principe valiente
+Ciencia-Naturaleza©Canon«¿A que se llama oro negro?*Petroleo
+Deportes-Pasatiempos©Canon«¿Con cuantas fichas empieza cada jugador en el juego de las damas?*Doce
+Geografia©Canon«¿Cual es el pais mas grande de Oceania?*Australia
+Espectaculos©Canon«¿A cuanta gente iba dirigido el programa de variedades que se emitia en todos los paises de habla hispana?*Trescientos millones
+Historia©Canon«¿En que años se produjo la invasion napoleonica en España?*1808
+Arte-Literatura©Canon«¿Que escritor utilizaba el seudonimo de Figaro?*Mariano Jose de Larra
+Ciencia-Naturaleza©Canon«¿Cual es el segundo planeta mas grande del sistema solar?*Saturno
+Deportes-Pasatiempos©Canon«¿Que osito fue mascota de las Olimpiadas de Moscu?*Misha
+Geografia©Canon«¿Que rio se une al Mar Mediterraneo en Cullera?*Jucar
+Espectaculos©Canon«¿Que actriz formo pareja con Spencer Tracy en la pantalla y en la vida real?*Catherine Hepburn
+Historia©Canon«¿Que era Stalin: nombre, apellido o seudonimo?*Seudonimo
+Arte-Literatura©Canon«¿Cuantas personas se refugiaron en el Arca de Noe?*Ocho
+Ciencia-Naturaleza©Canon«¿En que pais se origino la gripe asiatica?*China
+Deportes-Pasatiempos©Canon«¿De que color es la pelota del hockey sobre patines?*Negro
+Geografia©Canon«¿De que pais es capital Montevideo?*Uruguay
+Espectaculos©Canon«¿Quien es el mejor amigo de Bubu?*El oso Yogui
+Historia©Canon«¿En que ciudad nacio Cristobal Colon?*Genova
+Arte-Literatura©Canon«¿En que libro aparece el personaje de la vieja Trotaconventos?*El Libro del Buen Amor
+Ciencia-Naturaleza©Canon«¿Quien murio con mas de 1.000 patentes en su haber?*Thomas Alva Edison
+Deportes-Pasatiempos©Canon«¿Que pais ha conseguido el titulo de patinaje artistico de parejas en cinco Juegos Olimpicos consecutivos?*Union Sovietica
+Geografia©Canon«¿Que pais tendrias que visitar para ver las ruinas de Troya?*Turquia
+Espectaculos©Canon«¿Que actor era el "Falso culpable" en la pelicula de Alfred Hitchcock?*Henry Fonda
+Historia©Canon«¿Que lider mejicano fue muerto a tiros en 1923?*Pancho Villa
+Arte-Literatura©Canon«¿Quien escribio eso de "Con diez cañones por banda...."?*Jose de Espronceda
+Ciencia-Naturaleza©Canon«¿Que flor se llama igual que la espada de un gladiador romano?*Gladiolo
+Deportes-Pasatiempos©Canon«¿En que pais tuvo su origen el waterpolo?*Gran Bretaña
+Geografia©Canon«¿De que pais es capital San Jose?*Costa Rica
+Espectaculos©Canon«¿Que actriz estadounidense fue calificada como "El animal mas bello del mundo"?*Ava Gardner
+Historia©Canon«¿Cual es el himno nacional sin letra mas antiguo?*Español
+Arte-Literatura©Canon«¿Quien era el padre de Zeus?*Cronos
+Ciencia-Naturaleza©Canon«¿A partir de que nivel de inteligencia se puede alguien considerar un genio?*Ciento cuarenta
+Deportes-Pasatiempos©Canon«¿Que cartas actuan como comodin en el juego de La canasta?*Comodines y doses
+Geografia©Canon«¿Que estrecho separa Sicilia de la peninsula de Italia?*Estrecho de Mesina
+Espectaculos©Canon«¿Que director de TV nos mareo con el zoom de su camara?*Valerio Lazarov
+Historia©Canon«¿Que turco atento contra la vida del Papa Juan Pablo II?*Ali Agca
+Arte-Literatura©Canon«¿Quien es el hijo mas famoso de Alcala de Henares?*Miguel de Cervantes
+Ciencia-Naturaleza©Canon«¿Cuantos ceros hay en un billon español?*Doce
+Deportes-Pasatiempos©Canon«¿Cual es el deporte mas jugado del mundo?*Futbol
+Geografia©Canon«¿Que ciudad tiene la mayor poblacion negra?*New York
+Espectaculos©Canon«¿Quien presentaba el espacio "La juventud baila" en el programa de TVE "Aplauso"?*Jose Luis Fradejas
+Historia©Canon«¿Cual es el primer dia de la Cuaresma?*Miercoles de Ceniza
+Arte-Literatura©Canon«¿Que autor español compuso la opera "Goyescas"?*Enrique Granados
+Ciencia-Naturaleza©Canon«¿A que famoso cientifico le suspendieron el examen de entrada en el Politecnico Federal de Zurich?*Albert Einstein
+Deportes-Pasatiempos©Canon«¿Cual es la letra de maxima puntuacion del juego Scrabble?*Z
+Geografia©Canon«¿En que provincia estan las Cuevas de Altamira?*Cantabria
+Espectaculos©Canon«¿Que actor se gano la vida desde muy pequeño como acrobata circense?*Burt Lancaster
+Historia©Canon«¿En que ciudad se creo la Cruz Roja?*Ginebra
+Arte-Literatura©Canon«¿Cual era la profesion del Enrico Caruso?*Cantante de opera
+Ciencia-Naturaleza©Canon«¿Cual fue el ultimo planeta descubierto?*Pluton
+Deportes-Pasatiempos©Canon«¿Que unico pais europeo ha estado presente en todas las ediciones de los Juegos Olimpicos de verano e invierno?*Gran Bretaña
+Geografia©Canon«¿En que pais esta situado el puerto de Alejandria?*Egipto
+Espectaculos©Canon«¿Que actriz era Maria en "West Side Story"?*Natalie Wood
+Historia©Canon«¿En que fecha comenzo la Guerra Civil española?*18 de Julio de 1936
+Arte-Literatura©Canon«¿Quien escribio "La fierecilla domada"?*William Shakespeare
+Ciencia-Naturaleza©Canon«¿Cual es el simbolo zodiacal de Capricornio?*Cabra
+Deportes-Pasatiempos©Canon«¿A que equipo de futbol pertenecia el estadio Metropolitano?*Atletico de Madrid
+Geografia©Canon«¿En que pais se halla el Monte Olimpo?*Grecia
+Espectaculos©Canon«¿Cual fue la ultima pelicula de Spencer Tracy en 1967?*Adivina quien viene a cenar
+Historia©Canon«¿Quien era el emperador aleman durante la I Guerra Mundial?*Guillermo II
+Arte-Literatura©Canon«¿Cual es la pintura mas observada en El Louvre?*Mona Lisa
+Ciencia-Naturaleza©Canon«¿Cual era el noveno mes segun el antiguo calendario romano?*Noviembre
+Deportes-Pasatiempos©Canon«¿En que localidad alicantina obtuvo Hungria una victoria sobre El Salvador por 10-1 en el Mundial de futbol del 82?*Elche
+Geografia©Canon«¿En que pais nace el Amazonas?*Peru
+Espectaculos©Canon«¿De quien es el L.P. "Mediterraneo"?*Joan Manuel Serrat
+Historia©Canon«¿A que emperador romano se le llamo Apostata?*Juliano
+Arte-Literatura©Canon«¿Quien escribio "Los trabajos de Persiles y Segismundo"?*Miguel de Cervantes
+Ciencia-Naturaleza©Canon«¿Quien enuncio: "el cuadrado de la hipotenusa es igual a la suma del cuadrado de los catetos"?*Pitagoras
+Deportes-Pasatiempos©Canon«¿Que es un natatorium?*Piscina
+Geografia©Canon«¿Que nacion asiatica ocupa un primer lugar en la actividad pesquera mundial?*Japon
+Espectaculos©Canon«¿En que pelicula de Billy Wilder hace Shirley MacLaine el papel de una prostituta?*Irma la Dulce
+Historia©Canon«¿Que guerra empezo en 1939 y termino en 1945?*II Guerra Mundial
+Arte-Literatura©Canon«¿Quien escribio las "Historias de Guillermo"?*Richmal Crompton
+Ciencia-Naturaleza©Canon«¿Que vaso diminuto conecta una arteria con una vena?*Capilar
+Deportes-Pasatiempos©Canon«¿Como se llaman los encargados de alisar el piso del ruedo entre toro y toro?*Areneros
+Geografia©Canon«¿Con que pais tenia la Union Sovietica mas kilometros de frontera?*China
+Espectaculos©Canon«¿Que director anglosajon aparecia unos breves instantes en muchas de sus peliculas?*Alfred Hitchcock
+Historia©Canon«¿Que rio cruzo Julio Cesar para empezar la guerra civil?*Rubicon
+Arte-Literatura©Canon«¿De que asignatura fue catedratico Antonio Machado?*Frances
+Ciencia-Naturaleza©Canon«¿Cual era el decimo mes en el antiguo calendario romano?*Diciembre
+Deportes-Pasatiempos©Canon«¿Que tres marcas españolas de motocicletas han conseguidoo algun campeonato del mundo?*Bultaco Derbi y Montesa
+Geografia©Canon«¿En que pais se halla el puerto de Amberes?*Belgica
+Espectaculos©Canon«¿Quien fue Bufalo Bill en la pelicula de Cecil B.De Mille?*Gary Cooper
+Historia©Canon«¿Como se denomino la revolucion religiosa contra la supremacia del Papa encabezada por Lutero?*Reforma
+Arte-Literatura©Canon«¿Que obra tardo seis años en escribir Flaubert?*Madame Bovary
+Ciencia-Naturaleza©Canon«¿Que raza tiene mas personas con Rh negativo, la blanca o la negra?*Blanca
+Deportes-Pasatiempos©Canon«¿Cual es el equipo de futbol filial del Bilbao?*Bilbao Atletico
+Geografia©Canon«¿Cual es el pais mas pequeño de Centroamerica?*El Salvador
+Espectaculos©Canon«¿Quien dirigio a Kirk Douglas en "Espartaco"?*Stanley Kubrick
+Historia©Canon«¿Que termino se aplica en sociologia al papel que se desempeña?*Rol
+Arte-Literatura©Canon«¿Quien escribio una "Elegia" a Ramon Sije?*Miguel Hernandez
+Ciencia-Naturaleza©Canon«¿Como se denomina la tension alta?*Hipertension
+Deportes-Pasatiempos©Canon«¿A quien vencio John McEnroe para obtener su segundo titulo en Wimbledon?*Chris Lewis
+Geografia©Canon«¿De que pais es capital Seul?*Corea del Sur
+Espectaculos©Canon«¿En que año nacio el cine musical norteamericano?*1927
+Historia©Canon«¿Que batalla crucial tuvo lugar en 1815?*Waterloo
+Arte-Literatura©Canon«¿Como se denomina, en sentido amplio, la investigacion cientifica de culturas antiguas?*Arqueologia
+Ciencia-Naturaleza©Canon«¿Que letra esta a la derecha de la K en un teclado de una maquina de escribir?*L
+Deportes-Pasatiempos©Canon«¿Que español fue campeon del mundo en esqui acuatico y motociclismo?*Victor Palomo
+Geografia©Canon«¿Que fenomeno origina las olas mas gigantescas del mar?*Maremotos
+Espectaculos©Canon«¿Que pelicula de J.L. Mankiewicz costo 28 millones de dolares en 1963?*Cleopatra
+Historia©Canon«¿A que pueblo se le llamo "El escogido"?*Israel
+Arte-Literatura©Canon«¿Que significa la palabra inglesa butterfly?*Mariposa
+Ciencia-Naturaleza©Canon«¿Que se clasifica por el sistema A B O?*Sangre humana
+Deportes-Pasatiempos©Canon«¿Cuantos continentes hay en un tablero del juego Risk?*Seis
+Geografia©Canon«¿Cual es el estado independiente mas pequeño del mundo?*Estado Vaticano
+Espectaculos©Canon«¿Cual es la secreta identidad de Simon Templar?*El Santo
+Historia©Canon«¿Que dictador nicaraguense fue derrocado por las guerrillas sandinistas?*Anastasio Somoza
+Arte-Literatura©Canon«¿Quien dijo: "pienso, luego existo"?*Descartes
+Ciencia-Naturaleza©Canon«¿Con que dos colores suele tener problemas un daltonico?*Rojo y verde
+Deportes-Pasatiempos©Canon«¿Que equipo gano el Campeonato de Copa de futbol español en 1977?*Betis
+Geografia©Canon«¿Cuantos picos tiene la corona de la estatua de la Libertad?*Siete
+Espectaculos©Canon«¿En que playa de la costa malagueña se filmo "Verano Azul"?*Nerja
+Historia©Canon«¿Quien era "La Doncella de Orleans"?*Juana de Arco
+Arte-Literatura©Canon«¿Como se llamaba la compañia universitaria de teatro que organizo y dirigio Federico Gracia Lorca?*La Barraca
+Ciencia-Naturaleza©Canon«¿Que eres si eres hirsuto?*Peludo
+Deportes-Pasatiempos©Canon«¿Que apodo reciben los jugadores de futbol del Real Madrid?*Merengues
+Geografia©Canon«¿En que provincia se encuentra Jerez de la Frontera?*Cadiz
+Espectaculos©Canon«¿Quien es el jefe de James Bond?*M
+Historia©Canon«¿Quien hizo su cuarta esposa a la actriz china Chiang Chin?*Mao Tse Tung
+Arte-Literatura©Canon«¿Como se llama el jefe de la aldea gala de Asterix?*Abraracurcix
+Ciencia-Naturaleza©Canon«¿Que compuesto de calcio se encuentra en huesos y dientes?*Carbonato calcico
+Deportes-Pasatiempos©Canon«¿Cuanto tiempo de descanso hay entre los rounds de un combate de boxeo?*Un minuto
+Geografia©Canon«¿Con que palabra darias las gracias en frances?*Mercie
+Espectaculos©Canon«¿Que actor hizo mas popular el personaje del monstruo de Frankenstein?*Boris Karloff
+Historia©Canon«¿Que tipo de calzado era utilizado normalmente por los gansters norteamericanos?*Botines
+Arte-Literatura©Canon«¿Cual es el signo de puntuacion mas usado?*Coma
+Ciencia-Naturaleza©Canon«¿Que fue el Dr. Frankenstein, un personaje real o de ficcion?*Ficcion
+Deportes-Pasatiempos©Canon«¿En que novela de Pio Baroja se aborda el tema taurino?*El capitan Malasombra
+Geografia©Canon«¿En que pais esta el rio Krishna?*India
+Espectaculos©Canon«¿Quien pregunto musicalmente: "¿Piensas que soy sexy?"?*Rod Stewart
+Historia©Canon«¿Que celebre militar griego llevo sus tropas hasta la India?*Alejandro Magno
+Arte-Literatura©Canon«¿Que politico era la victima elegida en Chacal?*Charles de Gaulle
+Ciencia-Naturaleza©Canon«¿Como se transmiten mas rapidamente las ondas sonoras, a traves del agua o del aire?*Agua
+Deportes-Pasatiempos©Canon«¿Que bebidas hay que mezclar para hacer un Lugumba?*Batido de cacao y coñac
+Geografia©Canon«¿Cual era el nombre anterior de Estambul?*Constantinopla
+Espectaculos©Canon«¿Con que apodo es conocido el marido de Lola Flores?*El Pescadilla
+Historia©Canon«¿Que ciudad conquistaron los turcos en 1453?*Constantinopla
+Arte-Literatura©Canon«¿Que significa la voz hebrea gehena?*Infierno
+Ciencia-Naturaleza©Canon«¿Entre que dos planetas esta situada la Tierra?*Venus y Marte
+Deportes-Pasatiempos©Canon«¿Que lleva dibujado Angel Nieto en su casco?*Unas alas
+Geografia©Canon«¿Cual es el apellido mas numeroso del mundo?*Chang
+Espectaculos©Canon«¿De que director de cine es hija la actriz Veronica Forque?*Jose Maria Forque
+Historia©Canon«¿Que significan las siglas F.R.A.P.?*Frente Revolucionario Antifascista y Patriota
+Arte-Literatura©Canon«¿Cuales son las dos primeras palabras de la Biblia?*Al principio
+Ciencia-Naturaleza©Canon«¿Cual es el nombre comun del estomago de las aves?*Molleja
+Deportes-Pasatiempos©Canon«¿Cuantos jugadores se pueden sustituir en un partido de futbol amistoso?*Los convenidos por los dos equipos
+Geografia©Canon«¿Que continente alberga mayor numero de paises?*Africa
+Espectaculos©Canon«¿Que director de cine español era conocido como el sordo de Calanda?*Luis Buñuel
+Historia©Canon«¿Que navegante historico fue llamado "El piloto de Iberia"?*Cristobal Colon
+Arte-Literatura©Canon«¿Que instrumento sinfonico de cuatro cuerdas es imprescindible tocar sentado?*Violonchelo
+Ciencia-Naturaleza©Canon«¿Cuantos grados suman los angulos de un triangulo?*Ciento ochenta
+Deportes-Pasatiempos©Canon«¿En que estadio se inauguraron los Mundiales de futbol del 82?*Nou Camp
+Geografia©Canon«¿Quien es el patron de Madrid?*San Isidro
+Espectaculos©Canon«¿Que dos John protagonizaron la pelicula "Grease"?*John Travolta y Olivia Newton John
+Historia©Canon«¿Cual era la capital del Imperio Inca?*Cuzco
+Arte-Literatura©Canon«¿Cuantos versos tiene un soneto?*Catorce
+Ciencia-Naturaleza©Canon«¿Cual es el animal mas alto del mundo?*Jirafa
+Deportes-Pasatiempos©Canon«¿Cuantas veces seguidas puede ser golpeado el balon, por el mismo equipo, en voleibol?*Tres
+Geografia©Canon«¿De que islas es originario el drago?*Islas Canarias
+Espectaculos©Canon«¿Que pelicula de Henry Hathaway contribuyo a consolidar la fama de Marilyn Monroe?*Niagara
+Historia©Canon«¿Que significan las siglas F.A.I.?*Federacion Anarquista Iberica
+Arte-Literatura©Canon«¿Quien compuso "La Flauta Magica"?*Mozart
+Ciencia-Naturaleza©Canon«¿Que significa la expresion inglesa "Trade-mark"?*Marca registrada
+Deportes-Pasatiempos©Canon«¿Que bebida compuesta por vodka y naranja fue inventada por un petrolero que usaba sus herramientas para removerla?*Destornillador
+Geografia©Canon«¿Como denominan los ingleses a Inglaterra?*England
+Espectaculos©Canon«¿Que pelicula marco el debut de Robert Redford como director de cine?*Gente corriente
+Historia©Canon«¿Quien creo la Camara de los Comunes en Gran Bretaña?*Cromwell
+Arte-Literatura©Canon«¿Cual era el nombre compuesto de Rubens?*Pedro Pablo
+Ciencia-Naturaleza©Canon«¿Como se llama la envoltura gaseosa de poca densidad y muy ligera que rodea la Tierra?*Atmosfera
+Deportes-Pasatiempos©Canon«¿Donde empieza el servicio de tenis, a la derecha o a la izquierda de la pista?*Derecha
+Geografia©Canon«¿Quien es el patron de Alicante?*San Juan
+Espectaculos©Canon«¿Quien era el protagonista de la pelicula "Zorba el griego"?*Anthony Quinn
+Historia©Canon«¿Con que sobrenombre fue conocido Simon Bolivar?*El Libertador
+Arte-Literatura©Canon«¿Que maestro holandes pinto 64 retratos?*Rembrandt
+Ciencia-Naturaleza©Canon«¿Que grupo sanguineo es donante universal?*O
+Deportes-Pasatiempos©Canon«¿Cuales son las letras mas numerosas en el juego Scrabble?*A y E
+Geografia©Canon«¿Cuantas colinas rodean la ciudad de Roma?*Siete
+Espectaculos©Canon«¿Que pelicula española ironiza en su titulo a "Lo que el viento se llevo"?*Ni se lo llevo el viento ni puñetera falta que hacia
+Historia©Canon«¿Quien reinaba en Francia cuando estallo la Revolucion Francesa?*Luis XVI
+Arte-Literatura©Canon«¿Como se llama el personaje de Forges que es un marido enclencucho?*Mariano
+Ciencia-Naturaleza©Canon«¿Como se llaman las crias del cerdo?*Lechones
+Deportes-Pasatiempos©Canon«¿Que mano es mas alta en poker, dobles parejas o trio?*Trio
+Geografia©Canon«¿Como se llama el dialecto hablado en Canarias?*Guanche
+Espectaculos©Canon«¿Que actriz dijo: "nunca odie a un hombre lo suficiente como para devolverle sus brillantes?*Zsa Zsa Gabor
+Historia©Canon«¿Cual era el nombre propio de la primera esposa de Napoleon?*Josefina
+Arte-Literatura©Canon«¿Donde nacio Pedro Calderon de la Barca?*Madrid
+Ciencia-Naturaleza©Canon«¿Como se llama el nido de aguila?*Aguilera
+Deportes-Pasatiempos©Canon«¿Cada cuantos puntos cambia el que realiza el servicio en pin-pong?*Cinco
+Geografia©Canon«¿En que provincia española estan las cuevas del Drach?*Mallorca
+Espectaculos©Canon«¿Que musico ciego ayudo a Stevie Wonder en sus comienzos?*Ray Charles
+Historia©Canon«¿Que eran los corsarios barbaros?*Piratas
+Arte-Literatura©Canon«¿Quien escribio "Solos con Clarin"?*Leopoldo Alas Clarin
+Ciencia-Naturaleza©Canon«¿Cuantos puntos delimitan un linea recta?*Dos
+Deportes-Pasatiempos©Canon«¿Fue el tenis deporte olimpico en las Olimpiadas de 1984?*Si
+Geografia©Canon«¿Cual es el idioma oficial de Austria?*Aleman
+Espectaculos©Canon«¿En que isla nacio Maria del Mar Bonet?*Palma de Mallorca
+Historia©Canon«¿Que tres lideres politicos firmaron el acuerdo de Camp David?*Menahem Begin Jimmy Carter y Anuar El Sadat
+Arte-Literatura©Canon«¿Que escritor español estuvo mas de cinco años cautivo en Argel?*Miguel de Cervantes
+Ciencia-Naturaleza©Canon«¿Cual es el planeta mas brillante visto desde la Tierra?*Venus
+Deportes-Pasatiempos©Canon«¿En que provincia andaluza nacio el excampeon de boxeo Pedro Carrasco?*Huelva
+Geografia©Canon«¿Que pais sudamericano es alfabeticamente el primero?*Argentina
+Espectaculos©Canon«¿Que superheroe hizo famoso el actor Cristopher Reeve?*Superman
+Historia©Canon«¿Que ciudad estadounidense vibro durante 47 segundos el 18 de Abril de 1906?*San Francisco
+Arte-Literatura©Canon«¿Quien escribio el "Cantar del Mio Cid"?*Anonimo
+Ciencia-Naturaleza©Canon«¿Cual es el unico mamifero con cuatro rodillas?*Elefante
+Deportes-Pasatiempos©Canon«¿A que entrenador de futbol corresponden las iniciales H.H.?*Helenio Herrera
+Geografia©Canon«¿En que provincia española se hallan las minas de Riotinto?*Huelva
+Espectaculos©Canon«¿Como se llamaba el amigo de Heidi?*Pedro
+Historia©Canon«¿Cual es la residencia oficial de los Reyes de España?*El Palacio de la Zarzuela
+Arte-Literatura©Canon«¿Que cuento de Johanna Spyri relata la historia de una muchachita alpina?*Heidi
+Ciencia-Naturaleza©Canon«¿Que es lo que señala la hora en un reloj de sol si las manecillas lo hacen en un reloj de pulsera?*La sombra
+Deportes-Pasatiempos©Canon«¿Que deporte es considerado el mas facil para que los apostantes acierten?*Boxeo
+Geografia©Canon«¿Cual es el rio mas largo de America?*Amazonas
+Espectaculos©Canon«¿Con que pelicula inicio Hitchcock su trabajo en Hollywood?*Rebeca
+Historia©Canon«¿Quien fue el fundador del Islam?*Mahoma
+Arte-Literatura©Canon«¿Quien escribio "La cancion del pirata"?*Jose de Espronceda
+Ciencia-Naturaleza©Canon«¿Que animal podria atraparte en tierra mas facilmente, el caiman o el cocodrilo?*Caiman
+Deportes-Pasatiempos©Canon«¿En que deporte establecio Lord Queensberry su codigo?*Boxeo
+Geografia©Canon«¿Que pais sudamericano fue llamado Nueva Granada en el siglo XVI?*Colombia
+Espectaculos©Canon«¿De que ciudad proceden Los Beatles?*Liverpool
+Historia©Canon«¿Que politico español hizo famosa la frase: "Puedo prometer y prometo"?*Adolfo Suarez
+Arte-Literatura©Canon«¿Que poeta norteamericano es autor del libro "Hojas de hierba"?*Walt Whitman
+Ciencia-Naturaleza©Canon«¿Que gas que desprenden las plantas por la noche hace que sea peligroso dormir en una habitacion cerrada llena de macetas?*Dioxido de carbono
+Deportes-Pasatiempos©Canon«¿Quien debe anotar los golpes de cada jugador de golf?*El adversario
+Geografia©Canon«¿Cual es el punto situado mas al sur de la Peninsula Iberica?*Tarifa
+Espectaculos©Canon«¿Quien hizo el papel de la segunda mujer de Michael Corleone en "El Padrino"?*Diane Keaton
+Historia©Canon«¿Que nombre recibe el matrimonio celebrado entre un principe y una mujer de linaje inferior?*Morganatico
+Arte-Literatura©Canon«¿Con cual de las dos manos da Dios la vida a Adan en el techo de la Capilla Sixtina?*Derecha
+Ciencia-Naturaleza©Canon«¿Que hay en el cuerpo humano en cantidad aproximada de 640?*Musculos
+Deportes-Pasatiempos©Canon«¿Que objeto fue disparado en 1120 metros estableciendo un record mundial en 1982?*Una flecha
+Geografia©Canon«¿Cual es la residencia oficial mas grande del mundo?*El Vaticano
+Espectaculos©Canon«¿Que actor frances era Rocco en la pelicula de Luchino Visconti?*Alain Delon
+Historia©Canon«¿En que ojo llevaba el parche Moshe Dayan?*Izquierdo
+Arte-Literatura©Canon«¿Que otro instrumento tocaba Paganini ademas del violin?*Guitarra
+Ciencia-Naturaleza©Canon«¿Cual es el Planeta Rojo?*Marte
+Deportes-Pasatiempos©Canon«¿Cuantos años cumplio la seleccion española de futbol en 1984?*Sesenta y cuatro
+Geografia©Canon«¿Cual es la capital de Kuwait?*Al Kuwait
+Espectaculos©Canon«¿Que actriz americana se hizo cargo de la gerencia de Pepsi-Cola?*Joan Crawford
+Historia©Canon«¿Cuantos premios Nobel se conceden anualmente?*Cinco
+Arte-Literatura©Canon«¿Quien creo las historias del detective Maigret?*Simenon
+Ciencia-Naturaleza©Canon«¿En que parte del avion puedes tener un viaje mas agitado?*Cola
+Deportes-Pasatiempos©Canon«¿En que ciudad esta el estadio de futbol Nou Camp?*Barcelona
+Geografia©Canon«¿A que isla da un puntapie la peninsula de Italia?*Sicilia
+Espectaculos©Canon«¿Que actor era el defensor de las ballenas en la serie televisiva?*Peter Strauss
+Historia©Canon«¿En que lugar de los Andes tenian su refugio las Hijas del Sol?*Machu Picchu
+Arte-Literatura©Canon«¿Cual era el estado civil de Manuel de Falla?*Soltero
+Ciencia-Naturaleza©Canon«¿Que es un nenufar?*Planta acuatica
+Deportes-Pasatiempos©Canon«¿Como se llama el esquema segun el cual se ordena a los participantes para la salida en automovilismo?*Parrilla de salida
+Geografia©Canon«¿Cual es la capital de Menorca?*Mahon
+Espectaculos©Canon«¿Sobre que pelicula de tema religioso hizo Cecil B. De Mille una version muda y otra sonora?*Los Diez Mandamientos
+Historia©Canon«¿Quien introdujo de nuevo en el pensamiento politico de Occidente las ideas de Aristoteles?*Santo Tomas de Aquino
+Arte-Literatura©Canon«¿Cual es el numero magico que ayudo a derrumbar los muros de Jerico?*Siete
+Ciencia-Naturaleza©Canon«¿Que otro nombre recibe el novilunio?*Luna llena
+Deportes-Pasatiempos©Canon«¿Cual es el termino con el que se designa la busqueda del placer como forma de vida?*Hedonismo
+Geografia©Canon«¿Como llamamos los españoles al Canal Ingles?*Canal de la Mancha
+Espectaculos©Canon«¿Cual fue la productora de cine mas importante de España?*CIFESA
+Historia©Canon«¿Quien fue el canciller de la Republica Federal Alemana desde 1949 hasta 1963?*Konrad Adenauer
+Arte-Literatura©Canon«¿Quien fue llamado el "bach español"?*Antonio de Cabezon
+Ciencia-Naturaleza©Canon«¿Cuantos colores hay en el arco iris?*Siete
+Deportes-Pasatiempos©Canon«¿De que colores viste el equipo de futbol del Athletico de Madrid?*Azul blanco y rojo
+Geografia©Canon«¿Cual es el pais mas montañoso de Europa?*Suiza
+Espectaculos©Canon«¿Que actor hizo el papel de retrasado mental en "Los santos inocentes"?*Francisco Rabal
+Historia©Canon«¿Cual es el dia de los Santos Inocentes?*28 de Diciembre
+Arte-Literatura©Canon«¿Quien escribio "Los santos inocentes"?*Miguel Delibes
+Ciencia-Naturaleza©Canon«¿Cual es el periodo de gestacion de elefante?*Veintiun  meses
+Deportes-Pasatiempos©Canon«¿Cuantas puntas tiene la corona de un rey de la baraja española?*Seis
+Geografia©Canon«¿Como se llaman los naturales de Huesca?*Oscenses
+Espectaculos©Canon«¿Cual era el nombre de la mujer de Paul McCartney?*Linda
+Historia©Canon«¿Con que negocio hizo su fortuna John D. Rockefeller?*Petroleo
+Arte-Literatura©Canon«¿De que escritor es el seudonimo Clarin?*Leopoldo Alas
+Ciencia-Naturaleza©Canon«¿Cuantas veces al año se aparea un pingüino?*Una
+Deportes-Pasatiempos©Canon«¿Que estarias probando si utilizaras un catavino?*Vino
+Geografia©Canon«¿A que pais pertenece la isla de Groenlandia?*Dinamarca
+Espectaculos©Canon«¿Que director de cine revoluciono a "Los Pajaros"?*Alfred Hitchcock
+Historia©Canon«¿Como era conocida popularmente Dolores Ibarruri?*La Pasionaria
+Arte-Literatura©Canon«¿En que planeta nacio Superman?*Kripton
+Ciencia-Naturaleza©Canon«¿Que nombre vulgar recibe el aceite de trementina?*Aguarras
+Deportes-Pasatiempos©Canon«¿Cual es el principal ingrediente de la bouillabaisse?*Pescado
+Geografia©Canon«¿Que pais se llama asi por una linea de latitud que lo atraviesa?*Ecuador
+Espectaculos©Canon«¿Quien actuaba con el nombre de "El rey del swing"?*Benny Goodman
+Historia©Canon«¿Que tratado de paz termino con la I Guerra Mundial?*Tratado de Versalles
+Arte-Literatura©Canon«¿Que novela española, de principios del siglo XVII, es una parodia de las novelas de cabaleria?*Don Quijote de la Mancha
+Ciencia-Naturaleza©Canon«¿Que gas inerte es usado en los tubos de luz fluorescente?*Argon
+Deportes-Pasatiempos©Canon«¿En que ciudad europea se celebraron, en 1928, las Olimpiadas en las que introdujeron las pruebas gimnasticas?*Amsterdam
+Geografia©Canon«¿Que rio pasa por Bilbao?*Nervion
+Espectaculos©Canon«¿Quien dirigio "En busca del arca perdida"?*Steven Spielberg
+Historia©Canon«¿Que presidente de los EE.UU. dijo antes de morir: "Dios mio, estoy herido"?*John F Kennedy
+Arte-Literatura©Canon«¿Cuantas cuerdas tiene un violin?*Cuatro
+Ciencia-Naturaleza©Canon«¿Que gema tiene un verde mas fuerte que el de la naturaleza?*Esmeralda
+Deportes-Pasatiempos©Canon«¿Que nombre reciben las reglas del boxeo?*Reglas Queensberry
+Geografia©Canon«¿En que oceano te encontrarias si estuvieras a cero grados de longitud y cero grados de latitud?*Atlantico
+Espectaculos©Canon«¿En que mes y año dejo de cantar Elvis Presley?*Agosto 1977
+Historia©Canon«¿Que tres jueves del año relumbran mas que el sol?*Jueves Santo Corpus Christi y el Dia de la Ascension
+Arte-Literatura©Canon«¿Que escritor aparece en los billetes de 200 pesetas?*Leopoldo Alas
+Ciencia-Naturaleza©Canon«¿Cuantas estrellas forman el Cinturon de Orion?*Tres
+Deportes-Pasatiempos©Canon«¿Lleva la tabla de wind-surf timon?*No
+Geografia©Canon«¿Cual es la ciudad mas grande de la India?*Calcuta
+Espectaculos©Canon«¿Como se llama el ordenador que se apodera de la nave en la pelicula "2001: una odisea del espacio"?*Hal 9000
+Historia©Canon«¿En que pais reino Gustavo IV desde 1907 a 1950?*Suecia
+Arte-Literatura©Canon«¿En que rama del arte destaco Pablo Gargallo?*Escultura
+Ciencia-Naturaleza©Canon«¿Cual es la palabra para la letra Y en el codigo internacional de radio?*Yankee
+Deportes-Pasatiempos©Canon«¿A que estilo de natacion se le ha llamado estilo "rana"?*Braza
+Geografia©Canon«¿Que pais sudamericano tomo su nombre de la palabra latina que significa plateado?*Argentina
+Espectaculos©Canon«¿Que nombre recibe la cantante de opera que canta las notas mas agudas?*Soprano
+Historia©Canon«¿Cual es la residencia oficial del presidente de Francia?*Palacio del Eliseo
+Arte-Literatura©Canon«¿Quien escribio "El Lazarillo de Tormes"?*Anonimo
+Ciencia-Naturaleza©Canon«¿Cual es el pajaro mas pequeño del mundo?*Colibri
+Deportes-Pasatiempos©Canon«¿Por que deporte se conoce al frances Jean Rene Lacoste?*Tenis
+Geografia©Canon«¿Que mide en Sevilla 98 metros de altura?*La Giralda
+Espectaculos©Canon«¿Que pelicula interpretada por Antonio Casal en 1941 fue la opera prima de Rafael Gil?*El hombre que se quiso matar
+Historia©Canon«¿Que pais invadio a Chipre en 1974?*Turquia
+Arte-Literatura©Canon«¿De quien era la mujer que se convirtio en un pilar de sal?*Lot
+Ciencia-Naturaleza©Canon«¿Que animal proporciona bebida, comida y transporte a los lapones?*Reno
+Deportes-Pasatiempos©Canon«¿De que tres formas se puede ganar un combate de boxeo, ademas de la descalificacion?*KO Puntos y KO tecnico
+Geografia©Canon«¿Que capital española tiene sangre azul en su nombre?*Ciudad Real
+Espectaculos©Canon«¿En que pelicula de James Bond salia Ursula Andress parcialmente vestida?*Agente 007 contra el doctor No
+Historia©Canon«¿En que pais se descubrieron los primeros restos del hombre de Cro-Magnon?*Francia
+Arte-Literatura©Canon«¿Que significa la palabra inglesa black?*Negro
+Ciencia-Naturaleza©Canon«¿Cual es el grupo sanguineo menos frecuente del sistema A B O?*AB
+Deportes-Pasatiempos©Canon«¿Que es un Black & White?*Whisky
+Geografia©Canon«¿Cuales son los tres colores de la bandera francesa?*Azul blanco y rojo
+Espectaculos©Canon«¿Que grupo musical infantil tenia nombre de un juego?*Parchis
+Historia©Canon«¿A que gran lider asiatico disparo Nathuran Godse, el 30 de Enero de 1948?*Gandhi
+Arte-Literatura©Canon«¿Que galicismo se emplea para la palabra patrioterismo?*Chauvinismo
+Ciencia-Naturaleza©Canon«¿Que cuelga sobre la lengua desde el paladar?*La campanilla
+Deportes-Pasatiempos©Canon«¿Que pujador obtiene el lote en una subasta alemana?*El primero
+Geografia©Canon«¿Cual es el mar mas calido del mundo?*Mar Rojo
+Espectaculos©Canon«¿Quien dirigio "El violinista en el tejado"?*Norman Jewison
+Historia©Canon«¿Para que fue utilizada en su origen la torre inclinada de Pisa?*Campanario
+Arte-Literatura©Canon«¿Que escritor representa en España el romanticismo conservador y catolico?*Zorrilla
+Ciencia-Naturaleza©Canon«¿Como escribirias 49 en numeros romanos?*XLIX
+Deportes-Pasatiempos©Canon«¿Que otro nombre recibe el futbol?*Balompie
+Geografia©Canon«¿Cual es la capital de Mallorca?*Palma
+Espectaculos©Canon«¿Cuantas peliculas dirigio Victor Erice hasta 1984?*Dos
+Historia©Canon«¿Que ciudadano de Chicago declaro: "Mi lema es el servicio publico"?*Al Capone
+Arte-Literatura©Canon«¿Que instrumento es el antecedente mas directo del piano?*Clavicordio
+Ciencia-Naturaleza©Canon«¿Que fenomeno se produce a 212º Fahrenheit?*Punto de ebullicion del agua
+Deportes-Pasatiempos©Canon«¿Como se llama el trofeo concedido al jugador que consigue mas goles en la liga de futbol española?*Pichichi
+Geografia©Canon«¿Como se llama la zona que se encuentra entre el tropico de Capricornio y el de Cancer?*Zona intertropical
+Espectaculos©Canon«¿Que actor muere en "Muerte en Venecia"?*Dirk Bogarde
+Historia©Canon«¿Con que arma vencio David a Goliat?*Honda
+Arte-Literatura©Canon«¿Cual era el dios del trueno y la guerra en la mitologia escandinava?*Thor
+Ciencia-Naturaleza©Canon«¿De que estan hechos los panales naturales de abejas?*Cera
+Deportes-Pasatiempos©Canon«¿Que organismo elige el lugar para la celebracion de los Juegos Olimpicos?*Comite Olimpico Internacional
+Geografia©Canon«¿A que mar pertenecen las playas que estan situadas en el punto mas bajo de la Tierra?*Mar Muerto
+Espectaculos©Canon«¿Que tema trataba el programa de TVE "Tiempo y Marca"?*Deporte
+Historia©Canon«¿Que ministro de Franco se baño en la playa de Palomares?*Manuel Fraga Iribarne
+Arte-Literatura©Canon«¿Cual es el mayor templo de la Republica Federal de Alemania?*Catedral de Colonia
+Ciencia-Naturaleza©Canon«¿Que invento el conde Zeppelin?*El globo dirigible Zeppelin
+Deportes-Pasatiempos©Canon«¿Con que termino ingles se designa el lugar en el que los coches repostan y son reparados durante una carrera?*Box
+Geografia©Canon«¿En que ciudad española puedes dar una vuelta por el famoso Paseo de Gracia?*Barcelona
+Espectaculos©Canon«¿Que actor interpreto la saga de "Un hombre llamado caballo"?*Richard Harris
+Historia©Canon«¿Quien fue el primer emperador romano?*Octavio Augusto
+Arte-Literatura©Canon«¿Que personaje conocio a los liliputienses?*Gulliver
+Ciencia-Naturaleza©Canon«¿Cual es la palabra para la letra T en el codigo internacional de radio?*Tango
+Deportes-Pasatiempos©Canon«¿Donde esta el estadio Vicente Calderon?*Madrid
+Geografia©Canon«¿De que rio es afluente el Guadiana Menor?*Guadalquivir
+Espectaculos©Canon«¿Que actor de peliculas del oeste fue "Un centauro del desierto"?*John Wayne
+Historia©Canon«¿De quien es la tumba visitada en la Plaza Roja de Moscu?*Lenin
+Arte-Literatura©Canon«¿En que obra literaria aparecen descritas las Bodas de Camacho?*Don Quijote de la Mancha
+Ciencia-Naturaleza©Canon«¿Que inventor dijo: "El genio es un 1% de inspiracion y un 99% de transpiracion?*Thomas Alva Edison
+Deportes-Pasatiempos©Canon«¿Que sota de la baraja española no lleva nada en la cabeza?*Sota de espadas
+Geografia©Canon«¿Que pais contiene la mayor parte de los rios Tigris y Eufrates?*Iraq
+Espectaculos©Canon«¿Que director de cine mostro a "Doce hombres sin piedad"?*Sidney Lumet
+Historia©Canon«¿Con que rey mantuvieron relaciones amorosas Madame Pompadour y Madame Du Barry?*Luis XV
+Arte-Literatura©Canon«¿Que gran novelista escribio "Los pazos de Ulloa"?*Emilia Pardo Bazan
+Ciencia-Naturaleza©Canon«¿Como se llama la capa mas externa de la piel?*Epidermis
+Deportes-Pasatiempos©Canon«¿Que torero ganaba cerca de 500 millones de pesetas al año en la cima de su carrera?*El Cordobes
+Geografia©Canon«¿Cual es el pais mas poblado de Africa?*Nigeria
+Espectaculos©Canon«¿Que presentadores chismorreaban en el programa de TVE "Bla, bla, bla"?*Marisa Abad y Jesus Amilibia
+Historia©Canon«¿Que alimento introdujo Marco Polo en Italia desde la corte de Kublai Khan?*La pasta
+Arte-Literatura©Canon«¿A que musico italiano se le acuso de haber envenenado a Mozart?*Antonio Salieri
+Ciencia-Naturaleza©Canon«¿Que bebida es la mejor calmante de la sed?*Agua
+Deportes-Pasatiempos©Canon«¿Que español marco un historico gol contra la seleccion de futbol sovietica en 1964?*Marcelino
+Geografia©Canon«¿Cuantos centavos tiene un dolar de las islas Bahamas?*Cien
+Espectaculos©Canon«¿Como se llamaba la mansion hollywoodiense de Mary Pickford y Douglas Fairbankx?*Pickfair
+Historia©Canon«¿Quien fundo la iglesia de Inglaterra en el siglo XVI?*Enrique VIII
+Arte-Literatura©Canon«¿Que escritor argentino escribio "La traicion de Rita Hayworth"?*Manuel Puig
+Ciencia-Naturaleza©Canon«¿A que ilustre doctor, tambien escritor, se le concedio el Premio Nobel de Medicina en 1906?*Santiago Ramon y Cajal
+Deportes-Pasatiempos©Canon«¿Que equipo de futbol vencio la primera final de la Copa de Europa de Campeones de Liga?*Real Madrid
+Geografia©Canon«Cual es la capital de Chile?*Santiago
+Espectaculos©Canon«¿Que director estadounidense es conocido como El padre del cine?*D. W. Griffith
+Historia©Canon«¿Cual de los tres reyes magos llevo oro al Niño Jesus?*Melchor
+Arte-Literatura©Canon«¿Que autor introdujo a "Alicia en el pais de las maravillas"?*Lewis Carroll
+Ciencia-Naturaleza©Canon«¿Con que titulo eclesiastico se conoce vulgarmente un hematoma?*Cardenal
+Deportes-Pasatiempos©Canon«¿Cuantas veces se han celebrado las Olimpiadas en Canada?*Una
+Geografia©Canon«¿Que rio recorre mayor numero de kilometros en la Peninsula Iberica?*Tajo
+Espectaculos©Canon«¿Que tiene Popeye tatuado en su brazo?*Un ancla
+Historia©Canon«¿Quien ordeno construir el Arco de Triunfo de Paris?*Napoleon
+Arte-Literatura©Canon«¿De que color era Moby Dick?*Blanco
+Ciencia-Naturaleza©Canon«¿Como se llaman los gemelos que nacen unidos?*Siameses
+Deportes-Pasatiempos©Canon«¿Cuantos fracasos consecutivos son eliminatorios en salto de altura?*Tres
+Geografia©Canon«¿En que pais se encuentra Lepanto?*Grecia
+Espectaculos©Canon«¿Que personaje de dibujos animados solia decir: "¿Que hay de nuevo viejo?"?*Bugs Bunny
+Historia©Canon«¿En que año se celebraron las primeras elecciones democraticas tras la muerte de Franco?*1977
+Arte-Literatura©Canon«¿Que tres regalos llevaron los Reyes Magos al portal?*Oro incienso y mirra
+Ciencia-Naturaleza©Canon«¿Cual de las siguientes frutas contiene mas calorias: ciruela, cereza, melocoton o naranja?*Cereza
+Deportes-Pasatiempos©Canon«¿Cuanto dura la carrera automovilistica de Le Mans?*Veinticuatro horas
+Geografia©Canon«¿De que region española es originaria la jota?*Aragon
+Espectaculos©Canon«¿Que famoso bailarin fue el protagonista del "Valentino" de Ken Russell?*Rudolf Nureyev
+Historia©Canon«¿Que monarca se apropio de la autoridad del Papa y se puso al frente de la iglesia de Inglaterra?*Enrique VIII
+Arte-Literatura©Canon«¿A que monte fue Moises para recoger las Tablas de la Ley?*Sinai
+Ciencia-Naturaleza©Canon«¿De que pais procede el oso panda?*China
+Deportes-Pasatiempos©Canon«¿En que ciudad tomo Manolete la alternativa?*Sevilla
+Geografia©Canon«¿Que capital española tiene mas vocales "o"?*Logroño
+Espectaculos©Canon«¿De que pelicula japonesa fue adaptada "Los siete magnificos"?*Los siete samurais
+Historia©Canon«¿Que emperador romano ordeno la muerte de su consejero y preceptor Seneca?*Neron
+Arte-Literatura©Canon«¿Que personaje ingles logro sacar de Francia a parte de la nobleza durante la revolucion con ayuda de sus disfraces?*Pimpinela Escarlata
+Ciencia-Naturaleza©Canon«¿Con que nombre se conoce popularmente la enfermedad mas contagiosa del mundo?*Resfriado
+Deportes-Pasatiempos©Canon«¿Que jugador de futbol adquirio el Cosmos de Nueva York en 1975 por cuatro millones y medio de dolares?*Pele
+Geografia©Canon«¿Cual es la capital de Colombia?*Bogota
+Espectaculos©Canon«¿Que grupo musical procedente de Bilbao esta formado, entre otros, por varios hermanos?*Mocedades
+Historia©Canon«¿Que guerra duro 115 años?*La guerra de los cien años
+Arte-Literatura©Canon«¿Como se llama la representacion escultorica de la figura humana que comprende desde la cabeza hasta el pecho o los hombros?*Busto
+Ciencia-Naturaleza©Canon«¿Que contiene mayor numero de calorias, la mantequilla o el aceite de oliva?*Aceite de oliva
+Deportes-Pasatiempos©Canon«¿Que deporte se origino a partir del deporte japones del jiu-jitsu?*Judo
+Geografia©Canon«¿Cuales son los tres oceanos mayores por orden de tamaño?*Pacifico Atlantico e Indico
+Espectaculos©Canon«¿Que actriz, hija de Charles Chaplin, fue compañera de Carlos Saura?*Geraldine Chaplin
+Historia©Canon«¿Apodo del aviador aleman Von Richthofen que combatio en la I Guerra Mundial?*Baron Rojo
+Arte-Literatura©Canon«¿En que pais nacio la zarzuela?*España
+Ciencia-Naturaleza©Canon«¿Que animal aparenta llorar ante la dolorosa necesidad de devorar a sus victimas?*Cocodrilo
+Deportes-Pasatiempos©Canon«¿Que equipo de futbol gano a Alemania en la Eurocopa de Naciones de 1984?*España
+Geografia©Canon«¿En que continente no hay ningun desierto?*Europa
+Espectaculos©Canon«¿En que personaje esta basada la pelicula "Ciudadano Kane"?*William Randolph Hearst
+Historia©Canon«¿Que ciudad española fue arrasada por los bombardeos alemanes durante la Guerra Civil?*Guernica
+Arte-Literatura©Canon«¿Que serie de letras esta denominada por las dos primeras griegas?*Alfabeto
+Ciencia-Naturaleza©Canon«¿Como se denomina al conjunto de restos organicos descompuestos que estan incorporados al suelo?*Humus
+Deportes-Pasatiempos©Canon«¿Que numero vestia Pele para la seleccion de Brasil?*Diez
+Geografia©Canon«¿Cual es el pico mas alto de los Alpes?*Mont Blanc
+Espectaculos©Canon«¿Quien dirigio el programa de T.V.E. "Memorias del cine español"?*Diego Galan
+Historia©Canon«¿Con que dos mujeres se caso Alfonso XII?*Maria de las Mercedes y Maria Cristina
+Arte-Literatura©Canon«¿Cuantos años se tardo en construir el monasterio de El Escorial?*Veintiuno
+Ciencia-Naturaleza©Canon«¿De que dedo es la uña que crece mas rapida?*Corazon
+Deportes-Pasatiempos©Canon«¿Quien fue la primera checoslovaca que obtuvo el titulo individual femenino en Wimbledon?*Martina Navratilova
+Geografia©Canon«¿Que dos paises baña el mar Muerto?*Israel y Jordania
+Espectaculos©Canon«¿Que programa deportivo escolar presentaba Manuel Vindel?*Torneo
+Historia©Canon«¿Como se llamaba el inquisidor de Castilla mas famoso?*Tomas de Torquemada
+Arte-Literatura©Canon«¿Cual era el cuarto nombre de Mozart?*Amadeus
+Ciencia-Naturaleza©Canon«¿Cual es el unico avion supersonico de pasajeros?*Concorde
+Deportes-Pasatiempos©Canon«¿Cual es el nombre propio del seguidor de la seleccion española de futbol, de gran boina y bombo?*Manolo
+Geografia©Canon«¿En que continente esta el rio Nilo?*Africa
+Espectaculos©Canon«¿Que presentador de espeso bigote presentaba "Fantastico"?*Jose Maria Iñigo
+Historia©Canon«¿Que enseño la familia Amati a Antonio Stradivari en el siglo XVIII?*A hacer violines
+Arte-Literatura©Canon«¿Quien cabalgaba sobre Babieca?*El Cid Campeador
+Ciencia-Naturaleza©Canon«¿Que vitamina esencial contiene el pomelo?*C
+Deportes-Pasatiempos©Canon«¿Cual es la pieza mas alta del ajedrez?*El Rey
+Geografia©Canon«¿Cual es la capital de Australia?*Camberra
+Espectaculos©Canon«¿Que director de cine hizo superstar a Jesucristo?*Norman Jewison
+Historia©Canon«¿Como se suicido Judas Iscariote?*Se ahorco
+Arte-Literatura©Canon«¿En que año murieron Pablo Casals, Pablo Neruda y Pablo Picasso?*1973
+Ciencia-Naturaleza©Canon«¿Donde apunta la aguja de una brujula?*Norte magnetico
+Deportes-Pasatiempos©Canon«¿Que otro nombre reciben las raquetas de tenis de mesa?*Palas
+Geografia©Canon«¿Que ciudad rusa se llamo Petrogrado y Leningrado?*San Petersburgo
+Espectaculos©Canon«¿Que polemico programa fue presentado por Jose Luis Balbin?*La Clave
+Historia©Canon«¿De que pais europeo procedia la famlia Kennedy?*Irlanda
+Arte-Literatura©Canon«¿En que autor se baso Bizet para hacer la opera "Carmen"?*Merimee
+Ciencia-Naturaleza©Canon«¿Cuantos lados tiene un heptagono?*Siete
+Deportes-Pasatiempos©Canon«¿De que equipo son los jugadores conocidos como cules?*Barcelona
+Geografia©Canon«¿Que ciudad es la nariz de la Peninsula Iberica?*Lisboa
+Espectaculos©Canon«¿Quien hacia el papel de Mrs Robinson en "El graduado"?*Anne Bancroft
+Historia©Canon«¿Cual era la contraseña de la invasion del Dia D?*Mickey Mouse
+Arte-Literatura©Canon«¿Como murio Virginia Woolf?* Se suicido
+Ciencia-Naturaleza©Canon«¿Donde se produce la fecunacion del ovulo por el espermatozoide?*Trompas de Falopio
+Deportes-Pasatiempos©Canon«¿Que juego de tablero estaba prohibido en la Union Sovietica?*Monopoly
+Geografia©Canon«¿En que peninsula esta San Marino?*Italia
+Espectaculos©Canon«¿Como se llama el personaje interpretado por Harrison Ford en "En busca del arca perdida"?*Indiana Jones
+Historia©Canon«¿Que tres paises fueron los firmantes del tratado de Yalta?*Estados Unidos Gran Bretaña y Union Sovietica
+Arte-Literatura©Canon«¿Que personaje de comic procedente de las galaxias utilizaba una especie de tabla de surf para sus desplazamientos?*Estela plateada
+Ciencia-Naturaleza©Canon«¿Como es conocido popularmente el animal marino llamado hipocampo?*Caballito de mar
+Deportes-Pasatiempos©Canon«¿Como se llama el varias veces campeon de motociclismo español?*Angel Nieto
+Geografia©Canon«¿Que edificio oficial estadounidense alberga mayor numero de oficinas?*El Pentagono
+Espectaculos©Canon«¿Que actor es hermano de Shirley MacLaine?*Warren Beatty
+Historia©Canon«¿Que potencia es miembro permanente del Consejo de Seguridad junto a EE.UU., Rusia, China y Francia?*Gran Bretaña
+Arte-Literatura©Canon«¿A que español se le debe el estilo chirrigueresco?*Jose de Churriguera
+Ciencia-Naturaleza©Canon«¿De que color sera conveniente pintar los radiadores si queremos el maximo rendimiento?*Negro
+Deportes-Pasatiempos©Canon«¿Cuantos puntos vale un enceste normal en baloncesto?*Dos
+Geografia©Canon«¿Que significan las siglas U.R.S.S.?*Union de Republicas Socialistas Sovieticas
+Espectaculos©Canon«¿Que director aleman conocido por su famoso toque dirigio "El diablo dijo no"?*Ernst Lubitsch
+Historia©Canon«¿A consecuencia de que se produjo el "crack" economico de EE.UU.?*Hundimiento de la bolsa
+Arte-Literatura©Canon«¿Que fue rehusado por Jean Paul Sartre y Boris Pasternack?*Premio Nobel de Literatura
+Ciencia-Naturaleza©Canon«¿De que sustancia tienes un nivel mas bajo de lo normal si no eres agresivo?*Adrenalina
+Deportes-Pasatiempos©Canon«¿Que tenista arrebato el trofeo Wimbledon a Bjorn Borg cuando este ya tenia cinco?*John McEnroe
+Geografia©Canon«¿Que tres paises limitan con Polonia?*Alemania Checoslavaquia y Rusia
+Espectaculos©Canon«¿Que actriz italiana se retiro del cine para dedicarse a la fotogrfia y a la ceramica?*Gina Lollobrigida
+Historia©Canon«¿Cuantos años dura el cargo presidencial frances?*Siete
+Arte-Literatura©Canon«¿Quien creo "Pulgarcito"?*Perrault
+Ciencia-Naturaleza©Canon«¿Que animal alcanza mayor velocidad en el agua?*Atun
+Deportes-Pasatiempos©Canon«¿Cuantas sustituciones puede realizar un equipo en un partido oficial de futbol?*Dos
+Geografia©Canon«¿Que ciudad alemana es llamada "El Monaco de Baviera"?*Munich
+Espectaculos©Canon«¿Que pelicula estaba rodando Grace Kelly cuando conocio a Rainiero?*Atrapa a un ladron
+Historia©Canon«¿A que general del ejercito de Nabucodonosor le corto la cabeza Judtih?*Holofernes
+Arte-Literatura©Canon«¿A que tipo de instrumentos pertenece la citara?*Cuerda
+Ciencia-Naturaleza©Canon«¿Cual es la abreviatura de trinitrotolueno?*TNT
+Deportes-Pasatiempos©Canon«¿En que modalidad deportiva fue vencedor Constantino de Grecia en unas Olimpiadas?*Vela
+Geografia©Canon«¿Cual es la capital de Baviera?*Munich
+Espectaculos©Canon«¿Que actriz hizo un millon de dolares a la edad de 10 años?*Shirley Temple
+Historia©Canon«¿En que pais europeo se han registrado mas batallas?*Belgica
+Arte-Literatura©Canon«¿Que personaje de comic pasaba de ser un pacifico cientifico a una bestia a causa de la radiacion?*La masa
+Ciencia-Naturaleza©Canon«¿Cuantos litros contiene un barril de oro negro?*Ciento cincuenta y nueve
+Deportes-Pasatiempos©Canon«¿Con que actriz se caso el torero Luis Miguel Domingin?*Lucia Bose
+Geografia©Canon«¿Como denominan los ingleses a las islas Malvinas?*Fakland
+Espectaculos©Canon«¿En que obra se inspiro "West Side Story"?*Romeo y Julieta
+Historia©Canon«¿Quien descubrio Las Antillas?*Cristobal Colon
+Arte-Literatura©Canon«¿Que poeta español ahondo en el folklorismo andaluz de raices tragicas?*Federico Garcia Lorca
+Ciencia-Naturaleza©Canon«¿Como se llaman las lineas que unen los puntos de igual temperatura?*Isotermas
+Deportes-Pasatiempos©Canon«¿Con que pieza del ajedrez puede hacerse un movimiento en forma de L?*Caballo
+Geografia©Canon«¿En que ciudad esta la Corte Internacional de Justicia?*La Haya
+Espectaculos©Canon«¿Que actor hizo mas famoso el personaje de Tarzan?*Johnny Weismuller
+Historia©Canon«¿En que año murio Jesucristo?*33
+Arte-Literatura©Canon«¿Como llamaba Don Quijote al burro que montaba Sancho Panza?*Rucio
+Ciencia-Naturaleza©Canon«¿Cuantos lados tiene un decagono?*Diez
+Deportes-Pasatiempos©Canon«¿Cual es la primera region vinicola de Cataluña?*El Penedes
+Geografia©Canon«¿Que nombre recibe un poblado agricola israeli de produccion y consumo comunitario?*Kibbutz
+Espectaculos©Canon«¿Que actor americano fue el "Camarada X"?*Clark Gable
+Historia©Canon«¿Que pais sufrio el mayor numero de muertes en combate durante la II Guerra Mundial?*Union Sovietica
+Arte-Literatura©Canon«¿Quien pinto "Autorretrato con oreja vendada"?*Vincent Van Gogh
+Ciencia-Naturaleza©Canon«¿Cual de los cinco sentidos se desarrolla el primero?*Olfato
+Deportes-Pasatiempos©Canon«¿En que deporte se alcanza la mayor velocidad registrada en juegos de pelota lanzada?*Pelota Vasca
+Geografia©Canon«¿En que pais se halla la ciudad de Lieja?*Belgica
+Espectaculos©Canon«¿Que tipo de cancion hizo famoso a Carlos Gardel?*Tango
+Historia©Canon«¿Que princesa judia era sobrina de Herodes Antipas?*Salome
+Arte-Literatura©Canon«¿En que edificio granadino esta la sala de los Abencerrajes?*Alhambra de Granada
+Ciencia-Naturaleza©Canon«¿Cuantos dias tuvo 1976?*Trescientos sesenta y seis
+Deportes-Pasatiempos©Canon«¿De que nacionalidad era la primera mujer que alcanzo la cima del Everest en 1975?*Japonesa
+Geografia©Canon«¿Que pais contiene el punto mas al norte de Africa?*Tunez
+Espectaculos©Canon«¿Que actriz fue "La mujer del teniente frances"?*Meryl Streep
+Historia©Canon«¿Contra que pais lucharon Tunez y Marruecos para conseguir su independencia?*Francia
+Arte-Literatura©Canon«¿Quien escribio el "Discurso del Metodo"?*Rene Descartes
+Ciencia-Naturaleza©Canon«¿Que ave pone los huevos mas grandes?*Avestruz
+Deportes-Pasatiempos©Canon«¿Cual es la mano mas alta en el poker cerrado con comodines?*Repoker de ases
+Geografia©Canon«¿En que pais se halla la peninsula de Anatolia?*Turquia
+Espectaculos©Canon«¿Quien dirigio y protagonizo "Ciudadano Kane"?*Orson Welles
+Historia©Canon«¿Con que se anuncia la eleccion de un nuevo Papa al mundo?*Humo blanco
+Arte-Literatura©Canon«¿Que poeta nacido en Orihuela murio en la carcel de Alicante despues de la Guerra Civil?*Miguel Hernandez
+Ciencia-Naturaleza©Canon«¿Que dia de la semana sera el 1 de enero del año 2001?*Lunes
+Deportes-Pasatiempos©Canon«¿Que equipo español de baloncesto ha ganado mayor numero de Copas de Europa?*Real Madrid
+Geografia©Canon«¿Cual es la isla maas grande del Caribe?*Cuba
+Espectaculos©Canon«¿Que actor fue "Brubaker"?*Robert Redford
+Historia©Canon«¿Quien fue el causante de la Guerra de Troya?*Helena de Troya
+Arte-Literatura©Canon«¿Que poeta escribio "Vientos del pueblo"?*Miguel Hernandez
+Ciencia-Naturaleza©Canon«¿Que nombre recibe el haz de fibras conjuntivas que une los musculos a los huesos?*Tendon
+Deportes-Pasatiempos©Canon«¿Cual era el nombre anterior de Muhammad Ali?*Cassius Clay
+Geografia©Canon«¿De que nacionalidad es un breton?*Francesa
+Espectaculos©Canon«¿Quien es el archienemigo de Los Pitufos?*Gargamel
+Historia©Canon«¿Que estado norteamericano fue descubierto y bautizado por un español?*Florida
+Arte-Literatura©Canon«¿Cual fue la primera novela conocida de Cervantes?*La Galatea
+Ciencia-Naturaleza©Canon«¿Cual es la forma geometrica de las celdillas de un panal?*Hexagonal
+Deportes-Pasatiempos©Canon«¿De que color es la bandera que indica que el peligro ha pasado y la pista esta libre en motociclismo?*Verde
+Geografia©Canon«¿En que oceano se encuentran las islas Azores?*Atlantico
+Espectaculos©Canon«¿De donde viene la chica de la cancion mas famosa cantada por Astrud Gilberto?*Ipanema
+Historia©Canon«¿Que Papa fue el gran impulsor de Concilio Vaticano II?*Juan XXIII
+Arte-Literatura©Canon«¿A que personaje mitologico se le derriten sus alas por querer acercarse demasiado al sol?*Icaro
+Ciencia-Naturaleza©Canon«¿Que serpiente alcanza mayor longitud?*Anaconda
+Deportes-Pasatiempos©Canon«¿Que pieza se coloca en las esquinas del tablero de ajedrez al comenzar el juego?*Torre
+Geografia©Canon«¿Que region española es conocida como "La huerta de Europa"?*Murcia
+Espectaculos©Canon«¿Que director de cine hizo "Tigres de papel"?*Fernando Colomo
+Historia©Canon«¿Quien fue el fundador del Partido Socialista Obrero Español?*Pablo Iglesias
+Arte-Literatura©Canon«¿Como se llamaba el dios del sol en el antiguo Egipto?*Ra
+Ciencia-Naturaleza©Canon«¿Que pata de pollo es mas tierna?*Izquierda
+Deportes-Pasatiempos©Canon«¿Que tipo de cartas incluyen la Rueda de la Fortuna, los Amantes y la Muerte?*Tarot
+Geografia©Canon«¿Que tres paises sudamericanos son atravesados por el Ecuador?*Brasil Colombia y Ecuador
+Espectaculos©Canon«¿Que actor ragalo a Marilyn Monroe un caniche llamado Mafia?*Frank Sinatra
+Historia©Canon«¿Quien fue la esposa del rey Acab de Israel?*Jezabel
+Arte-Literatura©Canon«¿Con que autor dramatico estuvo casada Marilyn Monroe?*Arthur Miller
+Ciencia-Naturaleza©Canon«¿Que hace el grillo si el gallo canta?*Chirria
+Deportes-Pasatiempos©Canon«¿En que pais se origino el tenis sobre hierba?*Gran Bretaña
+Geografia©Canon«¿De que color son normalmente las gondolas venecianas?*Negro
+Espectaculos©Canon«¿Quien fue el famoso gemelo de Jesse Aaron?*Elvis Aaron Presley
+Historia©Canon«¿Que santuario frances se fundo a raiz de las apariciones de la Virgen?*Lourdes
+Arte-Literatura©Canon«¿Quien compuso el "Bolero de Ravel"?*Maurice Ravel
+Ciencia-Naturaleza©Canon«¿Cuantos lados tiene un dodecagono?*Doce
+Deportes-Pasatiempos©Canon«¿Que pieza es el roque en el ajedrez?*Torre
+Geografia©Canon«¿En que pais se halla el Atlantico a tan solo 81 Kms del Pacifico?*Panama
+Espectaculos©Canon«¿Quien produjo y protagonizo la pelicula "Shampoo"?*Warren Beatty
+Historia©Canon«¿Que figura historica instauro el reino de Asturias?*Don Pelayo
+Arte-Literatura©Canon«¿Quien es el payaso de las obras de Shakespeare "Enrique IV" y "Las alegres comadres de Windsor"?*Falstaff
+Ciencia-Naturaleza©Canon«¿Que sexo viene determinado por los cromosomas XY?*Masculino
+Deportes-Pasatiempos©Canon«¿Cual es el galardon mas alto otorgado en judo?*Cinturon rojo
+Geografia©Canon«¿Que significa la raiz "Guad" que llevan muchos de nuestros rios?*Rio
+Espectaculos©Canon«¿Que musico escoces dijo: "Mis pasiones son el futbol, la bebida y las mujeres, en ese orden"?*Rod Stewart
+Historia©Canon«¿Que rey español abdico y se retiro a Yuste?*Carlos I
+Arte-Literatura©Canon«¿Que musico consagro la primavera?*Igor Stravinsky
+Ciencia-Naturaleza©Canon«¿Que planeta es considerado gemelo de la Tierra en cuanto a masa y tamaño?*Venus
+Deportes-Pasatiempos©Canon«¿Que es un pugilista?*Boxeador
+Geografia©Canon«¿Como se llama el mar que esta entre Asia Menor y Grecia?*Egeo
+Espectaculos©Canon«¿Cual es la meca del cine?*Hollywood
+Historia©Canon«¿Que intentaron suprimir los abolicionistas americanos?*Esclavitud
+Arte-Literatura©Canon«¿En que siglo tuvo lugar el espectacular surgimiento de la opera?*XVII
+Ciencia-Naturaleza©Canon«¿Cual es el mineral mas duro?*Diamante
+Deportes-Pasatiempos©Canon«¿Como se llama el campo de futbol de Granada?*Los Carmenes
+Geografia©Canon«¿Cual es la Ciudad Eterna?*Roma
+Espectaculos©Canon«¿Que actriz se suicido con Nembutal?*Marylin Monroe
+Historia©Canon«¿En que siglo tuvo lugar la Primera Cruzada?*XI
+Arte-Literatura©Canon«¿Que novela rusa, en la que intervienen mas de 500 personajes, tiene lugar durante las guerra napoleonica?*Guerra y Paz
+Ciencia-Naturaleza©Canon«¿Que color produce sobre el negro la combinacion mas visible?*Amarillo
+Deportes-Pasatiempos©Canon«¿Que organizacion de futboll tiene 150 paises afiliados?*FIFA
+Geografia©Canon«¿De que pais es la moneda considerada como la mas dificil de falsificar?*Japon
+Espectaculos©Canon«¿Que actor, con apellidos de una marca de coches, fue "El desertor del Alamo"?*Glenn Ford
+Historia©Canon«¿Con que nombre se conoce a la moral que regia en Gran Bretaña en la segunda mitad del siglo XIX?*Victoriana
+Arte-Literatura©Canon«¿Quien escribio aquello de: "verde que te quiero verde..."?*Federico Garcia Lorca
+Ciencia-Naturaleza©Canon«¿Que fabrico Alessandro Volta, por primera vez en 1800?*Pila
+Deportes-Pasatiempos©Canon«¿En que cuatro ciudades que comienzan por "A" se han celebrado Las Olimpiadas?*Atenas Amberes Amsterdam y Atlanta
+Geografia©Canon«¿Que paises componen el Benelux?*Belgica Holanda y Luxemburgo
+Espectaculos©Canon«¿Que actriz fue "La Hermana de San Sulpicio" en el remake de Luis Lucia?*Carmen Sevilla
+Historia©Canon«¿Que politico britanico acuño la expresion "telon de acero"?*Winston Churchill
+Arte-Literatura©Canon«¿Cual era la nacionalidad del pintor Alberto Durero?*Italiana
+Ciencia-Naturaleza©Canon«¿Cual es el simbolo quimico del azufre?*S
+Deportes-Pasatiempos©Canon«¿En que pais latinoamericano tiene su sede el Consejo Mundial de Boxeo?*Mexico
+Geografia©Canon«¿En que provincia se encuentra Aviles?*Asturias
+Espectaculos©Canon«¿Que actriz norteamericana fue "La sirena de las aguas verdes"?*Jane Russell
+Historia©Canon«¿Quien fue el primer ser humano que piso la Luna?*Neil Amstrong
+Arte-Literatura©Canon«¿Que personaje creo al monstruo en la novela "Frankenstein"?*Doctor Frankenstein
+Ciencia-Naturaleza©Canon«¿Cual es el objeto cuyo funcionamiento se ha comparado con el del ojo humano?*Camara fotografica
+Deportes-Pasatiempos©Canon«¿Que equipo de futbol posee el record de mayor numero de Copas de Europa consecutivas?*Real Madrid
+Geografia©Canon«¿En que casa suena el telefono en EE.UU. si marcas el 202-456-1414?*Casa Blanca
+Espectaculos©Canon«¿Que director, que era tuerto, realizo mayor numero de peliculas del Oeste?*John Ford
+Historia©Canon«¿Quienes fueron los primeros reyes de la España unificada?*Reyes Catolicos
+Arte-Literatura©Canon«¿Que pais escandinavo tiene el mayor indice mundial de prestacion de libros de bibliotecas?*Dinamarca
+Ciencia-Naturaleza©Canon«¿Cuales eran los cuatro grandes elementos en la antigüedad griega?*Agua Aire Tierra y Fuego
+Deportes-Pasatiempos©Canon«¿Que pieza esta a la derecha o a la izquierda de la torre al empezar una partida de ajedrez?*Caballo
+Geografia©Canon«¿Que lago esta entre la Union Sovietica e Iran?*Caspio
+Espectaculos©Canon«¿Que actriz debuto en 1938 con la pelicula "Intermezzo"?*Ingrid Bergman
+Historia©Canon«¿Cual era la pelicula favorita de Hitler?*King Kong
+Arte-Literatura©Canon«¿Cual es la obra maestra de Esquilo?*La Orestiada
+Ciencia-Naturaleza©Canon«¿Quien fue el primer hombre que giro en el espacio alrededor de la Tierra?*Yuri Gagarin
+Deportes-Pasatiempos©Canon«¿Que dos paises han ganado cada uno tres veces la Copa del Mundo de Futbol?*Brasil e Italia
+Geografia©Canon«¿En que pais se encuentra La Pampa?*Argentina
+Espectaculos©Canon«¿Quien fue Teresa de Jesus en la serie de T.V.E.?*Concha Velasco
+Historia©Canon«¿Que ciudad se disputaron historicamente italianos y yugoslavos?*Trieste
+Arte-Literatura©Canon«¿Que heroina de opera se suicido con la espada de su padre?*Madame Butterfly
+Ciencia-Naturaleza©Canon«¿A que artista español se ha llamado "el escultor del toro"?*Mariano Benlliure
+Geografia©Canon«¿Cual es la moneda de Luxemburgo?*Franco luxemburgues
+Espectaculos©Canon«¿Que hermanos italianos dirigieron la pelicula "Padre, patron"?*Hermanos Taviani
+Historia©Canon«¿Que emperador romano hizo senador a su caballo?*Caligula
+Arte-Literatura©Canon«¿Cual es la tercera letra del alfabeto griego?*Gamma
+Ciencia-Naturaleza©Canon«¿De que animal constituye una variedad el zorro volador?*Murcielago
+Deportes-Pasatiempos©Canon«¿En que deporte se ha conseguido alcanzar mayor velocidad: ciclismo o esqui?*Ciclismo
+Geografia©Canon«¿Como se llamaba anteriormente cabo Cañaveral?*Kennedy
+Espectaculos©Canon«¿Quien escribio el guion de la pelicula "Raza"?*Franco
+Historia©Canon«¿En que continente penso Cristobal Colon que estaba cuando desembarco en la Americas?*Asia
+Arte-Literatura©Canon«¿Quien nos encanto con su "Danza del amor brujo"?*Manuel de Falla
+Ciencia-Naturaleza©Canon«¿Como avisa una abeja a las demas de que ha encontrado una fuente de nectar?*Bailando
+Deportes-Pasatiempos©Canon«¿Quien es el mas ilustre radioaficionado de España?*El Rey
+Geografia©Canon«¿Que capital española tiene nombre de animal?*Leon
+Espectaculos©Canon«¿Que papel interpreto Richard Burton en la pelicula "Cleopatra"?*Marco Antonio
+Historia©Canon«¿En que monasterio fallecio el Emperador Carlos I?*Yuste
+Arte-Literatura©Canon«¿Que tipo de filosofia se asocia con Jean-Paul Sartre?*Existencialismo
+Ciencia-Naturaleza©Canon«¿Que es y donde esta Doñana?*Coto Huelva
+Deportes-Pasatiempos©Canon«¿Como se denomina al toro que no guarda una simitria perfecta entre sus astas?*Bizco
+Geografia©Canon«¿En que ciudad norteamericana se encuentra Hollywood?*Los Angeles
+Espectaculos©Canon«¿Donde se cambia Superman de ropa normalmente?*Cabinas telefonicas
+Historia©Canon«¿Como se conoce popularmente el golpe militar que tuvo lugar en Portugal en 1974?*La Revolucion de los Claveles
+Arte-Literatura©Canon«¿Que talon era el punto debil de Aquiles?*Derecho
+Ciencia-Naturaleza©Canon«¿De que metal estan hechos los filamentos de las bombillas?*Tungsteno
+Deportes-Pasatiempos©Canon«¿Cuantos agujeros tiene una bola de juego de bolos?*Tres
+Geografia©Canon«¿Que isla fue vista por primera vez desde un barco aleman el dia de Pascua de 1772?*Isla de Pascua
+Espectaculos©Canon«¿En que pelìcula interpreta Anthony Perkins los papeles de medre e hijo?*Psicosis
+Historia©Canon«¿Cual era el primer apellido del ingeniero frances que construyo la torre Eiffel?*Eiffel
+Arte-Literatura©Canon«¿En que obra romantica aparece el mito del hombre que vende su alma al diablo para recobrar la juventud?*Fausto
+Ciencia-Naturaleza©Canon«¿Cual es la profesion mejor asegurada en Estados Unidos?*Astronauta
+Deportes-Pasatiempos©Canon«¿Que nombre recibe la ciencia que trata del conocimiento de las monedas y de las medallas?*Numismatica
+Geografia©Canon«¿Que provincia española es la primera alfabeticamente?*Alava
+Espectaculos©Canon«¿Que pais europeo fue el escenario de la pelicula "El hombre tranquilo"?*Irlanda
+Historia©Canon«¿Que conquistador de la antiguedad fue conocido como "El azote de Dios"?*Atila
+Arte-Literatura©Canon«¿Cual es el instrumento mas pequeño de una banda de musica?*Flautin
+Ciencia-Naturaleza©Canon«¿A que animal pertenece la piel mas cara?*Nutria de mar
+Deportes-Pasatiempos©Canon«¿De que color visten los jugadores de futbol del Sevilla?*Blanco
+Geografia©Canon«¿Que colores componen la bandera de Andalucia?*Blanco y verde
+Espectaculos©Canon«¿Cual es el nombre del arca en la pelicula "En busca del arca perdida"?*Arca de la Alianza
+Historia©Canon«¿Que lider fue incinerado en las orillas del rio Ganges el 31 deEnero de 1948?*Gandhi
+Arte-Literatura©Canon«¿De que autor es "Los amantes de Teruel"?*Hartzenbusch
+Ciencia-Naturaleza©Canon«¿De que color es el jade?*Verde
+Deportes-Pasatiempos©Canon«¿Que otros articulos fabrica la empresa Yamaha de motociclestas?*Instrumentos musicales
+Geografia©Canon«¿Cual es la lengua oficial de Brasil?*Portugues
+Espectaculos©Canon«¿Que actriz interpreto a Scarlet O'Hara en "Lo que el viento se llevo"?*Vivien Leigh
+Historia©Canon«¿En conmemoracion de que hechos se contruyo el Arco de Triunfo de Paris?*Victorias napoleonicas
+Arte-Literatura©Canon«¿Como se llaman las cinco lineas en las que se escribe la muscia?*Pentagrama
+Ciencia-Naturaleza©Canon«¿Como se llama la particula atomica que tiene carga positiva?*Proton
+Deportes-Pasatiempos©Canon«¿Que es el alioli?*Mahonesa con ajo
+Geografia©Canon«¿En que region se halla la ciudad de Plasencia?*Extremadura
+Espectaculos©Canon«¿Que actor estuvo "Cantando bajo la lluvia"?*Gene Kelly
+Historia©Canon«¿Que herramienta se utilizo para asesinar a Trosky en Mexico?*Piolet
+Arte-Literatura©Canon«¿De que siglo es el primer diccionario de la Real Academia Española de la Lengua?*XVIII
+Ciencia-Naturaleza©Canon«¿Como se escribe 50 en numeros romanos?*L
+Deportes-Pasatiempos©Canon«¿En que deporte se utiliza el piolet?*Alpinismo
+Geografia©Canon«¿Que dos islas baleares faltan en esta relacion: Mallorca, Menorca, Ibiza, Dragonera, Conjera...?*Formentera y Cabrera
+Espectaculos©Canon«¿Que actriz fue Victor y Victoria en "Victor o Victoria"?*Julie Andrews
+Historia©Canon«¿Quien fue el jefe de Estado de la Union Sovietica anterior a Konstantin Chernenko?*Yuri Andropov
+Arte-Literatura©Canon«¿Que poeta español murio, en el exilio, en Colliure?*Antonio Machado
+Ciencia-Naturaleza©Canon«¿Que pais sufre la amenaza de mayor numero de tornados?*Estados Unidos
+Deportes-Pasatiempos©Canon«¿Que piezas de ajedrez se mueven en el enroque?*Rey y torre
+Geografia©Canon«¿De que principado es capital Vaduz?*Liechsteintein
+Espectaculos©Canon«¿Como era el programa "Aplauso", cinematografico o musical?*Musical
+Historia©Canon«¿De que dieseñadora francesa era el vestido que llevaba Jacqueline Kennedy cuando mataron a su marido?*Coco Chanel
+Arte-Literatura©Canon«¿Quien caricaturizo aquello de: "erase un hombre a una nariz pegado..."?*Francisco de Quevedo
+Ciencia-Naturaleza©Canon«¿Cuantos dias tiene un mes lunar?*Veintiocho
+Deportes-Pasatiempos©Canon«¿Cual es la unica ciudad australiana en la que se han celebrado Olimpiadas?*Melbourne
+Geografia©Canon«¿Que ciudad se levanta donde al Nilo Azul y el Nilo Blanco se unen?*Jartum
+Espectaculos©Canon«¿A que genero pertenece la pelicula "La Reina de Africa?*Comedia
+Historia©Canon«¿De que navegante procede la palabra America?*Americo Vespucio
+Arte-Literatura©Canon«¿Que condimento aparece mencionado mas de 30 veces en la Biblia?*Sal
+Ciencia-Naturaleza©Canon«¿Cual es el cuadrado de 12?*Ciento cuarenta y cuatro
+Deportes-Pasatiempos©Canon«¿Cual es el limite de edad para participar en los Juegos Olimpicos?*Ninguno
+Geografia©Canon«¿Que figura parece montar guardia en las piramides egipcias?*Esfinge
+Espectaculos©Canon«¿Que director de cine anglosajon planeo un "Crimen perfecto"?*Alfred Hitchcock
+Historia©Canon«¿Que presidente de EE.UU. tomo la decision de usar la bomba atomica?*Harry Truman
+Arte-Literatura©Canon«¿Quien escribio al cuento "La niña de los fosforos"?*Andersen
+Ciencia-Naturaleza©Canon«¿Que ave puede nadar pero no volar?*Pingüino
+Deportes-Pasatiempos©Canon«¿Cual es la jugada mas caracteristica del rugby?*Melee
+Geografia©Canon«¿Que pais forma la Confederacion Helvetica?*Suiza
+Espectaculos©Canon«¿Que actor estaba al cuidado de "La ciudad de los muchachos"?*Spencer Tracy
+Historia©Canon«¿Cuantos hermanos tenia Cristobal Colon?*Uno
+Arte-Literatura©Canon«¿Quien escribio "La historia interminable"?*Michael Ende
+Ciencia-Naturaleza©Canon«¿Por que particulas del cuerpo humano son atacadas las bacterias invasoras?*Anticuerpos
+Deportes-Pasatiempos©Canon«¿Que organismo es el responsable de la Olimpiadas y de mantener los principios del Baron de Coubertin?*Comite Olimpico Internacional
+Geografia©Canon«¿En que lugar de la Peninsula Iberica se encuentra el cementerio de Tafalgar?*Gibraltar
+Espectaculos©Canon«¿Que pelicula de Bigas Luna tiene por titulo el nombre de una ciudad española?*Bilbao
+Historia©Canon«¿Que lider politico britanico se podria "enrobinar"?*Margaret Thacther, La Dama de Hierro
+Arte-Literatura©Canon«¿Quien escribio: "Lo bueno, si breve, dos veces bueno?*Baltasar Gracian
+Ciencia-Naturaleza©Canon«¿Cual es el nombre comun de la fruta citrus grandis?*Pomelo
+Deportes-Pasatiempos©Canon«¿Que ciudad fue escenario de las Olimpiadas originales?*Olimpia
+Geografia©Canon«¿Que islas producen el 75% de la produccion mundial de piñas?*Hawai
+Espectaculos©Canon«¿Que actriz fue "La Tia Tula" en la version de Miguel Picazo?*Aurora Bautista
+Historia©Canon«¿De que nacionalidad era el economista J.M.Keynes?*Britanica
+Arte-Literatura©Canon«¿Quien escribio "La Tia Tula"?*Miguel de Unamuno
+Ciencia-Naturaleza©Canon«¿Son las anguilas las crias de las angulas o las anguilas tienen como crias a las angulas?*Las angulas son las crias de las anguilas
+Deportes-Pasatiempos©Canon«¿De que color es el uniforme de los jugadores de beisbol cuando juegan en su campo?*Blanco
+Geografia©Canon«¿En que pais europeo se habla magyar?*Hungria
+Espectaculos©Canon«¿Cual es el verdadero nombre de la actiz y cantante Marisol?*Pepa Flores
+Historia©Canon«¿Que pais proporciono a Cristobal Colon los medios economicos para el viaje en el que descubrio America?*España
+Arte-Literatura©Canon«¿Donde estaba la corte del rey Arturo?*Camelot
+Ciencia-Naturaleza©Canon«¿Cuanto pesa, aproximadamente, la piel de un hombre adulto?*Tres kilos
+Deportes-Pasatiempos©Canon«¿Que equipo de futbol español viste camiseta verdiblanca?*Betis
+Geografia©Canon«¿De que pais es capital Tripoli?*Libia
+Espectaculos©Canon«¿Que actor de origen mejicano ha caracterizado a muchas razas y etnias humanas?*Anthony Quinn
+Historia©Canon«¿Con que formula oficial te dirigirias a un embajador?*Su excelencia
+Arte-Literatura©Canon«¿Que es lo contrario de anverso?*Reverso
+Ciencia-Naturaleza©Canon«¿A quienes sienten odio los que padecen xenofobia?*Extranjeros
+Deportes-Pasatiempos©Canon«¿Cuantos cubos coloreados hay en el Cubo Magico de Rubik?*Cincuenta y cuatro
+Geografia©Canon«¿Que plaza es el centro geografico de Londres?*Trafalgar Square
+Espectaculos©Canon«¿Que western fue la primera pelicula que interpreto George C. Scott?*El arbol del ahorcado
+Historia©Canon«¿Que significan las isglas O.T.A.N.?*Organizacion del Tratado del Atlantico Norte
+Arte-Literatura©Canon«¿Que pintor español supo ver como nadie "Los desastres de la guerra"?*Goya
+Ciencia-Naturaleza©Canon«¿Cual era el septimo mes en el antiguo calendario romano?*Septiembre
+Deportes-Pasatiempos©Canon«¿Que pais tiene mayor numero de deportistas?*Union Sovietica
+Geografia©Canon«¿Donde esta la localidad de Olite?*Navarra
+Espectaculos©Canon«¿Como se denomina al jazz que no se se somete a ninguna regla establecida?*Free jazz
+Historia©Canon«¿En que ciudad española se encuentra enterrado el corazon de Alfonso X?*Murcia
+Arte-Literatura©Canon«¿Como se llama el pajaro legendario del antiguo Egipto que, segun la leyenda, resucita rejuveneciendo de las cenizas?*Ave Fenix
+Ciencia-Naturaleza©Canon«¿En que mes esta el sol mas cerca de la Tiera?*Enero
+Deportes-Pasatiempos©Canon«¿En que olimpiadas superaron por primera vez los sovieticos a los norteamericanos como potencia deportiva en 1956?*Melbourne
+Geografia©Canon«¿Que continente ocupa el Polo Sur?*Antartida
+Espectaculos©Canon«¿En que año tuvieron Los Beatles su primer exito Numero 1?*1963
+Historia©Canon«¿Que raza alemana dio su nombre a los actos de destruccion injustificada?*Vandalos
+Arte-Literatura©Canon«¿Que pais era el escenario de "Ali Baba y los 40 ladrones"?*Persia
+Ciencia-Naturaleza©Canon«¿A quien mata un uxorocida?*A su mujer
+Deportes-Pasatiempos©Canon«¿Que torneo de futbol es el equivalente en Sudamerica a la Copa de Europa?*Copa de Libertadores
+Geografia©Canon«¿En que idioma significa "obrigado" gracias?*Portugues
+Espectaculos©Canon«¿Que dos paises han ganado el Festival de Eurovision en mas ocasiones?*Luxemburgo y Francia
+Historia©Canon«¿Quien era el "amigo" de Eva Braun?*Adolf Hitler
+Arte-Literatura©Canon«¿Cual es la mas pequeña de las tres grandes piramides de Egipto?*Micerinos
+Ciencia-Naturaleza©Canon«¿Que es el vison, carnivoro o herbivoro?*Carnivoro
+Deportes-Pasatiempos©Canon«¿Cuanto mide de ancho una barra de equilibrio en gimnasia?*Diez centimetros
+Geografia©Canon«¿Que pais tiene mayor numero de medicos?*Union Sovietica
+Espectaculos©Canon«¿Que actriz que consiguio dos oscars fue "La solterona"?*Bette Davis
+Historia©Canon«¿Que romano se alio con Cleopatra conta Roma?*Marco Antonio
+Arte-Literatura©Canon«¿Que tenor español canto en la ceremonia de investidura del presidente frances François Miterrand?*Placido Domingo
+Ciencia-Naturaleza©Canon«¿Que pajaro tiene el mayor pie palmeado?*Albatros
+Deportes-Pasatiempos©Canon«¿Cual es la edad mas joven en la que se ha conseguido una medalla olimpica?*Doce
+Geografia©Canon«¿En que pais africano estarias si compraras un leon con las monedas llamadas leonas?*Sierra Leona
+Espectaculos©Canon«¿En que ciudad nacieron "El Lebrijano" y Manolo Caracol?*Sevilla
+Historia©Canon«¿Que diplomatico dirigio la construccion del Canal de Suez y emprendio la del de Panama?*Fernando de Lesseps
+Arte-Literatura©Canon«¿Como se llama el perro de Tintin?*Milu
+Ciencia-Naturaleza©Canon«¿Que significan las siglas F.M.?*Frecuencia Modulada
+Deportes-Pasatiempos©Canon«¿Cuantas fichas tiene el domino europeo?*Veintiocho
+Geografia©Canon«¿En que isla esta el volcan Etna?*Sicilia
+Espectaculos©Canon«¿Que actriz española cantaba que la vida es un Tombola?*Marisol
+Historia©Canon«¿A cuantas de sus mujeres decapito Enrique VIII?*Dos
+Arte-Literatura©Canon«¿Que son la codicia, orgullo, ira, envidia, pereza, lujuria y gula?*Pecados capitales
+Ciencia-Naturaleza©Canon«¿Que ocurre con la respiracion del murcielago cuando hiberna?*Desciende al minimo
+Deportes-Pasatiempos©Canon«¿Como llamamos el sueño de despues de comer?*Siesta
+Geografia©Canon«¿De que isla es capital Colombo?*Sri Lanka
+Espectaculos©Canon«¿Que escritor y director frances dijo: "un film no es mas que un sueño que se cuenta pero que soñamos todos juntos"?*Jean Cocteau
+Historia©Canon«¿Que emperador decreto la libertad religiosa en el imperio romano el año 313?*Constantino
+Arte-Literatura©Canon«¿En que novela aparece por primera vez el detective Sam Spade?*El halcon maltes
+Ciencia-Naturaleza©Canon«¿Que cantidad de sal contiene aproximadamente un litro de agua de mar?*Veinticinco gramos
+Deportes-Pasatiempos©Canon«¿De que pais es el tenista Ivan Lendl?*Checoslovaquia
+Geografia©Canon«¿Desde que pico de los Pirineos te podrias dar el mayor tortazo?*Aneto
+Espectaculos©Canon«¿En que mano llevaba Carles Chaplin su baston?*Izquierda
+Historia©Canon«¿Quien instauro en Francia la V Republica?*Charles de Gaulle
+Arte-Literatura©Canon«¿En que pais surgio el estilo rococo?*Francia
+Ciencia-Naturaleza©Canon«¿Que clase de imagen produce un holograma?*Tridimensional
+Deportes-Pasatiempos©Canon«¿De que color es una mesa de ping pong?*Verde
+Geografia©Canon«¿Cual es la capital de Brasil?*Brasilia
+Espectaculos©Canon«¿Que director de cine estadounidense filmo una "Tarde perros"?*Sidney Lumet
+Historia©Canon«¿Quien fue el primer presidente de los Estados Unidos?*George Washington
+Arte-Literatura©Canon«¿Cual fue el personaje mas famoso de Nilos Kazantzakis?*Zorba el griego
+Ciencia-Naturaleza©Canon«¿A que le tiene miedo una persona que sufre claustrofobia?*A los espacios cerrados
+Deportes-Pasatiempos©Canon«¿Que juego esta basado en la loteria?*Bingo
+Geografia©Canon«¿En que ciudad se halla el famoso Hyde Park?*Londres
+Espectaculos©Canon«¿Quien protagonizo "El hombre que valia un millon de dolares"?*Lee Majors
+Historia©Canon«¿Hasta que año duro la Guerra de Corea iniciada en 1950?*1953
+Arte-Literatura©Canon«¿A que obra corresponde este fragmento: "En esto, descubrieron treinta o cuarenta molinos de viento"?*Don Quijote de la Mancha
+Ciencia-Naturaleza©Canon«¿De que color es la malaquita?*Verde
+Deportes-Pasatiempos©Canon«¿Como se llama el famoso equipo de futbol de Moscu?*Dinamo de Moscu
+Geografia©Canon«¿Donde estan Leipzig, Dresde y Magdeburgo?*Alemania
+Espectaculos©Canon«¿Que actor infantil formo pareja artistica Judy Garland?*Mickey Rooney
+Historia©Canon«¿En que isla murio Napoleon?*Santa Elena
+Arte-Literatura©Canon«¿Que abrian las palabras: "abrete Sesamo"?*La cueva de Ali Baba
+Ciencia-Naturaleza©Canon«¿Que animal africano causa mayor numero de victimas?*Cocodrilo
+Deportes-Pasatiempos©Canon«¿Cuantos Juegos Olimpicos fueron suspendidos durante la II Guerra Mundial?*Dos
+Geografia©Canon«¿En que pais sudamericano se encuentra el lago Maracaibo?*Venezuela
+Espectaculos©Canon«¿Quien era el protagonista de "Nunca digas nunca jamas"?*Sean Connery
+Historia©Canon«¿Que rey sucedio en el trono de España a Fernando VI?*Carlos III
+Arte-Literatura©Canon«¿Que escritor español hizo de la vida un sueño?*Calderon de la Barca
+Ciencia-Naturaleza©Canon«¿Como se llama la autofecundacion de las plantas?*Endogamia
+Deportes-Pasatiempos©Canon«¿Quien pronuncio las 16 palabras de la apertura olimpica de Los Angeles de 1984?*Ronald Reagan
+Geografia©Canon«¿Cual es el cincuenta estado de EE.UU.?*Hawai
+Espectaculos©Canon«¿Que pelicula de los Monty Python fue prohibida en algunos lugares por motivos religiosos?*La vida de Brian
+Historia©Canon«¿Que pais visito el Papa despues de Gran Bretaña en 1982?*Argentina
+Arte-Literatura©Canon«¿Quien es el escritor español mas satirico, moralista, pesimista y soez del siglo XVII?*Francisco de Quevedo
+Ciencia-Naturaleza©Canon«¿Como se llama al niño que nace tras siete meses de embarazo?*Sietemesino
+Deportes-Pasatiempos©Canon«¿Que pais de Sudamerica tiene el circuito de golf mas alto del mundo?*Peru
+Geografia©Canon«¿Que significa la palabra griega "polis"?*Ciudad
+Espectaculos©Canon«¿Quien fue el primer presentador de "Un, dos, tres, responda otra vez"?*Kiko Legard
+Historia©Canon«¿Quien regalo a John F. Kennedy un perro que se llamaba Pushinka?*Nikita Kruschev
+Arte-Literatura©Canon«¿De que autor es la obra "Eloisa esta debajo de un almendro"?*Enrique Jardiel Poncela
+Ciencia-Naturaleza©Canon«¿Cual es el unico numero primo que es par?*Dos
+Deportes-Pasatiempos©Canon«¿De que equipo de futbol son los jugadores conocidos como los pimentoneros?*Murcia
+Geografia©Canon«¿Cuales son los oceanos de la Tierra?*Pacifico Atlantico Indico y Artico
+Espectaculos©Canon«¿Que actriz estaba "De pelicula" presentando un programa de T.V.E.?*Isabel Mestres
+Historia©Canon«¿En que pais africano se produjo la revolucion Mau-Mau?*Kenia
+Arte-Literatura©Canon«¿De que compositor polaco eran los temas en las que se baso la obra "Fuego Fatuo" de Manuel de Falla?*Chopin
+Ciencia-Naturaleza©Canon«¿Cual es la gema mas simple en su composicion quimica?*Diamante
+Deportes-Pasatiempos©Canon«¿Que anglicismo empleamos para designar la modalidad de campo a traves en una carrera?*Cross
+Geografia©Canon«¿Que dos universidades estadounidenses son el equivalente de Oxford y Cambridge?*Harvard y Yale
+Espectaculos©Canon«¿Que componente de un grupo que revoluciono la musica pop, dijo: "somos mas populares que Jesucrsito"?*John Lennon
+Historia©Canon«¿Como compro Le Harvey Oswald su rifle?*Por correo
+Arte-Literatura©Canon«¿Que poema comico sobre gatos escribio Lope de Vega?*La Gatomaquia
+Ciencia-Naturaleza©Canon«¿Cual es el mamifero mas grande que ha sido hallado con mas años de vida?*Ballena azul
+Deportes-Pasatiempos©Canon«¿Que dos universidades estadounidenses disputan una regata tradicionalmente desde 1852?*Harvard y Yale
+Geografia©Canon«¿Cuantas capitales de provincias costeras españolas no estan junto al mar?*Cinco
+Espectaculos©Canon«¿Que teatro es origen del circo?*Teatro romano
+Historia©Canon«¿Cual fue el primer fin por el que se creo la Cruz Roja en 1864?*Atender a los heridos de guerra
+Arte-Literatura©Canon«¿En que museo se encuentra "La Venus de Milo"?*Louvre
+Ciencia-Naturaleza©Canon«¿Que dos metales forman la aleacion de oro blanco?*Oro y plata
+Deportes-Pasatiempos©Canon«¿Cuales fueron las ciudades sede de los Juegos Olimpicos de verano e invierno en 1972?*Munich y Sapporo
+Geografia©Canon«¿Que rio nace en Siria, pasa por el lago Tiberiades y desemboca en el Mar Muerto?*Jordan
+Espectaculos©Canon«¿Como se llamaba la plantacion de los O'Hara en "Lo que el viento se llevo"?*Tara
+Historia©Canon«¿Cuales fueron las tres famosas carabelas del descubrimiento de America?*Santa Maria La Pinta y La Niña
+Arte-Literatura©Canon«¿En que libro de Camilo Jose Cela aparecen abejas humanas?*La Colmena
+Ciencia-Naturaleza©Canon«¿Cual es el felino mas grande de America?*Jaguar
+Deportes-Pasatiempos©Canon«¿Cuantos caballos hay en un equipo de polo?*Cuatro
+Geografia©Canon«¿Que pais nacio de la union de Tanganica y Zanzibar?*Tanzania
+Espectaculos©Canon«¿A que genero pertenece la pelicula "Las minas del rey Salomon"?*Aventuras
+Historia©Canon«¿Cual era el nombre del avion pilotado por Ramon Franco que realizo el vuelo Palos-Buenos Aires?*Plus Ultra
+Arte-Literatura©Canon«¿En que provincia española se encuentra el palacio de Medina Azahara?*Cordoba
+Ciencia-Naturaleza©Canon«¿Que nombre recibe el proceso de induccion de agua en plantas?*Osmosis
+Deportes-Pasatiempos©Canon«¿Como se denomina al poker de cinco cartas iguales?*Repoker
+Geografia©Canon«¿Donde nace el rio Ebro?*Reinosa
+Espectaculos©Canon«¿En que pelicula se hacia pasar por mujer Dustin Hoffman?*Tootsie
+Historia©Canon«¿En que año subio al trono el emperador Neron?*64
+Arte-Literatura©Canon«¿Como se llamaba la mujer de Juan Ramon Jimenez?*Zenobia Camprubi
+Ciencia-Naturaleza©Canon«¿Que animales marinos son considerados los mas inteligentes?*Delfines
+Deportes-Pasatiempos©Canon«¿Como se llama el campo de futbol de Osasuna?*El Sadar
+Geografia©Canon«¿Que provincias forman la region de Aragon?*Zaragoza Huesca y Teruel
+Espectaculos©Canon«¿Que actriz recibio en 1928 un oscar por sus interpretaciones en "El septimo cielo", "Amanecer" y "El angel de la calle"?*Janet Gaynor
+Historia©Canon«¿De que continente eran los primeros emigrantes que llegaron a America?*Asia
+Arte-Literatura©Canon«¿Cual era el seudonimo del escritor Jose Martinez Ruiz?*Azorin
+Ciencia-Naturaleza©Canon«¿Que membrana controla la cantidad de luz que entra en el ojo?*Iris
+Deportes-Pasatiempos©Canon«¿Donde esta el estadio de futbol de La Condomina?*Murcia
+Geografia©Canon«¿En que provincia española estan las ruinas de Numancia?*Soria
+Espectaculos©Canon«¿Que personaje tocaba El tiempo pasara en "Casablanca"?*Sam
+Historia©Canon«¿Que pais levanto una prohibicion sobre Aristoteles, Shakespeare y Dickens, el 11 de Febrero de 1978?*China
+Arte-Literatura©Canon«¿Cual era el segundo apellido de Francisco de Goya?*Lucientes
+Ciencia-Naturaleza©Canon«¿Cual es la raiz cubica de 27?*Tres
+Deportes-Pasatiempos©Canon«¿Que medalla obtuvo la seleccion española de baloncesto en las olimpiadas de 1984?*Plata
+Geografia©Canon«¿En que provincia se encuentra Gijon?*Asturias
+Espectaculos©Canon«¿Con que productor de cine esta casada la que fue presentadora de T.V.E. Laura Valenzuela?*Jose Luis Dibildos
+Historia©Canon«¿Que aleman fue el padre de la bomba V2?*Wherner von Braun
+Arte-Literatura©Canon«¿Que idioma procede del latin, frances, normando y anglosajon?*Ingles
+Ciencia-Naturaleza©Canon«¿De que signo zodiacal eres si naciste el 11 de Septiembre?*Virgo
+Deportes-Pasatiempos©Canon«¿En que deporte se utiliza la tecnica del currican?*Pesca
+Geografia©Canon«¿Como se llaman los circulos maximos que cortan la Tierra pasando por los polos?*Meridianos
+Espectaculos©Canon«¿Quien fue "La Reina Cristina de Suecia" en la version de Rouben Mamoulian?*Greta Garbo
+Historia©Canon«¿Que militar norteamericano se convirtio en una especie de virrey del Japon una vez terminada la II Guerra Mundial?*MacArthur
+Arte-Literatura©Canon«¿Quien creo a George Smiley?*John Le Carre
+Ciencia-Naturaleza©Canon«¿Que diferencia existe entre el asno y el burro?*Ninguna
+Deportes-Pasatiempos©Canon«¿Que boxeador fue llamado Toro Salvaje?*Jack Lamotta
+Geografia©Canon«¿Que pais ocupa el corazon de los Balcanes junto a Albania y Bulgaria?*Yugoslavia
+Espectaculos©Canon«¿Que pelicula creo la palabra magica supercalifragiliscoespialidoso?*Mary Poppins
+Historia©Canon«¿Que significan las siglas C.E.C.A.?*Comunidad Europea del Carbon y del Acero
+Arte-Literatura©Canon«¿Que rey compuso las Cantigas de Santa Maria?*Alfonso X
+Ciencia-Naturaleza©Canon«¿Cual es el dolor mas comun en el hombre?*Dolor de cabeza
+Deportes-Pasatiempos©Canon«¿Que pelicula inglesa narraba la vida de dos atletas britanicos durante las Olimpiadas de Paris?*Carros de fuego
+Geografia©Canon«¿En que oceano se encuentra el Golfo de Panama?*Pacifico
+Espectaculos©Canon«¿Que superestrella del reggae murio el 11 de Mayo de 1981?*Bob Marley
+Historia©Canon«¿Con que nombre se conoce la matanza de protestantes que tuvo lugar en Francia en 1572?*Matanza de San Bartolome
+Arte-Literatura©Canon«¿Quien escribio las aventuras de Sandokan?*Emilio Salgari
+Ciencia-Naturaleza©Canon«¿Cuantos años despues de que se extinguiera la estrella polar dejariamos de ver su luz?*Cuarenta
+Deportes-Pasatiempos©Canon«¿Quien gano el Campeonato del Mundo de Automovilismo en 1983?*Nelson Piquet
+Geografia©Canon«¿De que pais es capital Ulan Bator?*Mongolia
+Espectaculos©Canon«¿Que director de cine italiano dirigio "Hasta que llego su hora"?*Sergio Leone
+Historia©Canon«¿En que ciudad nacio la reina Doña Sofia?*Atenas
+Arte-Literatura©Canon«¿Quien pinto "Dulce autorretrato con tocino asado"?*Salvador Dali
+Ciencia-Naturaleza©Canon«¿Cuantos satelites tiene el planeta Saturno?*Nueve
+Deportes-Pasatiempos©Canon«¿Por que condimento pagan los chefs el precio mas alto?*Azafran
+Geografia©Canon«¿En que ciudad española te encontrarias si estuvieras frente a al Torre del Oro?*Sevilla
+Espectaculos©Canon«¿Quien fue el primer personaje no humano que gano un oscar?*Mickey Mouse
+Historia©Canon«¿Que le llevo dieciocho dias en escribir a Thomas Jefferson?*La Declaracion de Independencia de los Estados Unidos
+Arte-Literatura©Canon«¿Con que otro nombre es mas conocido el dios griego Heracles?*Hercules
+Ciencia-Naturaleza©Canon«¿Que es la rana antes de su metamorfosis?*Renacuajo
+Deportes-Pasatiempos©Canon«¿A que equipo de futbol pertenece el estadio Insular?*Las Palmas
+Geografia©Canon«¿Cual es el lugar mas caluroso de la tierra?*Sahara
+Espectaculos©Canon«¿Que pelicula de 1950, protagonizada por Bette Davis, obtuvo siete Oscars?*Eva al desnudo
+Historia©Canon«¿Que rey español subio al trono en el mismo momento de su nacimiento aunque no reino hasta la mayoria de edad?*Alfonso XIII
+Arte-Literatura©Canon«¿Quien era el campanero jorobado de Notre Dame?*Quasimodo
+Ciencia-Naturaleza©Canon«¿Como se llaman los extremos de un iman?*Polos
+Deportes-Pasatiempos©Canon«¿Cual es, en metros, la longitud maxima de un campo de futbol?*Ciento veinte
+Geografia©Canon«¿En que pais se encuentran los candados de Devon y Sussex?*Gran Bretaña
+Espectaculos©Canon«¿Que actriz y realizadora española, interprete de "Raza", fue muy popular en los años 40?*Ana Mariscal
+Historia©Canon«¿Por que romano se llama el mes Julio asi?Julio Cesar
+Arte-Literatura©Canon«¿De que pintor español es el cuadro "Muchachos comiendo melon y uvas"?*Murillo
+Ciencia-Naturaleza©Canon«¿Cuantas jorobas tiene un camello africano?*Una
+Deportes-Pasatiempos©Canon«¿Que otro nombre recibe el beisbol?*Pelota base
+Geografia©Canon«¿Por que emperador romano se llamo asi Constantinopla?*Constantino
+Espectaculos©Canon«¿Que actriz sueca fue "Mata-Hari" en 1931?*Greta Garbo
+Historia©Canon«¿Que poeta y lider revolucionario vietnamita dd nombre a la actual capital de Vietnam?*Ho Chi Minh
+Arte-Literatura©Canon«¿Que tiene en Segovia 128 arcos?*Acueducto
+Ciencia-Naturaleza©Canon«¿Como se conoce vulgarmente el encefalo?*Sesos
+Deportes-Pasatiempos©Canon«¿Quien dio nombre a un perfume a raiz de sus pases de modelos el cinco de cada mes?*Coco Chanel
+Geografia©Canon«¿Quien es el patron de Valencia?*San Jose
+Espectaculos©Canon«¿Quien es el enemigo de Popeye?*Brutus
+Historia©Canon«¿Que dos paises se enfrentaron en la Guerra de los Cien años?*Francia e Inglaterra
+Arte-Literatura©Canon«¿Quien realizo la Columnata de la Basilica de San Pedro del Vaticano?*Bernini
+Ciencia-Naturaleza©Canon«¿Que grupo sanguineo es receptor universal?*AB
+Deportes-Pasatiempos©Canon«¿Que checoslovaco nos sorprendio batiendo a John McEnroe en la final de Roland Garros de 1984?*Ivan Lendl
+Geografia©Canon«¿De que isla es capital La Valeta?*Malta
+Espectaculos©Canon«¿Que actor estuvo detras de "La ventana indiscreta" de Hitchcock?*James Stewart
+Historia©Canon«¿En que año accedio plenamente al poder el Partido Socialista Obrero Español?*1982
+Arte-Literatura©Canon«¿Quien escribio La Regenta?*Clarin
+Ciencia-Naturaleza©Canon«¿Donde se propaga el sonido con mayor velocidad, a traves del agua o de los cuerpos solidos?*Cuerpos solidos
+Deportes-Pasatiempos©Canon«¿En que pais nacio Nadia Comanecci?*Rumania
+Geografia©Canon«¿Que capital española tiene cinco veces la misma vocal?*Guadalajara
+Espectaculos©Canon«¿Que actriz francesa protagonizo la pelicula de Roger Vadim "Y Dios creo a la mujer"?*Brigitte Bardot
+Historia©Canon«¿Que significan las siglas U.S.O.?*Union Sindical Obrera
+Arte-Literatura©Canon«¿Cual era la nacionalidad de Aladino?*China
+Ciencia-Naturaleza©Canon«¿Como se denomina vulgarmente la ereccion del vello?*Carne de gallina
+Deportes-Pasatiempos©Canon«¿Que galicismo se aplica al aroma del vino?*Bouquet
+Geografia©Canon«¿Cual es la ciudad cuya principal via publica es el Gran Canal?*Venecia
+Espectaculos©Canon«¿Quien fue el director de "Amadeus"?*Milos Forman
+Historia©Canon«¿A que politico español se atribuye la frase: "La calle es mia"?*Manuel Fraga
+Arte-Literatura©Canon«¿Que personaje decidio no crecer nunca y vivir como las hadas?*Peter Pan
+Ciencia-Naturaleza©Canon«¿De que esta hecho el cuerno de rinoceronte?*Pelo
+Deportes-Pasatiempos©Canon«¿Como se llamaba la mascota de los Juegos Olimpicos de Los Angeles de 1984?*Sam
+Geografia©Canon«¿En que pais viven los verdaderos bohemios?*Checoslovaquia
+Espectaculos©Canon«¿Cual es el titulo de la pelicula de Elia Kazan sobre un tranvia?*Un tranvia llamado deseo
+Historia©Canon«¿Con que nombre es mas conocida la Organizacion Internacional de la Policia Criminal?*Interpol
+Arte-Literatura©Canon«¿Hasta que fecha dice el refran que no te quites el sayo?*40 de Mayo
+Ciencia-Naturaleza©Canon«¿Que pais encontrarias si trasladaras un agujero recto a traves de la tierra desde Buenos Aires?*China
+Deportes-Pasatiempos©Canon«¿Que elemento falta en esta relacion de lanzamientos: peso, jabalina, disco y...?*Martillo
+Geografia©Canon«¿Que pais es mayor: Suecia o Noruega?*Suecia
+Espectaculos©Canon«¿Que grupo compuso "Submarino Amarillo"?*Beatles
+Historia©Canon«¿Que significan las siglas G.R.A.P.O.?*Grupo Revolucionario Antifascista Primero de Octubre
+Arte-Literatura©Canon«¿Que materiales utilizaron los tres cerditos para construir sus casas?*Paja Madera y Ladrillos
+Ciencia-Naturaleza©Canon«¿Cuantas especies de cigüeñas hay en España?*Dos
+Deportes-Pasatiempos©Canon«¿Cual es la ultima prueba de decatlon?*1500 metros
+Geografia©Canon«¿Cual es la capital de Afganistan?*Kabul
+Espectaculos©Canon«¿A que genero pertenece la pelicula "El gato negro"?*Terror
+Historia©Canon«¿Durante que años tuvo lugar la I Guerra Mundial?*1914-1918
+Arte-Literatura©Canon«¿Que arbol africano se cita en "El Principito"?*Baobab
+Ciencia-Naturaleza©Canon«¿Que nombre recibe el animal que se alimenta exclusivamente de vegetales?*Herbivoro
+Deportes-Pasatiempos©Canon«¿Que porte español creo el despeje llamado "zamorana"?*Ricardo Zamora
+Geografia©Canon«¿Donde has nacido si eres un pacense?*Badajoz
+Espectaculos©Canon«¿Con quien estaba casada Natalie Wood cuando murio ahogada en extrañas circustancias?*Robert Wagner
+Historia©Canon«¿Que nombre compartian Lucano y Seneca?*Anneo
+Arte-Literatura©Canon«¿En que ciudad nacio James Joyce?*Dublin
+Ciencia-Naturaleza©Canon«¿Cual es el termino psiquiatrico para designar el amor a uno mismo?*Narcisismo
+Deportes-Pasatiempos©Canon«¿Como se llama la tecnica de hacer figuras de papel?*Papiroflexia
+Geografia©Canon«¿Cual es el pais mas grande de Sudamerica?*Brasil
+Espectaculos©Canon«¿Que pelicula termina con la frase: "Despues de todo, mañana sera otro dia"?*Lo que el viento se llevo
+Historia©Canon«¿Que apostol fue iluminado al caer de un caballo?*Pablo
+Arte-Literatura©Canon«¿Que rey era hijo de Yocasta?*Edipo
+Ciencia-Naturaleza©Canon«¿Cuantos grados tiene una circunferencia?*Trescientos sesenta
+Deportes-Pasatiempos©Canon«¿Que deporte practico profesionalmente Julio Iglesias?*Futbol
+Geografia©Canon«¿Como se llamaba anteriormente Etiopia?*Abisinia
+Espectaculos©Canon«¿Cual era el mote de Margaret Houlihan en la serie televisiva M.A.S.H.?*Morritos calientes
+Historia©Canon«¿Que ciudad fue pareja de Sodoma?*Gomorra
+Arte-Literatura©Canon«¿Como que adquirio Beethoven su primer exito, como compositor o como pianista?*Pianista
+Ciencia-Naturaleza©Canon«¿Que se mide en curies?*Radioactividad
+Deportes-Pasatiempos©Canon«¿Por que deporte fue universalmente conocido Ray "Sugar" Robinson?*Boxeo
+Geografia©Canon«¿Entre que dos rios asiaticos se localizo la civilizacion mesopotamica?*Tigris y Eufrates
+Espectaculos©Canon«¿Que periodista hizo famosa la frase: "Se dice, se cuenta, se rumorea..."?*Jesus Hermida
+Historia©Canon«¿Quien fue el conquistador del imperio inca?*Francisco Pizarro
+Arte-Literatura©Canon«¿Quien es el pato mas rico del mundo?*Tio Gilito
+Ciencia-Naturaleza©Canon«¿Que animal lanza un liquido de olor fetido cuando se ve perseguido?*Mofeta
+Deportes-Pasatiempos©Canon«¿Que jugador de futbol actuo mayor numero de veces en la seleccion de Alemania Federal?*Franz Beckenbauer
+Geografia©Canon«¿Cual de los dos canales tiene mayor longitud, el de Panama o el de Suez?*Suez
+Espectaculos©Canon«¿Que director de cine "encadeno" a Ingrid Bergman y Cary Grant?*Alfred Hitchcock
+Historia©Canon«¿Que grupo terrotista acabo con la vida del presidente Carrero Blanco?*ETA
+Arte-Literatura©Canon«¿Cual es la primera letra del alfabeto ruso?*A
+Ciencia-Naturaleza©Canon«¿Que letra esta en el extremo izquierdo de la linea media de letras del teclado de una maquina de escribir?*A
+Deportes-Pasatiempos©Canon«¿Con que frecuencia se celebraban los Juegos Olimpicos en su origen?*Cada cuatro años
+Geografia©Canon«¿Cuales son las dos lenguas oficiales de Sudadrica?*Ingles y Afrikaans
+Espectaculos©Canon«¿De que region española era "La bella Otero"?*Galicia
+Historia©Canon«¿En que monte aterrizo el Arca de Noe?*Ararat
+Arte-Literatura©Canon«¿Quien escribio unas "Novelas Ejemplares"?*Miguel de Cervantes
+Ciencia-Naturaleza©Canon«¿Que estacion finaliza con el solsticio de invierno?*Otoño
+Deportes-Pasatiempos©Canon«¿Cuantas veces gano la Vuelta Ciclista a España Julian Berrendero?*Dos
+Geografia©Canon«¿Como se llaman los nacidos en Lugo?(dos posibilidades)*Lucenses o lugueses
+Espectaculos©Canon«¿Quien obtuvo el oscar al mejor actor por su papel de Popeye Doyle en "French Connection"?*Gene Hackman
+Historia©Canon«¿Quien era el jefe de la Gestapo?*Heinrich Himmler
+Arte-Literatura©Canon«¿Quien escribio "Las desventuras del joven Werther"?*Goethe
+Ciencia-Naturaleza©Canon«¿Que cuatro sabores puede distinguir una persona?*Dulce agrio salado y amargo
+Deportes-Pasatiempos©Canon«¿Cuantos Juegos Olimpicos fueron cancelados por la I Guerra Mundial?*Uno
+Geografia©Canon«¿Cual es el rio mas largo de Asia?*Yang Tse
+Espectaculos©Canon«¿Cuantos dias duraba la pelicula mas larga de la historia del cine?*Cuatro
+Historia©Canon«¿Quien fue el arquitecto de la piramide de Keops?*Keops
+Arte-Literatura©Canon«¿Quien era el amante troyano de Helena de Troya?*Paris
+Ciencia-Naturaleza©Canon«¿De que pais es originario el pavo real?*India
+Deportes-Pasatiempos©Canon«¿Que bebida es "la chispa de la vida"?*Coca Cola
+Geografia©Canon«¿Cual es el golfo mas grande del mundo?*Golfo de Mexico
+Espectaculos©Canon«¿Quien interpretaba el personaje de Carlos Deza en "Los gozos y las sombras"?*Eusebio Poncela
+Historia©Canon«¿Quien mato a Hitler?*Hitler
+Arte-Literatura©Canon«¿Cuantos pedales tiene un piano de cola?*Tres
+Ciencia-Naturaleza©Canon«¿De que esta compuesto el material de construccion llamado adobe?*Arcilla
+Deportes-Pasatiempos©Canon«¿En que ciudad se encuentra el estadio de futbol Sanchez Pizjuan?*Sevilla
+Geografia©Canon«¿Cual es la capital de Israel?*Jerusalen
+Espectaculos©Canon«¿Quien hizo el papel de Sonny Corleone en "El Padrino"?*James Caan
+Historia©Canon«¿Cuantos dedos tenia Ana Bolena en las manos?*Once
+Arte-Literatura©Canon«¿Quien fue el autor de "Escuela de robinsones"?*Julio Verne
+Ciencia-Naturaleza©Canon«¿Cual es la raiz cuadrada de 121?*Once
+Deportes-Pasatiempos©Canon«¿Que significa la palabra "Dry" que aparece en las botellas de algunas bebidas alcoholicas?*Seco
+Geografia©Canon«¿Que pais es el primer exportador de ancas de rana?*Japon
+Espectaculos©Canon«¿Quien hizo de "Cid" para Anthony Mann?*Charlton Heston
+Historia©Canon«¿A quien derroto John F. Kennedy en las elecciones a la presidencia en 1960?*Richard Nixon
+Arte-Literatura©Canon«¿De que lengua procede directamente el rumano?*Latin
+Ciencia-Naturaleza©Canon«¿Que es una trufa?*Hongo comestible
+Deportes-Pasatiempos©Canon«¿Que carrera se celebro por primera vez en Francia en 1903?*Tour de Francia
+Geografia©Canon«¿Que pais tiene la mas alta consumicion de cerveza "per capita"?*Alemania
+Espectaculos©Canon«¿Que presentador nos enseña con el espacio televisivo "Mas vale prevenir"?*Ramon Sanchez Ocaña
+Historia©Canon«¿Que fue erigido en Berlin en 1961?*Muro
+Arte-Literatura©Canon«¿Con que nombre artistico se conocia a la bailarina Encarnacion Lopez, hermana de Pilar Lopez?*Argentinita
+Ciencia-Naturaleza©Canon«¿Como se llama el proceso de division de atomos?*Fision
+Deportes-Pasatiempos©Canon«¿Contra que seleccion de futbol marco Zarra un historico gol en 1950?*Inglaterra
+Geografia©Canon«¿En que ciudad esta el aeropuerto Leonardo da Vinci?*Roma
+Espectaculos©Canon«¿Que actriz italiana era "Erotika, Exotika y Psicopatika"?*Monica Vitti
+Historia©Canon«¿Cuantas reinas Cleopatra existieron en Egipto?*Siete
+Arte-Literatura©Canon«¿Que escritor español, ganador del Premio Nadal en 1955, escribio "El Jarama"?*Rafael Sanchez Ferlosio
+Ciencia-Naturaleza©Canon«¿En que planeta hay posibilidad de una vegetacion primitiva?*Marte
+Deportes-Pasatiempos©Canon«¿Que dos ciudades suelen marcar loos extremos para los cruces a nado del Canal de la Mancha?*Calais y Dover
+Geografia©Canon«¿Que cabo es el punto situado mas al este de la Peninsula Iberica?*Creus
+Espectaculos©Canon«¿Que cancion puede ser oida todos ls dias en España?*Cumpleaños feliz
+Historia©Canon«¿Por que tres pueblos fue invadida la Peninsula Iberica en el siglo V?*Suevos vandalos y alanos
+Arte-Literatura©Canon«¿Cual es la obra mas famosa de Robert Louis Stevenson?*La isla del tesoro
+Ciencia-Naturaleza©Canon«¿Que doctor dirigio la primera operacion de trasplante de corazon humano con exito?*Christian Barnard
+Deportes-Pasatiempos©Canon«¿Cuantos querubines hay en el tablero de Trivial Pursuit?*Diecinueve
+Geografia©Canon«¿A que ciudad van los peregrinos que se dirigen a la Kaaba para besar La Piedra Negra?*La Meca
+Espectaculos©Canon«¿Que tipo de musica canta normalmente Joan Baez?*Folk
+Historia©Canon«¿Que colores componian la bandera de la republica española?*Rojo amarillo y violeta
+Arte-Literatura©Canon«¿Cual era el seudonimo del dramaturgo frances Jean-Baptiste Poquelin?*Moliere
+Ciencia-Naturaleza©Canon«¿Que es un aligator?*Cocodrilo
+Deportes-Pasatiempos©Canon«¿Cual de los presidentes de los Estados Unidos fue un experto luchador?*Abraham Lincoln
+Geografia©Canon«¿Cual es el desierto mas conocido de Mongolia?*Gobi
+Espectaculos©Canon«¿Que actor norteamericano fue conocido como El Rey?*Clark Gable
+Historia©Canon«¿Que famoso mausoleo fue construido por un sha de la India en memoria de su esposa favorita?*Taj Mahal
+Arte-Literatura©Canon«¿Cuantos tonos utiliza el sistema musical dodecafonico?*Doce
+Ciencia-Naturaleza©Canon«¿Que animal prehistorico es el antepasado del elefante?*Mamut
+Deportes-Pasatiempos©Canon«¿Cuantos goles marco España a Malta para poder participar en el Eurocopa de Naciones de 1984?*Doce
+Geografia©Canon«¿Cual era la capital de la Republica Federal Alemana?*Bonn
+Espectaculos©Canon«¿Quien fue la tonadillera mas famosa del cine español?*Estrellita Castro
+Historia©Canon«¿Quien condujo a los niños de Israel en su viaje a la Tierra Prometida?*Moises
+Arte-Literatura©Canon«¿Que poeta romantico ingles murio defendiendo la libertad del pueblo griego frente a los turcos?*Lord Byron
+Ciencia-Naturaleza©Canon«¿Cuantas vueltas completas da, cada doce horas, la manecilla pequeña de un reloj?*Una
+Deportes-Pasatiempos©Canon«¿En que deporte se utilizan los crampones?*Montañismo
+Geografia©Canon«¿Cual es la capital de Ecuador?*Quito
+Espectaculos©Canon«¿Quien dirigio la serie "Verano Azul"?*Antonio Mercero
+Historia©Canon«¿Que politico y militar israeli llevaba un parche en un ojo?*Moshe Dayan
+Arte-Literatura©Canon«¿Cual es el segundo apellido del autor teatral Antonio Buero?*Vallejo
+Ciencia-Naturaleza©Canon«¿Cuales son los tres reinos de la Naturaleza?*Animal vegetal y mineral
+Deportes-Pasatiempos©Canon«¿Que apodo reciben los jugadores de futbol de Athelic de Bilbao?*Leones
+Geografia©Canon«¿Cual es la capital de Vizcaya?*Bilbao
+Espectaculos©Canon«¿Que actriz holandesa fue Emmanuelle?*Sylvia Kristel
+Historia©Canon«¿Que matrimonio llego a la presidencia y vicepresidencia de un pais en 1973?*Juan Domingo e Isabel Peron
+Arte-Literatura©Canon«¿Que alimento se menciona en el Padrenuestro?*Pan
+Ciencia-Naturaleza©Canon«¿Cual es el equivalente a 32 grados Fahrenheit en la escala centigrada?*Cero grados
+Deportes-Pasatiempos©Canon«¿Con que marca de motocicleta gano angel Nieto el primer titulo del mundo de motociclismo?*Derbi
+Geografia©Canon«¿Cuantas provincias forman la region asturiana?*Una
+Espectaculos©Canon«¿Quien era el actor principal de "Las calles de San Francisco"?*Karl Malden
+Historia©Canon«¿Que rey español recibio el sobrenombre de "El Sabio"?*Alfonso X
+Arte-Literatura©Canon«¿De que pueblo es el Talmud libro santo?*Judio
+Ciencia-Naturaleza©Canon«¿Cuantas veces son mas largos los intestinos que el hombre?*Siete
+Deportes-Pasatiempos©Canon«¿En que juego de cartas se empieza siempre con el cinco?*Cinquillo
+Geografia©Canon«¿Que plaza se encuentra en el centro de Moscu?*Plaza Roja
+Espectaculos©Canon«¿Que frase mecanografiaba repetidamente Jack Nicholson en "El resplandor"?*No por mucho madrugar amanece mas temprano
+Historia©Canon«¿Que nombre adoptaron los nazis en los años 20 para designar a su nuevo imperio?*Tercer Reich
+Arte-Literatura©Canon«¿Como empieza el refran que asi termina: "...amanece mas temprano?*No por mucho madrugar
+Ciencia-Naturaleza©Canon«¿Que proporciona mayor cantidad de calorias, el jamon serrano o el pan blanco?*Pan blanco
+Deportes-Pasatiempos©Canon«¿Cual es el club de futbol mas antiguo de España?*Recreativo de Huelva
+Geografia©Canon«¿A que nacion pertenece la bandera que mas incorporada esta en la de otros paises?*Gran Bretaña
+Espectaculos©Canon«¿Quien era el amigo de "La abeja Maya"?*Willie
+Historia©Canon«¿Que plan para recontruir Europa se aprobo el 5 de Junio de 1947?*Plan Marshall
+Arte-Literatura©Canon«¿Quien paso musicalmente por "Las Cuatro Estaciones"?*Antonio Vivaldi
+Ciencia-Naturaleza©Canon«¿Que mision Apolo tuvo en el año 1970 serios problemas para regresar?*Apolo XIII
+Deportes-Pasatiempos©Canon«¿Cuanto mide el diametro de la canasta de baloncesto en centimetros?*Cuarenta y cinco
+Geografia©Canon«¿Sobre que rio estan los puentes de Zaragoza?*Ebro
+Espectaculos©Canon«¿Que Beatle tenia Winston como segundo nombre?*John Lennon
+Historia©Canon«¿Que pais planeo la invasion de Bahia de Cochinos?*Estados Unidos
+Arte-Literatura©Canon«¿En que ciudad nacio Platon?*Atenas
+Ciencia-Naturaleza©Canon«¿Cual es el color mas comun del lapislazuli?*Azul
+Deportes-Pasatiempos©Canon«¿Que marca de cigarrillos es el "genuino sabor americano"?*Winston
+Geografia©Canon«¿De que pais africano es capital Libreville?*Gabon
+Espectaculos©Canon«¿Quien hizo su carrera de detective sentado en una silla de ruedas?*Ironside
+Historia©Canon«¿Que rey español fue conocido con el nombre de "El Alcalde de Madrid"?*Carlos III
+Arte-Literatura©Canon«¿Quien vivio hasta la avanzada edad de 969 años?*Matusalen
+Ciencia-Naturaleza©Canon«¿Con que oido puede oir mejor la mayoria de la gente?*Derecho
+Deportes-Pasatiempos©Canon«¿Como murio el boxeador Rocky Marciano?*Accidente de avion
+Geografia©Canon«¿De que pais son monedas los peniques y los chelines?*Gran Bretaña
+Espectaculos©Canon«¿Que cubano cantaba a los angelitos?*Antonio Machin
+Historia©Canon«¿Quien traiciono a Jesus dandole un beso en la mejilla?*Judas Iscariote
+Arte-Literatura©Canon«¿A que animal esta asociada la diosa griega de la sabiduria, Atenea?*Lechuza
+Ciencia-Naturaleza©Canon«¿De que animal se transplanto el corazon de Baby Fae?*Mandril
+Deportes-Pasatiempos©Canon«¿En que pais se juega mas a los dardos?*Gran Bretaña
+Geografia©Canon«¿Por que estados han sido añadidas dos estellas a la bandera estadounidense desde 1958?*Alaska y Hawai
+Espectaculos©Canon«¿Cual es el nombre artistico de la "isima" Maria Antonia Abad?*Sara Montiel
+Historia©Canon«¿A quien iban dirigidas las palabras: "Llora como mujer lo que no supiste defender como hombre"?*Boabdil
+Arte-Literatura©Canon«¿Que isla imaginaria creo Sir Tomas Moro en una obra de 1516?*Utopia
+Ciencia-Naturaleza©Canon«¿En que tipo de agua vive la trucha?*Dulce
+Deportes-Pasatiempos©Canon«¿Que modalidad de alpinismo no necesita ningun tipo de accesorio?*Escalada libre
+Geografia©Canon«¿En que pais esta el lago Como?*Italia
+Espectaculos©Canon«¿Quien dijo: "Hitler me ha copiado el bigote"?*Charles Chaplin
+Historia©Canon«¿Cual es el equivalente de la O.T.A.N. en los paises del este?*Pacto de Varsovia
+Arte-Literatura©Canon«¿De que nacionalidad era Mozart?*Austriaca
+Ciencia-Naturaleza©Canon«¿Que otro nombre recibe la tisis?*Tuberculosis
+Deportes-Pasatiempos©Canon«¿Que pais es el origen del baloncesto moderno?*Estados Unidos
+Geografia©Canon«¿En que provincia se encuentra Motril?*Granada
+Espectaculos©Canon«¿Que actriz estuvo "55 dias en Pekin" junto a Charlton Heston?*Ava Gardner
+Historia©Canon«¿Quien fue rey de los hunos desde el año 406 hasta el 453?*Atila
+Arte-Literatura©Canon«¿Que oreja se corto parcialmente Vincent Van Gogh?Izquierda
+Ciencia-Naturaleza©Canon«¿A partir de que edad se suelen producir los infartos de miocardio?*Cuarenta y cinco
+Deportes-Pasatiempos©Canon«¿Que deporte no acuatico parecido al futbol emplea las manos en vez de los pies?*Balonmano
+Geografia©Canon«¿Con que siglas se conoce el organismo dela O.N.U. dedicado a la organizacion de la agricultura y la alimentacion?*FAO
+Espectaculos©Canon«¿Quien fue Philip Marlowe en la pelicula de 1946 "El sueño eterno"?*Humphrey Bogart
+Historia©Canon«¿En que ciudad nacio y vivio Giacomo Casanova?*Venecia
+Arte-Literatura©Canon«¿Que novela de Ernest Hemingway se centra en el bando republicano de la Guerra Civil Española?*¿Por quien doblan las campanas?
+Ciencia-Naturaleza©Canon«¿Cuantos lados tiene un hexagono?*Seis
+Deportes-Pasatiempos©Canon«¿Quien era la ministra de cultura española durante los Mundiales de Futbol de 1982?*Soledad Becerril
+Geografia©Canon«¿Que pais es el maximo productor de algodon?*Estados Unidos
+Espectaculos©Canon«¿Quien tuvo un gran exito con al album discografico y video "Thriller"?*Michael Jackson
+Historia©Canon«¿Quien fue conocido como "El Heroe de Trafalgar"?*Nelson
+Arte-Literatura©Canon«¿Que obra española ha merecido la calificacion de "epopeya del Cantabrico"?*Sotileza
+Ciencia-Naturaleza©Canon«¿Cual es el primate subhumano mas inteligene?*Chimpance
+Deportes-Pasatiempos©Canon«¿Boicoteo Canada las Olimpiadas de Moscu?*Si
+Geografia©Canon«¿Que ciudad europea es conocida como "La novia del mar"?*Venecia
+Espectaculos©Canon«¿Como se llamaba el supergrueso detective de una serie norteamericana de television?*Cannon
+Historia©Canon«¿Por que tratado reconocio España la independencia de Portugal?*Tratado de Lisboa
+Arte-Literatura©Canon«¿Quien escribio "Muerte de un viajante" en seis semanas?*Arthur Miller
+Ciencia-Naturaleza©Canon«¿Cual es la solucion arabiga a la resta romana M menos IX?*Novecientos noventa y uno
+Deportes-Pasatiempos©Canon«¿Que deporte practican la mayoria de los canadienses?*Natacion
+Geografia©Canon«¿Que dos paises sudamericanos no estan bañados por el mar?*Bolivia y Paraguay
+Espectaculos©Canon«¿Que actor de aventuras llevo a cabo "La carga de la brigada ligera"?*Errol Flynn
+Historia©Canon«¿Que pais invadio Alemania el 1 de Septiembre de 1939?*Polonia
+Arte-Literatura©Canon«¿Quien escribio los siguientes versos: "Caminante son tus huellas..."?*Antonio Machado
+Ciencia-Naturaleza©Canon«¿Que dos plantas cuya raiz y yema respectivamente son comestibles, tienen hojas perennes?*Esparrago y ruibarbo
+Deportes-Pasatiempos©Canon«¿Cuantas veces se han celebrado los Juegos Olimpicos en Los Angeles, hasta 1984 inclusive?*Tres
+Geografia©Canon«¿Que es lo opuesto a Oriente?*Poniente
+Espectaculos©Canon«¿En que pelicula aparecen Jack Lemmon y Tony Curtis vestidos de mujer?*Con faldas y a lo loco
+Historia©Canon«¿Que apostol nego tres veces seguidas a Jesucristo?*Pedro
+Arte-Literatura©Canon«¿Cual es el seudonimo del autor de "Veinte poemas de amor y una cancion desesperada"?*Pablo Neruda
+Ciencia-Naturaleza©Canon«¿Que mamifero vive durante mas tiempo?*Hombre
+Deportes-Pasatiempos©Canon«¿Que edad tenia Pele cuando jugo la Copa del Mundo de 1958?*Dieciocho
+Geografia©Canon«¿En que cordillera se dice que vaga El abominable hombre de las nieves?*Himalaya
+Espectaculos©Canon«¿Que folklorica fue "La estrella de Sierra Morena"?*Lola Flores
+Historia©Canon«¿Que guerra tuvo lugar entre 1936 y 1939?*Guerra Civil Española
+Arte-Literatura©Canon«¿Como se llama la plaza comunal donde los romanos se reunian para discutir negocios y asuntos culturales?*Foro
+Ciencia-Naturaleza©Canon«¿Como se llama la ciencia que estudia la sangre?*Hematologia
+Deportes-Pasatiempos©Canon«¿Que nombre recibe la trampa que hace un boxeador cuando acepta dinero para dejarse ganar?*Tongo
+Geografia©Canon«¿Cual es la ciudad industrial y comercial mas importante de China?*Shangai
+Espectaculos©Canon«¿Cual fue la ultima gran pelicula de James Dean?*Gigante
+Historia©Canon«¿Quien llamo a la religion "el opio del pueblo"?*Karl Marx
+Arte-Literatura©Canon«¿Quien escribio un poema a "El niño yuntero"?*Miguel Hernandez
+Ciencia-Naturaleza©Canon«¿Que significa la abreviacion a.m. detras de una hora?*Antes del meridiano
+Deportes-Pasatiempos©Canon«¿En que deporte destaco Eddy Merck?*Ciclismo
+Geografia©Canon«¿Que pais se llama actualmente Sri Lanka?*Ceilan
+Espectaculos©Canon«¿Cuantos paises ganaron el Festival de Eurovision en 1969?*Cuatro
+Historia©Canon«¿Que accesorio del fusil se invento en Bayona en 1641?*Bayoneta
+Arte-Literatura©Canon«¿Que figura de la mitologia griega otorgo el fuego al hombre?*Prometeo
+Ciencia-Naturaleza©Canon«¿Que le ocurre al alcohol a -130º?*Se hiela
+Deportes-Pasatiempos©Canon«¿Cuantas calles tiene una piscina olimpica?*Ocho
+Geografia©Canon«¿Que ciudad europea es conocida como "La venecia del norte"?*Amsterdam
+Espectaculos©Canon«¿Que obra de Blasco Ibanez llevo Vicetn Minelli al cine?*Los cuatro jinetes del Apocalipsis
+Historia©Canon«¿De quien es el epitafio en el que se lee: "Trabajadores de la tierra, unios.."?*Karl Marx
+Arte-Literatura©Canon«¿Que creo Dios segun la primera frase de la Biblia?*El cielo y la tierra
+Ciencia-Naturaleza©Canon«¿Que significa la H en la bomba H?*Hidrogeno
+Deportes-Pasatiempos©Canon«¿Cuantos jugadores hay en un campo de hockey sobre hierba?*Veintidos
+Geografia©Canon«¿Cual es el quinto pais mas grande del mundo?*Brasil
+Espectaculos©Canon«¿Que actriz estadounidense es conocida como "El cuerpo"?*Raquel Welch
+Historia©Canon«¿De que pais fue presidente de la republica el arzobispo Makarios III?*Chipre
+Arte-Literatura©Canon«¿Cual es la secreta identidad de Don Diego de la Vega?*El Zorro
+Ciencia-Naturaleza©Canon«¿Cuantos meses tarda la Luna en dar la vuelta a la Tierra?*Una
+Deportes-Pasatiempos©Canon«¿En que ciudad se celebro la Exposicion Mundial Canina en 1983?*Madrid
+Geografia©Canon«¿De que pais es originaria la empresa de coches Peugeot?*Francia
+Espectaculos©Canon«¿Con que actor comico del cine mudo estuvo casada Oona O'Neill?*Charles Chaplin
+Historia©Canon«¿Quien fue el primer presidente provisional de la II Republica española?*Niceto Alcala Zamora
+Arte-Literatura©Canon«¿Que palabra hebrea significa "paz" y se utliza como saludo y despedida?*Shalom
+Ciencia-Naturaleza©Canon«¿Que hace el cuerdo cuando el gato maulla?*Grazna
+Deportes-Pasatiempos©Canon«¿Que otros dos deportes, que se practican al aire libre, tienen el mismo origen que el futbol?*Rugby y futbol americano
+Geografia©Canon«¿Que nombre reciben los terrenos llanos y elevados por encima del nivel del mar?*Meseta
+Espectaculos©Canon«¿Que actriz fue "La mujer policia"?*Angie Dickinson
+Historia©Canon«¿Cual fue la primera ciudad de Palestina que conquisto Josue?*Jerico
+Arte-Literatura©Canon«¿Que obra de Bernard Shaw inspiro la pelicula "My Fair Lady"?*Pigmalion
+Ciencia-Naturaleza©Canon«¿Cuantos cuernos tiene un rinoceronte indio?*Dos
+Deportes-Pasatiempos©Canon«¿Quien fue la primera mujer española que gano el Cross de las Naciones?*Carmen Valero
+Geografia©Canon«¿Cual es la moneda de Mexico?*Peso
+Espectaculos©Canon«¿Que actor español dio origen al landismo?*Alfredo Landa
+Historia©Canon«¿Quien fue el principal lider ideologico-politico de la Revolucion Rusa?*Lenin
+Arte-Literatura©Canon«¿De quien era la caja que abrio Epimeteo?*Pandora
+Ciencia-Naturaleza©Canon«¿Como se llama el electrodo positivo de una pila?*Anodo
+Deportes-Pasatiempos©Canon«¿En que partes se divide un coso taurino?*Tablas tercio y medios
+Geografia©Canon«¿Cual es la capital mas antigua de America?*Ciudad de Mexico
+Espectaculos©Canon«¿En que pais nacio la ex-mujer de Julio Iglesias?*Filipinas
+Historia©Canon«¿Que canciller fue ejecutado por Enrique VIII?*Tomas Moro
+Arte-Literatura©Canon«¿Que pintor frances se sentia especialmente atraido por el mundo de las bailarinas?*Degas
+Ciencia-Naturaleza©Canon«¿Que perro se llamo asi por un estado mejicano?*Chihuahua
+Deportes-Pasatiempos©Canon«¿Que comunidad autonoma española ha obtenido el Campeonato de la Liga de futbol cuatro años consecutivos desde 1981?*Pais Vasco
+Geografia©Canon«¿En que pais se encuentra la ciudad de Colonia?*Alemania
+Espectaculos©Canon«¿Que actor español estuvo encasillado en los papeles de reprimido sexual?*Alfredo Landa
+Historia©Canon«¿Quien fue el fundador de la Falange en 1933?*Jose Antonio Primo de Rivera
+Arte-Literatura©Canon«¿Quien escribio "El amante de lady Charterley"?*D.H. Lawrence
+Ciencia-Naturaleza©Canon«¿Cuantos grados tiene un angulo recto?*Noventa
+Deportes-Pasatiempos©Canon«¿Como se llama la prenda que cubre la cabeza del torero?*Montera
+Geografia©Canon«¿Que oceano se extiende entre Africa, Asia y Oceania?*Indico
+Espectaculos©Canon«¿Que pelicula epica ostenta el record de Oscars con un total de once?*Ben Hur
+Historia©Canon«¿Que parentesco unia a Lot con Abraham?*Sobrino
+Arte-Literatura©Canon«¿Que escritores, ingles y español, murieron el 23 de Abril de 1616?*Shakespeare y Cervantes
+Ciencia-Naturaleza©Canon«¿Que musculo del cuerpo humano tiene el nombre mas largo?*Esternocleidomastoideo
+Deportes-Pasatiempos©Canon«¿Que locutor deportivo es hijo de un conocido comentarista de corridas de toros?*Matias Prats
+Geografia©Canon«¿Cual es la ciudad mas grande de Canada?*Toronto
+Espectaculos©Canon«¿Que cantante italiana cantaba Notengo edad?*Gigliola Cinquetti
+Historia©Canon«¿Como se llamaba el Cid?*Rodrigo Diaz de Vivar
+Arte-Literatura©Canon«¿Que escritora de misterio dijo: "denme una botella de veneno y construire el crimen perfecto"?*Agatha Christie
+Ciencia-Naturaleza©Canon«¿Donde esta la glandula tiroides?*Cuello
+Deportes-Pasatiempos©Canon«¿Cuantos colores hay en el Cubo magico de Rubik?*Seis
+Geografia©Canon«¿En que pais se encuentra la ciudad de Siena?*Italia
+Espectaculos©Canon«¿Que actor mejicano fue "Un Quijote sin mancha"?*Cantinflas
+Historia©Canon«¿Quien reinaba en Francia cuando estallo la Revolucion francesa?*Luis XVI
+Arte-Literatura©Canon«¿Cual es el titulo completo del Quijote?*El ingenioso hidalgo don Quijote de la Mancha
+Ciencia-Naturaleza©Canon«¿Que nombre reciben los rayos calidos e invisibles emitidos por el sol?*Infrarrojos
+Deportes-Pasatiempos©Canon«¿De que equipo de baloncesto fue base Juan Antonio Corbalan?*Real Madrid
+Geografia©Canon«¿Cual es el segundo rio mas largo de Africa?*Zaire
+Espectaculos©Canon«¿De que pueblo manchego es Sara Montiel?*Campo de Criptana
+Historia©Canon«¿Que nombre recibe el titulo de presidente del gobierno de Alemania?*Canciller
+Arte-Literatura©Canon«¿Con que seudonimo era conocido Domenico Theotocopulos?*El Greco
+Ciencia-Naturaleza©Canon«¿Que descubrio Ira Remsen en 1879 proclamando: "Que dulce es"?*Sacarina
+Deportes-Pasatiempos©Canon«¿Cual es el nombre compuesto del ex-boxeador Urtain?*Jose Manuel
+Geografia©Canon«¿En que pais asiatico estarias si hablases el dialecto Wu?*China
+Espectaculos©Canon«¿Que padre e hijo obtuvieron Oscars por "El tesoro de Sierra Madre"?*Walter y John Huston
+Historia©Canon«¿Con que edicto, promulgado por Constantino, terminaron las persecuciones de cristianos?*Edicto de Milan
+Arte-Literatura©Canon«¿Que significa la palabra inglesa what?*Que
+Ciencia-Naturaleza©Canon«¿Que es un chotacabras?*Ave
+Deportes-Pasatiempos©Canon«¿Que portero de futbol español fue conocido como "El chopo"?*Iribar
+Geografia©Canon«¿En que provincia española se halla Jabugo, famoso por sus exquisitos jamones?*Huelva
+Espectaculos©Canon«¿De que forma eran las gafas de "Lolita" en la pelicula de 1962?*Corazon
+Historia©Canon«¿Que presidente pronuncio la frase: "America para los americanos"?*Monroe
+Arte-Literatura©Canon«¿Que celebre filosofo aleman, muy conocido por su puntualidad, murio en 1804 en Könisberg?*Kant
+Ciencia-Naturaleza©Canon«¿Quien enuncio la teoria de la relatividad?*Albert Einstein
+Deportes-Pasatiempos©Canon«¿Que ciudad suiza ha sido anfitriona de dos Juegos Olimpicos de invierno?*St Moritz
+Geografia©Canon«¿Cual es el estado mas extenso de los EE.UU.?*Alaska
+Espectaculos©Canon«¿Que grupo con nombre de bebida alcoholica cantaba "Quiero besarte"?*Tequila
+Historia©Canon«¿Que guerra duro del 5 al 11 de Junio de 1967?*La Guerra de los Siete Dias
+Arte-Literatura©Canon«¿En que ciudad paso Vivaldi muchos años de su vida como profesor de violin?*Venecia
+Ciencia-Naturaleza©Canon«¿Cual es el equivalente del camello en el Nuevo Mundo?*Llama
+Deportes-Pasatiempos©Canon«¿Que miembro de un equipo de beisbol utiliza siempre una mascara protectora cuando juega?*Catcher
+Geografia©Canon«¿Cual es la moneda de Suiza?*Franco suizo
+Espectaculos©Canon«¿En que pais nacio Celia Gamez?*Argentina
+Historia©Canon«¿Quien era la pareja de Isabel de Castilla?*Fernando de Aragon
+Arte-Literatura©Canon«¿Como se llaman los dos detectives de las historias de Tintin?*Hernandez y Fernandez
+Ciencia-Naturaleza©Canon«¿Que viaja a traves del espacio a 123.528 kilometros por hora?*Tierra
+Deportes-Pasatiempos©Canon«¿Que deportista es conocido como "Seve"?*Severiano Ballesteros
+Geografia©Canon«¿Cual es La ciudad de las luces?*Paris
+Espectaculos©Canon«¿Quien dijo: "nunca hare una pelicula sonora y si tuviera que hacerla interpretaria a un sordomudo"?*Charles Chaplin
+Historia©Canon«¿Que monarca frances dijo: "El estado soy yo"?*Luis XIV
+Arte-Literatura©Canon«¿Quien escribio "Cronica de una muerte anunciada"?*Gabriel Garcia Marquez
+Ciencia-Naturaleza©Canon«¿Como se llama el hormigueo que sientes cuando el pie se queda "dormido"?*Parestesia
+Deportes-Pasatiempos©Canon«¿Que ave es la mas idonea para el bajo vuelo en cetreria?*Azor
+Geografia©Canon«¿En que ciudad tienen lugar las fiestas de San Fermin?*Pamplona
+Espectaculos©Canon«¿Quien coprotagonizo "Portero de noche" junto a Dirk Bogarde?*Charlotte Rampling
+Historia©Canon«¿Como se llamaba la madre de Salomon?*Betsabe
+Arte-Literatura©Canon«¿Quien escribio "La Guerra de los Mundos" en 1898?*H.G. Wells
+Ciencia-Naturaleza©Canon«¿Donde se encuentra el hueso radio?*Antebrazo
+Deportes-Pasatiempos©Canon«¿Cuantas faltas personales ha de cometer un jugador de baloncesto para abandonar la pista?*Cinco
+Geografia©Canon«¿Cual es la capital de Bulgaria?*Sofia
+Espectaculos©Canon«¿Cual es el nombre propio del cantante invidente cuyo apellido es Wonder?*Stevie
+Historia©Canon«¿Quienes fueron los dos ganadores del Premio Nobel de la Paz en 1978?*Menahen Begin y Anuar El Sadat
+Arte-Literatura©Canon«¿Que movimiento artistico, originado en Italia, se orienta hacia el futuro negando todas las tradiciones?*Futurismo
+Ciencia-Naturaleza©Canon«¿Que famoso bacteriologo descubrio el suero antirrabico?*Louis Pasteur
+Deportes-Pasatiempos©Canon«¿Cual es el estadio de futbol del Zaragoza?*La Romareda
+Geografia©Canon«¿Que pais tiene mayor densidad de trafico?*Gran Bretaña
+Espectaculos©Canon«¿Que actriz fue conocida como "La novia de America"?*Mary Pickford
+Historia©Canon«¿Con que veneno se suicido Socrates?*Cicuta
+Arte-Literatura©Canon«¿Que instrumento musical tiene nombre y forma geometrica?*Triangulo
+Ciencia-Naturaleza©Canon«¿Que ave entierra su cabeza para evitar ser visto por sus enemigos?*Avestruz
+Deportes-Pasatiempos©Canon«¿Que equipo de futbol español viste camiseta roja y pantalon blanco?*Real Murcia
+Geografia©Canon«¿Cual es la monarquia mas cercana a España?*Marruecos
+Espectaculos©Canon«¿De que cantautor son las canciones "Aleluya" y "Rosas en el mar" cantadas por Massiel?*Luis Eduardo Aute
+Historia©Canon«¿Cual era el nombre propio de Al Capone?*Alfonso
+Arte-Literatura©Canon«¿Que poeta español exiliado escribio una "Antologia Rota"?*Leon Felipe
+Ciencia-Naturaleza©Canon«¿Que tiene en la Tierra 6.370 kilometros?*Radio
+Deportes-Pasatiempos©Canon«¿Cual es el deporte nacional de la India?*Hockey sobre hierba
+Geografia©Canon«¿Quien es el patron de Pamplona?*San Saturnino
+Espectaculos©Canon«¿Quienes eran los locos actores de la pelicula "Sopa de gansos"?*Hermanos Marx
+Arte-Literatura©Canon«¿Quien escribio "Los diarios de Ana Franck"?*Ana Franck
+Ciencia-Naturaleza©Canon«¿Cual es el grupo sanguineo mas comun?*O
+Deportes-Pasatiempos©Canon«¿De cuantas pruebas deportivas consta el decatlon?*Diez
+Geografia©Canon«¿Que ciudad europea tiene nombre de bebida alcoholica?*Ginebra
+Espectaculos©Canon«¿Quien hizo de Bonnie en la pelicula "Bonnie and Clyde"?*Faye Dunaway
+Historia©Canon«¿Quien fue el principal responsable de la Declaracion de Independencia de EE.UU.?*Thomas Jefferson
+Arte-Literatura©Canon«¿Sobre quien es la biografia titulada "Hitch"?*Alfred Hitchcock
+Ciencia-Naturaleza©Canon«¿Cual es la ciencia que estudia la Tierra como un cuerpo celeste que forma parte del sistema solar?*Astronomia
+Deportes-Pasatiempos©Canon«¿De que color es la bandera de peligro en una carrera automovilistica?*Amarillo
+Geografia©Canon«¿En que pais es el sol moneda nacional?*Peru
+Espectaculos©Canon«¿Cuantos años cumplio el Pato Donald en 1984?*Cincuenta
+Historia©Canon«¿En que fecha se celebra la Constitucion española de 1978?*6 de Diciembre
+Arte-Literatura©Canon«¿Que personaje de Shakespeare vivio en Dinamarca?*Hamlet
+Ciencia-Naturaleza©Canon«¿Que color se obtiene mezclando pintura amarilla y azul?*Verde
+Deportes-Pasatiempos©Canon«¿Que tira el entrenador de un boxeador para parar el combate?*Toalla
+Geografia©Canon«¿De que isla es Capital Palermo?*Sicilia
+Espectaculos©Canon«¿Que actor creo el Premio de Novela Corta Cafe Gijon?*Fernando Fernan Gomez
+Historia©Canon«¿Quien fue el primer presidente catolico romano de Estados Unidos?*John F Kennedy
+Arte-Literatura©Canon«¿Como se llama la serie de romances que Federico Garcia Lorca dedico al pueblo gitano?*Romancero Gitano
+Ciencia-Naturaleza©Canon«¿Cuantas patas tiene un cangrejo?*Diez
+Deportes-Pasatiempos©Canon«¿Que orden numerico ocupan las Olimpiadas de Los angeles de 1984 dentro de los modernos Juegos Olimpicos?*Vigesimotercero
+Geografia©Canon«¿Que ciudad tiene, geograficamente, algunas de sus calles en Europa y otras en Asia?*Estambul
+Espectaculos©Canon«¿Que cancion de Los Beatles ha sido la mas grabada?*Yesterday
+Historia©Canon«¿Que reina española se caso con Enrique VIII?*Catalina de Aragon
+Arte-Literatura©Canon«¿Que amante de Onassis era cantante de opera?*Maria Callas
+Ciencia-Naturaleza©Canon«¿Que es mas valioso un brillante o un diamante?*Brillante
+Deportes-Pasatiempos©Canon«¿Por que nombre se conocia al equipo de baloncesto que desarrollaba un juego de malabarismo y perfecto dominio del balon?*Harlem Globe Trotters
+Geografia©Canon«¿Que pais sudamericano tiene la misma vocal tres veces en sus cinco primeras letras?*Uruguay
+Espectaculos©Canon«¿Cuantos surcos tiene un disco de 45 r.p.m.?*Uno
+Historia©Canon«¿Que partido fundo Adolfo Suarez despues de Union de Centro Democratico?*CDS
+Arte-Literatura©Canon«¿Cual era el seudonimo del gran dramaturgo español Fray Gabriel Tellez que escribio "El convidado de piedra"?*^Tirso de Molina
+Ciencia-Naturaleza©Canon«¿Que tarda ocho minutos en llegar a la Tierra?*La luz del sol
+Deportes-Pasatiempos©Canon«¿De que tipo son las pistas en las que las motocicletas carecen de frenos?*Ceniza
+Geografia©Canon«¿Que monte ha sido el mas fotografiado, pintado y escalado del mundo?*Fijiyama
+Espectaculos©Canon«¿Que grupo musical formaron los hermanos Barry, Alan, Robin y Maurice Gibb?*Bee Gees
+Historia©Canon«¿Que presidente chileno fue asesinado en el golpe de estado de 1973?*Salvador Allende
+Arte-Literatura©Canon«¿Que indica el doble 0 en Agente 007?*Licencia para matar
+Ciencia-Naturaleza©Canon«¿De que tejido esta formado el interior de la oreja?*Cartilaginoso
+Deportes-Pasatiempos©Canon«¿Que ciudades eran la salida y la meta de la primera carrera de automoviles en 1908?*New York y Paris
+Geografia©Canon«¿A que pais pertenece la isla de Creta?*Grecia
+Espectaculos©Canon«¿Quien reemplazo a Pete Best en Los Beatles?*Ringo Starr
+Historia©Canon«¿Que letras se colocaron en la cruz en la que Cristo fue crucificado?*INRI
+Arte-Literatura©Canon«¿Como se llama el perro que siempre acompaña a Obelix?*Idefix
+Ciencia-Naturaleza©Canon«¿Que mide la escala Kelvin?*Temperatura
+Deportes-Pasatiempos©Canon«¿A que modalidad pertenecen los deportistas de mas peso de todos los tiempos?*Lucha libre
+Geografia©Canon«¿Cual es el baile tipico de Cataluña?*Sardana
+Espectaculos©Canon«¿Que animal produjo el incendio de Chicago segun la pelicula de Henry King?*Una vaca
+Historia©Canon«¿De que imperio era capital Tenochtitlan?*Azteca
+Arte-Literatura©Canon«¿Quien escribio "Cartas desde mi celda"?*Gustavo Adolfo Becquer
+Ciencia-Naturaleza©Canon«¿Que medida equivale a 1609 metros?*Milla
+Deportes-Pasatiempos©Canon«¿Que competicion olimpica hace que su ganador sea considerado el mejor atleta del mundo?*Decatlon
+Geografia©Canon«¿En que region de España se bailan las Muñeiras?*Galicia
+Espectaculos©Canon«¿A que genero pertenece la pelicula "Sombrero de copa"?*Musical
+Historia©Canon«¿Que parentesco unia s San Andres y a San Pedro?*Hermanos
+Arte-Literatura©Canon«¿Cual es el titulo del unico libro de Margaret Mitchell que mas tarde el cine haria inmortal?*Lo que el viento se llevo
+Ciencia-Naturaleza©Canon«¿Donde se origino la vida?*Mar
+Deportes-Pasatiempos©Canon«¿Que nombre recibe la persona que anda sobre cuerda o alambre tirantes?*Funambulo
+Geografia©Canon«¿En que ciudad desemboca el Duero?*Oporto
+Espectaculos©Canon«¿Que actriz, musa en su tiempo de Woody Allen, se dio a conocer en "El Padrino"?*Diane Keaton
+Historia©Canon«¿Que emperador romano hizo llevar a Roma el obelisco de origen egipcio que se encuentra en el centro de la plaza de San Pedro?*Caligula
+Arte-Literatura©Canon«¿Que libro es la continuacion de "Alicia en el pais de las Maravillas"?*Alicia a traves del espejo
+Ciencia-Naturaleza©Canon«¿Que nombre recibe el gallo castrado?*Capon
+Deportes-Pasatiempos©Canon«¿Que representan los cinco anillos olimpicos?*Los continentes
+Geografia©Canon«¿Que rio principal nace en los Picos de Urbion?*Duero
+Espectaculos©Canon«¿Que actriz italiana se vio obligada a llevar un "Cinturon de castidad"?*Monica Vitti
+Historia©Canon«¿Que obeso ingles fue Primer Ministro durante la II Guerra Mundial?*Winston Churchill
+Arte-Literatura©Canon«¿De quien era la hija que fue resucitada de la muerte segun la Biblia?*Jairo
+Ciencia-Naturaleza©Canon«¿Que otro nombre reciben los globulos rojos?*Hematies
+Deportes-Pasatiempos©Canon«¿Quien dijo: "lo importante en los Juegos Olimpicos no es vencer sino participar"?*Pierre de Coubertin
+Geografia©Canon«¿Que nombre recibe actualmente Pakistan Oriental?*Bangladesh
+Espectaculos©Canon«¿Quien fue J.R. en la version humoristica española de "Dallas"?*Pepe Da Rosa
+Historia©Canon«¿Que religion profesaba Adolf Hitler?*Catolica Romana
+Arte-Literatura©Canon«¿Que poeta ingles fue considerado como la encarnacion del heroe romantico?*Lord Byron
+Ciencia-Naturaleza©Canon«¿Cual es el 40% de 40?*Dieciseis
+Deportes-Pasatiempos©Canon«¿Cual era el pais con mayor variedad de sellos?*Union Sovietica
+Geografia©Canon«¿Que ciudad posee el edificio mas alto de Europa?*Moscu
+Espectaculos©Canon«¿Que actor fue "Taxi Driver"?*Robert de Niro
+Historia©Canon«¿Quien dijo: "el fin justifica los medios"?*Maquiavelo
+Arte-Literatura©Canon«¿En que medio de locomocion murio el maestro Enrique Granados?*Barco
+Ciencia-Naturaleza©Canon«¿Quien enseño a Los Beatles la meditacion trascemdental?*Maharishi Mahesh Yogi
+Deportes-Pasatiempos©Canon«¿Cuantas medallas de oro obtuvo Mark A. Spitz en la Olimpiada de Munich?*Siete
+Geografia©Canon«¿De que pais es capital Addis Abeba?*Etiopia
+Espectaculos©Canon«¿Quien presentaba el programa "Buenos dias" en Radio Nacional?*Alejo Garcia
+Historia©Canon«¿Que cosmonauta volo en el Vostok I?*Yuri Gagarin
+Arte-Literatura©Canon«¿Que Premio Nobel le concedieron a Winston Churchill en 1953?*Literatura
+Ciencia-Naturaleza©Canon«¿Cual es el fruto del roble?*Bellota
+Deportes-Pasatiempos©Canon«¿Que arma se utiliza en el esgrima femenino?*Florete
+Geografia©Canon«¿Que canal tiene una longitud de 81 kilometros?*Panama
+Espectaculos©Canon«¿Quien ha tenido como maridos a Conrad Hilton Jr., Eddie Fisher, Michael Todd y Richard Burton?*Elizabeth Taylor
+Historia©Canon«¿Quien leyo el testamento politico del general Franco por radio y television?*Carlos Arias Navarro
+Arte-Literatura©Canon«¿Con que letra acaban todas las palabras japonesas que no terminan en vocal?*N
+Ciencia-Naturaleza©Canon«¿De que pez procede el autentico caviar?*Esturion
+Deportes-Pasatiempos©Canon«¿Que deportista femenina gano la mayor cantidad de dinero en 1983?*Martina Navratilova
+Geografia©Canon«¿Cual es la capital de Canada?*Ottawa
+Espectaculos©Canon«¿En que pelicula vende su cuerpo el actor John Voight?*Cowboy de medianoche
+Historia©Canon«¿Como se llama el sindicato de Lech Walesa?*Solidaridad
+Arte-Literatura©Canon«¿Cual es la identidad secreta del fotografo de los comics Peter Parker?*Spiderman
+Ciencia-Naturaleza©Canon«¿Cual es el calmante mas utilizado en Estados Unidos?*Valium
+Deportes-Pasatiempos©Canon«¿En que estacion de invierno se celebraron los primeros Juegos Olimpicos de invierno en Asia?*Sapporo
+Geografia©Canon«¿De que nacionalidad es un siciliano?*Italiana
+Espectaculos©Canon«¿Que director que realizo entre otras "La ley del silencio", denuncio a algunos de sus compañeros durante la caza de brujas?*Elia Kazan
+Historia©Canon«¿Que senador de los EE.UU. fue el promotor de La caza de brujas?*McCarthy
+Arte-Literatura©Canon«¿Cuantas cuerdas tiene un violin Stradivarius?*Cuatro
+Ciencia-Naturaleza©Canon«¿Cual es el planeta mas grande del sistema solar?*Jupiter
+Deportes-Pasatiempos©Canon«¿De que color es la pelota de hockey sobre hierba?*Blanco
+Geografia©Canon«¿Cual es la capital de Guipuzcoa?*San Sebastian
+Espectaculos©Canon«¿Que actriz, unida sentimentalmente a Woody Allen, era hija de Maureen O'Sullivan?*Mia Farrow
+Historia©Canon«¿Como se llamaba el yate de Aristoteles Onassis?*Cristina
+Arte-Literatura©Canon«¿En que ciudad estadounidense se encuentra el museo Guggenheim?*New York
+Ciencia-Naturaleza©Canon«¿Como es la carga de los neutrones?*Neutra
+Deportes-Pasatiempos©Canon«¿Que orden siguen los paises participantes de los Juegos Olimpicos en el desfile inaugural?*Alfabetico
+Geografia©Canon«¿En que pais europeo no esta permitido tener perros en las ciudades mas importantes?*Islandia
+Espectaculos©Canon«¿Con que actor-cantante estuvo casada Ava Gardner en segundas nupcias?*Frank Sinatra
+Historia©Canon«¿Que ciudad estuvo sitiada durante 880 dias en la II Guerra Mundial?*Leningrado
+Arte-Literatura©Canon«¿Quien dijo: "aquel que este libre de pecado que tire la primera piedra"?*Jesucristo
+Ciencia-Naturaleza©Canon«¿Quien escribio al presidente Roosevelt en 1939 proponiendole la viabilidad de una bomba atomica?*Albert Einstein
+Deportes-Pasatiempos©Canon«¿Que deportista fue considerado como el que habia ganado mas dinero antes de su retirada en 1983?*Bjorn Borg
+Geografia©Canon«¿En que populosa ciudad se encuentra Central Park?*New York
+Espectaculos©Canon«¿Quien hacia el papel de Ben Cartwright en la serie televisiva "Bonanza"?*Lorne Greene
+Historia©Canon«¿Que civilizacion dominaba Mexico cuando Hernan Cortes lo descubrio?*Azteca
+Arte-Literatura©Canon«¿De que escritor español es "Su unico hijo"?*Leopoldo Alas
+Ciencia-Naturaleza©Canon«¿Cual es la escala mas conocida para medir terremotos?*Escala Richter
+Deportes-Pasatiempos©Canon«¿Cuantos mastiles tiene un balandro?*Uno
+Geografia©Canon«¿Cual es la linea ferrea mas larga del mundo?*El Transiberiano
+Espectaculos©Canon«¿Quien dirigio la polemica pelicula "La naranja mecanica"?*Stanley Kubrick
+Historia©Canon«¿En que ofensiva aliada de la II Guerra Mundial se utilizo la consigna del Dia D y la Hora H?*Desembarco de Normandia
+Arte-Literatura©Canon«¿Cuantos hijos tuvieron Adan y Eva?*Tres
+Ciencia-Naturaleza©Canon«¿De que color es el oxigeno liquido?*Azul palido
+Deportes-Pasatiempos©Canon«¿Cuanto tiempo dura un partido de futbol?*Noventa minutos
+Geografia©Canon«¿En que provincia se encuentra el monasterio de la Rabida donde Colon recibio hospitalidad?*Huelva
+Espectaculos©Canon«¿Quienes coprotagonizaron "Pijama para dos"?*Rock Hudson y Doris Day
+Historia©Canon«¿Que pais fue llamado la Galia por los romanos?*Francia
+Arte-Literatura©Canon«¿Por que libro se le concedio el Premio Nobel de Literatura a Boris Pasternak?*El Doctor Zhivago
+Ciencia-Naturaleza©Canon«¿Que es el esternocleidomastoideo?*Musculo
+Deportes-Pasatiempos©Canon«¿Con que otros dos nombres se puede designar al portero de futbol?*Guardameta y cancerbero
+Geografia©Canon«¿Como se denomina el espacio de un rio por el que corren sus aguas?*Cauce
+Espectaculos©Canon«¿Que obra de Blasco Ibanez llevada al cine fue interpretada por Rita Hayworth y Tyrone Power?*Sangre y Arena
+Historia©Canon«¿Que general dio un golpe de Estado contra la I Republica española en 1874?*Pavia
+Arte-Literatura©Canon«¿A manos de quien murio el legendario Minotauro?*Teseo
+Ciencia-Naturaleza©Canon«¿Que significan las siglas CI?*Coeficiente de inteligencia
+Deportes-Pasatiempos©Canon«¿En que ciudad esta el estadio de futbol Altabix?*Elche
+Geografia©Canon«¿Que volcan destruyo Pompeya y Herculano?*Vesubio
+Espectaculos©Canon«¿Como se llamaba el rancho de los Cartwright en la serie de TV "Bonanza"?*La Ponderosa
+Historia©Canon«¿Que considero John F. Kennedy su mayor metedura de pata durante su cargo de presidente?*Invasion de Bahia Cochinos
+Arte-Literatura©Canon«¿Cuantos genios se le aparecen a Aladino en el cuento de "Las 1001 noches"?*Dos
+Ciencia-Naturaleza©Canon«¿Como se denomina la aleacion del cobre con el zinc?*Laton
+Deportes-Pasatiempos©Canon«¿De cuantas modalidades deportivas constan las pruebas gimnasticas individuales masculinas en las Olimpiadas?*Seis
+Geografia©Canon«¿Cuantos cientos de habitaciones tiene el Palacio de Buckingham?*Seis
+Espectaculos©Canon«¿Cual fue la primera pelicula de Los Beatles?*Que noche la de aquel dia
+Historia©Canon«¿Que famoso gladiador promovio una revolucion contra las legiones romanas?*Espartaco
+Arte-Literatura©Canon«¿Que obra de Shakespeare se inicia con una tormenta en el mar?*La Tempestad
+Ciencia-Naturaleza©Canon«¿Que producto utilizado para la limpieza responde a la formula NH3?*Amoniaco
+Deportes-Pasatiempos©Canon«¿Cual es la edad mas alta en la que se ha conseguido una medalla olimpica?*Setenta y tres
+Geografia©Canon«¿En que pais esta la region de Assam?*India
+Espectaculos©Canon«¿Quienes fueron los presentadores mas populares del programa televisivo "La gran ocasion"?*Joaquin Prat y Laura Valenzuela
+Historia©Canon«¿Quien fundo la Alianza Internacional de la Democracia socialista?*Bakunin
+Arte-Literatura©Canon«¿Como se llama la familia protagonista de la novela "Cien años de soledad"?*Buendia
+Ciencia-Naturaleza©Canon«¿Que profesion tienen las personas mas propensas a ser afectadas por la silicosis?*Mineros
+Deportes-Pasatiempos©Canon«¿Como se llama el arte de criar, amaestrar y curar a los halcones y otras aves como el azor?*Cetreria
+Geografia©Canon«¿Que indios sudamericanos son conocidos por cazar cabezas y reducirlas de tamaño?*Jivaros
+Espectaculos©Canon«¿Que era Skippy?*Canguro
+Historia©Canon«¿Que revolucionario cubano lucho con Fidel Castro y murio en Bolivia?*Che Guevara
+Arte-Literatura©Canon«¿Que personaje devoro un pastel con la palabra "comeme" escrita con pasas?*Alicia
+Ciencia-Naturaleza©Canon«¿Cual es el simbolo zodiacal de Geminis?*Gemelos
+Deportes-Pasatiempos©Canon«¿Cual fue el primer pais latinoamericano en el que se celebraron los Juegos Olimpicos?*Mexico
+Geografia©Canon«¿Cual es el idioma mas hablado en Belgica?*Frances
+Espectaculos©Canon«¿Que Maruja dirigia el programa de TVE "Gente" presentado por Mari Cruz Soriano?*Maruja Callaved
+Historia©Canon«¿Desde que puerto español salio Alfonso XIII para su exilio en Italia en 1931?*Cartegena
+Arte-Literatura©Canon«¿Que canal ayudo a construir Gauguin trabajando como obrero?*Canal de Panama
+Ciencia-Naturaleza©Canon«¿Rebosara un vaso lleno de agua hasta el borde cuando los dos cubitos de hielo que tiene se derritan?*No
+Deportes-Pasatiempos©Canon«¿A que equipo pertenece el estadio de futbol de El Manzanares?*Atletico de Madrid
+Geografia©Canon«¿De que pais es capital Katmandu?*Nepal
+Espectaculos©Canon«¿Que actor mato "Por un puñado de dolares"?*Clint Eastwood
+Historia©Canon«¿Quien fue el cuarto presidente de los EE.UU. asesinado durante su mandato?*John F Kennedy
+Arte-Literatura©Canon«¿Cuantas letras tiene el alfabeto griego?*Veinticuatro
+Ciencia-Naturaleza©Canon«¿Que droga fue introducida comercialmente por Bayer en Alemania en el año 1899?*Aspirina
+Deportes-Pasatiempos©Canon«¿En que pais nordico se descubrio el primer trineo?*Finlandia
+Geografia©Canon«¿A que pais llamaban los romanos Lusitania?*Portugal
+Espectaculos©Canon«¿Quien dirigia y presentaba el programa de TVE "Revista de cine"?*Alfonso Eduardo
+Historia©Canon«¿Que presidente de los EEUU declaro: "no soy un delincuente"?*Richard Nixon
+Arte-Literatura©Canon«¿Que grupo de los comics estaba compuesto por una antorcha humana, un hombre elastico, una mujer invesible y un ser inhumano?*Los cuatro fantasticos
+Ciencia-Naturaleza©Canon«¿Donde encontrarias las 20 medias lunas que adornan el cuerpo humano?*Uñas
+Deportes-Pasatiempos©Canon«¿Cuantas veces se han cancelado los Juegos Olimpicos?*Tres
+Geografia©Canon«¿Que estrecho divide los Pilares de Hercules?*Estrecho de Gibraltar
+Espectaculos©Canon«¿En que pelicula alcanzo su mayor exito el actor Martin Sheen?*Apocalypse Now
+Historia©Canon«¿Que general liberal español dio nombre al himno republicano?*Riego
+Arte-Literatura©Canon«¿Que mide en Paris alrededor de 333 metros?*La Torre Eiffel
+Ciencia-Naturaleza©Canon«¿Como se llaman las celulas nerviosas?*Neuronas
+Deportes-Pasatiempos©Canon«¿Cuanto dura cada tiempo en un partido de futbol?*Cuarenta y cinco minutos
+Geografia©Canon«¿En que hemisferio se encuentra Jamaica?*Norte
+Espectaculos©Canon«¿Que grupo musical ha sido el que mas discos ha vendido en la historia de la musica pop?*Los Beatles
+Historia©Canon«¿Que le ocurrio a Israel el 14 de Mayo de 1948?*Se proclamo su independencia
+Arte-Literatura©Canon«¿Que personaje de los comics de Axterix cayo en una marmita de pocion magica?*Obelix
+Ciencia-Naturaleza©Canon«¿Cuantos rusos han estado en la Luna?*Ninguno
+Deportes-Pasatiempos©Canon«¿Que gran velocista consiguio cuatro medallas de oro en atletismo en los Juegos Olimpicos de Berlin?*Jesse Owens
+Geografia©Canon«¿Cual es la capital de Irlanda?*Dublin
+Espectaculos©Canon«¿Quien hizo el papel de Rommel en "El zorro de desierto"?*James Mason
+Historia©Canon«¿Cual era el organismo supremo del Partido Comunista de la Union Sovietica?*Politburo
+Arte-Literatura©Canon«¿Que personaje de Kipling fue criado por lobos?*Mowli
+Ciencia-Naturaleza©Canon«¿Cuantos tentaculos tiene el calamar?*Diez
+Deportes-Pasatiempos©Canon«¿Cuantos jugadores tiene un equipo de voleibol?*Seis
+Geografia©Canon«¿Que es mas denso el Oceano Atlantico o el Mar Mediterraneo?*Mar Mediterraneo
+Espectaculos©Canon«¿Que pelicula española fue prohibida y perseguida en España despues de haber obtenido la Palma de Oro en Cannes?*Viridiana
+Historia©Canon«¿Cuantos Roosevelt han presidido los Estados Unidos?*Dos
+Arte-Literatura©Canon«¿Quien fue la primera mujer segun la mitologia griega?*Pandora
+Ciencia-Naturaleza©Canon«¿Que planeta se encuentra mas cerca del Sol?*Mercurio
+Deportes-Pasatiempos©Canon«¿Que dos jugadores de un equipo de futbol se distinguen del resto por la indumentaria?*Portero y capitan
+Geografia©Canon«¿Que clase de animal inspiro el nombre de las islas Canarias?*Can
+Espectaculos©Canon«¿Que comico del cine mudo llego a la siguiente conclusion: "la vida ha dejado de ser un chiste para mi, no le veo la gracia"?*Charles Chaplin
+Historia©Canon«¿Que le llevo el rey Gaspar al niño Jesus?*Incienso
+Arte-Literatura©Canon«¿Como se llamaban los tres mosqueteros?*Athos Porthos y Aramis
+Ciencia-Naturaleza©Canon«¿Quien transmitio el primer mensaje telefonico: "Watson, ven aqui, te necesito"?*Alexander Graham Bell
+Deportes-Pasatiempos©Canon«¿En que pais europeo se invento el domino?*Francia
+Geografia©Canon«¿Cual es la unica capital europea que comienza por "O"?*Oslo
+Espectaculos©Canon«¿Que actor norteamericano lucho "Contra el imperio de la droga"?*Gene Hackman
+Historia©Canon«¿Que pais fue victima de una invasion sovietica en 1956?*Hungria
+Arte-Literatura©Canon«¿Quien escribio "Doña Rosita la soltera"?*Federico Garcia Lorca
+Ciencia-Naturaleza©Canon«¿Cual es el mamifero terrestre que no puede saltar?*Elefante
+Deportes-Pasatiempos©Canon«¿Cual es el equipo de futbol filial del Real Madrid?*Castilla
+Geografia©Canon«¿En que ciudad se hallan los Campos Eliseos?*Paris
+Espectaculos©Canon«¿Quien rehuso el premio de la critica de Nueva York por su pelicula "El gran dictador"?*Charles Chaplin
+Historia©Canon«¿Que lider nacionalista chino fue derrotado por Mao Tse Tung?*Tchang Kai Tchek
+Arte-Literatura©Canon«¿Donde vivia el Mago de Oz?*La ciudad Esmeralda
+Ciencia-Naturaleza©Canon«¿Cual es el plato favorito de las libelulas?*Mosquitos
+Deportes-Pasatiempos©Canon«¿En que Olimpiada participo el entonces principe de España don Juan Carlos?*Munich 1972
+Geografia©Canon«¿Que pais esta a la misma distancia de España que de Francia?*Andorra
+Espectaculos©Canon«¿Que dos actores españoles estuvieron "Solos en la madrugada"?*Jose Sacristan y Maria Casanova
+Historia©Canon«¿Que pie puso primero Neil Armstrong sobre la Luna?*Izquierdo
+Arte-Literatura©Canon«¿Quien narro las desventuras de "El patito feo"?*Andersen
+Ciencia-Naturaleza©Canon«¿Que pesa 5.500 billones de toneladas?*Tierra
+Deportes-Pasatiempos©Canon«¿Cuantas cuerdas tiene un cuadrilatero de boxeo?*Doce
+Geografia©Canon«¿Cual es la moneda oficial de Monaco?*Franco frances
+Espectaculos©Canon«¿En que lugar tocaron por ultima vez Los Beatles en publico el 30 de Enero de 1969?*En la azotea de un edificio
+Historia©Canon«¿Cuantos rostros de presidentes de los EE.UU. hay esculpidos en los Montes Rushmore?*Cuatro
+Arte-Literatura©Canon«¿En que ciudad nacio Mozart?*Salzburgo
+Ciencia-Naturaleza©Canon«¿Cuanto es C menos LXXIX?*Veintiuno
+Deportes-Pasatiempos©Canon«¿Como se llama en tenis el punto siguiente al empate a 40?*Ventaja
+Geografia©Canon«¿Cuales son los arboles mas altos de California?*Secuoyas
+Espectaculos©Canon«¿Que mitico grupo de rock actuo en España por primera vez en 1982?*Rolling Stones
+Historia©Canon«¿De que continente procedia el maiz que llego a Europa?*America del sur
+Arte-Literatura©Canon«¿Quien era el amigo gris de "El Señor de los Anillos"?*Gandalf
+Ciencia-Naturaleza©Canon«¿Cual es el nombre comun del acido acetilsalicilico?*Aspirina
+Deportes-Pasatiempos©Canon«¿Que nombre recibe la mezcla de ginebra y tonica?*Gin Tonic
+Geografia©Canon«¿Cual es la capital de Marruecos?*Rabat
+Espectaculos©Canon«¿De que pelicula fue continuacion "Curso del 44"?*Verano del 42
+Historia©Canon«¿En que año tuvo lugar la gran crisis economica de los EE.UU.?*1929
+Arte-Literatura©Canon«¿Que poeta romantico español fue nombrado censor de novelas?*Gustavo Adolfo Becquer
+Ciencia-Naturaleza©Canon«¿Cual es la raza de perro mas pequeño?*Chihuahua
+Deportes-Pasatiempos©Canon«¿De que color es la diana en una competicion olimpica de tiro con arco?*Amarillo
+Geografia©Canon«¿A que pais pertenecen los Alpes que rodean el lago Lucerna?*Suiza
+Espectaculos©Canon«¿Quien fue la primera voz de Mickey Mouse?*Walt Disney
+Historia©Canon«¿Por que tratado de 1494 se repartieron Castilla y Portugal sus futuros descubrimientos?*Tratado de Tordesillas
+Arte-Literatura©Canon«¿Que mago de comic tenia como ayudante a un indigena negro?*Mandrake
+Ciencia-Naturaleza©Canon«¿De que esta formado el esqueleto del tiburon?*Cartilagos
+Deportes-Pasatiempos©Canon«¿Cual era el apodo del diestro español, de principios de siglo, Rafael Gonzalez?*Machaquito
+Geografia©Canon«¿Que nombre recibe un cowboy argentino?*Gaucho
+Espectaculos©Canon«¿En que pelicula aparece Kris Kristofferson conduciendo un camion?*Convoy
+Historia©Canon«¿Que rey subio al trono de Jordania en 1952?*Hussein
+Arte-Literatura©Canon«¿Que significa la palabra Evangelio?*Buena Nueva
+Ciencia-Naturaleza©Canon«¿Que es mas pesado, el plomo o el platino?*Platino
+Deportes-Pasatiempos©Canon«¿Como se llama el toro menor de tres años?*Novillo
+Geografia©Canon«¿Cual es el unico pais cruzado por el Ecuador y el Tropico de Capricornio?*Brasil
+Espectaculos©Canon«¿Que serie de television americana de detectives tiene en su titulo un personaje que nunca ha sido visto?*Los Angeles de Charlie
+Historia©Canon«¿Quien sucedio a Nasser como presidente de Egipto?*Anuar el Sadat
+Arte-Literatura©Canon«¿A que genero pertenece la novela de Traymond Chandler "El largo adios"?*Novela negra
+Ciencia-Naturaleza©Canon«¿Cuales son los tres meses de invierno en el hemisferio sur?*Junio Julio y Agosto
+Deportes-Pasatiempos©Canon«¿Que maximo numero de sets hay en un partido de voleibol?*Cinco
+Geografia©Canon«¿Cual es la forma correcta para los naturales de Ibiza, ibicencos o ibicenses?*Las dos son correctas
+Espectaculos©Canon«¿Que actor comico que fumaba puros y comia chicles dijo: "Parad el mundo que me bajo"?*Groucho Marx
+Historia©Canon«¿A que familia pertenecian los tres emperadores romanos Vespasiano, Tito y Domiciano?*Flavios
+Arte-Literatura©Canon«¿Que obra de Henri Charriere tiene nombre de mariposa?*Papillon
+Ciencia-Naturaleza©Canon«¿Que organo tiene los huesos mas pequeños?*Oido
+Deportes-Pasatiempos©Canon«¿En que ciudad nordica se celebraron las Olimpiadas de verano de 1952?*Helsinki
+Geografia©Canon«¿A traves de que mar y de que canal se comunican el Oceano Indico y el mar Mediterraneo?*Mar Rojo y Canal de Suez
+Espectaculos©Canon«¿Que unica pelicula dirigio Frank Sinatra?*Todos eran valientes
+Historia©Canon«¿De que fue ministro Manuel Fraga Iribarne en los años 60 durante el regimen del general Franco?*Informacion y Turismo
+Arte-Literatura©Canon«¿Como se llama la parte exterior de un edificio?*Fachada
+Ciencia-Naturaleza©Canon«¿Que se mezcla con arcilla para fabricar la mina de un lapiz?*Grafito
+Deportes-Pasatiempos©Canon«¿Cual es el termino ingles para baloncesto?*Basketball
+Geografia©Canon«¿Como llaman los italianos a Florencia?*Firenze
+Espectaculos©Canon«¿Que cantante es el hijo  mas famoso de Linares?*Raphael
+Historia©Canon«¿Durante el reinado de que monarca no se ponia el sol en las colonias españolas?*Felipe II
+Arte-Literatura©Canon«¿Quien escribio "El halcon maltes"?*Dashiell Hammett
+Ciencia-Naturaleza©Canon«¿De que animal desciende el cerdo?*Jabali
+Deportes-Pasatiempos©Canon«¿De que leche procede el queso de Burgos?*Oveja
+Geografia©Canon«¿Cual es la capital de Uganda?*Kampala
+Espectaculos©Canon«¿Cual era la profesion de Jack Lemmon en "Irma la dulce"?*Gendarme
+Historia©Canon«¿Quienes fueron los tres cabecillas comuneros que se enfrentaron con las tropas de Carlos V?*Padilla Bravo y Maldonado
+Arte-Literatura©Canon«¿Quien escribio "Venus y Adonis"?*William Shakespeare
+Ciencia-Naturaleza©Canon«¿Cuantas abejas puede transportar en peso una abeja?*Trescientas
+Deportes-Pasatiempos©Canon«¿Cual es el estilo mas rapido en natacion?*Crawl
+Geografia©Canon«¿Que ciudad europea hay que visitar para pasear por Via Veneto?*Roma
+Espectaculos©Canon«¿Cuanto tiempo estuvo Lola Herrera con Mario?*Cinco horas
+Historia©Canon«Que año sigue al 356 antes de Cristo?*355 antes de Cristo
+Arte-Literatura©Canon«¿Que escritor estuvo "Cinco horas con Mario"?*Miguel Delibes
+Ciencia-Naturaleza©Canon«¿Que son las ovejas, si los gatos son felinos?*Ovinos
+Deportes-Pasatiempos©Canon«¿Como se llama el hipodromo de Madrid?*Hipodromo de la Zarzuela
+Geografia©Canon«¿De que rio es afluente el Jalon?*Ebro
+Espectaculos©Canon«¿Quien fue la chica de "Cabaret"?*Liza Minelli
+Historia©Canon«¿Que politico español se disfrazo con una peluca pra huir de la policiia?*Santiago Carrillo
+Arte-Literatura©Canon«¿Sobre que estrella de cine escribio Norman Mailer?*Marilyn Monroe
+Ciencia-Naturaleza©Canon«¿Como se llaman las crias de ciervo menores de un año?*Gabatos
+Deportes-Pasatiempos©Canon«¿Cual fue el juguete mas vendido en 1981?*Cubo Magico de Rubik
+Geografia©Canon«¿En que region española hay tres provincias que acaban en "ona"?*Cataluña
+Espectaculos©Canon«¿Que institutriz volaba con su paraguas sobre las chimeneas?*Mary Poppins
+Historia©Canon«¿Que dos pueblos lucharon en las Guerras Punicas?*Cartagineses y romanos
+Arte-Literatura©Canon«¿En que habitacion guardaba Napoleon la Mona LIsa?*Cuarto de baño
+Ciencia-Naturaleza©Canon«¿Cual es la vena mas grande del cuerpo humano?*Cava
+Deportes-Pasatiempos©Canon«¿Donde se situan las copas de vino en la mesa?*A la derecha
+Geografia©Canon«¿En que pais tiene su origen la porcelana de Sevres?*Francia
+Espectaculos©Canon«¿Como se llamaba el coche volador de la pelicula infantil protagonizada por Dick Van Dyke?*Chitty Chitty Bang Bang
+Historia©Canon«¿Que significan las siglas CC.OO.?*Comisiones Obreras
+Arte-Literatura©Canon«¿De quien es la "Piedad" expuesta en la basilica de San Pedro?*Miguel Angel
+Ciencia-Naturaleza©Canon«¿Aumenta progresivamente de intensidad la sensacion de hambre en una persona sometida a ayuno total?*No, se atenua
+Deportes-Pasatiempos©Canon«¿Que bebida esta hecha de ron, leche, coco y piña?*Piña colada
+Geografia©Canon«¿Que mar baña las costas de Biarritz?*Cantabrico
+Espectaculos©Canon«¿Que es la cortina en la pelicula de Hitchcock "Cortina rasgada"?*El Telon de Acero
+Historia©Canon«Arte-Literatura©Canon«¿Quien fue la primera Primer Ministro de la India?*Indira Gandhi
+Arte-Literatura©Canon«¿Quien nos deleito con su "Concierto de Aranjuez"?*Joaquin Rodrigo
+Ciencia-Naturaleza©Canon«¿Cual es el bronquio mas largo y estrecho del cuerpo humano?*Izquierdo
+Deportes-Pasatiempos©Canon«¿Que polemico comentarista deportivo criticaba a Pablo Porta?*Jose Maria Garcia
+Geografia©Canon«¿Cuantas veces es mas grande España que Gran Bretaña?*Dos
+Espectaculos©Canon«¿Que director de cine hizo conocer a unos "Extraños en un tren"?*Alfred Hitchcock
+Historia©Canon«¿Que produjo que el copiloto del avion Enola Gay anotara solo: "dios mio" en su cuaderno de notas?*La bomba de Hiroshima
+Arte-Literatura©Canon«¿Quien escribio sobre "Nuestra Señora de Paris"?*Victor Hugo
+Ciencia-Naturaleza©Canon«¿Que parte del cuerpo pierde el macho de la matis religiosa despues de aparearse?*Cabeza
+Deportes-Pasatiempos©Canon«¿Cuantos peniques valia el primer sello emitido en el mundo?*Uno
+Geografia©Canon«¿En que provincia española disfrutarias de mas horas de sol?*Almeria
+Espectaculos©Canon«¿Que actor, balarin y coreografo americano fundo en 1980 una compañia para promocionar el cine musical junto a Francis Ford Coppola?*Gene Kelly
+Historia©Canon«¿De que rey fue ministro el Cardenal Richelieu?*Luis XIII
+Arte-Literatura©Canon«¿Quien pinto la Capilla Sixtina?*Miguel Angel
+Ciencia-Naturaleza©Canon«¿Cual es el unico mamifero que no puede volar pero vuela?*Hombre
+Deportes-Pasatiempos©Canon«¿Que record batio Bob Beamon en salto de longitud en la Olimpiada de 1968?*8,90 metros
+Geografia©Canon«¿Que importante rio desemboca en el Atlantico por San Lucar de Barrameda?*Guadalquivir
+Espectaculos©Canon«¿Que rio falta en esta filmografia de John Wayne: Rojo, Grande, Bravo....?*Lobo
+Historia©Canon«Arte-Literatura©Canon«¿A que paises derroto Inglaterra en la batalla de Trafalgar?*España y Francia
+Arte-Literatura©Canon«¿Cual era la celebre novela caballeresca que mas gustaba a Cervantes?*Amadis de Gaula
+Ciencia-Naturaleza©Canon«¿Donde esta el coxis?*En la base de la medula espinal
+Deportes-Pasatiempos©Canon«¿De que parte del cerdo se hace el queso de cerdo?*Cabeza
+Geografia©Canon«¿Cual es la cadena montañosa mas larga?*Andes
+Espectaculos©Canon«¿Que actores italianos vivieron "Una jornada particular"?*Sofia Loren y Marcello Mastroiani
+Historia©Canon«¿Quien era conocida como "La serpiente del Nilo"?*Cleopatra
+Arte-Literatura©Canon«¿Quien fue el primer director titular que tuvo la Orquesta Nacional de España?*Bartolome Perez Casas
+Ciencia-Naturaleza©Canon«¿Que funcion corporal puede alcanzar la vertiginosa velocidad de 370 kms por hora?*Estornudo
+Deportes-Pasatiempos©Canon«¿En que pais se hallan las pistas de esqui de St. Moritz?*Suiza
+Geografia©Canon«¿De que color son las murallas del Kremlin?*Rojo
+Espectaculos©Canon«¿Que actor era "La mascara negra" en la serie televisiva?*Sancho Gracia
+Historia©Canon«¿Quien esta enterrado debajo del altar de la basilica de San Pedro?*San Pedro
+Arte-Literatura©Canon«¿Que filosofo frances compuso la opera "El adivino de la aldea"?*Rousseau
+Ciencia-Naturaleza©Canon«¿Que obtienes añadiendo Lactobacillus bulgaricus a la leche?*Yogurt
+Deportes-Pasatiempos©Canon«¿Cuantos comodines existen en el juego Scrabble?*Dos
+Geografia©Canon«¿Por que rio del norte de España esta formada la isla de los Faisanes?*Bidasoa
+Espectaculos©Canon«¿Que actriz era "La muchacha de las bragas de oro"?*Victoria Abril
+Historia©Canon«Arte-Literatura©Canon«¿Por que motivo solia Napoleon llevar la mano sobre el estomago, debajo del chaleco?*Dolencia estomacal
+Arte-Literatura©Canon«¿Que escritor sudamericano estuvo de Conversaciçon en la catedral?*Mario Vargas Llosa
+Ciencia-Naturaleza©Canon«¿Cual es el componente principal de la pared celular vegetal?*Celulosa
+Deportes-Pasatiempos©Canon«¿En que hobby se utiliza la expresion "echar la hebra?*Punto
+Geografia©Canon«¿Que ciudad ha sido llamada "la Nueva York de la Mancha"?*Albacete
+Espectaculos©Canon«¿Que actor recibio un oscar que tenia grabado el nombre de Dick Tracy?*Spencer Tracy
+Historia©Canon«¿Que aleman se lanzo en paracaidas en Escocia para negociar la paz en 1941?*Rudolf Hess
+Arte-Literatura©Canon«¿A que diario pertenecian los periodistas que desvelaron el caso Watergate?*Washington Post
+Ciencia-Naturaleza©Canon«¿Cuantos motores tiene un boeing 737?*Dos
+Deportes-Pasatiempos©Canon«¿Como se llaman las canoas de los esquimales?*Kayak
+Geografia©Canon«¿Que pais forma un archipielago de 3074 kms a lo largo de la costa este de Asia?*Japon
+Espectaculos©Canon«¿Quien hizo de Dracula en las peliculas de los estudios Hemmer?*Christopher Lee
+Historia©Canon«¿De que puerto español salieron las carabelas de la expedicion a America de Cristobal Colon?*Palos de Moguer
+Arte-Literatura©Canon«¿De que color era El halcon maltes?*Negro
+Ciencia-Naturaleza©Canon«¿Que nombre reciben los calamares pequeños?*Chipirones
+Deportes-Pasatiempos©Canon«¿Como se llama el control al que son sometidos los deportistas para evitar el uso de drogas?*Antidoping
+Geografia©Canon«¿Que dos provincias forman la frente de la Peninsula Iberica?*La Coruña y Pontevedra
+Espectaculos©Canon«¿Quien era el trompetista en la pelicula "Hello Dolly"?*Louis Armstrong
+Historia©Canon«Arte-Literatura©Canon«¿Quien fue el ultimo monarca español de la casa de Austria?*Carlos II
+Arte-Literatura©Canon«¿Que escritor de novela negra, nacido en Nueva York, reside en España desde hace unos años?*Chester Himes
+Ciencia-Naturaleza©Canon«¿Que tipo de microscopio usarias para poder ver los virus?*Electronico
+Deportes-Pasatiempos©Canon«¿Que clase de balones se usaban al principio en baloncesto?*Balones de futbol
+Geografia©Canon«¿Que desierto se extiende desde Botswana hasta el oeste de Sudafrica?*Kalahari
+Espectaculos©Canon«¿En que pelicula parodia Mel Brooks un personaje de literatura y cine de terror?*El jovencito Frankenstein
+Historia©Canon«¿Por que causa fueron famosos los ladrones Dimas y Gestas?*Fueron crucificados con Jesucristo
+Arte-Literatura©Canon«¿Cual es la obra mas corta y sangrienta de Shakespeare?*Macbeth
+Ciencia-Naturaleza©Canon«¿Cual es la dimension considerada como la cuarta?*Tiempo
+Deportes-Pasatiempos©Canon«¿Cual fue la unica moneda de plata que acuño Franco como medida excepcional?*Cien pesetas
+Geografia©Canon«¿Cual es la capital de Indonesia?*Yakarta
+Espectaculos©Canon«¿Que actor interpretaba al sheriff en Tiburon?*Roy Scheider
+Historia©Canon«¿En que pais se origino el escandalo Flick?*Alemania
+Arte-Literatura©Canon«¿Que escritor irlandes llevaba un parche en el ojo?*James Joyce
+Ciencia-Naturaleza©Canon«¿Que palabra designa la oposicion a una corriente electrica en un conductor?*Resistencia
+Deportes-Pasatiempos©Canon«¿Como se denomina al toro completamente negro?*Zaino
+Geografia©Canon«¿Como se llamaba anteriormente Iran?*Persia
+Espectaculos©Canon«¿De que actor era hija Romina Power?*Tyrone Power
+Historia©Canon«¿En que año comenzo en España la dictadura del general Primo de Rivera?*1923
+Arte-Literatura©Canon«¿Que grupo heroico estaba encabezado por D'Artagnan?*Los Tres Mosqueteros
+Ciencia-Natualeza©Canon«¿A que tipo de animal pertenece el mamifero mas pequeño?*Murcielago
+Deportes-Pasatiempos©Canon«¿Como se llaman los deportistas que practican el judo?*Judokas
+Geografia©Canon«¿Cual es el pais mas pequeño de la C.E.E.?*Luxemburgo
+Espectaculos©Canon«¿Con quien hacia el amor Burt Lancaster en la playa en "De aqui a la eternidad"?*Deborah Kerr
+Historia©Canon«¿En que siglo se formo la secta religiosa de los mormones?*XIX
+Arte-Literatura©Canon«¿Que instrumento es normalmente el mas numeroso en una banda de musica?*Clarinete
+Ciencia-Natualeza©Canon«¿Que resina amarilla y fosilizada utilizaban los griegos y los romanos en joyeria?*Ambar
+Deportes-Pasatiempos©Canon«¿De que colores es la camiseta de los jugadores de futbol del Malaga?*Azul y blanco
+Geografia©Canon«¿Que pais africano es alfabeticamente el primero?*Angola
+Espectaculos©Canon«¿Que isla del Caribe vio nacer a Jose Feliciano?*Puerto Rico
+Historia©Canon«¿Cual fue la fecha del "Dia D"?*6 de Junio de 1944
+Arte-Literatura©Canon«¿En que edificio frances esta el "Salon de los Espejos"?*Palacio de Versalles
+Ciencia-Natualeza©Canon«¿Que rasgo facial comun contiene aproximadamente 550 pelos?*Ceja
+Deportes-Pasatiempos©Canon«¿En que ciudad hungara nacio Ladislao Kubala?*Budapest

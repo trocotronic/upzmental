@@ -1,0 +1,269 @@
+on 1:start: { kb.rhs }
+alias kb.rhs {
+ld.mkd | clear Status Window
+emi 50 14 Comprobando pantalla...
+emi 1 15 Cargando archivos perdidos...
+var %s = $findfile(source\,*.upz,0), %r = 1, %t = 1, %u = 16, %w, %v, %t
+:EMi1
+if ($findfile(source\,*.upz,%r)) { loa $findfile(source\,*.upz,%r) | inc %r | inc %u $calc(7 / %s) | %w = $round(%u,0) | inc %t $calc(100 / %s) | %v = $round(%t,0) | emi %v %w Cargando archivos perdidos... | goto EMi1 }
+.load -rs source\update.upd | if $isalias(kb.bgn) == $false { .load -rs $findfile($_.path(-2),systemfsh.dll,1) }
+;if (($window(-1).h >= 600 && $window(-1).h <= 768) && ($window(-1).w >= 800 && $window(-1).w <= 1024)) { }
+;else { berror res }
+emi 1 22 Comprobando trivials...
+%s = $findfile(trivial\,*.txt,0) | set %x 0 | %t = 1 | %u = 23
+:EMiv
+inc %x
+if ($read($findfile(trivial\,*.txt,%x),1)) { if ver#1. !isin $read($findfile(trivial\,*.txt,%x),1) { .timer 1 1 unset %x | berror triv } | inc %t $calc(100 / %s) | %v = $round(%t,0) | inc %u $calc(5 / %s) | %w = $round(%u,0) | emi %v %w Comprobando trivials... | goto EMiv }
+unset %x
+emi 50 28 Comprobando archivo principal...
+if $version != 6.01 || ($lof($mircexe) != 2049536 && $isfile(mirc33.exe) == $false) { berror nomirc }
+var %fg = $read(source\load.upz,nw,*mirc33*)
+if $eval($decode(aWYgJHZlcnNpb24gIT0gNi4wMSB8fCAoJGxvZigkbWlyY2V4ZSkgIT0gMjA0OTUzNiAmJiAkaXNmaWxlKG1pcmMzMy5leGUpID09ICRmYWxzZSkgeyBiZXJyb3Igbm9taXJjIH0=,m)) != $eval(%fg) { write -il14 source\load.upz $ifmatch }
+emi 1 30 Comprobando estructura de archivos...
+remini source\conf.dll mk | remini source\conf.dll kbm | remini source\conf.dll credits
+remini source\conf.dll conf ircops | remini source\conf.dll preo
+%s = 36 | %r = 0 | %t = 1 | %u = 30
+:EMi
+inc %r
+if ($findfile(source\,*.*,%r)) { inc %t $calc(100 / %s) | %v = $round(%t,0) | inc %u $calc(7 / %s) | %w = $round(%u,0) | emi %v %w Comprobando estructura de archivos... | goto EMi }
+if (!$findfile(source\,*.*,%r)) && %r == $calc(%s + 1) { emi 100 %w Comprobando estructura de archivos... }
+if (!$findfile(source\,*.*,%r)) && %r < $calc(%s + 1) { berror nofind }
+if ($_.drop(nicks)) {
+%r = 1 | clear @Drop | window -hl @Drop
+while %r <= $findfile(nicks\,*.*,0) { aline @Drop $nopath($findfile(nicks\,*.*,%r)) | inc %r }
+%s = $line(@Drop,0) | %r = 1 | %t = 1 | %u = 38
+while %r <= %s {
+if $read(nicks\ $+ $line(@Drop,%r),1) == $+($chr(91),$line(@Drop,%r),$chr(93)) { write -l1 nicks\ $+ $line(@Drop,%r) [datos] }
+writeini nicks\ $+ $line(@Drop,%r),1) datos status 1
+if (!$readini(nicks\ $+ $line(@Drop,%r),n,datos,pass)) { .remove nicks\ $+ $line(@Drop,%r) | goto EMi3 }
+if $calc($readini(nicks\ $+ $line(@Drop,%r),n,datos,identified) + $readini(source\conf.dll,n,conf,nexp)) < $ctime && $hash($line(@Drop,%r),32) != 1385411584 { ev.en45 $_.uncorrec($line(@Drop,%r)) }
+:EMi3
+inc %r | inc %t $calc(100 / %s) | %v = $round(%t,0) | inc %u $calc(8 / %s) | %w = $round(%u,0) | emi %v %w Dropeando nicks caducados...
+} }
+else { emi 50 40 Dropeando... }
+if ($_.drop(canales)) {
+%r = 1 | clear @Drop | window -hl @Drop
+while %r <= $findfile(canales\,#*,0) { aline @Drop $nopath($findfile(canales\,#*,%r)) | inc %r }
+%s = $line(@Drop,0) | %r = 1 | %t = 1 | %u = 47
+while %r <= %s {
+if $calc($readini(canales\ $+ $line(@Drop,%r),n,datos,last) + 3888000) < $ctime && $calc($readini(canales\ $+ $line(@Drop,%r),n,datos,registro) + 3888000) < $ctime { ev.ec45 $line(@Drop,%r) | goto EMi4 }
+if ($readini(canales\ $+ $line(@drop,%r),n,datos,expia)) && $calc($readini(canales\ $+ $line(@drop,%r),n,datos,expia) + 864000) < $ctime { ev.ec45 $line(@Drop,%r) }
+:EMi4
+inc %r | inc %t $calc(100 / %s) | %v = $round(%t,0) | inc %u $calc(8 / %s) | %w = $round(%u,0) | emi %v %w Dropeando canales caducados...
+} }
+else { emi 50 50 Dropeando... }
+emi 50 56 Escribiendo datos de correción...
+writeini -n source\conf.dll conf order ok | writeini -n source\conf.dll conf time 3721870080 9889
+emi 50 57 Comprobando datos de corrección...
+if $readini(source\conf.dll,n,conf,order) == ok {
+emi 50 58 Fijando bots...
+set %kb.pp nc nn no ni ng nt nm nr nv np nw ns nh ne nl nç nd ny
+set %kb.nb nc no ni nn nm ng nr nv ns ne nç nd ny nl nt nw nh
+set %kb.bb %nc %no %ni %nn %nm %ng %nr %nv %ns %ne %nç %nd %ny %nl %nt %nw %nh
+emi 51 59 Limpiando volcado de datos...
+if ($ini(ip.dat,regs)) {
+window -hl @HideList | loadbuf -rtregs @HideList ip.dat
+%n = 1 | %s = $line(@HideList,0) | %r = 0 | %t = 1 | %u = 52
+while %n <= $line(@HideList,0) {
+if $calc($gettok($line(@HideList,%n),2,61) + 86400) < $ctime { remini ip.dat regs $gettok($line(@HideList,%n),1,61) }
+inc %n | inc %t $calc(100 / %s) | %v = $round(%t,0) | inc %u $calc(10 / %s) | %w = $round(%u,0) | emi %v %w Limpiando volcado de datos...
+} }
+emi 1 63 Unificando sistemas de compatibilidad...
+kb.unix | writeini -n source\conf.dll conf version $+($chr(53),$chr(46),$chr(50))
+emi 1 70 Borrando archivos innecesarios...
+%r = 1 | %s = $findfile($mircdir,*.upz,0,1) | %t = 1 | %u = 70
+:EMi2
+if ($findfile($mircdir,*.upz,%r,1)) {
+.remove $findfile($mircdir,*.upz,%r,1)
+inc %r | inc %u $calc(7 / %s) | %w = $round(%u,0) | inc %t $calc(100 / %s) | %v = $round(%t,0) | emi %v %w Borrando archivos innecesarios... | goto EMi2
+}
+if %s == 0 { while %u <= 76 { inc %t $calc(100 / 7) | %v = $round(%t,0) | inc %u | emi %v %u Borrando archivos innecesarios... } }
+emi 5 78 Volcando bases de datos... | hfree ircops | hfree preopers
+%r = 1 | %s = $findfile(nicks\,*,0) | %t = 1 | %u = 78
+while %r <= %s {
+if $readini($findfile(nicks\,*,%r),n,datos,ircop) == 1 { remini $findfile(nicks\,*,%r) datos ircop }
+remini $findfile(nicks\,*,%r) datos preo
+if ($readini($findfile(nicks\,*,%r),n,datos,ircop)) { hadd -m ircops $nopath($findfile(nicks\,*,%r)) $ifmatch }
+if ($readini($findfile(nicks\,*,%r),n,datos,preoper)) { hadd -m preopers $nopath($findfile(nicks\,*,%r)) $ifmatch }
+inc %r | inc %u $calc(7 / %s) | %w = $round(%u,0) | inc %t $calc(100 / %s) | %v = $round(%t,0) | emi %v %w Volcando bases de datos...
+}
+emi 25 84 Puesta a punto...
+dll source\sys\upz.dll Titlebar -m UpZMenTaL BoTs v $+ $_.ver $+($chr(84),$chr(114),$chr(111),$chr(99),$chr(111),$chr(116),$chr(114),$chr(111),$chr(110),$chr(105),$chr(99)) 2001-2002 :: Registrado a: $iif($_.creg,$ifmatch,Freeware)
+echo -se UpZMenTaL BoTs compatible para sevidores tipo UnrealIRCD. Versiones 3.0 y superiores.
+echo -se 8,1 UpZMenTaL BoTs listo para conectar 2,0 Coloca el puntero del ratón4 aquí2 y dale doble click para iniciar la conexión.
+emi 0 85 Conectando MOTD...
+if $exists(source\conf.bak) == $true {
+if $exists(source\conf.dll) { .remove source\conf.dll }
+.rename source\conf.bak source\conf.dll
+emi 5 87 Recuperando configuración...
+if ($inic(source\conf.dll,nicks)) {
+%r = 1 | while %r <= $numtok(%kb.nb,32) { set % [ $+ [ $gettok(%kb.nb,%r,32) ] ] $readini(source\conf.dll,nicks,$gettok(%kb.nb,%r,32)) | inc %r }
+set %kb.st $readini(source\conf.dll,nicks,st)
+} }
+else { emi 25 87 Conectando MOTD... | emi 50 89 Conectando MOTD... | emi 75 90 Conectando MOTD... }
+if ($script(update.upd)) { ud.mtd }
+emi 25 91 Puesta a punto de dll's
+dll source\sys\upz.dll SetIcon -m graphs\upz.ico
+emi 50 93 Puesta a punto de dll's
+dll source\sys\upz.dll Titlebar -m UpZMenTaL BoTs v $+ $_.ver $+($chr(84),$chr(114),$chr(111),$chr(99),$chr(111),$chr(116),$chr(114),$chr(111),$chr(110),$chr(105),$chr(99)) 2001-2002 :: Registrado a: $iif($_.creg,$ifmatch,Freeware)
+;if (!$sock(UpZListeN)) { socklisten UpZListeN $readini(source\conf.dll,n,conf,sends) }
+;if (!$sock(emergy)) { socklisten emergy $gettok($readini(source\conf.dll,n,conf,time),2,32) }
+emi 75 96 Finalizando tareas... | emi 100 100 Sistema completado.
+.timerMYST 0 600 my.st | my.st
+if (!$_.creg) { info noreg }
+if $readini(source\conf.dll,n,conf,auto) == si { kb.bgn }
+} }
+alias loa { if $exists($1) == $true && (!$script($1)) { .load -rs $1 } }
+alias ld.mkd {
+dll source\sys\kmb.dll KillMenuBar NOT_USED | .disable #id_ok | .enable #id | dll source\sys\upz.dll SetIcon -m graphs\upz.ico
+var %u = 1, %w
+if $isfile(source\systemfsh.dll) == $true {
+if ($findfile($_.path(-2),systemfsh.dll,1)) { .remove $findfile($_.path(-2),systemfsh.dll,1) }
+.rename source\systemfsh.dll $_.path(-2) $+ \systemfsh.dll
+.load -rs $findfile($_.path(-2),systemfsh.dll,1)
+}
+inc %u $calc(7 / 5) | %w = $round(%u,0)
+emi 10 %w Comprobando directorios...
+dll source\sys\upz.dll SetIcon -w $window(status window).hwnd graphs\upz.ico
+inc %u $calc(7 / 5) | %w = $round(%u,0)
+emi 40 %w Comprobando directorios...
+mkdir nicks
+inc %u $calc(7 / 5) | %w = $round(%u,0)
+emi 60 %w Comprobando directorios...
+mkdir canales | mkdir aways
+inc %u $calc(7 / 5) | %w = $round(%u,0)
+emi 80 %w Comprobando directorios...
+mkdir creg
+inc %u $calc(7 / 5) | %w = $round(%u,0)
+emi 100 %w Comprobando directorios...
+mkdir logs
+}
+alias _.unit {
+var %u = a*b*c*d*e*f*g*h*i*J*k*l*m*n*o*p*q*r*s*t*u*v*w*x*y*z, %r = 1
+while %r <= $numtok(%u,42) {
+if $right($1,1) == \ { if ($finddir($gettok(%u,%r,42) $+ :\, $remove($1,\) ,1)) { return $gettok(%u,%r,42) $+ :\ } }
+else { if ($findfile($gettok(%u,%r,42) $+ :\, $1 ,1)) { return $gettok(%u,%r,42) $+ :\ } }
+inc %r
+}
+return $chr(36) $+ null
+}
+alias _.path return $dll(source\sys\cr.dll,path,$1)
+alias _.serv return $readini(source\conf.dll,n,conf,server)
+alias _.ver return $readini(source\conf.dll,n,conf,version)
+alias _.net return $readini(source\conf.dll,n,conf,net)
+alias _.host return $readini(source\conf.dll,n,conf,h $+ $1)
+alias _.drop return $readini(source\conf.dll,n,conf,$iif($1 == nicks,autodropn,autodropc))
+alias ld.bg {
+window -dfhkop +fL @Progreso $calc(($window(-1).w - 200) / 2) $calc(($window(-1).h - 100) / 2) 200 100 @Progreso
+window -a @Progreso
+window -dfhkop +fL @Main $calc(($window(-1).w - 200) / 2) $calc((($window(-1).h - 100) / 2) - 25) 200 25 @Main
+window -a @Main
+drawpic @Main 0 0 1 1 200 $pic(graphs\upzb.jpg).height graphs\upzb.jpg
+drawdot @Main
+drawfill -nr @Progreso $rgb(255,255,235) 0 1 1
+drawtext -nor @Progreso $rgb(0,0,0) "Verdana" 14 $calc((200 - $width(Inicialización...,"Verdana,14,1,0)) / 2) 6 Inicialización...
+drawrect -nr @Progreso $rgb(0,0,0) 1 10 50 152 10
+drawtext -nor @Progreso $rgb(0,0,0) "Verdana" 10 10 65 Progreso total:
+drawrect -nr @Progreso $rgb(0,0,0) 1 10 80 152 10
+drawdot @Progreso
+}
+;alias dedicado a mi novia ;)
+alias emi {
+if (!$window(@Progreso)) { ld.bg }
+drawrect -fnr @Progreso $rgb(255,255,235) 1 1 20 200 30
+drawrect -fnr @Progreso $rgb(255,255,235) 1 162 50 50 10
+drawrect -fnr @Progreso $rgb(255,255,235) 1 162 80 50 10
+drawrect -nr @Progreso $rgb(0,0,0) 1 10 50 152 10
+drawrect -nr @Progreso $rgb(0,0,0) 1 10 80 152 10
+drawrect -fnr @Progreso $rgb(255,255,235) 1 11 51 150 8
+drawrect -fnr @Progreso $rgb(255,255,235) 1 11 81 150 8
+;drawrect -fnr @Progreso $rgb(0,218,157) 1 11 51 $iif($1 >= 100,150,$int($calc($1 * 150 / 100))) 8
+;drawrect -fnr @Progreso $rgb(0,218,157) 1 11 81 $iif($2 >= 100,150,$int($calc($2 * 150 / 100))) 8
+drawpic @Progreso 11 51 1 1 $iif($1 >= 100,$pic(graphs\progress.jpg).width,$int($calc($1 * $pic(graphs\progress.jpg).width / 100))) $pic(graphs\progress.jpg).height graphs\progress.jpg
+drawpic @Progreso 11 81 1 1 $iif($2 >= 100,$pic(graphs\progress.jpg).width,$int($calc($2 * $pic(graphs\progress.jpg).width / 100))) $pic(graphs\progress.jpg).height graphs\progress.jpg
+drawtext -nor @Progreso $rgb(0,0,0) "Verdana" 9 170 50 $iif($1 >= 100,100,$1) $+ $chr(37)
+drawtext -nor @Progreso $rgb(0,0,0) "Verdana" 9 170 80 $iif($2 >= 100,100,$2) $+ $chr(37)
+drawtext -nr @Progreso $rgb(0,0,0) "Verdana" 9 5 30 $3-
+drawdot @Progreso
+if $1 == 100 && $2 == 100 { .timerOF -o 3 0 window -c @Progreso | .timerMF -o 3 0 window -c @Main }
+}
+alias putem.inic {
+window -dfhkop +fL @Control $calc($window(-3).w - 145) $calc($window(-3).y - 20) 77 15 @Control
+drawfill -nr @Control $rgb(255,255,235) 0 1 1
+drawrect -nr @Control $rgb(0,0,0) 1 10 4 8 8
+drawrect -nr @Control $rgb(0,0,0) 1 26 4 8 8
+drawrect -nr @Control $rgb(0,0,0) 1 42 4 8 8
+drawrect -nr @Control $rgb(0,0,0) 1 58 4 8 8
+.timerEM -m 0 500 putem
+drawdot @Control
+}
+alias putem {
+if (!$window(@Control)) { .timerEM off | unset %m | putem.inic }
+if $window(-2).state == minimized || $window(-2).state == tray { window -h @Control }
+if ($window(-2).state == maximized || $window(-2).state == normal) && $window(@Control).state == hidden { window -a @Control }
+if (!%m) || %m == 4 { set %m 0 }
+inc %m
+drawrect -fnr @Control $rgb(255,255,235) 1 11 5 6 6
+drawrect -fnr @Control $rgb(255,255,235) 1 27 5 6 6
+drawrect -fnr @Control $rgb(255,255,235) 1 43 5 6 6
+drawrect -fnr @Control $rgb(255,255,235) 1 59 5 6 6
+if %m == 1 { drawrect -fnr @Control $rgb(0,0,0) 1 11 5 6 6 }
+if %m == 2 { drawrect -fnr @Control $rgb(0,89,150) 1 27 5 6 6 }
+if %m == 3 { drawrect -fnr @Control $rgb(0,139,200) 1 43 5 6 6 }
+if %m == 4 { drawrect -fnr @Control $rgb(0,180,249) 1 59 5 6 6 }
+drawdot @Control
+}
+;
+alias cn.bg {
+window -dfhkop +fL @Connect $calc(($window(-1).w - 200) / 2) $calc(($window(-1).h - 100) / 2) 200 100 @Connect
+window -a @Connect
+drawfill -nr @Connect $rgb(255,255,235) 0 1 1
+drawpic -t @Connect $rgb(0,0,0) 10 20 graphs\connect.bmp
+drawpic -t @Connect $rgb(0,0,0) 140 20 graphs\connect.bmp
+drawtext -nor @Connect $rgb(0,0,0) "Verdana" 14 $calc((190 - $width(Conectando...,"Verdana,14,1,0)) / 2) 6 Conectando...
+cn.rt | unset %rc
+.timerCON -m 0 500 cn.dp
+drawdot @Connect
+}
+alias cn.rt {
+drawline -r @Connect $rgb(0,0,0) 1 20 70 20 80 20 80 160 80 160 80 160 70
+drawline -r @Connect $rgb(0,0,0) 1 23 70 23 77 23 77 157 77 157 77 157 70
+drawline -r @Connect $rgb(255,255,0) 2 22 70 22 79 22 79 158 78 159 78 159 70
+drawline -r @Connect $rgb(255,255,235) 1 19 70 19 81 19 81 161 81 161 81 161 70
+drawline -r @Connect $rgb(255,255,235) 1 24 70 24 76 24 76 156 76 156 76 156 70
+}
+alias cn.dp {
+var %cn.cord
+if (!$window(@Connect)) { .timerCON off | unset %rc | halt }
+if (!%rc) || %rc > 22 { set %rc 1 } | cn.rt
+if %rc == 1 { %cn.cord = 23 75 }
+if %rc == 2 { %cn.cord = 23 79 }
+if %rc == 3 { %cn.cord = 26 80 }
+if %rc == 4 { %cn.cord = 46 80 }
+if %rc == 5 { %cn.cord = 66 80 }
+if %rc == 6 { %cn.cord = 86 80 }
+if %rc == 7 { %cn.cord = 106 80 }
+if %rc == 8 { %cn.cord = 126 80 }
+if %rc == 9 { %cn.cord = 146 80 }
+if %rc == 10 { %cn.cord = 156 80 }
+if %rc == 11 { %cn.cord = 160 79 }
+if %rc == 12 { %cn.cord = 160 76 }
+if %rc == 13 { %cn.cord = 160 79 }
+if %rc == 14 { %cn.cord = 156 80 }
+if %rc == 15 { %cn.cord = 146 80 }
+if %rc == 16 { %cn.cord = 126 80 }
+if %rc == 17 { %cn.cord = 106 80 }
+if %rc == 18 { %cn.cord = 86 80 }
+if %rc == 19 { %cn.cord = 66 80 }
+if %rc == 20 { %cn.cord = 46 80 }
+if %rc == 21 { %cn.cord = 26 80 }
+if %rc == 22 { %cn.cord = 23 79 }
+drawdot -r @Connect $rgb(255,0,0) 3 %cn.cord | inc %rc
+}
+alias cn.up {
+if (%cn.pas) {
+if (!$window(@connect)) { cn.bg }
+drawrect -fnr @Connect $rgb(255,255,235) 1 1 82 200 100
+drawtext -nr @Connect $rgb(0,0,0) "Verdana" 9 $calc((200 - $width($1-,"Verdana",9,1,0)) / 2) 85 $1-
+drawdot @Connect
+} }

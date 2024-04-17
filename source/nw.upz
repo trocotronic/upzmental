@@ -1,0 +1,44 @@
+alias pr.nw { kb.scp | kb.sk %_.3 PRIVMSG %_.1 : $+ %_.3 no dispone de comandos. | limpiav }
+alias nw.jw {
+if ($pos($1,-,1) == 1 && + isin $1) || ($pos($1,+,1) == 1 && - isin $1) {
+var %p = $gettok($gettok($1,1,45),1,43), %n = $gettok($gettok($1,2,45),1,32)
+if m isincs %p { nw.am m $2 }
+if m isincs %n { nw.dm m $2 }
+if i isincs %p { nw.am i $2 }
+if i isincs %n { nw.dm i $2 }
+if p isincs %p { nw.am p $2 }
+if p isincs %n { nw.dm p $2 }
+if s isincs %p { nw.am s $2 }
+if s isincs %n { nw.dm s $2 }
+if k isincs %p { nw.am k $2 }
+if k isincs %n { nw.dm k $2 }
+if ($hget(modes,$2)) { kb.sk %nw JOIN $2 }
+else { kb.sk %nw PART $2 }
+}
+if $pos($1,-,1) == 1 && + !isin $1 {
+if m isincs $1 { nw.dm m $2 }
+if i isincs $1 { nw.dm i $2 }
+if p isincs $1 { nw.dm p $2 }
+if s isincs $1 { nw.dm s $2 }
+if k isincs $1 { nw.dm k $2 }
+if (!$hget(modes,$2)) { kb.sk %nw PART $2 }
+}
+if $pos($1,+,1) == 1 && - !isin $1 {
+if m isincs $1 { nw.am m $2 }
+if i isincs $1 { nw.am i $2 }
+if p isincs $1 { nw.am p $2 }
+if s isincs $1 { nw.am s $2 }
+if k isincs $1 { nw.am k $2 }
+if ($hget(modes,$2)) { kb.sk %nw JOIN $2 }
+}
+unset %p %n %oldmo* %mods %modc
+}
+alias nw.dbg { if ($hget(modes,%_.3)) { kb.sk %nw PRIVMSG $readini(source\conf.dll,n,conf,shadow) : $+ $time $gettok(%kb.dts,3,32) > $remove($gettok(%kb.dts,1,32),:) > $gettok($gettok(%kb.dts,4-,32),1-,58) } }
+alias nw.am {
+if $1 isincs $gettok($readini(canales\ $+ $2,n,datos,modos),2,45) && $readini(canales\ $+ $2,n,datos,rmodos) == on { return }
+hadd -m modes $2 $hget(modes,$2) $+ $1
+}
+alias nw.dm {
+if $1 isincs $gettok($gettok($readini(canales\ $+ $2,n,datos,modos),1,45),1,43) && $readini(canales\ $+ $2,n,datos,rmodos) == on { return }
+hadd -m modes $2 $removecs($hget(modes,$2),$1)
+}

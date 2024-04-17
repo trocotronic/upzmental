@@ -1,0 +1,118 @@
+alias ev.ws {
+if s isincs %_.4 {
+if + isin %_.4 && - !isin %_.4 { hadd -m modes %_.3 $hget(modes,%_.3) $+ s }
+if + !isin %_.4 && - isin %_.4 { hadd -m modes %_.3 $removecs($hget(modes,%_.3),s) }
+if + isin %_.4 && - isin %_.4 {
+if $pos(%_.4,s) < $pos(%_.4,+) && $pos(%_.4,s) > $pos(%_.4,-) { hadd -m modes %_.3 $removecs($hget(modes,%_.3),s) }
+if $pos(%_.4,s) > $pos(%_.4,+) && $pos(%_.4,s) < $pos(%_.4,-) { hadd -m modes %_.3 $hget(modes,%_.3) $+ s }
+} } }
+alias ev.wk {
+if k isincs %_.4 {
+if + isin %_.4 && - !isin %_.4 { hadd -m modes %_.3 $hget(modes,%_.3) $+ k | hadd -m claves %_.3 %_.4 }
+if + !isin %_.4 && - isin %_.4 { hadd -m modes %_.3 $removecs($hget(modes,%_.3),k) | hdel claves %_.3 }
+if + isin %_.4 && - isin %_.4 {
+if $pos(%_.4,k) < $pos(%_.4,+) && $pos(%_.4,k) > $pos(%_.4,-) { hadd -m modes %_.3 $removecs($hget(modes,%_.3),k) | hdel claves %_.3 }
+if $pos(%_.4,k) > $pos(%_.4,+) && $pos(%_.4,k) < $pos(%_.4,-) { hadd -m mode %_.3 $hget(modes,%_.3) $+ k | hadd -m claves %_.3 %_.4 }
+}
+if %_.3 isin $hget(claves,%_.3) { hadd -m claves %_.3 $remtok($hget(claves,%_.3),%_.3,32) }
+if modos isin $hget(claves,%_.3) { hadd -m claves %_.3 $remtok($hget(claves,%_.3),modos,32) }
+} }
+alias kb.skll {
+if $istok(%kb.bb,%_.3,32) == $true {
+if %_.3 == %nn { sockwrite -nt bots NICK %nn 1 $ctime %nn $_.host(nn) $_.serv 0 :Servicios Gestión de Nicks }
+if %_.3 == %no { sockwrite -nt bots NICK %no 1 $ctime %no $_.host(no) $_.serv 0 :Servicio de Control de Red }
+if %_.3 == %ni { sockwrite -nt bots NICK %ni 1 $ctime %ni $_.host(ni) $_.serv 0 :Servicio de Información }
+if %_.3 == %nc { sockwrite -nt bots NICK %nc 1 $ctime %nc $_.host(nc) $_.serv 0 :Servicio Gestión de Canales }
+if %_.3 == %ng { sockwrite -nt bots NICK %ng 1 $ctime %ng $_.host(ng) $_.serv 0 :Servicio Gestión de Mensajes masivos }
+if %_.3 == %nm { sockwrite -nt bots NICK %nm 1 $ctime %nm $_.host(nm) $_.serv 0 :Servicio Gestión de Mensajeria }
+if %_.3 == %nr { sockwrite -nt bots NICK %nr 1 $ctime %nr $_.host(nr) $_.serv 0 :Servicio Gestión de Registro de Canales }
+if %_.3 == %nv { sockwrite -nt bots NICK %nv 1 $ctime %nv $_.host(nv) $_.serv 0 :Servicio Gestión de Ip's Virtuales }
+if %_.3 == %nw { sockwrite -nt bots NICK %nw 1 $ctime %nw $_.host(nw) $_.serv 0 :Servicio de Control de Canales }
+if %_.3 == %nt { sockwrite -nt bots NICK %nt 1 $ctime %nt $_.host(nt) $_.serv 0 :Servicio de Estadísticas }
+if %_.3 == %ns { sockwrite -nt bots NICK %ns 1 $ctime %ns $_.host(ns) $_.serv 0 :Servicio de envío de SMS }
+if %_.3 == %nh { sockwrite -nt bots NICK %nh 1 $ctime %nh $_.host(nh) $_.serv 0 :Servicio de Anti-Spam en canales }
+if %_.3 == %ne { sockwrite -nt bots NICK %ne 1 $ctime %ne $_.host(ne) $_.serv 0 :Servicio de Control de Red para Pre-Operadores }
+if %_.3 == %nl { sockwrite -nt bots NICK %nl 1 $ctime %nl $_.host(nl) $_.serv 0 :Servicio de diversión para el usuario }
+if %_.3 == %ny { sockwrite -nt bots NICK %ny 1 $ctime %ny $_.host(ny) $_.serv 0 :Servicio de aWaY }
+if %_.3 == %nd { sockwrite -nt bots NICK %nd 1 $ctime %nd $_.host(nd) $_.serv 0 :Servicio de conexiones con pass }
+if %_.3 == %nç { sockwrite -nt bots NICK %nç 1 $ctime %nç $_.host(nç) $_.serv 0 :Servicio de noticias }
+kb.sk %_.3 MODE %_.3 :+oOihSaANTCrqBdvt1z | kb.sk $_.serv KILL %_.1 :No se permite el kill a bots. | ev.qu %_.1 | limpiav
+} }
+alias ev.cn {
+if ($readini(canales\ $+ %c,n,datos,fun)) {
+if $numtok($hget(chans,%c),32) == 1 {
+kb.sk $_.serv MODE %c +r
+if $readini(canales\ $+ %c,n,datos,rmodos) == on { kb.sk %nc MODE %c $gettok($readini(canales\ $+ %c,n,datos,modos),1,45) $gettok($readini(canales\ $+ %c,n,datos,modos),2-,32) }
+if $readini(canales\ $+ %c,n,datos,ctopic) == on { kb.sk %nc TOPIC %c : $+ $iif(($readini(canales\ $+ %c,n,datos,topic)),$_.uncod($ifmatch),Sin topic) }
+if ((O isincs $readini(canales\ $+ %c,n,datos,modos) || A isincs $readini(canales\ $+ %c,n,datos,modos)) && $_.st($_.correc(%_.1)) < 5) && $readini(canales\ $+ %c,n,datos,rmodos) == on { kb.sk %nc SAPART %_.1 %c }
+if R isincs $readini(canales\ $+ %c,n,datos,modos) && $readini(canales\ $+ %c,n,datos,rmodos) == on && $_.st(%_.1) < 3 { kb.sk %no SAPART %_.1 %c }
+ev.mdb
+}
+if $_.st(%_.1) > 2 || $_.lv(%_.1,%c) == 500 {
+ev.akc
+if $_.st(%_.1) == 4 { kb.sk %ne MODE %c +o %_.1 | goto CN1 }
+writeini -n canales\ $+ %c datos last $ctime
+if $readini(canales\ $+ %c,usuarios,$_.correc(%_.1)) >= $readini(canales\ $+ %c,levels,fundador) { kb.sk $_.serv MODE %c +q %_.1 }
+if $readini(canales\ $+ %c,usuarios,$_.correc(%_.1)) >= $readini(canales\ $+ %c,levels,autoop) && $_.st(%_.1) < 5 { kb.sk %nc MODE %c +o %_.1 }
+if $readini(canales\ $+ %c,usuarios,$_.correc(%_.1)) < $readini(canales\ $+ %c,levels,autoop) && $readini(canales\ $+ %c,usuarios,$_.correc(%_.1)) >= $readini(canales\ $+ %c,levels,autohalf) { kb.sk %nc MODE %c +h %_.1 }
+if $readini(canales\ $+ %c,usuarios,$_.correc(%_.1)) < $readini(canales\ $+ %c,levels,autohalf) && $readini(canales\ $+ %c,usuarios,$_.correc(%_.1)) >= $readini(canales\ $+ %c,levels,autovoice) { kb.sk %nc MODE %c +v %_.1 }
+}
+ev.sc
+:CN1
+ev.ent
+} }
+alias ev.en45 {
+flushini nicks\ $+ $_.correc($1) | if (!$ini(nicks\ $+ $_.correc($1),regs)) { goto DP }
+window -hl @HideList | loadbuf -rtregs @HideList nicks\ $+ $_.correc($1)
+var %f = 1
+while %f <= $line(@HideList,0) {
+if $readini(canales\ $+ $gettok($line(@HideList,%f),1,61),n,datos,fun) == $_.correc($1) { writeini -n canales\ $+ $gettok($line(@HideList,%f),1,61) datos fun %nr | writeini canales\ $+ $gettok($line(@HideList,%f),1,61) datos expia $ctime }
+remini canales\ $+ $gettok($line(@HideList,%f),1,61) usuarios $_.correc($1)
+if ($remtok($readini(canales\ $+ $gettok($line(@HideList,%f),1,61),n,datos,owner),$_.correc($1),230)) { writeini -n canales\ $+ $gettok($line(@HideList,%f),1,61) datos owner $ifmatch }
+else { remini canales\ $+ $gettok($line(@HideList,%f),1,61) datos owner }
+inc %f
+}
+:DP
+hdel ircops $1 | hdel preopers $1 | remini otros.dat cuentas $readini(nicks\ $+ $_.correc($1),n,datos,mail) | .remove nicks\ $+ $_.correc($1)
+}
+alias ev.ec45 {
+if (!$readini(canales\ $+ $1,n,datos,pas)) { return }
+flushini canales\ $+ $1 | if (!$ini(canales\ $+ $1,usuarios)) { goto DP1 }
+window -hl @HideList | loadbuf -rtusuarios @HideList canales\ $+ $1
+var %r = 1
+while %r <= $line(@HideList,0) { remini nicks\ $+ $gettok($line(@HideList,%r),1,61) regs $1 | inc %r }
+:DP1
+if ($hget(chans,$1)) { kb.sk $_.serv MODE $1 -r } | .remove canales\ $+ $1
+}
+alias ev.mdb {
+flushini canales\ $+ %c | if (!$ini(canales\ $+ %c,bans)) { return }
+window -hl @HideList | loadbuf -rtbans @HideList canales\ $+ %c
+var %r = 1
+while %r <= $line(@HideList,0) { kb.sk %nc MODE %c +b $gettok($line(@HideList,%r),1,61) | inc %r }
+}
+alias ev.akc {
+flushini canales\ $+ %c | if (!$ini(canales\ $+ %c,akick)) { goto AKc }
+window -hl @HideList | loadbuf -rtakick @HideList canales\ $+ %c
+var %r = 1
+while %r <= $line(@hideList,0) {
+if ($wildtok($_.mask(%_.1),$gettok($line(@HideList,%r),1,61),1,32)) {
+kb.sk %nc KICK %c %_.1 :AKICK: $_.uncorrec($gettok($line(@HideList,%r),2,230)) > $gettok($gettok($line(@HideList,%r),1,230),2,61)
+kb.sk %nc MODE %c +b $mask($_.mask(%_.1),9) | writeini -n canales\ $+ %c bans $mask($_.mask(%_.1),9) * | ev.pu %_.1 %_.3 | limpiav
+}
+inc %r
+}
+:AKc
+if ($readini(canales\ $+ %c,akick,$_.correc(%_.1))) {
+kb.sk %nc KICK %c %_.1 :AKICK: $_.uncorrec($gettok($readini(canales\ $+ %c,akick,$_.correc(%_.1)),2,230)) > $gettok($readini(canales\ $+ %c,akick,$_.correc(%_.1)),1,230)
+kb.sk %nc MODE %c +b $mask($_.mask(%_.1),9) | writeini -n canales\ $+ %c bans $mask($_.mask(%_.1),9) * | ev.pu %_.1 %_.3 | limpiav
+} }
+alias ev.ent { if ($readini(canales\ $+ %c,n,datos,welcome)) && $readini(canales\ $+ %c,n,datos,welcome) != no { kb.sk %nc NOTICE %_.1 : $+ $_.uncod($ifmatch) } }
+alias ev.sc { if $_.lv(%_.1,%c) == 0 && $readini(canales\ $+ %c,n,datos,secur) == on { kb.sk %nc KICK %c %_.1 :Sólo los usuarios registrados e identificados. | ev.pu %_.1 %c | limpiav } }
+alias nh.pc {
+if (!$hget(cspam,%_.3)) { return }
+if $readini(source\conf.dll,n,conf,scan) == off { return }
+var %r = 1
+while %r <= $numtok($readini(source\conf.dll,n,conf,cspam),230) {
+if $gettok($readini(source\conf.dll,n,conf,cspam),%r,230) isin $gettok(%kb.dts,4-,32) { kb.gl %nh $_.mask(%_.1).userhost $readini(source\conf.dll,n,conf,ctime) Publicidad no permitida en esta red. }
+inc %r
+} }

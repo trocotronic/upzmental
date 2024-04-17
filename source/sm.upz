@@ -1,0 +1,85 @@
+;envío a canales
+alias nr.sdp {
+if (!%_.5) { error noparam SENDPASS #canal }
+if (!$readini(canales\ $+ $_.correc(%_.5),n,datos,modos)) { error nochan }
+set %nc.sb %_.1 | writeini -n cola.dat colac $readini(nicks\ $+ $_.correc($readini(canales\ $+ %_.5,n,datos,fun)),n,datos,mail) $+(%_.5,æ,$readini(canales\ $+ %_.5,n,datos,pas))
+nc.snd | limpiav
+}
+alias nc.snd {
+flushini cola.dat | if (!$ini(cola.dat,colac)) { mesg No hay ningún email. | unset %ruta | limpiav }
+window -hl @ColaEnviosc | loadbuf -rtcolac @ColaEnviosc cola.dat
+if ($line(@colaenviosc,2)) { return }
+if æ !isin $line(@ColaEnviocs,1) || (!$line(@ColaEnviosc,1)) { unset %nc.* | limpiav }
+set %nc.em $gettok($line(@ColaEnviosc,1),1,61) | set %nc.eb $gettok($gettok($line(@ColaEnviosc,1),2,61),1,230) | set %nc.ep $gettok($gettok($line(@ColaEnviosc,1),2,61),2,230)
+if (!$sock(emailsc)) { sockopen emailsc $readini(source\conf.dll,n,conf,smtp) 25 }
+}
+on 1:sockopen:emailsc: {
+if $sockerr > 0 { kb.sk %nc PRIVMSG %nc.sb :4ERROR No es posible conectar con SMTP4 $readini(source\conf.dll,n,conf,smtp) | unset %nc.* | limpiav }
+sockwrite -nt emailsc $iif($readini(source\conf.dll,n,conf,stlogin),EHLO,HELO) $readini(source\conf.dll,n,conf,smtp)
+if ($readini(source\conf.dll,conf,stlogin)) {
+sockwrite -nt emailsc AUTH LOGIN
+sockwrite -nt emailsc $encode($readini(source\conf.dll,n,conf,stlogin),m)
+sockwrite -nt emailsc $encode($readini(source\conf.dll,n,conf,stpass),m)
+}
+sockwrite -nt emailsc MAIL FROM: $_.serv
+sockwrite -nt emailsc RCPT TO: %nc.em
+sockwrite -nt emailsc DATA
+sockwrite -nt emailsc Subject: Pasword del canal %nc.eb
+sockwrite -nt emailsc From: " $+ $_.serv $+ " $+(%nc,@,$_.serv)
+sockwrite -nt emailsc To: %nc.em
+sockwrite -nt emailsc Este email fue pedido por el fundador del canal %nc.eb
+sockwrite -nt emailsc La clave del canal %lenick es: %nc.ep
+sockwrite -nt emailsc Para identificarse como fundador, utilice: /msg $+(%nc,@,$_.serv) IDENTIFY %nc.eb %nc.ep
+sockwrite -nt emailsc Gracias por entrar en la red $_.net .
+sockwrite -nt emailsc .
+sockwrite -nt emailsc QUIT
+remini cola.dat colac %nc.em
+kb.sk %nc PRIVMSG %nc.sb :Password enviado al E-mail de %nc.eb | nc.snd
+}
+on 1:sockread:emailsc: sockread %eml | kb.dg 30 %eml | unset %eml
+alias nr.ghp {
+if (!%_.5) { error noparam GETPASS #canal }
+if $left(%_.5,1) != $chr(35) { error nochr }
+if (!$readini(canales\ $+ %_.5,n,datos,pas)) { error nochan }
+mesg La clave del canal %_.5 es $readini(canales\ $+ %_.5,n,datos,pas) | limpiav
+}
+;envío a nicks
+alias nn.snd {
+if (!%_.5) { error noparam SENDPASS nick }
+if (!$readini(nicks\ $+ $_.correc(%_.5),n,datos,pass)) { error noreg }
+set %nn.sb %_.1 | writeini -n cola.dat cola $readini(nicks\ $+ $_.correc(%_.5),n,datos,mail) $+($_.correc(%_.5),æ,$readini(nicks\ $+ $_.correc(%_.5),n,datos,pass)) | nn.nd
+}
+alias nn.nd {
+flushini cola.dat | if (!$ini(cola.dat,cola)) { mesg No hay ningún email. | limpiav }
+window -hl @ColaEnvios | loadbuf -rtcola @ColaEnvios cola.dat
+if ($line(@colaenvios,2)) { return }
+if æ !isin $line(@ColaEnvios,1) || (!$line(@ColaEnvios,1)) { unset %nn.* | limpiav }
+set %nn.em $gettok($line(@ColaEnvios,1),1,61) | set %nn.eb $_.uncorrec($gettok($gettok($line(@ColaEnvios,1),2,61),1,230)) | set %nn.ep $gettok($gettok($line(@ColaEnvios,1),2,61),2,230)
+if (!$sock(emails)) { sockopen emails $readini(source\conf.dll,n,conf,smtp) 25 }
+}
+on 1:sockopen:emails: {
+if $sockerr > 0 { kb.sk %nn PRIVMSG %nn.sb :4ERROR No es posible conectar con SMTP4 $readini(source\conf.dll,n,conf,smtp) | unset %nn.* | limpiav }
+sockwrite -nt emailsc $iif($readini(source\conf.dll,n,conf,stlogin),EHLO,HELO) $readini(source\conf.dll,n,conf,smtp)
+if ($readini(source\conf.dll,conf,stlogin)) {
+sockwrite -nt emails AUTH LOGIN
+sockwrite -nt emails $encode($readini(source\conf.dll,n,conf,stlogin),m)
+sockwrite -nt emails $encode($readini(source\conf.dll,n,conf,stpass),m)
+}
+sockwrite -nt emails MAIL FROM: $_.serv
+sockwrite -nt emails RCPT TO: %nn.em
+sockwrite -nt emails DATA
+sockwrite -nt emails Subject: Pasword del nick %nn.eb
+sockwrite -nt emails From: " $+ $_.serv $+ " $+(%nn,@,$_.serv)
+sockwrite -nt emails To: %nn.em
+sockwrite -nt emails
+sockwrite -nt emails Nick: %nn.eb
+sockwrite -nt emails La clave del nick %nn.eb es: %nn.ep
+sockwrite -nt emails Para identificarse utilice: /msg $+(%nn,@,$_.serv) IDENTIFY %nn.ep
+sockwrite -nt emails Para cambiar el pass utilice: /msg %nn set pass elnuevopass
+sockwrite -nt emails Gracias por entrar en la red $_.net .
+sockwrite -nt emails .
+sockwrite -nt emails QUIT
+remini cola.dat cola %nn.em | unset %nc.*
+kb.sk %nn PRIVMSG %nn.sb :Password enviado al E-mail de %nn.eb | nn.nd
+}
+on 1:sockread:emails: sockread %eml | kb.dg 30 %eml | unset %eml

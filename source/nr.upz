@@ -1,0 +1,183 @@
+alias pr.nr {
+if %_.2 != PRIVMSG { limpiav }
+if %_.4 == help || %_.4 == ayuda { nr.hlp }
+if %_.4 == info { nr.inf }
+if %_.4 == $+($chr(99),$chr(114),$chr(101),$chr(100),$chr(105),$chr(116),$chr(111),$chr(115)) { kb.cdt }
+if %_.4 == register { sc.nr | nr.rg }
+if %_.4 == drop { sc.nr | nr.dpc }
+if %_.4 == apoya { sc.nr | nr.wap }
+if %_.4 == aceptar { kb.scp | sc.nr | nr.cac }
+if %_.4 == fase { nr.lcg }
+if %_.4 == lista { kb.scp | nr.lcr }
+if %_.4 == cancelar { kb.scp | nr.cad }
+if %_.4 == expia { kb.scp | nr.adp }
+if %_.4 == apoyos { nr.lap }
+if %_.4 == creditos { creditos }
+error nocom
+}
+alias nr.rg {
+if (!%_.7) { error noparam REGISTER #canal pass descripción }
+if $left(%_.5,1) != $chr(35) { error nochr }
+if ($readini(otros.dat,cdeny,%_.5)) { mesg Este canal esta prohibido. Motivo: $_.uncod($ifmatch) | limpiav }
+if \ isin %_.5 || / isin %_.5 || : isin %_.5 || æ isin %_.5 || ? isin %_.5 || < isin %_.5 || > isin %_.5 || $chr(124) isin %_.5 { error No se pueden registrar canales que incluyan alguno de los caracteres: \ / : æ ? " < > $chr(124)   }
+if ($readini(creg\ $+ %_.5,n,datos,fundador)) { error Ya existe un canal en fase de registro con ese nombre. Usa /msg %nr FASE para listar los canales en esta fase. }
+if ($readini(canales\ $+ %_.5,n,datos,modos)) { error Ya existe un canal registrado con ese nombre. }
+if $calc($readini(nicks\ $+ $_.correc(%_.1),n,datos,cregs) + 0) == $readini(source\conf.dll,n,conf,rmax) { error No está autorizado a registrar más canales. }
+nr.scap | kb.tkz 7
+writeini -n creg\ $+ %_.5 datos fundador $_.correc(%_.1) | writeini -n creg\ $+ %_.5 datos pass %_.6
+writeini -n creg\ $+ %_.5 datos descripcion $_.cod(%_.tkz)
+writeini -n creg\ $+ %_.5 datos fecha $date | writeini -n creg\ $+ %_.5 datos hora $time
+writeini -n creg\ $+ %_.5 datos reg $ctime | writeini -n nicks\ $+ $_.correc(%_.1) datos cregs $calc($readini(nicks\ $+ $_.correc(%_.1),$_.correc(%_.1),cregs) + 1)
+mesg El canal %_.5 ha sido registrado en la base de datos de %nr , necesitarás $readini(source\conf.dll,n,conf,apy) apoyos en 7 días para que el registro se lleve a cabo. Una vez se hayan conseguido los apoyos, se te notificará el registro mediante el bot %nm .
+if $readini(source\conf.dll,n,conf,apy) == 0 { writeini -n otros.dat procesados %_.5 $+($readini(creg\ $+ %_.5,n,datos,descripcion),æ,$ctime) | nr.cac }
+writeini -n ip.dat regs $_.ip(%_.1) $ctime | limpiav
+}
+alias nr.wap {
+if (!%_.5) { error noparam APOYA #canal }
+if $left(%_.5,1) != $chr(35) { error nochr }
+if (!$readini(creg\ $+ %_.5,n,datos,fundador)) { error No existe ningún canal en fase de registro con ese nombre. }
+if ($readini(nicks\ $+ $_.correc(%_.1),apoyos,%_.5)) { error Ya está anotado tu apoyo en este canal. }
+if $readini(creg\ $+ %_.5,n,datos,fundador) == $_.correc(%_.1) { error El fundador no puede apoyar el canal que quiere registrar. }
+if $numtok($readini(creg\ $+ %_.5,n,datos,apoyos),230) == $readini(source\conf.dll,n,conf,apy) { error El canal %_.5 esta pendiente de la aprobacion de registro. }
+nr.scap
+writeini -n creg\ $+ %_.5 datos apoyos $addtok($readini(creg\ $+ %_.5,n,datos,apoyos),$_.correc(%_.1),230) | writeini -n nicks\ $+ $_.correc(%_.1) apoyos %_.5 $date
+mesg Tu apoyo al canal %_.5 ha sido registrado
+if $numtok($readini(creg\ $+ %_.5,n,datos,apoyos),230) == $readini(source\conf.dll,n,conf,apy) { mesg El canal ha pasado a la fase de aprobación del registro. | writeini -n otros.dat procesados %_.5 $+($readini(creg\ $+ %_.5,n,datos,descripcion),æ,$ctime) }
+writeini -n ip.dat regs $_.ip(%_.1) $ctime | limpiav
+}
+alias nr.inf {
+if (!%_.5) { error noparam INFO #canal }
+if $left(%_.5,1) != $chr(35) { error nochr }
+if ($readini(otros.dat,cdeny,%_.5)) { error Este canal esta prohibido. }
+if (!$readini(creg\ $+ %_.5,n,datos,fundador)) { error No existe ningún canal en fase de registro con ese nombre. }
+mesg Información del canal %_.5
+mesg Fundador:12 $_.uncorrec($readini(creg\ $+ %_.5,n,datos,fundador))
+mesg Descripción:12 $_.uncod($readini(creg\ $+ %_.5,n,datos,descripcion))
+mesg Número de apoyos hasta el momento:12 $numtok($readini(creg\ $+ %_.5,n,datos,apoyos),230)
+mesg Fecha de registro:12 $readini(creg\ $+ %_.5,n,datos,fecha) $readini(creg\ $+ %_.5,n,datos,hora)
+if $_.correc(%_.1) == $readini(creg\ $+ %_.5,n,datos,fundador) {
+mesg Apoyos emitidos por:
+var %r = 1
+while %r <= $numtok($readini(creg\ $+ %_.5,n,datos,apoyos),230) { mesg $_.uncorrec($gettok($readini(creg\ $+ %_.5,n,datos,apoyos),%r,230)) | inc %r }
+}
+limpiav
+}
+alias nr.dpc {
+if (!%_.5) { error noparam DROP #canal }
+if (!$readini(creg\ $+ %_.5,n,datos,fundador)) { error No existe ningún canal en fase de registro con ese nombre. }
+if $_.st(%_.1) > 4 { goto cop }
+if $readini(creg\ $+ %_.5,n,datos,fundador) != $_.correc(%_.1) { error Debes ser el fundador para poder eliminar el canal %_.5 de la fase de registro. }
+:cop
+if $readini(nicks\ $+ $_.correc(%_.1),n,datos,cregs) == 1 { remini nicks\ $+ $_.correc(%_.1) datos cregs }
+else { writeini -n nicks\ $+ $_.correc(%_.1) datos cregs $calc($readini(nicks\ $+ $_.correc(%_.1),n,datos,cregs) - 1) }
+.remove creg\ $+ %_.5
+mesg El canal %_.5 ha sido eliminado de la fase de registro. | limpiav
+}
+alias nr.cac {
+if (!%_.5) { error noparam ACEPTAR #canal }
+if (!$readini(otros.dat,n,procesados,%_.5)) && %_.3 != %nc { error El canal %_.5 no tiene los apoyos necesarios. }
+if %_.3 == %nc { kb.tkz 7 }
+writeini -n canales\ $+ %_.5 datos fun $iif(%_.3 == %nc,$_.correc(%_.1),$readini(creg\ $+ %_.5,n,datos,fundador))
+writeini -n canales\ $+ %_.5 datos pas $iif(%_.3 == %nc,%_.6,$readini(creg\ $+ %_.5,n,datos,pass))
+writeini -n canales\ $+ %_.5 datos des $iif(%_.3 == %nc,%_.tkz,$readini(creg\ $+ %_.5,n,datos,descripcion))
+writeini -n canales\ $+ %_.5 datos url -
+writeini -n canales\ $+ %_.5 datos mail -
+writeini -n canales\ $+ %_.5 datos modos +nt
+writeini -n canales\ $+ %_.5 datos rmodos off
+writeini -n canales\ $+ %_.5 datos topic El canal ha sido registrado. Este topic debe cambiarse.
+writeini -n canales\ $+ %_.5 datos rtopic off
+writeini -n canales\ $+ %_.5 datos secureops off
+writeini -n canales\ $+ %_.5 datos debug on
+writeini -n canales\ $+ %_.5 datos secur off
+writeini -n canales\ $+ %_.5 datos fstatus off
+writeini -n canales\ $+ %_.5 datos welcome El canal a sido registrado debido a sus requisitos cumplidos. Este mensaje debe cambiarse. Más información: /msg %nc ayuda SET
+writeini -n canales\ $+ %_.5 datos registro $ctime
+writeini -n canales\ $+ %_.5 datos topicpor %nc
+writeini -n canales\ $+ %_.5 datos hidelist off
+writeini -n canales\ $+ %_.5 datos especial 0
+writeini -n canales\ $+ %_.5 usuarios $iif(%_.3 == %nc,$_.correc(%_.1),$readini(creg\ $+ %_.5,n,datos,fundador)) 500
+writeini -n nicks\ $+ $iif(%_.3 == %nc,$_.correc(%_.1),$readini(creg\ $+ %_.5,n,datos,fundador)) regs %_.5 Founder
+writeini -n canales\ $+ %_.5 levels fundador 500
+writeini -n canales\ $+ %_.5 levels set 500
+writeini -n canales\ $+ %_.5 levels acc-edit 450
+writeini -n canales\ $+ %_.5 levels acc-list 1
+writeini -n canales\ $+ %_.5 levels autoop 300
+writeini -n canales\ $+ %_.5 levels autohalf 100
+writeini -n canales\ $+ %_.5 levels autovoice 75
+writeini -n canales\ $+ %_.5 levels opdeop 300
+writeini -n canales\ $+ %_.5 levels clear 450
+writeini -n canales\ $+ %_.5 levels banunban 300
+writeini -n canales\ $+ %_.5 levels akick 450
+writeini -n canales\ $+ %_.5 levels invite 300
+writeini -n canales\ $+ %_.5 levels especial 400
+writeini -n canales\ $+ %_.5 datos apoyos $iif(($readini(creg\ $+ %_.5,apoyos,apoyos)),$ifmatch,*)
+kb.sk %nr JOIN %_.5 | kb.sk %no MODE %_.5 +o %nr | kb.sk $_.serv MODE %_.5 +r
+kb.sk %nr MODE %_.5 +nt | kb.sk %nr TOPIC %_.5 :El canal ha sido registrado.
+kb.sk %nr PART %_.5
+if %_.3 != %nc {
+writeini -n nicks\ $+ $readini(creg\ $+ %_.5,n,datos,fundador) memos $_.memo($readini(creg\ $+ %_.5,n,datos,fundador)) $+(%nr,æ,$date,æ,$time,æ,$_.cod( Enhorabuena su canal a sido registrado debido a que cumplia las normativas de la red. Use /msg %nc SET [ %_.5 ] para fijar las opciones. ))
+}
+mesg El canal ha sido registrado.
+kb.sk $_.serv WALLOPS :2Nuevo canal registrado por %_.3 $+ : %_.5
+if %_.3 != %nc { .remove creg\ $+ %_.5 | remini otros.dat procesados %_.5 } | limpiav
+}
+alias nr.lcr {
+flushini otros.dat | if (!$ini(otros.dat,procesados)) { mesg No hay canales para procesar. | limpiav }
+window -hl @HideList | loadbuf -rtprocesados @HideList otros.dat
+mesg **** Lista de canales procesados **** | var %r = 1
+while %r <= $line(@HideList,0) { mesg $gettok($line(@HideList,%r),1,61) - $gettok($gettok($line(@HideList,%r),2,61),1,230) - $iif($calc($readini(creg\ $+ $gettok($line(@HideList,%r),1,61),n,datos,reg) + 604800) < $ctime,4Tiempo excedido,3Correcto) | inc %r }
+mesg **** Fin de la Lista de canales procesados **** | limpiav
+}
+alias nr.cad {
+if (!%_.6) { error noparam CANCELAR #canal motivo }
+if (!$readini(otros.dat,n,procesados,%_.5)) { error El canal %_.5 no tiene los apoyos necesarios. }
+remini otros.dat procesados %_.5 | kb.tkz 6
+writeini -n nicks\ $+ $readini(creg\ $+ %_.5,n,datos,fundador) memos $_.memo($readini(creg\ $+ %_.5,n,datos,fundador)) $+(%nr,æ,$date,æ,$time,æ,$_.cod(Su canal a sido rechazado con el motivo: [ %_.tkz ] ))
+mesg El canal ha sido desaprobado. | .remove creg\ $+ %_.5 | limpiav
+}
+alias nr.lcg {
+if $findfile(creg\,#*,0) == 0 { error No hay ningún canal en fase de registro. }
+var %g = 1
+mesg **** Lista de canales en fase de registro ****
+while %g <= $findfile(creg\,#*,0) { mesg $nopath( $findfile(creg\,#*,%g)) - $iif($calc($readini( $findfile(creg\,#*,%g),n,datos,reg) + 604800) < $ctime,4Expiado por falta de apoyos en 7 días,3Correcto) | inc %g }
+mesg **** Fin del listado de canales en fase de registro **** | limpiav
+}
+alias nr.scap {
+if $calc($readini(nicks\ $+ $_.correc(%_.1),n,datos,reg) + $readini(source\conf.dll,n,conf,older)) > $ctime { error Debes tener el nick registrado desde almenos $calc($readini(source\conf.dll,n,conf,older) / 86400) días. }
+if $calc($readini(ip.dat,n,regs,$_.ip(%_.1)) + 86400) > $ctime { error No puedes realizar ninguna operación si no han transcurrido almenos 24 horas. }
+else { remini ip.dat regs $_.ip(%_.1) }
+}
+alias nr.lap {
+if (%_.5) {
+if $left(%_.5,1) == $chr(35) {
+if ($readini(canales\ $+ %_.5,n,datos,fun)) { goto LAp }
+if (!$readini(creg\ $+ %_.5,n,datos,fundador)) { error No existe ningún canal en fase de registro con ese nombre. }
+if $readini(creg\ $+ %_.5,n,datos,fundador) != $_.correc(%_.1) { error Acceso denegado. }
+mesg Apoyos hasta el momento: $numtok($readini(creg\ $+ %_.5,n,datos,apoyos),230) | mesg Apoyos emitidos por: | var %r = 1
+while %r <= $numtok($readini(creg\ $+ %_.5,n,datos,apoyos),230) { mesg $_.uncorrec($gettok($readini(creg\ $+ %_.5,n,datos,apoyos),%r,230)) | inc %r }
+limpiav
+:LAp
+if ($readini(canales\ $+ %_.5,n,datos,apoyos)) && $readini(canales\ $+ %_.5,n,datos,apoyos) != * {
+mesg Apoyos de %_.5 | var %r = 1
+while %r <= $numtok($readini(canales\ $+ %_.5,n,datos,apoyos),230) { mesg $_.uncorrec($gettok($readini(canales\ $+ %_.5,n,datos,apoyos),%r,230)) | inc %r }
+limpiav
+}
+mesg El canal ha sido registrado por la administración o no se han anotado los apoyos para el canal %_.5 . | limpiav
+}
+if $left(%_.5,1) != $chr(35) { error nochr }
+}
+sc.nr
+flushini nicks\ $+ $_.correc(%_.1) | if (!$ini(nicks\ $+ $_.correc(%_.1),apoyos)) { mesg No has emitido ningún apoyo | limpiav }
+window -hl @HideList | loadbuf -rtapoyos @HideList nicks\ $+ $_.correc(%_.1)
+mesg **** Apoyos emitidos **** | var %r = 1
+while %r <= $line(@HideList,0) { mesg Apoyo a:12 $gettok($line(@HideList,%r),1,61) el día:12 $gettok($line(@HideList,%r),2,61) | inc %r }
+limpiav
+}
+alias nr.adp {
+if (!%_.5) { error noparam EXPIA #canal }
+if (!$readini(creg\ $+ %_.5,n,datos,fundador)) { error No existe ningún canal en fase de registro con ese nombre. }
+if $calc($readini(creg\ $+ %_.5,n,datos,reg) + 604800) > $ctime { error El canal aun se encuentra dentro del tiempo reglamentario. }
+remini otros.dat procesados %_.5
+writeini -n nicks\ $+ $readini(creg\ $+ %_.5,n,datos,fundador) memos $_.memo($readini(creg\ $+ %_.5,n,datos,fundador)) $+(%nr,æ,$date,æ,$time,æ,$_.cod( Su canal a sido rechazado con el motivo: El canal no ha obtenido los apoyos necesarios en 7 días. ))
+mesg El canal %_.5 ha expiado. | .remove creg\ $+ %_.5 | limpiav
+}

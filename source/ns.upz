@@ -1,0 +1,465 @@
+alias pr.ns {
+if %_.2 != PRIVMSG { limpiav }
+if %_.4 == send { sc.nr | ns.snd }
+if %_.4 == alta { sc.nr | ns.jn }
+if %_.4 == $+($chr(99),$chr(114),$chr(101),$chr(100),$chr(105),$chr(116),$chr(111),$chr(115)) { kb.cdt }
+if %_.4 == baja { sc.nr | ns.pt }
+if %_.4 == set { sc.nr | ns.st }
+if %_.4 == access { sc.nr | ns.ac }
+if %_.4 == help || %_.4 == ayuda { ns.hlp }
+if %_.4 == creditos { creditos }
+error nocom
+}
+alias ns.hlp {
+if (!%_.5) {
+mesg 6UpZMenTaL BoTs Servicio de Envío de Mensajes a móviles gratis. 6 %ns
+raya
+mesg Este servicio consiste en la posibilidad de enviar mensajes a móviles totalmente gratis.
+mesg Su funcionamiento es muy fácil: simplemente se requiere el número de teléfono móvil de destino o el nick y el mensaje que se desee.
+mesg Los mensajes sólo deben tener una longitud máxima de caracteres, variando según el nick de origen.
+mesg Los comandos disponibles son:
+mesg 6SEND Envía un sms a un nick o número de móvil.
+mesg 6SET Fija las diferentes opciones.
+mesg 6ALTA Te da alta en la base de datos de %ns . Este comando es necesario para recibir sms por nick; es decir, que los demás usuarios puedan enviarte sms sin saber necesariamente tu número.
+mesg 6BAJA Te da de baja en la base de datos de %ns .
+mesg 6ACCESS Fija las diferentes opciones de nicks privilegiados.
+raya
+mesg Para más información, 12/msg %ns AYUDA comando
+mesg Es posible que surjan efectos en el envío. Por este motivo, rogamos espere algunos minutos y vuelva a efectuar la misma operación.
+limpiav
+}
+if %_.5 == send {
+mesg 12SEND
+raya
+mesg Este comando envía un sms corto al móvil especificado.
+mesg Aun así, puede especificar un nick de destino. Dicho nick debe estar registrado en la red y dado de alta en la base de %ns .
+mesg También, puede darse el caso que el nick de destino disponga de una lista de nicks privilegiados. Si se encuentra en ella, podrá enviar el sms. De no ser así, no podrá hacerlo sin saber su número de teléfono.
+raya
+mesg Sintaxis:
+mesg 6/msg %ns SEND nick/numtel mensaje
+limpiav
+}
+if %_.5 == set {
+if (!%_.6) {
+mesg 12SET
+raya
+mesg Con SET, podrá especificar las distintas opciones disponibles.
+mesg Dichas opciones son:
+raya
+mesg 6NUMERO Fija otro número de teléfono para su nick.
+mesg 6LIST Activa/desactiva la lista de nicks privilegiados.
+raya
+mesg Para más información, 12/msg %ns AYUDA SET comando
+limpiav
+}
+if %_.6 == numero {
+mesg 12NUMERO
+raya
+mesg Con este comando, podrá especificar otro número de teléfono.
+raya
+mesg Sintaxis:
+mesg 6/msg %ns SET NUMERO sunumero
+limpiav
+}
+if %_.6 == list {
+mesg 12LIST
+raya
+mesg El comando LIST activa/desactiva la lista de nicks privilegiados.
+mesg Estos nicks privilegiados, podrán enviarle sms sin la necesidad que conozcan su número de móvil en el caso que tubiera activada esta opción.
+mesg Si tiene desactivada esta opción, cualquier usuario podrá enviarle sms sin saber su número de móvil.
+mesg Si sólo desea que ciertos nicks puedan enviarle sms, debe activar esta opción e introducir dichos nicks con el comando ACCESS.
+raya
+mesg Sintaxis:
+mesg 6/msg %ns SET LIST on/off
+limpiav
+} }
+if %_.5 == ALTA {
+mesg 12ALTA
+raya
+mesg Con este comando, se dará de alta en la base de datos de %ns
+mesg Darse de alta en la base de %ns significa que no es necesario que los demás usuarios sepan su número de móvil para enviarle sms.
+mesg Tan sólo escribiendo su nick en el número de destino, podrá recibir tantos mensajes como le envíen los demás usuarios. Si sólo desea establecer ciertos nicks privilegiados, utilice el comando 12SET LIST
+raya
+mesg Sintaxis:
+mesg 6/msg %ns ALTA sunumero
+limpiav
+}
+if %_.5 == BAJA {
+mesg 12BAJA
+raya
+mesg Con este comando, se dará de baja en la base de datos de %ns
+mesg Si se da de baja, los demás usuarios deberán saber su número de móvil para enviarle sms.
+mesg No se recomienda.
+raya
+mesg Sintaxis:
+mesg 6/msg %ns BAJA
+limpiav
+}
+if %_.5 == ACCESS {
+if (!%_.6) {
+mesg 12ACCESS
+raya
+mesg El comando access le permitirá añadir, borrar o listar los nicks que dispone en su lista de nicks privilegiados.
+mesg Dichos nicks, podrán enviarle sms sin saber su número de móvil sin tener en cuenta el estado de LIST (on/off)
+mesg Para ello, se incluyen las diferentes opciones:
+raya
+mesg 6ADD Añade un nick a la lista de privilegiados.
+mesg 6DEL Borra un nick de la lista de privilegiados.
+mesg 6LIST Muestra la lista de nicks privilegiados.
+raya
+mesg Para más información, 12/msg %ns AYUDA ACCESS
+limpiav
+}
+if %_.6 == ADD {
+mesg 12ADD
+raya
+mesg Este comando añade un nick a la lista de nicks privilegiados. Dicho nick, debe estar registrado en la red mediante el bot %nn
+raya
+mesg Sintaxis:
+mesg 6/msg %ns ACCESS ADD nick
+limpiav
+}
+if %_.6 == DEL {
+mesg 12DEL
+raya
+mesg Este comando borra un nick de la lista de nicks privilegiados. Dicho nick , debe estar en la lista previamente.
+raya
+mesg Sintaxis:
+mesg 6/msg %ns ACCESS DEL nick
+limpiav
+}
+if %_.6 == LIST {
+mesg 12LIST
+raya
+mesg Este comando lista todos los nicks que se encuentran en su lista de nicks privilegiados.
+raya
+mesg Sintaxis:
+mesg 6/msg %ns ACCESS LIST
+limpiav
+} } }
+alias ns.st.lt {
+if (!%_.6) || (%_.6 != on && %_.6 != off) { error noparam SET LIST on/off }
+writeini -n nicks\ $+ $_.correc(%_.1) sms smspriv %_.6 | mesg Valor para lista de privilegiados cambiado a $upper(%_.6) | limpiav
+}
+alias ns.st {
+if (!%_.5) { error noparam SET comando }
+if %_.5 == numero { ns.st.nm }
+if %_.5 == list { ns.st.lt }
+error nocom
+}
+alias ns.ac {
+if (!%_.5) { error noparam ACCESS add/del/list }
+if %_.5 == add { ns.ac.as }
+if %_.5 == del { ns.ac.ds }
+if %_.5 == list { ns.ac.ls }
+error nocom
+}
+alias ns.ac.ls {
+if (!$readini(nicks\ $+ $_.correc(%_.1),n,sms,priv)) { error No tiene ningún nick en la lista de privilegiados. }
+mesg **** Nicks privilegiados **** | var %r = 1
+while %r <= $numtok($readini(nicks\ $+ $_.correc(%_.1),n,sms,priv),230) { mesg $gettok($readini(nicks\ $+ $_.correc(%_.1),n,sms,priv),%r,230) | inc %r }
+mesg **** Fin de la lista **** | limpiav
+}
+alias ns.ac.ds {
+if (!%_.6) { error noparam ACCESS del nick }
+if $istok($readini(nicks\ $+ $_.correc(%_.1),n,sms,priv),$_.correc(%_.6),230) == $false { error No existe este nick en la lista de privilegiados. }
+if ($remtok($readini(nicks\ $+ $_.correc(%_.1),n,sms,priv),$_.correc(%_.6),230)) { writeini -n nicks\ $+ $_.correc(%_.1) sms priv $ifmatch }
+else { remini nicks\ $+ $_.correc(%_.1) sms priv }
+mesg Usuario borrado de la lista de privilegiados. | limpiav
+}
+alias ns.ac.as {
+if (!%_.6) { error noparam ACCESS add nick }
+if (!$readini(nicks\ $+ $_.correc(%_.6),n,datos,pass)) { error noreg }
+writeini -n nicks\ $+ $_.correc(%_.1) sms priv $addtok($readini(nicks\ $+ $_.correc(%_.1),n,sms,priv),$_.correc(%_.6),230)
+mesg Usuario añadido a la lista de privilegiados. | limpiav
+}
+alias ns.pt { if (!$readini(nicks\ $+ $_.correc(%_.1),n,sms,num)) { error No está dado de alta en la base de datos de %ns. } | remini nicks\ $+ $_.correc(%_.1) sms | mesg Ha sido dado de baja en la base de datos de %ns | limpiav }
+alias ns.st.nm {
+if (!%_.6) { error noparam SET NUMERO numtel }
+if (!$regex(%_.6,^6[0-9]{8}$)) { error Número de móvil incorrecto. }
+if $readini(nicks\ $+ $_.correc(%_.1),n,sms,num) == %_.6 { error Es el mismo número de teléfono. }
+writeini -n nicks\ $+ $_.correc(%_.1) sms num %_.6
+mesg Número de móvil cambiado a 12 %_.6 | limpiav
+}
+alias ns.jn {
+if (!%_.5) { error noparam ALTA numtel }
+if (!$regex(%_.5,^6[0-9]{8}$)) { error Número de móvil incorrecto. }
+if ($readini(nicks\ $+ $_.correc(%_.1),n,sms,num)) { error Ya está dado de alta en la base de datos de %ns . Para cambiar el número, use el comando SET NUMERO. }
+writeini -n nicks\ $+ $_.correc(%_.1) sms num %_.5 | writeini -n nicks\ $+ $_.correc(%_.1) sms smspriv off
+mesg Ha sido dado de alta en la base de datos de %ns | limpiav
+}
+alias ns.snd {
+if (!%_.6) { error noparam SEND numtel/nick mensaje }
+if %_.5 !isnum { goto SNd }
+if (!$regex(%_.5,^6[0-9]{8}$)) { error Número de móvil incorrecto. }
+goto SNn | :SNd
+if (!$readini(nicks\ $+ $_.correc(%_.5),n,datos,pass)) { error noreg }
+if (!$readini(nicks\ $+ $_.correc(%_.5),n,sms,num)) { error El nick de destino no está dado de alta en %ns }
+if $istok($readini(nicks\ $+ $_.correc(%_.5),n,sms,priv),$_.correc(%_.1),230) == $false && $readini(nicks\ $+ $_.correc(%_.5),n,sms,smspriv) == on { error El nick de destino tiene especificada la opción de 12SÓLO USUARIOS PRIVILEGIADOS4 y no aparece en su lista. }
+var %n = $readini(nicks\ $+ $_.correc(%_.5),n,sms,num) | if (%n) { %nns.n = %_.5 }
+:SNn | kb.tkz 6
+if $len(%_.tkz) > $calc(120 - $len(%_.1) - 1) { error El mensaje no puede contener más de 120 caracteres. Actualmente contiene $calc($len(%_.tkz) + $len(%_.1) + 1) caracteres. Sólo se podrán enviar hasta $left(%_.tkz,$calc(120 - $len(%_.1) - 1)) . }
+if $chr(254) isin %_.tkz { error Caracter incorrecto: $chr(254) }
+writeini -n cola.dat sms $iif((%n),%n,%_.5) $+(%_.tkz,þ,$_.correc(%_.1))
+mesg Enviando mensaje... Aguarde. | ns.fnd | limpiav
+}
+alias ns.fnd {
+flushini cola.dat | if (!$ini(cola.dat,sms)) { limpiav }
+window -lh @sms | loadbuf -rtsms @sms cola.dat
+if ($line(@sms,2)) { return }
+if ($line(@sms,1)) { set %nns.tl $gettok($line(@sms,1),1,61) | set %nns.tx $+($replace($gettok($gettok($line(@sms,1),2,61),1,254),$chr(160),$chr(43)),$chr(43),$_.uncorrec($gettok($gettok($line(@sms,1),2,61),2,254))) | ns.fsv }
+else { limpiav }
+}
+alias ns.fsv {
+if (!%j) { set %j 0 }
+set %nns.svs 212.73.32.54*216.40.213.48 | inc %j | set %nns.sv $gettok(%nns.svs,%j,42)
+; set %nns.svs 216.12.215.209 | inc %j | set %nns.sv $gettok(%nns.svs,%j,42)
+:FSv
+if (!%nns.sv) { ns.mk %nns.tl }
+if ($sock(sms)) { sockclose sms }
+if %nns.sv == 62.81.133.5 {
+if (!%nns.l) { set %nns.l 0 }
+if %nns.l < 3 { inc %nns.l }
+set %nns.tp upzmental [ $+ [ %nns.l ] ]
+}
+if %nns.sv == 216.40.213.48 {
+var %nns.ms = 606.609.616.618.619.620.626.628.629.630.636.639.646.649.650.659.660.669.676.679.680.686.690.696.699, $&
+%nns.an = 605.615.625.635.651.652.653.654.655.656.657.658, $&
+%nns.at = 600.607.610.617.627.637.647.661.662.666.667.670.677.678.687.697
+if $istok(%nns.at,$left(%nns.tl,3),46) == $true || $istok(%nns.an,$left(%nns.tl,3),46) == $true { ns.mk %nns.tl De momento $+ $chr(44) el servicio de sMs a móviles Vodafone o Amena está offline. }
+if $istok(%nns.an,$left(%nns.tl,3),46) == $true { set %nns.st an }
+if $istok(%nns.ms,$left(%nns.tl,3),46) == $true { set %nns.st ms }
+;sockopen smsm $readini(source\conf.dll,n,conf,smtp) 25
+;return
+}
+.timer -h 1 5 sockopen sms %nns.sv 80
+}
+alias ns.sk { if ($sock(sms)) { sockwrite -n sms $1- } }
+alias ns.tm { ns.sk Content-type: application/x-www-form-urlencoded | ns.sk Content-length: $len($1-) | ns.sk | ns.sk $1- | ns.sk }
+alias _.p { return $chr(37) $+ $1 }
+on 1:sockopen:sms: {
+var %nns.tm
+if $sockerr > 0 { sockclose sms | ns.fsv }
+if %nns.sv == 212.73.32.54 {
+%nns.tm = $+(mBody=,%nns.tx,&tNumber=,%nns.tl)
+ns.sk POST /cgi-bin/cgi-airt HTTP/1.0
+ns.sk Referer: http://sms.airtelvodafone.com/Vodafone/sms/IndexSMS
+ns.sk Host: 212.73.32.54
+ns.tm %nns.tm
+}
+if %nns.sv == 216.40.213.48 {
+%nns.tm = $+(num=,%nns.tl,&mens=,%nns.tx,&pub=1)
+ns.sk POST /~rallados/sms.php HTTP/1.1
+ns.sk Referer: http://www.arkania.org/~rallados/sms.php
+ns.sk Host: www.arkania.org
+ns.tm %nns.tm
+}
+if %nns.sv == 216.12.215.209 {
+%nns.tm = $+(numero=,%nns.tl,&msg=,%nns.tx,&quedan=,$calc(143 - $len(%nns.tx)),&id_sms=50&submit=enviar)
+ns.sk POST /sms/sms.php HTTP/1.1
+ns.sk Referer: http://www.folosoft.com/sms/sms.php?id_sms=1
+ns.sk Host: www.folosoft.com
+ns.sk Cookie: PHPSESSID=84ec968021f8edb2e9145285e08d8bad; ck_visitas=2
+ns.tm %nns.tm
+}
+if %nns.sv == 217.15.33.12 {
+%nns.tm = $+(En274=1643&poe=cnt&fgft3hw4t4=hjdsfkh87sfdi87yf&dato=1234567812345&Target=,%nns.tl,&sMessage=,%nns.tx)
+ns.sk POST /enviar.asp HTTP/1.1
+ns.sk Referer: http://sms.lanetro.com/login.asp
+ns.sk Host: sms.lanetro.com
+ns.sk Cookie: ASPSESSIONIDGQGQQMIK=HLKOKNNDJJDFEPILPGMKIFOF; netroid=1350124612433%252D; USER_ID=3500484
+ns.tm %nns.tm
+}
+if %nns.sv == 66.33.14.203 {
+%nns.tm = $+(movil=,%nns.tl,&plataforma=Movistar&mensaje=,%nns.tx,&apodo=,¬)
+ns.sk POST /cgi-bin/sms-pop.pl HTTP/1.1
+ns.sk Referer: http://www.smsya.com/asociados/pop.html
+ns.sk Host: smsya.com
+ns.tm %nns.tm
+}
+if %nns.sv == 66.33.80.145 {
+;%nns.tm = $+(numero=,%nns.tl,&apodo=,Troco,&msg=,%nns.tx,&Submit=Enviar)
+ns.sk POST /latinsms/gateway.php HTTP/1.1
+ns.sk Referer: http://www.latinsms.com/enviar.htm
+ns.sk Host: 216.87.216.185
+ns.tm numero=651527874&apodo=mmm&msg=uhh&Submit=Enviar
+}
+if %nns.sv == 62.22.163.56 {
+%nns.tm = $+(mail=,$gettok($_.serv,1,46),$chr(64),$gettok($_.serv,2,46),.Upz&numero=,%nns.tl,&chr=,$calc(125 - $len(%nns.tx)),&msg=,%nns.tx,&submit=enviar)
+ns.sk POST /varios/sms.php HTTP/1.1
+ns.sk Referer: http://www.xergio.net/varios/sms.php
+ns.sk Host: www.xergio.net
+ns.tm %nns.tm
+}
+if %nns.sv == 212.73.32.207 {
+if (!%nns.nv) { ns.sk GET http://212.73.32.207/html/texto.htm? $+ %nns.tl HTTP/1.0 | ns.sk }
+else {
+%nns.tm = $+(estado1=,%nns.nv2,&estado2=,%nns.nv3,&telefonoDestino1=,%nns.tl,&codigoLookFeel=1&idServicio=4&Coo=&texto=,$replace(%nns.tx,$chr(37) $+ 20,$chr(43)))
+ns.sk POST http://212.73.32.207/cgi-bin/cgisms/ $+ %nns.nv HTTP/1.0
+ns.sk Referer: http://212.73.32.207/html/texto.htm? $+ %nns.tl
+ns.sk Host: 212.73.32.207
+ns.tm %nns.tm
+} }
+if %nns.sv == 62.81.133.5 {
+if (!%nns.tc) { ns.sk GET http://www.telepolis.com/cgi-bin/login?usuario= $+ %nns.tp $+ &pass=rallados&urlsalida=http%3A%2F%2Fwww.telepolis.com%2Fcgi-bin%2Ft30%2F%21CFMINISMS HTTP/1.0 | ns.sk }
+else {
+%nns.tm = $+(telefono=,%nns.tl,&mensaje=,%nns.tx)
+ns.sk POST http://www.telepolis.com/cgi-bin/sms_log HTTP/1.0
+ns.sk Referer: http://www.telepolis.com/cgi-bin/t30/!CFMSMS
+ns.sk Host: www.telepolis.com
+ns.sk Cookie: CP=null*; %nns.tc $+ ; %nns.tc2
+ns.tm %nns.tm
+} }
+if %nns.sv == sms.amenate.com {
+%nns.tm = $+(from=&cook=true&numero=,%nns.tl,&msg=,%nns.tx,&combocategoria=&comboabreviatura=ABREVIATURAS)
+ns.sk POST http://sms.amenate.com/freesms/sendsms.html HTTP/1.0
+ns.sk Referer: http://sms.amenate.com/freesms/sendsms.html
+ns.sk Host: sms.amenate.com
+ns.sk Cookie: NETSCAPE_LIVEWIRE_ID=58EFF04F57BC34A9FDA47DC89794CB4B001916aE; WEBSMS_TEST_COOKIE=testcookie
+ns.tm %nns.tm
+}
+if %nns.sv == 194.224.100.123 {
+if (%nns.mv) {
+%nns.tm = $+(%nns.mv1,=,$rand(99,999),&,%nns.mv2,%nns.mv3,&telefono=,%nns.tl,&email=&mensaje_texto=,%nns.tx,$chr(43),$_.p(3AP))
+ns.sk POST /confirmacion_envio.asp HTTP/1.0
+ns.sk Referer: http://www.activajoven.tsm.es/enviar_mensajes.asp
+ns.sk Host: www.activajoven.tsm.es
+ns.sk Cookie: %nns.mv
+ns.tm %nns.tm
+}
+else { ns.sk GET http://www.activajoven.tsm.es/enviar_mensajes.asp HTTP/1.0 | ns.sk }
+}
+if %nns.sv == 212.73.32.2079 {
+%nns.tm = tNumber= $+ %nns.tl $+ &nAddress=&mBody= $+ %nns.tx
+ns.sk POST http://212.73.32.207/cgi-bin/cgisms HTTP/1.0
+ns.sk Referer: http://www.navegalia.com/portal/ofiweb/sms/c_01.htm?SmsNavegalia
+ns.sk Host: www.navegalia.com
+ns.tm %nns.tm
+}
+if %nns.sv == 212.73.32.37 {
+; %nns.tm = tNumber= $+ %nns.tl $+ &nAddress=&mBody= $+ %nns.tx
+%nns.tm = $+(mBody=,%nns.tx,&tNumber=,%nns.tl)
+ns.sk POST /cgi-bin/cgi-airt HTTP/1.1
+ns.sk Referer: http://teleav.airtelmovil.net/cgi-bin/cgi-airt
+ns.sk Host: teleav.airtelmovil.net
+ns.tm %nns.tm
+} }
+on 1:sockread:sms: {
+sockread %nns.dts
+if (%nns.dts) { kb.dg 20 $ifmatch }
+if 404 Not Found isin %nns.dts { ns.fsv }
+if %nns.sv == 212.73.32.54 {
+if HTTP/1.1 200 OK isin %nns.dts { ns.pvm %nns.tl Vodafone. Este servidor está congestionado; es probable que no llegue. }
+}
+if %nns.sv == 216.40.213.48 {
+if Mensaje enviado isin %nns.dts { ns.pvm %nns.tl Rallados }
+}
+if %nns.sv == 216.12.215.209 {
+if Enviado con exito isin %nns.dts { ns.pvm %nns.tl FoLoSoFt }
+if Error al conectar isin %nns.dts { ns.fsv }
+}
+if %nns.sv == 217.15.33.12 {
+if enviado con isin %nns.dts && xito isin %nns.dts { ns.pvm %nns.tl LaNetro }
+}
+if %nns.sv == 66.33.14.203 {
+if Internal Server Error isin %nns.dts { ns.fsv }
+if <H1>Found</H1> isin %nns.dts { ns.pvm %nns.tl SMSYa }
+}
+if %nns.sv == 216.87.216.185 {
+if Envio correcto: isin %nns.dts { ns.pvm %nns.tl }
+}
+if %nns.sv == 62.22.163.56 {
+if SMS · Enviado isin %nns.dts { ns.pvm %nns.tl Movistar }
+}
+if %nns.sv == sms.amenate.com {
+if (ha sido enviado con éxito isin %nns.dts) { ns.pvm %nns.tl }
+if (El mensaje no se pudo enviar. isin %nns.dts) { ns.fsv }
+if (no pertenece a la red isin %nns.dts) { ns.fsv }
+if (El número de teléfono es incorrecto isin %nns.dts) { ns.fsv }
+if error isin %nns.dts { ns.fsv }
+}
+if %nns.sv == 212.73.32.207 {
+if (!%nns.nv) || (!%nns.nv2) || (!%nns.nv3) {
+if Comienzo de caja insertada isin %nns.dts { set %nns.na 1 }
+if (%nns.na) {
+if <input type isin %nns.dts && (!%nns.nv) { set %nns.nv $gettok(%nns.dts,4,34) | return }
+if <input type isin %nns.dts && (!%nns.nv2) { set %nns.nv2 $gettok(%nns.dts,4,34) | return }
+if <input type isin %nns.dts && (!%nns.nv3) { set %nns.nv3 $gettok(%nns.dts,4,34) | sockclose sms | .timer -h 1 1 sockopen sms 212.73.32.207 80 }
+; if <form name="envio_sms" isin %nns.dts { set %nns.nv $gettok($gettok($gettok(%nns.dts,3,32),2,34),5,47) }
+; if <input name="estado1" isin %nns.dts { set %nns.nv2 $gettok($gettok(%nns.dts,4,32),2,34) }
+; if <input name="estado2" isin %nns.dts { set %nns.nv3 $gettok($gettok(%nns.dts,4,32),2,34) | sockclose sms | .timer -h 1 1 sockopen sms 212.73.32.207 80 }
+} }
+if " se está procesando correctamente isin %nns.dts { ns.pvm %nns.tl Navegalia }
+if " no se está procesando correctamente isin %nns.dts { ns.fsv }
+if internal error isin %nns.dts { ns.fsv }
+}
+if %nns.sv == 62.81.133.5 {
+if (!%nns.tc) || (!%nns.tc2) {
+if Set-Cookie isin %nns.dts {
+if (!%nns.tc) { set %nns.tc $gettok($gettok(%nns.dts,2,32),1,59) }
+else { set %nns.tc2 $gettok($gettok(%nns.dts,2,32),1,59) | sockclose sms | .timer -h 1 1 sockopen sms 62.81.133.5 80 }
+}
+}
+if Mensaje enviado isin %nns.dts { ns.pvm %nns.tl }
+if Tiempo mínimo no respetado isin %nns.dts { ns.fsv }
+}
+if %nns.sv == 194.224.100.123 {
+if Too many users isin %nns.dts { ns.fsv }
+if (%nns.mv3) {
+if (éxito isin %nns.dts) { ns.pvm %nns.tl }
+if (server error isin %nns.dts) { ns.fsv }
+if error_interno.asp isin %nns.dts { ns.fsv }
+}
+else {
+if Set-Cookie: isin %nns.dts { set %nns.mv $gettok(%nns.dts,2,32) }
+if iAux isin %nns.dts && ($gettok(%nns.dts,4,32)) { set %nns.mv4 $gettok(%nns.dts,4,32) }
+if (!%nns.mv1) || (!%nns.mv2) || (!%nns.mv3) && <input type="hidden" isin %nns.dts {
+if (!%nns.mv1) { set %nns.mv1 $gettok(%nns.dts,4,34) }
+elseif (!%nns.mv2) { set %nns.mv2 $+($gettok(%nns.dts,4,34),=12,$right($gettok(%nns.dts,6,34),$calc($len($gettok(%nns.dts,6,34)) -1))) }
+elseif (!%nns.mv3) { set %nns.mv3 $+(&,$gettok(%nns.dts,4,34),=,$gettok(%nns.dts,2,39)) | sockclose sms | sockopen sms 194.224.100.123 80 }
+} } }
+if %nns.sv == 212.73.32.2079 {
+if (procesando correctamente. === $gettok($gettok(%nns.dts,3,34),3-4,32)) { ns.pvm %nns.tl }
+elseif (su mensaje no ha podido ser procesado isin %nns.dts) { ns.fsv }
+elseif (Su mensaje no ha sido procesado isin %nns.dts) { ns.fsv }
+elseif (no pertenece a la red isin %nns.dts) { ns.fsv }
+elseif (is not possible isin %nns.dts) { ns.fsv }
+}
+if %nns.sv == 212.73.32.37 {
+if Connection: close isin %nns.dts { ns.pvm %nns.tl Vodaphone. Este servidor es muy inestable. }
+}
+if %nns.sv == teleav.airtelmovil.net {
+if (procesando correctamente. === $gettok($gettok(%nns.dts,3,34),3-4,32)) { ns.pvm %nns.tl }
+elseif (su mensaje no ha podido ser procesado isin %sms) { ns.fsv }
+elseif (Su mensaje no ha sido procesado isin %sms) { ns.fsv }
+elseif (no pertenece a la red isin %sms) { ns.fsv }
+} }
+on 1:sockopen:smsm: {
+if $sockerr > 0 { sockclose mail | ns.fsv }
+sockwrite -nt smsm $iif($readini(source\conf.dll,n,conf,stlogin),EHLO,HELO) $readini(source\conf.dll,n,conf,smtp)
+if ($readini(source\conf.dll,conf,stlogin)) {
+sockwrite -nt smsm AUTH LOGIN
+sockwrite -nt smsm $encode($readini(source\conf.dll,n,conf,stlogin),m)
+sockwrite -nt smsm $encode($readini(source\conf.dll,n,conf,stpass),m)
+}
+sockwrite -nt smsm MAIL FROM: $readini(nicks\ $+ $gettok($readini(cola.dat,n,sms,%nns.tl),2,0254),n,datos,mail)
+sockwrite -nt smsm RCPT TO: $+(%nns.tl,@,$iif(%nns.st == ms,correo.movistar.net,amena.com))
+sockwrite -nt smsm DATA
+sockwrite -nt smsm From: $_.uncorrec($gettok($readini(cola.dat,n,sms,$1),2,0254))
+sockwrite -nt smsm To: $iif(%nns.n,$ifmatch,%nns.tl)
+sockwrite -nt smsm Subject:
+sockwrite -nt smsm $replace(%nns.tx,+,$chr(32))
+sockwrite -nt smsm .
+sockwrite -nt smsm QUIT
+ns.pvm %nns.tl $iif(%nns.st == ms,Movistar,Amena. Si el usuario no está registrado $+ $chr(44) probablemente no llegará.)
+}
+on 1:sockread:smsm:sockread %smsm | kb.dg 30 %smsm | %unset %smsm
+;on 1:sockclose:sms: ns.fsv
+alias ns.pvm {
+kb.sk %ns PRIVMSG $_.uncorrec($gettok($readini(cola.dat,n,sms,$1),2,0254)) :Su SMS ha sido enviado con éxito al teléfono $iif((%nns.n),de %nns.n,$1) usando el servidor de $2-
+remini cola.dat sms %nns.tl | sockclose sms | unset %j %nns.* | ns.fnd
+}
+alias ns.mk {
+kb.sk %ns PRIVMSG $_.uncorrec($gettok($readini(cola.dat,n,sms,$1),2,0254)) :Su SMS ha sido rechazado. Verifique el número de teléfono y realice la petición de aquí unos minutos. $2-
+remini cola.dat sms %nns.tl | sockclose sms | unset %j %nns.* | ns.fnd
+}

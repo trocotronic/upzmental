@@ -1,0 +1,458 @@
+Cambios parche 5.2
+-Arreglado fallo que SHaDoW permanecía en canales NO registrados (Gracias Davidlig por el aviso.)
+-Actualizada ayuda para añadir IRCops que se había quedado obsoleta (Gracias iCe-Cube por el aviso.)
+-Arreglado fallo en OpEr que no permitía cambiar el límite de memos en un nick (Gracias ^CHiVi^ por el aviso.)
+
+Cambios 5.2
+-Arreglado fallo en el envío de notificación de errores que no permitía responder.
+-Agregado sistema de login/pass para servidores SMTP que lo requieran.
+-Añadido al panel de control el login/pass para servidores SMTP que lo requieran.
+-Adaptado sistema de autentificación SMTP al envío de claves de nicks.
+-Adaptado sistema de autentificación SMTP al envío de claves de canales.
+-Adaptado sistema de autentificación SMTP al envío de claves de verificación.
+-Añadido sistema de registro del producto.
+-Añadido al panel de control el registro del producto.
+-Quitado sistema de registro del producto vía web.
+-Introducción al protocolo NICKv2.
+-Introducción al protocolo UMODE2.
+-Adaptado sistema NICK al protocolo NICKv2.
+-Adaptado sistema MODE al protocolo UMODE2.
+-Añadida posibilidad de enviar ID Bots para recibir la clave.
+-Arreglado fallo para ip nula en sockets al listen.
+-Arreglado fallo de status con parámetro nulo.
+-Añadido control de dropeo de nicks.
+-Añadido configuración automática/manual de nicks.
+-Añadido control de dropeo de canales.
+-Añadido configuración automática/manual de canales.
+-Añadido parámetro tiempo de caducidad en nicks.
+-Añadido parámetro tiempo de caducidad en canales.
+-Añadido autodropeo en configuración.
+-Adaptado autodropeo al refresh.
+-Arreglado fallo potencial en quit user.
+-Unificado sistema dropeo manual o automático.
+-Arreglado fallo owner en dropeo de nicks.
+-Cambio sistema Oper/ircop.
+-Adaptados procesos internos al nuevo sistema.
+-Restaurado sistema IRcop/oper.
+-Quitado opcion SET IRCOP.
+-Añadido modo +k en SHaDoW.
+-Añadida función Retención de modos de canales vía SHaDoW (modos mipsk) en NetBurst.
+-Arreglado fallo modo +L y -s en set de canales.
+-Adaptado modos set de canales a la versión UnrealIRCd 3.2b10+spa.0.3.
+-Compilación de los archivos source en formato UNIX.
+
+Cambios 5.1 Final
+-Arreglado fallo en Bot-lines en inicio de sesión.
+-Arreglado fallo remoto en listens de los bots sobre ip 0.
+-Arreglado fallo de registro de canales vía chan.
+
+Cambios 5.1 Beta 1
+-Arreglado fallo de listar apoyos de un canal.
+-Arreglado fallo en el cambio global de masks de los bots preo y away.
+-Arreglado fallo en la fijación de levels de un canal.
+-Arreglado fallo en el invite (vía CHaN, OpEr o PReO).
+-Arreglado fallo de cuelgue en la introducción de ciertos bots.
+-Cambio del sistema de logs.
+-Añadido nuevo servidor de sms.
+-Arreglado fallo en el registro de canales vía oper que permitía registrar canales ya registrados.
+-Arreglado fallo en el MODE de OpEr.
+-Añadido comando AWAY en OpEr que desactiva/activa este servicio.
+-Añadido comando DENY en CHaN para prohibir canales.
+-Añadido comando UDENY en CHaN para permitir canales prohibidos.
+-Añadido sistema DENY de canales a su registro vía OpEr o CReG.
+-Añadido sistema DENY de canales a su info vía CReG.
+-Arreglado fallo de seguridad según boletín UPZ-50F13
+-Arreglado fallo de seguridad según boletín UPZ-50F14
+-Arreglado fallo de seguridad según boletín UPZ-50F15
+-Arreglado fallo de seguridad según boletín UPZ-50F16
+-Añadida compatibilidad con CHGIDENT.
+-Añadida compatibilidad con CHGNAME.
+-Actualizada ayuda respectiva.
+-Añadido sistema de envío de datos para estadísticas de la red.
+-Añadido sistema automático de envío de datos para estadísticas de red.
+-Arreglado fallo del 35% de progreso.
+-Añadido comando UGRATIX.
+-Añadida compatibilidad con Root.
+-Añadido control de root extremo.
+-Añadido nuevo status de Admin de la red.
+-Trasladados comandos ADDPREOPER y DELPREOPER para admins.
+-Añadidos comandos para admins.
+-Añadido comando ADDIRCOP para admins y root.
+-Añadido comando DELIRCOP para admins y root.
+-Nuevo sistema de jerarquía: Root > Admin > IRCop > Preoper > User
+-Roots añaden admins e ircops. Admins añaden ircops. Todo sin O Line.
+-Quitado comando FUNDADOR en OpEr.
+-Mejora del dropeo de nicks con compatibilidad para Preo's.
+-Trasladado comando SUSPENDER de OpEr a NiCK.
+-Trasladado comando LIBERAR de OpEr a NiCK.
+-Trasladado comando SUSPENDIDOS de OpEr a NiCK.
+-Trasladado comando DROP de OpEr a NiCK.
+-Añadida compatibilidad con CHGHOST.
+-Mejorado sistema de cambio de host.
+-Añadido parámetro interno para ip's virtuales.
+-Añadido debug en KICK por CHaN.
+-Añadido motivo de KICK por CHaN.
+-Añadido debug en BAN por CHaN.
+-Añadido debug en UNBAN por CHaN.
+-Añadida compatibilidad para *!*@* en blines.
+-Arreglado fallo en el kill protection vía kill.
+-Añadido sistema de auto-gline por puertos abiertos modificable por el root.
+-Añadido configuración de puertos a escanear.
+-Añadido sistema de comprobación de e-mails.
+-Añadido comando RESEND.
+-Añadido comando VERIFY.
+-Mejorado sistema de dropeo de nicks.
+-Implementado sistema de comprobación de e-mails al mismo registro.
+-Añadido sistema de inserción de bots.
+-Añadido opción de inserción de bots en el panel de control.
+-Actualizado sistema anti-kill bots.
+-Arreglado fallo de cruce de comandos en CLON.
+-Arreglado fallo de modos en CLON.
+-Añadido WHOIS especial en CLON.
+-Añadido comando GETVERIFY.
+-Actualizada correspondiente ayuda.
+-Arreglado fallo en ESPECIAL que sacaba a AntiSpam y bots permanentes del canal.
+-Arreglado fallo del Unrealircd sobre los modos +s y +p.
+-Arreglado fallo en el sistema de modos con clave.
+-Añadido sistema de memos leídos/no-leídos.
+-Mejora de la rapidez de procesamiento de datos por $ifmatch.
+-Añadido comando PARA en StAtS.
+-Añadido sistema de recuperación de configuración.
+-Añadido sistema de guardado de configuración.
+-Añadido acceso al sistema de guardado de configuración por panel de control.
+-Arreglado fallo de cola de sms.
+-Arreglado fallo de cola en envios de canales.
+-Arreglado fallo de cola en envios de nicks.
+-Arreglado fallo de discernición entre envios de nicks y canales.
+-Añadida compatibilidad con root inicial (root/pass).
+
+Cambios 5.0
+-Mejora del sistema de compatibilidad de niveles y accesos.
+-Cambio de nomenclatura de variables.
+-Cambio de bucles internos.
+-Cambio de proceso de datos.
+-Cambio de la gestión de sockets.
+-Cambio de la administración de archivos.
+-Nuevo sistema de archivos.
+-Nuevo sistema de llamada de aliases y comandos internos.
+-Nuevo sistema de control interno.
+-Nuevo sistema de la fijación de niveles para canales.
+-Nuevo sistema de correción de nicks con caracteres no permitidos (],[,|)
+-Nuevo sistema de nicks suspendidos.
+-Mejora de la compatibilidad de comandos con el sistema de nicks suspendidos.
+-Mejora de la unificación de archivos presente en las otras versiones.
+-Mejora del rawcmd.
+-Mejora del rooting o identificación del root de los bots.
+-Mejora del sistema de BoT-Lines.
+-Mejora del rooting o cambio de root.
+-Mejora del servicio de estadística StAtS.
+-Mejora del listado de nicks.
+-Mejora del dropeo de nicks.
+-Mejora del sistema de proxies, que, por motivos varios, mostraba la ip en el canal de ASAJOIN.
+-Solución al problema de la entrada de canales con Unrealircd 3.0.
+-Inclusión de un nuevo bot de pre-opers. (PReO)
+-Inclusión de un nuevo bot de diversión. (LuDo)
+-Inclusión de un nuevo bot de antispam en canales (AntiSpam)
+-Completa integración de los tres nuevos bots al resto de comandos.
+-Nuevo sistema de registro de PreOpers.
+-Nuevo sistema de registro de IRcops.
+-Nuevo sistema secure de modos.
+-Mejora del Global de ircops.
+-Cambio del sistema de MOTD.
+-Cambio del sistema de autoupdate.
+-Inclusión del sistema de inicialización de los bots.
+-Incluída monitorización de procesos de inicialización.
+-Mejora del sistema anti-glines globales.
+-Cambio del sistema de CReG.
+-Unificación del sisterma de IP's.
+-Unificación del sistmea de IP's virtuales.
+-Unificación del sistema de VHosts.
+-Unificación del sistema de niveles de usuarios.
+-Mejora de los modos al vaciar un canal.
+-Integridad de visualización de nicks/canales.
+-Unificación de errores.
+-Unificación de mensajes.
+-Cambio del sistema de MeMo's.
+-Cambio en la visualización de colores.
+-Completado sistema de CSpam.
+-Añadida opción de control de tiempo de ban por CSpam.
+-Completado sistema de PReO.
+-Completado sistema de LuDo.
+-Completo sistema Trivial de LuDo.
+-Añadida opción HIDE quit.
+-Añadida opción de visualizar un quit voluntario en la INFO de un nick.
+-Añadido comando ALLOW a OpEr.
+-Añadido comando UNALLOW a OpEr.
+-Añadida opción Recuperación de Archivos (nicks, canales, creg's y stats)
+-Terminada compatibilidad con acceso de Server Root For UpZMenTaL BoTs 5
+-Corregido fallo de cuelgue en la introducción de nicks nuevos.
+-Mejora del volcado de realname's.
+-Añadida opción de control de antigüedad de nicks.
+-Adaptado control de configuración al sistema interno de datos.
+-Cambio del comandor REGISTRA de CReG a REGISTER.
+-Incluído limpiado de volcado de datos.
+-Establecida compenetración entre preopers, opers, usuarios normales y sus cambios de nicks (raras veces se daba).
+-Arreglado fallo de modos +s +p que los omitía (fallo de unrealircd).
+-Traspasado comando SENDPASS de CReG a CHaN.
+-Traspasado comando GETPASS de OpEr a NiCK.
+-A partir de ahora los mails de los canales no se mandan al mail del canal sinó al mail del founder.
+-Deshabilitación de los menús de mIRC.
+-Cambio del sistema de CSpam para anotaciones internas.
+-Cambio del sistema interno de anotación de datos.
+-Translación del sistema interno de anotación de datos mediante ficheros a tablas internas (fase de pruebas).
+-Añadida opción de bloqueo de querys a bots para no usuarios.
+-Incluído nuevo comando en StAtS: GLOBAL.
+-Adaptado código fuente a la monitorización de estadísticas globales.
+-Suprimido parámetro de canales con carácter incorrecto (æ)
+-Mejora del sistema AKICK para una compenetración total con masks dinámicas.
+-Cambio del servidor de sMs por uno mucho más fiable y más instantáneo.
+-Arreglado curioso fallo del mIRC que incompatibiliza el modo -s en picwins corriendo bajo Win98 (en WinXP no ocurría).
+-Arreglado pequeño fallo que creaba archivos de canales no resgistrados en quit.
+-Arreglado fallo de retención de topic.
+-Añadida nueva opción de KTOPIC.
+-Se difiere RTOPIC.
+-Adaptador código load al ktopic.
+-Abolido sistema de canal #pre_opers.
+-Añadida mejora del reseteo de estado.
+-Arreglado fallo de Vhost.
+-Añadida opción de visualización del root en el comando ADMINS.
+-Arreglado fallo de cruce de datos en el status de un nick y los derivados que comporta.
+-Mejora del sistema de registros de canales vía OpEr.
+-OpEr deja de ser fundador de sus canales registrados; lo es el ircop que lo solicita.
+-Añadida opción de guardián de modos con el +R.
+-Añadido nuevo bot: NeWs.
+-Adaptado código global al nuevo bot.
+-Terminado uso del bot NeWs.
+-Traspasado comando MOTD de GLoBaL a NeWs.
+-Añadido comando a NeWs REGULAR.
+-Mejorado comando de autoop cuando es superior a 12 @ (fallo unrealircd).
+-Remodelado sistema de identificación con conexiones con pass.
+-Adaptado sistema interno de control de usuarios al sistema de conexiones con pass.
+-Adaptado sistema de cambio de nicks con conexiones con pass.
+-Añadida mejora de vhosts, ip's virtuales y cambios de nicks, indiferentes a los ircops reconocidos.
+-Añadido nuevo servidor sMs más fiable (el último comenzaba a dar problemas, todos petan que mierda).
+-Añadida opción de configuración de server de aways.
+-Añadido sistema de kill en el linkado de los bots si un usuario está usando un nick prohibido (like Q Line).
+-Mejorado sistema de MeMo's.
+-Mejora de kicks sobre bots.
+-Añadido tope de longitud de caracteres en los memos (900, NO debe cambiarse, no es opcional).
+-Añadido sistema de detección de errores en el linkado del servidor.
+-Añadida información extra en el linkado correcto del servidor.
+-Añadido sistema anti-flood vía ctcps (si se producen 2 ctcps en menos de 5 segundos a los bots o a canales donde esté almenos un bot, immediatamente es glineado con el tiempo establecido por AntiSpam).
+-Estructurado el sistema de away.
+-Cambiado sistema de datos de nicks.
+-Adaptado control interno de datos al nuevo sistema de registrod de datos de nicks.
+-Añadida opción de dropeo de nicks/canales si sobrepasan el tiempo de registro al refrescar.
+-Añadido sistema de posibilidad de recuperación de canal con fundador dropeado (el nuevo fundador pasa a ser CReG).
+-Añadido sistema de autoexpiración en canales con CReG de fundador a partir de los 10 días si no se reclama.
+-Añadida opción de importar proxies de algun fichero.
+-Cambiado sistema de GLINE's.
+-Adaptado sistema de GLINE's a un correcto uso de forma compatible con todas las versiones unreal (gline por  protocolo standard).
+-Mejora del sistema de autodropeo de canales/nicks esta vez en info's.
+-Añadido sistema de whois en nicks away.
+-Arreglado importante fallo de autentificación.
+-Añadida una nueva ventana de créditos muy muy bonita :P
+-Arreglado fallo de links.
+-Cambio de colores.
+
+Cambios v4.4.5
+-Arreglada incompatibilidad con las versiones 3.0 de unrealircd.
+
+Cambios v4.4.4
+-Remodelación del bot sMs.
+-Se introduce un nuevo server en el bot sMs.
+-Incluída nueva opción de enviar sMs a nicks sin saber el num.
+-Incluída nueva opción de darte de alta/baja en el bot sMs.
+-Incluída nueva opción de lista de nicks privilegiados en el bot sMs.
+-Incluída nueva opción de fijar opciones en el bot sMs.
+-Incluída nueva opción de añadir/borrar nicks de la lista de privilegiados.
+-Incluída nueva ayuda de sMs.
+-Incluída nueva opción de visualización de la base de datos de sMs en la info de un nick.
+-Mejora del debug de SHaDoW.
+-Supresión del comando FLUSH.
+-Mejora del código de StAtS (mejora interna)
+-Mejora del envío múltiples de SMS.
+-Mejora del sistema de spam: no percibe los mensajes en el canal de autojoin.
+-Mejora del sistema de anotación de modos en inicio de bots.
+-Mejora de la info de un nick por OpEr.
+-Mejora de la info de un nick.
+-Mejora de los niveles de canales.
+-Mejora del dropeo de canales.
+-Mejora del sistema identificación de founders sin tener el nick registrado.
+-Inlcuído nuevo sistema de protección de proxies.
+-Addición de la lista editable de proxies en el cuadro de configuración.
+
+Cambios v4.4.3
+-Mejora de todo el sistema de modos.
+-Mejora del sistema múltiple de modos.
+-Mejora del sistema de bans.
+-Mejora del sistema múltiple de bans.
+-Mejora del sistema de SHaDoW.
+-Mejora del sistema debug de canales.
+-Mejora del sistema op/deop por CHaN.
+-Mejora del sistema secureops.
+-Incluída opción de visualización del nick que pone un ban en el comando LISTBAN.
+-Unificación de errores.
+-Mejora del autoupdate con las DLL's.
+-Mejora del sistema de inicialización de archivos cargados e instalados.
+-Mejora del sistema de cambio de nicks.
+-Mejora del listado de IP especiales.
+-Mejora del deauth por CHaN.
+-Nuevo sistema de kill de los nicks.
+-Nuevo sistema de status de nicks.
+-Mejora del sistema de identificación en situaciones de emergencia.
+-Mejora de los modos de usuario/+x en IRCops con el factor split.
+-Mejora del sistema iterno de canales registrados.
+-Mejora del sistema de entrada de StAts.
+-Mejora del sistema de modos de SHaDoW.
+-Mejora considerable de la retención de modos.
+-Mejora del sistema de anotación de claves.
+-Adaptación del sistema secureops para modos múltiples (Tratado individual de tokens) (+-+-+)
+-Adaptación del sistema de fijación de modos para un canal con múltiples modos.
+-Adaptación del sistema de retención de modos para un canal con múltiples modos.
+-Completa compatibilidad con los modos de especificación adicional en Unreal (klfL).
+-Mejora de la ayuda de configuración.
+-Mejora del TOPIC con el factor split.
+-Añadido sistema de seguridad de passwords para servidores.
+-Supressión del comando DELIRCOP de OpEr.
+-Mejora de la caducidad de nicks.
+-Suprimido el sistema de Hash Tables por incompatibilidad.
+-Mejora del control de canales.
+-Incluída absoluta compatibilidad con antiguas versiones.
+.Mejora del autoupdate con compatibilidad para nuevas versiones.
+
+Cambios v4.4.2
+-Cambio notable sobre el sistema interno/externo de GLines.
+-Suprimido el comando NETBAN/UNETBAN.
+-Mejora del sistema de Listglines.
+-Mejora del sistema de Glines por OpEr.
+-Mejora del sistema de UnGlines por OpEr.
+-Incluído el sistema de listado de Glines independientemente de su origen.
+-Separación de los sistemas BoT-Line y GLine.
+-Mejora del sistema de autodropeo de nicks no identificados pasados 45 días.
+-Incluído nuevo sistema de apoyo/registro de canales en nicks con una antigüedad de 10 días registrado.
+-Mejora de la compatibilidad con el nuevo sistema de estructuración de archivos respeto a la antigua.
+-Incluído nuevo sistema de nick provisional para SPaM en el caso de no poder utilizarse.
+-Mejora del cuadro de configuración.
+-Mejora del sistema OP con el factor +/-.
+-Incluído innovedoso sistema de bans/unbans vía modes con el factor +/-.
+-Incluído innovedoso sistema de op/deops/half/dehalfs vía modes con el factor +/- añadido al factor op-bots de servicio.
+-Mejora del sistema antidehalf con el factor split.
+
+Cambios v4.4.1
+-Mejora del sistema ban-split.
+-LISTBAN borra todos los bans de un canal sin interferir el factor split.
+-Mejora del sistema +x/-x con Vhosts.
+-Mejora del sistema ban vía CHaN.
+-Mejora del sistema auto-ban vía CHaN con compatibilidad para +x.
+-Mejora del sistema de estadísticas de un canal.
+-Incluído sistema de compactación de espacio modular.
+-Mejora del sistema de nick-kill.
+-Mejora de las opciones de nick.
+-Mejora del help.
+-Mejora del dropaje de nicks pasados 45 días sin identificarse.
+-Mejora del dropaje de canales pasados 45 días sin la entrada de un nick identificado de la lista de acceso.
+-Mejora del registro de entradas de nicks identificados de la lista de acceso de un canal.
+-Mejora de canales seguros.
+-Mejora de los eventos de canales.
+-Mejora de la lista de canales en fase de aprobación de registro (se visualiza el tiempo excedido en 7 días)
+-Mejora de la lista de canales en fase de registro (se visualiza si ha o no expiado por apoyos innecesarios)
+-Mejora de los canales en la BDD de CReG.
+-Mejora del autoupdate.
+-Mejora de la integración de SPaM.
+-Mejora del envío de pass de nicks al mail.
+-Mejora del envío de pass de canales al mail.
+-Mejora del sistema antispam.
+-Mejora del sistema SHaDoW.
+-Mejora de la ayuda de CHaN.
+-Mejora del sistema NETBAN.
+
+Cambios v4.4
+-Reorganización de los archivos de sistema.
+-Sistema de seguridad para la completa integración de todos los archivos.
+-Mejoras de los aliases de carga.
+-Actualizado todo el código para funcionar en mIRC v5.91.
+-Unificación de los mensajes de error.
+-Mejora del sistema de Hosts virtuales.
+-Sistema de cambio de encriptación de IP's cada 7 días de manera automática.
+-Sistema de encriptacion usando la dll de ais.
+-Corrector de caracteres.
+-Compactación del código.
+-Mejora de la velocidad de procesamiento de datos.
+-Simplifiación del código.
+-Supressión de variables innecesarias.
+-Mejora del sistema de ida/vuelta/volcado.
+-Mejora del sistema de listas internas.
+-Compatibilidad para información con *.
+-Mejora del sistema de listado de usuarios conectados mediante comodines.
+-Mejora del robo de nicks.
+-Mejora del sistema de recuperación de nicks.
+-Integración del sistema de opciones de nicks.
+-Incluído el sistema de reedistribución de datos.
+-Mejora del control de apoyos.
+-Nuevo comando APOYOS para un nick o canal. Lista los apoyos emitidos por un nick (si es nick) o los apoyos recibidos (si es canal).
+-Nuevo sistema de autoop/autodeop basado por el servidor. 
+-Reestructuración de los eventos de un canal como consecuencia del punto anterior.
+-Mejora del sistema de autobans.
+-Mejora del sistema de compatibilidad de nicks con simbología no permitida ([,],\,|)
+-Mejora del sistema de auto-kick (AKICK) en canales registrados en la base de datos de CHaN (en adelante, BDD)
+-Mejora del sistema del evento entrada-akick.
+-Mejora del sistema del evento ip virtual-akick/ban.
+-Mejora del sistema de secureops.
+-Mejora del sistema de autodeop en splits/servidores.
+-Incluído sistema de autodeowner en splits/servidores.
+-Incluído sistema de No-kick a bots de servicio.
+-Mejora del servicio de control de canal (SHaDoW por defecto).
+-Mejora del sistema de filtro de akick.
+-Mejora del sistema especial de entrada de bots de servicio a canales.
+-Supresión en la opcion especial de un canal del símbolo - y &.
+-Nuevo sistema de especial en la entrada de bots de servicio a un canal.
+-Mejora del sistema debug de los bots.
+-Mejora del sistema de invitación vía CHaN/OpEr.
+-Compatibilidad sistema de ip-bans.
+-Mejora del sistema de listado de bans.
+-Mejora del sistema de autoentrada de bots de servicio a canales.
+-Mejora del sistema de reseteo de bans.
+-Mejora de la introducción de datos en la BDD de HeLP.
+-Mejora de la supresión de datos de la BDD de HeLP.
+-Compatibilidad en la gestión de memos con mensajes de símbolo *.
+-Nuevo cuadro de configuración.
+-Nuevas mejoras incluídas en el cuadro de configuración.
+-Nuevo sistema de comprovación de datos de los bots de servicios en el cuadro de configuración.
+-Mejora de los créditos por menús.
+-Mejora del sistema anti-clon.
+-Nuevo sistema de eliminación de nicks pasados 45 días sin autentificarse.
+-Nuevo sistema de eliminación de canales pasados 45 días sin la entrada de un nick en la lista de acceso del canal.
+-Nuevo sistema de guardado/volcado de datos de la configuración de los bots de servicio.
+-Nuevo sistema de modos para usuarios al conectarse (+ixws).
+-Añadida nueva opción al hacer un WHOIS a un nick (SWHOIS).
+-Mejora del sistema de actualización de cambios de nicks en las correspondientes BDD's.
+-Compatibilidad de modos de usuario.
+-Mejora del sistema de bot-lines.
+-Incluído sistema de anotación de modos especiales de usuario.
+-Mejora del sistema de auto-glines.
+-Mejora del sistema de info de un nick.
+-Mejora del sistema de suspensión de nicks.
+-Supresión del sistema de automayusculado.
+-Mejora del sistema de akick-ban.
+-Mejora del sistema KILL.
+-Supresión del sistema deauth ante OpEr.
+-Mejora del sistema de reloads de módulos.
+-Mejora del sistema de cambio de nick vía OpEr.
+-Mejora del sistema No-kill a bots de servicio.
+-Mejora del sistema salida de canal.
+-Mejora del sistema de kicks.
+-Adaptación de los créditos.
+-Incluído nueva opción de visualización de las características del sistema de los bots de servicio. (SYSTEM)
+-Mejora del sistema de envío de contraseñas de canales.
+-Mejora del sistema de envío de contraseñas de nicks.
+-Nuevo sistema de anti-spam.
+-Incluído sistema de usuario normal por SPaM.
+-Incluído sistema de evaluación de mensajes a SPaM.
+-Incluído sistema de listado de palabras spam.
+-Mejora del sistema addición/borrado de palabras spam.
+-Mejora del sistema auto-actualización.
+-Mejora del sistema de conexión de bots de servicio.
+-Mejora del sistema de conexión del servidor de bots de servicio.
+-Integración total de SPaM como usuario normal.
+-Transcripción de todo el código a mIRC v5.91.

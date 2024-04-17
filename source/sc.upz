@@ -1,0 +1,319 @@
+alias sc.nr { if $_.isus(%_.1) == $true { error Tu nick está suspendido. 12 /msg %nn info %_.1  para mas información } | if $_.st(%_.1) isnum 1-2 { error No estás identificado. (/msg $+(%nn,@,$_.serv) IDENTIFY tupass) } | if (!$readini(nicks\ $+ $_.correc(%_.1),n,datos,pass)) { error No tienes el nick registrado. } }
+alias _.lv {
+var %l = $readini(canales\ $+ $2,usuarios,$_.correc($1))
+if (!%l) { %l = 0 }
+if $istok(%kb.bb,$_.correc($1),32) == $true { %l = 500 }
+if $_.st($1) > 3 { %l = 500 }
+if $istok($readini(canales\ $+ $2,n,datos,owner),$_.correc($1),230) == $true { %l = 500 }
+if $_.st($1) > 2 && $readini(canales\ $+ $2,n,datos,fun) == $_.correc($1) { %l = 500 }
+if $_.st($1) < 3 { %l = 0 }
+if %l < $readini(canales\ $+ $2,levels,$3) { return $false }
+else { return %l }
+}
+alias _.away {
+if (!$readini(nicks\ $+ $_.correc($1),n,away,nick)) { return $false }
+else { return $true }
+}
+alias nc.ntc { if $readini(canales\ $+ $1,n,datos,debug) == on || (!$readini(canales\ $+ $1,n,datos,debug)) { kb.sk %nc NOTICE $1 : $+ $2- } }
+alias _.user {
+if $prop == nick {
+if (!$hget(users,$1)) { return $false }
+else { return $true }
+}
+if $prop == chan { return $istok($hget(chans,$1),$2,32) }
+}
+alias sc.nv {
+if $readini(canales\ $+ %_.5,n,datos,secureops) == on {
+if $_.lv(%_.6,%_.5,$iif($1 == op,autoop,autohalf)) == $false { kb.sk %nc MODE %_.5 $iif($1 == op,-o,-h) %_.6 }
+} }
+alias creditos {
+mesg UpZMenTaL BoTs v $+ $_.ver -6 Trocotronic -
+raya
+mesg Traducción, adaptación, y mejoras desde la version 3.0 por Trocotronic a partir de los BoTs originales de NiGHT y KaT.
+mesg Basado en el sistema que introdució KaT.
+mesg Módulos adicionales:
+mesg -Encriptación de IP's: crypt.dll (ais)
+mesg -Información de sistema del servidor: moo.dll (Kamek)
+mesg Información, notificación de bugs, sugerencias o parches a 6Trocotronic@Telefonica.net
+mesg Página web 12http://www.rallados.es.vg
+mesg Servidor de IRC: 6UpZMenTaL.SyTeS.NeT
+mesg Este programa está dedicado a la persona que más quiero: es para ti 3Emi.
+mesg Beta Testers: 3IgNoRaO, warzone.
+raya
+mesg - 12KaT -
+mesg Adaptación libre del CService a mIRC Script (Win 95/98/NT)
+mesg Bajatelo de:12 http://www.sarrio.org/kat
+mesg Comentarios, Sugerencias, preguntas y avisos de bugs a: 12kat@blackcode.com
+mesg Quisiera dedicar este trabajo a 12Cris y a 12"Los Gallos de la Suboscuridad".
+limpiav
+}
+alias _.correc return $replace($1,[,¥,],¬,$chr(124),½)
+alias _.uncorrec { var %t = $replace($1,¥,[,¬,],½,$chr(124)) | return $iif(($findfile($mircdir,%t,1)),$nopath($ifmatch),%t) }
+alias _.cod return $replace($1-,,ã,,Â,,¥)
+alias _.uncod return $replace($1-,ã,,Â,,¥,)
+alias _.isus { if ($readini(admins.dat,n,suspendidos,$_.correc($1))) { return $true } }
+alias kb.unix {
+emi 1 63 Unificando sistemas de compatibilidad... | var %r = 1, %s = $findfile(nicks\,*.*,0), %t = 1, %f, %u = 63, %s, %v, %w
+:UNx1
+if ($findfile(nicks\,*.*,%r)) {
+%f = $nopath($findfile(nicks\,*.*,%r))
+if ($readini(nicks\ $+ %f,%f,%f)) {
+writeini -n nicks\ $+ %f datos pass $gettok($readini(nicks\ $+ %f,%f,%f),1,42)
+writeini -n nicks\ $+ %f datos omail $gettok($readini(nicks\ $+ %f,%f,%f),2,42)
+writeini -n nicks\ $+ %f datos mail $gettok($readini(nicks\ $+ %f,%f,%f),3,42)
+writeini -n nicks\ $+ %f datos oweb $gettok($readini(nicks\ $+ %f,%f,%f),4,42)
+writeini -n nicks\ $+ %f datos web $gettok($readini(nicks\ $+ %f,%f,%f),5,42)
+writeini -n nicks\ $+ %f datos oreal $gettok($readini(nicks\ $+ %f,%f,%f),6,42)
+writeini -n nicks\ $+ %f datos real $_.cod($gettok($readini(nicks\ $+ %f,%f,%f),7,42))
+writeini -n nicks\ $+ %f datos otime $gettok($readini(nicks\ $+ %f,%f,%f),8,42)
+writeini -n nicks\ $+ %f datos out $gettok($readini(nicks\ $+ %f,%f,%f),9,42)
+writeini -n nicks\ $+ %f datos identified $gettok($readini(nicks\ $+ %f,%f,%f),10,42)
+writeini -n nicks\ $+ %f datos omask $gettok($readini(nicks\ $+ %f,%f,%f),11,42)
+writeini -n nicks\ $+ %f datos mask $gettok($readini(nicks\ $+ %f,%f,%f)s,12,42)
+writeini -n nicks\ $+ %f datos reg $gettok($readini(nicks\ $+ %f,%f,%f),13,42)
+remini nicks\ $+ %f %f | remini nicks\ $+ %f datos preo | remini nicks\ $+ %f datos nooline
+}
+if (!$readini(nicks\ $+ %f,n,datos,oquit)) { writeini -n nicks\ $+ %f datos oquit off }
+if ($readini(nicks\ $+ %f,n,memos,numeroactual)) || $readini(nicks\ $+ %f,n,memos,numeroactual) == 0 { remini nicks\ $+ %f memos numeroactual }
+inc %r | inc %u $calc(3 / %s ) | %w = $round(%u,0) | inc %t $calc(100 / %s) | %v = $round(%t,0) | emi %v %w Unificando sistemas de compatibilidad... | goto UNx1
+}
+%r = 1 | %s = $findfile(canales\,*.*,0) | %t = 1
+:UNx2
+if ($findfile(canales\,#*,%r)) {
+%f = $nopath($findfile( [ [ $mircdir ] $+ ] canales\,#*,%r))
+remini canales\ $+ %f akick ??? | remini canales\ $+ %f bans ??? | remini canales\ $+ %f strict
+if (!$readini(canales\ $+ %f,n,datos,ctopic)) { writeini -n canales\ $+ %f datos ctopic off }
+inc %r | inc %u $calc(3 / %s) | %w = $round(%u,0) | inc %t $calc(100 / %s) | %v = $round(%t,0) | emi %v %w Unificando sistemas de compatibilidad... | goto UNx2
+}
+if $exists(cuentas.dat) == $true {
+%r = 1 | %s = $ini(cuentas.dat,cuentas,0) | %t = 1
+:UNx3
+if ($read(cuentas.dat,n,%r)) {
+write otros.dat $read(cuentas.dat,n,%r)
+inc %r | inc %t $calc(100 / %s) | %v = $round(%t,0) | emi %v 67 Unificando sistemas de compatibilidad... | goto UNx3
+}
+.remove cuentas.dat
+}
+else { emi 50 67 Unificando sistemas de compatibilidad... }
+if $exists(kills.dat) == $true {
+%r = 1 | %s = $ini(kills.dat,kills,0) | %t = 1
+:UNx4
+if ($read(kills.dat,n,%r)) {
+write otros.dat $read(kills.dat,n,%r)
+inc %r | inc %t $round($calc(100 / %s),0) | %v = $round(%t,0) | emi %v 68 Unificando sistemas de compatibilidad... | goto UNx4
+}
+.remove kills.dat
+}
+else { emi 50 68 Unificando sistemas de compatibilidad... }
+if $exists(glines.dat) == $true { .remove glines.dat }
+if ($ini(otros.dat,kills)) {
+flushini otros.dat | window -hl @HideList | loadbuf -rtkills @HideList otros.dat
+%r = 1 | %s = $line(@HideList,0) | %t = 1
+:UNx5
+if ($line(@HideList,%r) {
+writeini -n nicks\ $+ $gettok($line(@HideList,%r),1,61) datos kill $gettok($line(@HideList,%r),2,61)
+inc %r | inc %t $calc(100 / %s) | %v = $round(%t,0) | emi %v 69 Unificando sistemas de compatibilidad... | goto UNx5
+}
+remini otros.dat kills
+}
+else { emi 50 69 Unificando sistemas de compatibilidad... }
+}
+alias kb.mkf {
+emi 0 1 Recuperando archivos... | var %s = $findfile(\,admins.dat,n,0), %r = 1, %t = 1, %g = 1, %u = 1, %h, %d, %e, %y, %x, %v, %z, %w
+inc %g $calc(100 / %s / 4) | %h = $round(%g,0)
+while %r <= %s {
+%d = $findfile(\,admins.dat,n,%r) | %e = $finddir($nofile(%d),canales,1) | %y = $findfile(%e,#*,0) | %x = 1
+if (%e) && $+(\,$gettok($mircdircanales,2-,92)) != %e {
+while %x <= %y {
+%z = $findfile(%e,#*,1) | inc %t $calc(100 / %y) | %v = $round(%t,0) | emi %v %h Recuperando archivos...
+if (!$findfile(canales\,$nopath(%z),1)) { .rename %z canales\ $+ $nopath(%z) }
+inc %x
+} }
+inc %g $calc(100 / %s / 4) | %h = $round(%g,0) | emi 0 %h Recuperando archivos...
+%e = $finddir($nofile(%d),nicks,1) | %t = 1 | %y = $findfile(%e,*,0) | %x = 1
+if (%e) && $+(\,$gettok($mircdirnicks,2-,92)) != %e {
+while %x <= %y {
+%z = $findfile(%e,*,1) | inc %t $calc(100 / %y) | %v = $round(%t,0) | inc %u $calc(100 / %s) | %w $round(%u,0) | emi %v %h Recuperando archivos...
+if (!$findfile(nicks\,$nopath(%z),1)) { .rename %z nicks\ $+ $nopath(%z) }
+inc %x
+} }
+inc %g $calc(100 / %s / 4) | %h = $round(%g,0) | emi 0 %h Recuperando archivos...
+%e = $finddir($nofile(%d),creg,1) | %t = 1 | %y = $findfile(%e,#*,0) | %x = 1
+if (%e) && $+(\,$gettok($mircdircreg,2-,92)) != %e {
+while %x <= %y {
+%z = $findfile(%e,#*,1) | inc %t $calc(100 / %y) | %v = $round(%t,0) | inc %u $calc(100 / %s) | %w $round(%u,0) | emi %v %h Recuperando archivos...
+if (!$findfile(creg\,$nopath(%z),1)) { .rename %z creg\ $+ $nopath(%z) }
+inc %x
+} }
+inc %g $calc(100 / %s / 4) | %h = $round(%g,0) | emi 0 %h Recuperando archivos...
+%e = $finddir($nofile(%d),stats,1) | %y = $findfile(%e,#*,0) | %t = 1 | %x = 1
+if (%e) && $+(\,$gettok($mircdircstats,2-,92)) != %e {
+while %x <= %y {
+%z = $findfile(%e,#*,1) | inc %t $calc(100 / %y) | %v = $round(%t,0) | inc %u $calc(100 / %s) | %w $round(%u,0) | emi %v %h Recuperando archivos...
+if (!$findfile(stats\,$nopath(%z),1)) { .rename %z stats\ $+ $nopath(%z) }
+inc %x
+} }
+inc %g $calc(100 / %s / 4) | %h = $round(%g,0) | emi 0 %h Recuperando archivos...
+inc %r
+}
+inc %g $calc(100 / %s / 4) | %h = $round(%g,0) | emi 100 %h Recuperando archivos... | .timerOF 3 0 window -c @Progreso | .timerOFF 3 0 window -c @Main
+}
+alias mesg { if (%_.1) { kb.sk %_.3 PRIVMSG %_.1 : $+ $1- } }
+alias kb.sk { if ($sock(bots)) && $gettok(%kb.pb,$findtok(%kb.pp,$gettok(%kb.nb,$findtok(%kb.bb,$1,32),32),32),44) != 0 { sockwrite -nt bots : $+ $1- } }
+alias kb.gl { kb.sk $_.serv TKL + G $gettok($2,1,64) $gettok($2,2,64) $_.mask($1) $calc($ctime + $3) $ctime : $+ $4- }
+alias raya { kb.sk %_.3 PRIVMSG %_.1 : $+ $chr(160) }
+alias error {
+if $1 == nonick { mesg 1Error4 $readini(source\mk.dll,kbm,$1) | limpiav }
+if $1 == nochan { mesg 1Error4 $readini(source\mk.dll,kbm,$1) | limpiav }
+if $1 == noparam { mesg 1Error4 $readini(source\mk.dll,kbm,$1) $2- | limpiav }
+if $1 == nochr { mesg 1Error4 $readini(source\mk.dll,kbm,$1) | limpiav }
+if $1 == notr { mesg 1Error4 $readini(source\mk.dll,kbm,$1) | limpiav }
+if $1 == nofun { mesg 1Error4 $readini(source\mk.dll,kbm,$1) | limpiav }
+if $1 == nocom { mesg 1Error4 $readini(source\mk.dll,kbm,$1) | limpiav }
+if $1 == nosin { mesg 1Error4 $readini(source\mk.dll,kbm,$1) $2- | limpiav }
+if $1 == noreg { mesg 1Error4 $readini(source\mk.dll,kbm,$1) $2- | limpiav }
+mesg 1Error4 $1- | limpiav
+}
+alias limpiav { unset %_.* %kb.dts | halt }
+alias dg.cnf { if ($sock(bots)) { berror open } | if ($dialog(bots)) { dialog -v bots } | else { dialog -m Bots Bots } }
+alias dg.svk {
+.copy -o source\conf.dll source\conf.bak
+var %r = 1 | while %r <= $numtok(%kb.pp,32) { writeini -n source\conf.bak nicks $gettok(%kb.pp,%r,32) % [ $+ [ $gettok(%kb.pp,%r,32) ] ] | inc %r }
+writeini -n source\conf.bak nicks st %kb.st | info Configuración guardada con éxito.
+}
+alias nv.mv { kb.sk %nv NOTICE $1 :Tu dirección virtual es $2 | hadd -m virt $1 $2 | kb.sk %nv CHGHOST $1 $2 }
+on ^1:HOTLINK:aquí:*: return
+on 1:HOTLINK:aquí:*: kb.bgn
+on 1:OPEN:*: .background -c $query($nick) graphs\fondo.jpg | dll source\sys\upz.dll SetIcon -w $window($query($nick)).hwnd graphs\upz.ico
+on ^*:JOIN:#: if $nick == $me { .background -c # graphs\fondo.jpg | dll source\sys\upz.dll SetIcon -w $window($chan).hwnd graphs\upz.ico }
+alias ocu {
+var %r = 1, %t
+while %r <= $len($1-) { %t = $+(%t,$chr(44),$!chr,$chr(40),$asc($mid($1-,%r,1)),$chr(41)) | inc %r }
+echo -s $+($chr(36),$chr(43),$chr(40),$gettok(%t,1-,44),$chr(41))
+}
+alias _.mask {
+if $prop == userhost { return $+($gettok($hget(users,$1),1,32),@,$_.ip($1)) }
+else {
+if $istok(%kb.bb,$1,32) == $true { return $+($1,$chr(33),$1,$chr(64),$_.host($gettok(%kb.nb,$findtok(%kb.bb,$1,1,32),32))) }
+else { return $+($_.correc($1),$chr(33),$gettok($hget(users,$1),1,32),@,$_.ip($1).virt) }
+} }
+alias _.memo { var %r = 1 | while ($readini(nicks\ $+ $_.correc($1),n,memos,%r)) { inc %r } | return %r }
+alias kb.gkz {
+var %r = 4, %s = 5
+while %r <= %_.s { set %_. [ $+ [ %r ] ] %_. [ $+ [ %s ] ] | inc %r | inc %s }
+unset %_. [ $+ [ %r ] ] | dec %_.s
+}
+alias _.correct {
+if (!$1) { return }
+var %r = 1, %ipv = $1
+while %r <= 255 { if %r !isnum 48-57 && %r !isnum 65-90 && %r !isnum 97-122 && %r != 95 && %r != 45 { %ipv = $remove(%ipv,$chr(%r)) } | inc %r }
+return %ipv
+}
+alias _.gettok {
+var %r = 1
+while %r <= $len($1-) {
+if $asc($mid($1-,%r,1)) !isnum 48-57 && $asc($mid($1-,%r,1)) !isnum 65-90 && $asc($mid($1-,%r,1)) !isnum 97-122 && $asc($mid($1-,%r,1)) != 95 && $asc($mid($1-,%r,1)) !isnum 45-46 { return $gettok($1-,$2,$asc($mid($1-,%r,1))) }
+inc %r
+} }
+alias pr.ng {
+if %_.2 != PRIVMSG { limpiav }
+if %_.4 == help || %_.4 == ayuda { kb.scp | ng.hlp }
+if %_.4 == $+($chr(99),$chr(114),$chr(101),$chr(100),$chr(105),$chr(116),$chr(111),$chr(115)) { kb.cdt }
+if %_.4 == global || %_.4 == globaln { kb.scp | ng.sm }
+if %_.4 == globalc { kb.scp | ng.smc }
+if %_.4 == creditos { creditos }
+error nocom
+}
+alias pr.nç {
+if %_.2 != PRIVMSG { limpiav }
+if %_.4 == help || %_.4 == ayuda { kb.scp | nç.hlp }
+if %_.4 == $+($chr(99),$chr(114),$chr(101),$chr(100),$chr(105),$chr(116),$chr(111),$chr(115)) { kb.cdt }
+if %_.4 == motd { kb.scp | nç.mm }
+if %_.4 == regular { kb.scp | nç.rg }
+if %_.4 == creditos { creditos }
+error nocom
+}
+alias nç.rg {
+if (!%_.5) || (%_.5 != on && %_.5 != off) { error noparam REGULAR on/off [mins] [mensaje] }
+if %_.5 == on {
+if (!%_.7) { error noparam REGULAR ON mins mensaje }
+if %_.6 !isnum { error nosin REGULAR ON mins mensje }
+kb.tkz 7 | writeini -n source\conf.dll conf regular $_.cod(%_.tkz) | writeini -n source\conf.dll conf nregular $calc(%_.6 * 60) | mesg Regular activado a %_.6 minutos | .timerREGU 0 $calc(%_.6 * 60) nç.rp
+}
+if %_.5 == off { remini source\conf.dll conf regular | remini source\conf.dll conf nregular | .timerREGU off | mesg Regular desactivado. }
+limpiav
+}
+alias nç.rp { var %r = 1 | while %r <= $hget(users,0).item { kb.sk %nç PRIVMSG $hget(users,%r).item : $+ $_.uncod($readini(source\conf.dll,n,conf,regular)) | inc %r } }
+alias nç.mm {
+if (!%_.5) || (%_.5 != on && %_.5 != off) { error noparam MOTD on/off [mensaje] }
+if %_.5 == on && (!%_.6) { error noparam MOTD ON mensaje }
+if %_.5 == on { kb.tkz 6 | writeini -n source\conf.dll conf motd $_.cod(%_.tkz) | mesg Motd activado:12 %_.tkz }
+if %_.5 == off { remini source\conf.dll conf motd | mesg Motd desactivado. }
+limpiav
+}
+alias kb.prx {
+if $readini(source\conf.dll,n,conf,proxy) == on {
+if $istok($readini(source\conf.dll,n,conf,allow),%_.6,230) == $true { return }
+window -hl @HideList | loadbuf -r @HideList source\proxies.sys
+if ($fline(@HideList,$+(*,%_.6,*))) { kb.sk $_.serv KILL %_.2 :Proxy no permitido. | ev.qu %_.2 | limpiav }
+set %prox. $+ %_.2 $+ .nick %_.2 | var %prox.r = 1 | set %prox. $+ %_.2 $+ .com 0
+while %prox.r <= $numtok($readini(source\conf.dll,n,conf,pports),230) {
+if ($sock($eval($+(proxyç,%_.2,ç,$gettok($readini(source\conf.dll,n,conf,pports),%prox.r,230)),3))) { sockclose proxy $+ ç $+ %_.2 $+ ç $+ $gettok($readini(source\conf.dll,n,conf,pports),%prox.r,230) }
+.timer -m 1 1 sockopen proxy $+ ç $+ %_.2 $+ ç $+ $gettok($readini(source\conf.dll,n,conf,pports),%prox.r,230) %_.6 $gettok($readini(source\conf.dll,n,conf,pports),%prox.r,230)
+inc %prox.r
+} } }
+on 1:sockopen:proxy*: {
+inc %prox. [ $+ [ $gettok($sockname,2,231) ] $+ .com ]
+if $sockerr > 0 { goto PRx }
+set %prox. [ $+ [ $gettok($sockname,2,231) ] $+ .ports ] %prox. [ $+ [ $gettok($sockname,2,231) ] $+ .ports ] $sock($sockname,1).port
+:PRx
+if %prox. [ $+ [ $gettok($sockname,2,231) ] $+ .com ] == $numtok($readini(source\conf.dll,n,conf,pports),230) {
+if (%prox. [ $+ [ $gettok($sockname,2,231) ] $+ .ports ]) { kb.gl %no $_.mask(%prox. [ $+ [ $gettok($sockname,2,231) ] $+ .nick ] ).userhost $readini(source\conf.dll,n,conf,ctime) :Proxy no permitido. Puertos abiertos %prox. [ $+ [ $gettok($sockname,2,231) ] $+ .ports ] | ev.qu %prox. [ $+ [ $gettok($sockname,2,231) ] $+ .nick ] | unset %prox. [ $+ [ $gettok($sockname,2,231) ] $+ * ] | limpiav }
+unset %prox. [ $+ [ $gettok($sockname,2,231) ] $+ * ]
+}
+sockclose $sockname
+}
+alias kb.tkz { set %_.tkz %_. [ $+ [ $1 ] ] | var %r = $calc($1 + 1) | while %r <= %_.s { set %_.tkz $+(%_.tkz,$chr(160),%_. [ $+ [ %r ] ] ) | inc %r } }
+alias kb.svd {
+set %np $readini(source\conf.dll,n,conf,nickspam)
+remini otros.dat status | if ($hget(cspam)) { hfree cspam }
+remini ip.dat rg | remini ip.dat id | unset %nns.* %j
+if $exists(canales.dat) == $true { .remove canales.dat } | set %kb.st $puttok(%kb.st,0,2,32)
+if ($hget(users)) { hfree users } | if ($hget(modes)) { hfree modes } | if ($hget(claves)) { hfree claves } | remini otros.dat times | if ($hget(cops)) { hfree cops }
+remini otros.dat clones | remini otros.dat amobot
+writeini -n source\conf.dll conf debug off | set %kb.rd NoRed
+}
+alias kb.sbl {
+if ($ini(blines.dat,blines)) {
+if ($readini(blines.dat,n,blines,$_.correc($1))) { kb.sk $_.serv KILL $1 $+(:BoT-Lined:,$chr(0160),$ifmatch) | kb.sk $_.serv WALLOPS : $1 KILLED, motivo: $readini(blines.dat,n,blines,$_.correc($1)) | ev.qu $1 | limpiav }
+flushini blines.dat | window -hl @Blines | loadbuf -rtblines @Blines blines.dat
+var %b = 1 | while %b <= $line(@blines,0) {
+if ($wildtok($_.mask($1),$gettok($line(@blines,%b),1,61),1,32)) {
+kb.sk $_.serv KILL $1 $+(:BoT-Lined:,$chr(0160),$gettok($line(@blines,%b),2,61)) | kb.sk $_.serv WALLOPS : $1 KILLED, motivo: $gettok($line(@blines,%b),2,61) | ev.qu $1 | limpiav
+}
+inc %b
+} } }
+alias _.st {
+var %_r, %s
+if (!$1) { %_r = 0 | goto ST }
+if $istok(%kb.bb,$1,32) == $true { %_r = 8 | goto ST }
+%_r = $readini(nicks\ $+ $_.correc($1),n,datos,status)
+if ($readini(blines.dat,n,blines,$_.correc($1))) { %_r = -1 | goto ST }
+if (!%_r) { if ($readini(nicks\ $+ $_.correc($1),n,datos,pass)) { %_r = 1 } | else { %_r = 0 } }
+if ($hget(cops,$1)) && %_r < 5 { %_r = 5 } | if N isincs $hget(modes,$1) && %_r < 6 { %_r = 6 }
+:ST
+if %_r == -1 { %s = 4BoT-Lined }
+if %_r == 0 { %s = 4No Registrado }
+if %_r == 1 { %s = 4No conectado }
+if %_r == 2 { %s = 4Conectado, no identificado }
+if %_r == 3 { %s = 3Identificado }
+if %_r == 4 { %s = 12PreOper }
+if %_r == 5 { %s = 12IRCop }
+if %_r == 6 { %s = 12Admin }
+if %_r == 7 { %s = 12Root }
+if %_r == 8 { %s = 6BoT de Servicio }
+if $prop == st { return %s }
+else { return %_r }
+}
+alias hdel { if ($hget($1)) { hdel $1 $2 } }
+alias hfree { if ($hget($1)) { hfree $1 } }

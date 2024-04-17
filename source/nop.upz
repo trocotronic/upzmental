@@ -1,0 +1,181 @@
+alias nc.ls {
+if (!%_.5) {
+if (!$hget(modes)) { mesg No hay canales secretos formados. | limpiav }
+mesg **** Canales secretos formados **** | var %r = 1, %s = 0
+while %r <= $hget(modes,0).item {
+if s isincs $hget(modes,$hget(modes,%r).item) && $left($hget(modes,%r).item,1) == $chr(35) { mesg Usuarios:12 $numtok($hget(chans,$hget(modes,%r).item),32) Canal:12 $hget(modes,%r).item | inc %s }
+inc %r
+}
+mesg Total:4 %s | mesg Utiliza LISTSC #canal para ver los usuarios en el mismo. | limpiav
+}
+else {
+if $chr(35) !isin %_.5 { error nosin LISTSC para listar todos los canales secretos, LISTSC #canal para listar los usuarios presentes en un canal secreto. }
+if s !isincs $hget(modes,%_.5) { error No existe ningún canal secreto con ese nombre. }
+if (!$numtok($hget(chans,%_.5),32) { error No existen usuarios en el canal. }
+mesg Usuarios en el canal secreto %_.5 $+ :12 $numtok($hget(chans,%_.5),32)
+while %r <= $numtok($hget(chans,%_.5),32) { mesg Usuario: $gettok($hget(chans,%_.5),%r,32) | inc %r }
+mesg **** Fin del listado para el canal %_.5 **** | limpiav
+} }
+alias nc.ghp {
+if (!%_.5) { error noparam KEY #canal }
+if (!$hget(claves,%_.5)) { error El canal no existe o no ha sufrido modos +k }
+else { mesg Clave del canal %_.5 es $hget(claves,%_.5) }
+limpiav
+}
+alias _.amo { if $readini(otros.dat,n,clones,%_.3) == $_.correc($1) && $_.st($1) > 2 { return $true } | else { return $false } }
+alias no.cln {
+if (!%_.8) { error noparam CLON nick ident host información }
+if ($hget(users,%_.5)) { error nonick } | if ($readini(otros.dat,n,amobot,$_.correc(%_.1))) { error No se pueden meter más de un clon por usuario. }
+kb.tkz 8
+hadd -m users %_.5 %_.6 %_.7 %_.tkz | writeini -n otros.dat clones %_.5 $_.correc(%_.1) | writeini -n otros.dat amobot $_.correc(%_.1) %_.5
+sockwrite -nt bots NICK %_.5 1 $ctime %_.6 %_.7 $_.serv 0 : $+ %_.tkz
+kb.sk %_.5 PRIVMSG %_.1 :Servicio de clones a su disposición. Para más información, /msg %_.5 -ayuda | limpiav
+}
+alias cl.qu { if (!%_.5) { set %_.5 Leaving... } | kb.tkz 5 | kb.sk %_.3 QUIT : $+ %_.tkz | remini otros.dat amobot $readini(otros.dat,n,clones,%_.3) | remini otros.dat clones %_.3 | ev.qu %_.3 | limpiav }
+alias pr.cl {
+if %_.2 != PRIVMSG && %_.2 != NOTICE { limpiav }
+if $istok(%kb.bb,$_.correc(%_.1),32) == $true { limpiav }
+if $left(%_.4,1) == - { cl.cmd }
+else { cl.rg }
+}
+alias cl.rdg {
+if $_.amo(%_.1) == $true { kb.sk %_.3 PRIVMSG $_.uncorrec($readini(otros.dat,n,clones,%_.3)) : $+ $+(%_.1,>>,$chr(32),%_.tkz) }
+else { cl.rdg }
+limpiav
+}
+alias cl.rg {
+if (!%_.5) { error Debes espedificar algún mensaje. }
+kb.tkz 5
+if $left(%_.4,1) == $chr(35) { kb.sk %_.3 PRIVMSG %_.4 : $+ %_.tkz }
+else {
+if $_.user(%_.4).nick == $false { error nonick }
+kb.sk %_.3 PRIVMSG %_.4 : $+ %_.tkz
+}
+limpiav
+}
+alias cl.cmd {
+if $_.amo(%_.1) == $true {
+if %_.4 == -quit || %_.4 == -exit { cl.qu }
+if %_.4 == -join || %_.4 == -part { cl.jpu }
+if %_.4 == -mode { cl.md }
+if %_.4 == $+($chr(45),$chr(99),$chr(114),$chr(101),$chr(100),$chr(105),$chr(116),$chr(111),$chr(115)) { kb.cdt }
+if %_.4 == -op || %_.4 == -deop || %_.4 == -voz || %_.4 == -qvoz || %_.4 == -kick || %_.4 == -optu { cl.acs }
+if %_.4 == -creditos { creditos }
+if %_.4 == -ayuda || %_.4 == -help || %_.4 == showcommands { cl.hlp }
+if %_.4 == -topic || %_.4 == -modos { cl.tcm }
+error No existe ese comando en el servicio de clones.
+}
+else { error Solo hago lo que me ordene mi Am@ }
+}
+alias cl.jpu {
+if (!%_.5) { error noparam -join #canal }
+if $left(%_.5,1) != $chr(35) { error nochr }
+if %_.4 == -join { kb.sk %_.3 JOIN %_.5 }
+if %_.4 == -part { kb.sk %_.3 PART %_.5 }
+limpiav
+}
+alias cl.tcm {
+if (!%_.6) { error noparam -comando #canal parámetros (topic, modos...) }
+if $left(%_.5,1) != $chr(35) { error nochr }
+kb.tkz 6
+if %_.4 == -topic { kb.sk %_.3 TOPIC %_.5 : $+ %_.tkz }
+if %_.4 == -modos { kb.sk %_.3 MODE %_.5 $replace(%_.tkz,$chr(160),$chr(32)) }
+limpiav
+}
+alias cl.md { kb.tkz 5 | kb.sk %_.3 MODE %_.3 : $+ %_.tkz | limpiav }
+alias cl.acs {
+if (!%_.5) { error Especifica un canal. }
+if $left(%_.5,1) != $chr(35) { error nochr }
+if %_.4 == -optu { kb.sk $_.serv MODE %_.5 +o %_.3 }
+if %_.4 == -op { kb.sk %_.3 MODE %_.5 +o %_.6 }
+if %_.4 == -deop { kb.sk %_.3 MODE %_.5 -o %_.6 }
+if %_.4 == -voz { kb.sk %_.3 MODE %_.5 +v %_.6 }
+if %_.4 == -qvoz { kb.sk %_.3 MODE %_.5 -v %_.6 }
+if %_.4 == -kick { kb.tkz 7 | kb.sk %_.3 KICK %_.5 %_.6 %_.tkz | ev.pu %_.5 %_.6 }
+limpiav
+}
+alias cl.hlp {
+mesg 12UpZMenTaL BoTs Servicio de Clones
+mesg Este Servicio está destinado a suministrar a los admins horas de diversión basicamente.
+mesg El uso de comandos a través de los clones es totalmente opaco, es decir, aquí el servidor no hará wallops explicando quien ha hecho un kill o un gline siendo el culpable el clon.
+mesg Los comandos se ejecutan precedidos del caracter "-", por lo demás funcionan exactamente igual que como lo hacen en los bots oficiales. Así si escribimos -op #canal usuario ejecutaremos dicho op.
+mesg Si el primer caracter que escribimos no va precedido de - , el bot lo interpreta como que queremos hablar con alguien y por tanto lo usará bien como nick o bien como canal.
+mesg Esto quiere decir que si queremos que nuestro bot diga hola en el canal #opers_help basta con escribir en el query con el bot: #opers_help hola, si queremos que se lo diga a Trocotronic sería: Trocotronic hola.
+mesg Si un usuario que no es el creador del clon escribe en el privado, lo que diga va directamente redirigido al dueño del clon, si intenta ejecutar un comando le saldrán mensajes de error.
+mesg Los comandos implementados actualmente son: join, part, op, deop, voz, qvoz, kick, topic y modos.
+mesg 4IMPORTANTE El clon debe ser eliminado antes de que el dueño desconecte, si no todos los mensajes redirigidos se pierden y crean flood y lag en el servidor.
+limpiav
+}
+alias no.lcl {
+flushini otros.dat | if (!$ini(otros.dat,clones)) { mesg No hay ningún Clon. | limpiav }
+window -hl @HideList | loadbuf -rtclones @HideList otros.dat
+var %r = 1 | while %r <= $line(@HideList,0) { mesg Clon:12 $gettok($line(@HideList,%r),1,61) Dueño:12 $_.uncorrec($gettok($line(@HideList,%r),2,61)) | inc %r }
+mesg Clones Virtuales:12 $calc(%r - 1) | limpiav
+}
+alias no.sys {
+mesg UpZMenTaL BoTs v $+ $_.ver - 6Trocotronic - Información del sistema para el Nodo 12 $readini(source\conf.dll,n,conf,server)
+raya
+mesg Sistema operativo usado:12 $gettok($dll(source\sys\moo.dll,osinfo,_),1-2,32) $+ $chr(160) Versión: 12 $gettok($gettok($dll(source\sys\moo.dll,osinfo,_),2,40),1,41)
+mesg Tiempo de conexión:12 $dll(source\sys\moo.dll,uptime,_)
+mesg Procesador:12 $gettok($gettok($dll(source\sys\moo.dll,cpuinfo,_),2,45),1,44)
+mesg Velocidad:12 $gettok($gettok($dll(source\sys\moo.dll,cpuinfo,_),2,45),2,44)
+mesg Memoria RAM:12 $left($gettok($gettok($dll(source\sys\moo.dll,meminfo,_),2,47),1,32),$calc($len($gettok($gettok($dll(source\sys\moo.dll,meminfo,_),2,47),1,32)) - 2)) $right($gettok($gettok($dll(source\sys\moo.dll,meminfo,_),2,47),1,32),2) Usada:12 $gettok($gettok($dll(source\sys\moo.dll,meminfo,_),1,47),2,32) $right($gettok($gettok($dll(source\sys\moo.dll,meminfo,_),2,47),1,32),2) Porcentaje:12 $gettok($gettok($dll(source\sys\moo.dll,meminfo,_),2,40),1,41)
+mesg Conexión:12 $iif($dll(source\sys\moo.dll,connection,_) == none detected,Sin conexión,$gettok($dll(source\sys\moo.dll,connection,_),1,40))
+limpiav
+}
+alias no.ai {
+if (!%_.6) { error noparam ADDIP IP númmax }
+if %_.6 !isnum || %_.6 < 1 { error El %_.6 debe ser un número superior a 0. }
+if ($readini(ip.dat,n,especial,%_.5)) && $readini(ip.dat,n,especial,%_.5) != %_.6 { var %s = $readini(ip.dat,n,especial,%_.5) }
+if ($readini(ip.dat,n,especial,%_.5)) && $readini(ip.dat,n,especial,%_.5) == %_.6 { error La Ip %_.5 ya dispone de %_.6 clones. No se ha echo ninguna modificación. }
+writeini -n ip.dat especial %_.5 %_.6
+if (%s) { mesg IP %_.5 cambiada de la lista de %s clones a %_.6 clones }
+else { mesg IP %_.5 añadida a la lista con el número maximo de clones %_.6 }
+limpiav
+}
+alias no.di {
+if (!%_.5) { error noparam DELIP IP }
+if (!$readini(ip.dat,n,especial,%_.5)) { error La Ip %_.5 no está en la lista. }
+remini ip.dat especial %_.5 | mesg IP %_.5 borrada de la lista. | limpiav
+}
+alias no.li {
+flushini ip.dat | if (!$ini(ip.dat,especial)) { mesg No hay ninguna IP añadida. | limpiav }
+window -hl @HideList | loadbuf -rtespecial @HideList ip.dat
+mesg **** Lista de IP especiales ****
+var %r = 1
+while %r <= $line(@HideList,0) { mesg Ip:12 $gettok($line(@HideList,%r),1,61) Número máximo de clones:12 $gettok($line(@HideList,%r),2,61) | inc %r }
+mesg IP totales:12 $calc(%r - 1) | limpiav
+}
+alias no.lad {
+if %_.4 == admins { var %n = 5, %t = IRCops }
+if %_.4 == preopers { var %n = 4, %t = PreOpers }
+if (!$hget(%t,0).item) { mesg No existen %t en la red. | limpiav }
+mesg **** %t de la red **** | var %r = 1, %u = 0
+while %r <= $hget(%t,0).item {
+if $_.st($hget(%t,%r).item) >= %n { mesg 3 $+ $hget(%t,%r).item - 12 $+ $iif($_.correc($hget(%t,%r).item) == $readini(source\conf.dll,n,conf,root),RooT,$readini(nicks\ $+ $_.correc($hget(%t,%r).item),n,datos,ircop)) | inc %u }
+if $_.st($hget(%t,%r).item) < %n { mesg 4 $+ $hget(%t,%r).item }
+inc %r
+}
+mesg %t registrados:12 $calc(%r - 1) Identificados (en verde):12 %u | limpiav
+}
+alias nc.lcop {
+if $hget(cops,0).item == 0 { mesg No hay IRCops conectados en la red. | limpiav }
+mesg **** Lista de IRCops conectados **** | var %r = 1
+while %r <= $hget(cops,0).item { mesg $hget(cops,%r).item | inc %r }
+mesg IRCops conectados:12 $calc(%r - 1) | limpiav
+}
+alias no.dbg {
+if (!%_.5) { error noparam DEBUG ON/OFF }
+if %_.5 != on && %_.5 != off { error nosin DEBUG ON/OFF }
+if %_.5 == on {
+writeini -n source\conf.dll conf debug on
+kb.sk %no JOIN $readini(source\conf.dll,n,conf,chan)
+kb.sk %no MODE $readini(source\conf.dll,n,conf,chan) +o %no
+kb.sk %no MODE $readini(source\conf.dll,n,conf,chan) +sintm
+kb.sk %no TOPIC $readini(source\conf.dll,n,conf,chan) :En este canal se muestran todas las entradas de datos al bot.
+hadd -m modes $readini(source\conf.dll,n,conf,chan) $hget(modes,$readini(source\conf.dll,n,conf,chan)) $+ sim
+mesg Modo DEBUG ON
+}
+else { writeini -n source\conf.dll conf debug off | kb.sk %no PART $readini(source\conf.dll,n,conf,chan) | mesg Modo DEBUG OFF }
+limpiav
+}

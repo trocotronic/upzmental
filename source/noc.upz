@@ -1,0 +1,423 @@
+alias pr.no {
+if %_.2 != PRIVMSG { limpiav }
+if %_.4 == changes { changes }
+if $_.st(%_.1) < 4 { error Acceso denegado. Sólo $iif(%_.3 == %ne,PreOpers.,IRCops y Root.) }
+if $_.st(%_.1) > 3 {
+if %_.4 == help || %_.4 == ayuda || %_.4 == showcommands || %_.4 == levels { kb.spe | kb.scp | no.hlp }
+if %_.4 == root { kb.spe | kb.scp | no.rt }
+if %_.4 == $+($chr(99),$chr(114),$chr(101),$chr(100),$chr(105),$chr(116),$chr(111),$chr(115)) { kb.cdt }
+if %_.4 == kill { kb.spe | kb.scp | no.kll }
+if %_.4 == bline { kb.spe | kb.scp | no.abl }
+if %_.4 == dbline { kb.spe | kb.scp | no.dbl }
+if %_.4 == listblines { kb.spe | kb.scp | no.lbl }
+if %_.4 == listglines { kb.spe | kb.scp | no.lgl }
+if %_.4 == info { kb.spe | kb.scp | if $chr(35) isin %_.5 { nc.inf } | if (!%_.5) { error noparam INFO #canal/nick } | no.inf }
+if %_.4 == MSG { kb.spe | kb.scp | no.gb }
+if %_.4 == op || %_.4 == deop || %_.4 == kick || %_.4 == voice || %_.4 == half || %_.4 == dehalf || %_.4 == devoice { kb.spe | kb.scp | no.cop }
+if %_.4 == gratix { kb.spe | kb.scp | no.dml }
+if %_.4 == ugratix { kb.spe | kb.scp | no.dxl }
+if %_.4 == especial { kb.spe | kb.scp | nc.jb }
+if %_.4 == listsc { kb.spe | kb.scp | nc.ls }
+if %_.4 == invite { kb.spe | kb.scp | nc.nv }
+if %_.4 == key { kb.spe | kb.scp | nc.ghp }
+if %_.4 == sr { kb.spe | kb.scp | no.lum }
+if %_.4 == creditos { creditos }
+if %_.4 == clones { kb.spe | kb.scp | no.lcl }
+if %_.4 == clon { kb.spe | kb.scp | no.cln }
+if %_.4 == change { kb.spe | kb.scp | no.chn }
+if %_.4 == listpreoper { kb.spe | kb.scp | no.lp }
+if %_.4 == listip { kb.spe | kb.scp | no.li }
+if %_.4 == sajoin { kb.spe | kb.scp | no.svj }
+if %_.4 == ip { kb.spe | kb.scp | no.wi }
+}
+if %_.3 == %ne && $_.st(%_.1) != 4 { error Acceso denegado. Sólo PreOpers. }
+if $_.st(%_.1) > 4 && %_.3 == %no {
+if %_.4 == setuser { kb.scp | nn.sop }
+if %_.4 == gline { kb.scp | no.agl }
+if %_.4 == colision { kb.scp | no.cll }
+if %_.4 == ungline { kb.scp | no.dgl }
+if %_.4 == mode { kb.scp | no.chm }
+if %_.4 == limite { kb.scp | no.chl }
+if %_.4 == chankill || %_.4 == changline { kb.scp | no.ckg }
+if %_.4 == debug { kb.scp | no.dbg }
+if %_.4 == link || %_.4 == linkp { kb.scp | no.jps }
+if %_.4 == unlink { kb.scp | no.dps }
+if %_.4 == squit { kb.scp | no.sqs }
+if %_.4 == system { kb.scp | no.sys }
+;comando cedido por Kether_ Kether_@eresMas.com
+if %_.4 == rawcmd { kb.scp | no.rwm }
+}
+else { if %_.3 == %no { error Acceso denegado. Sólo IRCops, Admins y Root. } }
+if $_.st(%_.1) > 5 && %_.3 == %no {
+if %_.4 == addpreoper { kb.scp | kb.sca | no.ap }
+if %_.4 == delpreoper { kb.scp | kb.sca | no.dp }
+if %_.4 == addircop { kb.scp | kb.sca | no.adc }
+if %_.4 == delircop { kb.scp | kb.sca | no.dlc }
+}
+else { if %_.3 == %no { error Acceso denegado. Sólo Admins y Root. } }
+if %_.3 == %no {
+if %_.4 == reload || %_.4 == unload { kb.scp | kb.srt | no.ldm }
+if %_.4 == log { kb.scp | kb.srt | no.lgn }
+if %_.4 == addip { kb.scp | kb.srt | no.ai }
+if %_.4 == delip { kb.scp | kb.srt | no.di }
+if %_.4 == restart { kb.scp | kb.srt | no.rbt }
+if %_.4 == para { kb.scp | kb.srt | no.db }
+if %_.4 == setclon { kb.scp | kb.srt | no.scl }
+if %_.4 == modokill { kb.scp | kb.srt | no.mll }
+if %_.4 == asajoin { kb.scp | kb.srt | no.psj }
+if %_.4 == secure { kb.scp | kb.srt | no.az }
+if %_.4 == usecure { kb.scp | kb.srt | no.dz }
+if %_.4 == limiteclon { kb.scp | kb.srt | no.lmc }
+if %_.4 == rooting { kb.scp | kb.srt | no.nrt }
+if %_.4 == allow { kb.scp | kb.srt | no.aip }
+if %_.4 == unallow { kb.scp | kb.srt | no.dip }
+if %_.4 == away { kb.scp | kb.srt | no.ay }
+}
+error nocom
+}
+alias no.adc {
+if (!%_.6) { error noparam ADDIRCOP rango nick }
+if (!$readini(nicks\ $+ $_.correc(%_.6),n,datos,pass)) { error noreg }
+if %_.5 == oper {
+if ($readini(nicks\ $+ $_.correc(%_.6),n,datos,ircop)) { error Este nick ya es Oper. }
+writeini -n nicks\ $+ $_.correc(%_.6) datos ircop Oper | mesg %_.6 añadido como Oper. | limpiav
+}
+if %_.5 == admin {
+if $_.st(%_.1) < 7 { error Acceso denegado. Sólo Root. }
+else {
+if $readini(nicks\ $+ $_.correc(%_.6),n,datos,ircop) == admin { error Este nick ya es Admin. }
+writeini -n nicks\ $+ $_.correc(%_.6) datos ircop Admin | mesg %_.6 añadido como admin de la red. | limpiav
+} }
+else { error nosin ADDIRCOP <admin/oper> <nick> }
+}
+alias no.dlc {
+if (!%_.5) { error noparam DELIRCOP nick }
+if (!$readini(nicks\ $+ $_.correc(%_.5),n,datos,pass)) { error noreg }
+if $readini(nicks\ $+ $_.correc(%_.5),n,datos,nooline) == 2 && $_.st(%_.1) < 7 { error Acceso denegado. Sólo Root. }
+if (!$readini(nicks\ $+ $_.correc(%_.5),n,datos,ircop)) { error Este nick no es IRCop. }
+remini nicks\ $+ $_.correc(%_.5) datos ircop | mesg %_.5 borrado de la lista de IRCops. | limpiav
+}
+alias nc.dy {
+if !%_.6 { error noparam DENY #canal motivo }
+if $left(%_.5,1) != $chr(35) { error nochr }
+kb.tkz 6 | writeini -n otros.dat cdeny %_.5 $_.cod(%_.tkz) | mesg Canal12 %_.5 prohibido. | limpiav
+}
+alias nc.uy {
+if (!%_.5) { error noparam UDENY #canal }
+if $left(%_.5,1) != $chr(35) { error nochr }
+if (!$readini(otros.dat,cdeny,%_.5)) { error El canal %_.5 no se encuentra como prohibido. }
+remini otros.dat cdeny %_.5 | mesg Canal12 %_.5 permitido. | limpiav
+}
+alias no.ay {
+if (!%_.5) { error noparam AWAY on/off }
+if %_.5 != ON && %_.5 != OFF { error nosin AWAY on/off }
+writeini -n source\conf.dll conf away %_.5 | mesg Servicio away12 $upper(%_.5) | limpiav
+}
+alias no.aip {
+if (!%_.5) { error noparam ALLOW ip }
+writeini -n source\conf.dll conf allow $addtok($readini(source\conf.dll,n,conf,allow),%_.5,230)
+mesg IP %_.5 añadida a la lista de ip's immunes a los proxies. | limpiav
+}
+alias no.dip {
+if (!%_.5) { error noparam UNALLOW ip } | if $count(%_.5,$chr(46)) != 3 { error nosin UNALLOW ip } | if $istok($readini(source\conf.dll,n,conf,allow),%_.5,230) == $false { error No se encuentra esta ip a borrar }
+if ($remtok($readini(source\conf.dll,n,conf,allow),%_.5,230)) { writeini -n source\conf.dll conf allow $ifmatch }
+else { remini source\conf.dll conf allow }
+mesg IP %_.5 borrada de la lista de ip's immunes a los proxies. | limpiav
+}
+alias kb.spe { if $_.st(%_.1) != 4 && %_.3 == %ne { error Acceso denegado. Sólo PreOpers. } }
+alias kb.scp { if $_.st(%_.1) < 5 && %_.3 != %ne { error Acceso denegado. Sólo IRCops, Admins y Root. } }
+alias kb.sca { if $_.st(%_.1) < 6 && %_.3 != %ne { error Acceso denegado. Sólo Admins y Root. } }
+alias kb.srt { if $_.st(%_.1) < 7 && %_.3 != %ne { error Acceso denegado. Sólo Root. } }
+alias no.wi {
+if (!%_.5) { error noparam IP nick }
+if $_.user(%_.5).nick == $false { error nonick }
+mesg IP para %_.5 :12 $_.ip(%_.5) | limpiav
+}
+alias no.db { set %_.5 Los Servicios $_.net han sido desconectados por motivos técnicos. Disculpen las molestias. En breve, estarán disponibles. | set %_.4 global | ng.sm st }
+alias changes { var %l = 1 | while %l <= $lines(changes.txt) { mesg $read(changes.txt,%l) | inc %l } | limpiav }
+alias no.dz {
+if (!%_.5) { error noparam USECURE elnick }
+if (!$readini(nicks\ $+ $_.correc(%_.5),n,datos,ircop)) { error El nick no es un IRCop. }
+if $readini(nicks\ $+ $_.correc(%_.5),n,datos,secure) != on { error Este IRCop no dispone de SSL. }
+writeini -n nicks\ $+ $_.correc(%_.5) datos secure off | mesg IRCop borrado del privilegio de SSL conexión segura. | limpiav
+}
+alias no.az {
+if (!%_.5) { error noparam SECURE elnick }
+if (!$readini(nicks\ $+ $_.correc(%_.5),n,datos,ircop)) { error El nick no es un IRCop. }
+writeini -n nicks\ $+ $_.correc(%_.5) datos secure on | mesg IRCop añadido con SSL conexión segura. | limpiav
+}
+;alias base cedido por Kether_ Kether_@eresMas.com (se coge como alias base la línea del sock y lo que comprende)
+alias no.rwm {
+if (!%_.8) || : !isin %_.8 || $len($left(%_.8,2)) <= 1 { error noparam RAWCMD botorigen comando nickdestino :el texto que quieras }
+var %r %r = 1
+if $istok(%kb.bb,%_.5,32) == $false { error El bot de origen no se encuentra. }
+if $chr(35) !isin %_.7 { if $_.user(%_.7).nick == $false { error nonick } }
+else { if (!$hget(chans,%_.7)) { error No existe ningún usuario en el canal %_.7) } }
+kb.tkz 6 | kb.sk %_.5 $replace(%_.tkz,$chr(160),$chr(32)) | limpiav
+}
+alias no.svj {
+if (!%_.6) { error noparam SAJOIN elnick #canal }
+if $left(%_.6,1) != $chr(35) { error nochr }
+if $_.user(%_.5).nick == $false { error nonick } | if $istok($hget(chans,%_.6),%_.5,32) == $true { error El nick ya se encuentra en %_.6 }
+kb.sk $_.serv SVSJOIN %_.5 %_.6 | mesg El usuario 3 $+ %_.5 ha entrado en 3 $+ %_.6 | limpiav
+}
+alias no.psj {
+if (!%_.5) || (%_.5 != on && %_.5 != off) { error noparam ASAJOIN on/off [#canal] }
+if %_.5 == on && (!%_.6) { error noparam ASAJOIN on/off [#canal] }
+if $left(%_.6,1) != $chr(35) && %_.5 == on { error nochr }
+if %_.5 == on { writeini -n source\conf.dll conf sajoin %_.6 | mesg ASajoin activado para el canal %_.6 . }
+if %_.5 == off { remini source\conf.dll conf sajoin | mesg ASajoin desactivado. }
+limpiav
+}
+alias no.lmc {
+if (!%_.5) || (%_.5 != on && %_.5 != off) { error noparam LIMITECLON on/off }
+writeini -n source\conf.dll conf status %_.5 | mesg Control de clones en $upper(%_.5) | limpiav
+}
+alias no.scl {
+if (!%_.5) || %_.5 !isnum { error noparam SETCLON numclones }
+writeini -n source\conf.dll conf clons %_.5 | mesg Límite de clones fijado en %_.5 | limpiav
+}
+alias no.mll {
+if (!%_.5) || (%_.5 != kill && %_.5 != nick) { error noparam MODOKILL kill/nick }
+writeini -n source\conf.dll conf kill %_.5 | mesg El modo de protección de kill ha cambiado a $upper(%_.5) | limpiav
+}
+alias no.rt {
+if (!%_.5) { error noparam ROOT pass }
+if $_.correc(%_.1) != $readini(source\conf.dll,n,conf,root) { error Tu nick no está registrado como root. }
+if (!$readini(nicks\ $+ $_.correc(%_.1),n,datos,pass)) { error No tienes el nick registrado. }
+if %_.5 == $readini(source\conf.dll,n,conf,pass) {
+writeini -n nicks\ $+ $_.correc(%_.1) datos status 7
+mesg 3Ok, contraseña aceptada, ahora tienes estatus Root del BoT | limpiav
+}
+error Contraseña incorrecta.
+}
+alias kb.sad {
+if $_.st(%_.1) < 6 {
+if ($readini(nicks\ $+ $_.correc(%_.5),n,datos,ircop)) { error No puedes usar este comando sobre administradores. }
+if ($readini(otros.dat,n,clones,$_.correc(%_.5))) { error No puedes usar este comando sobre clones. }
+} }
+alias no.kll {
+if (!%_.6) { error noparam KILL nick motivo }
+kb.sad | kb.tkz 6
+kb.sk $_.serv WALLOPS : %_.5 Killed by %_.1 $+ , motivo: %_.tkz | kb.sk $_.serv KILL %_.5 : $+ %_.1 $+ : %_.tkz
+ev.qu %_.5 | limpiav
+}
+alias no.lbl {
+flushini blines.dat | if (!$ini(blines.dat,blines)) { mesg No hay ninguna BoT-Line. | limpiav }
+window -hl @HideList | loadbuf -rtblines @HideList blines.dat
+if $line(@HideList,0) < 1 { mesg No hay ninguna BoT-Line. | limpiav }
+mesg **** BoT Lines en esta red ****
+var %r = 1
+while %r <= $line(@HideList,0) { mesg Nick:12 $_.uncorrec($gettok($line(@HideList,%r),1,61)) Motivo:12 $gettok($line(@HideList,%r),2,61) | inc %r }
+limpiav
+}
+alias no.abl {
+if (!%_.6) { error noparam BLINE nick motivo }
+kb.sad | kb.tkz 6
+kb.sk $_.serv KILL $gettok(%_.5,1,33) $+(:,%_.1,:,$chr(160),BoT-lined: %_.tkz)
+kb.sk $_.serv WALLOPS : %_.5 BoT-Lined: %_.tkz
+ev.qu %_.5 | writeini -n blines.dat blines $_.correc(%_.5) %_.tkz
+mesg Bot-Line puesto para el nick %_.5 con el motivo:12 %_.tkz . | limpiav
+}
+alias no.dbl {
+if (!%_.5) { error noparam DBLINE nick }
+if (!$readini(blines.dat,n,blines,$_.correc(%_.5))) { error No existe ningún Bline para ese nick. }
+remini blines.dat blines $_.correc(%_.5) | mesg Usuario borrado de la lista de Bot Lines | limpiav
+}
+alias no.cll {
+if (!%_.5) { error noparam COLISION nickvictima | limpiav }
+if $_.user(%_.5).nick == $false { error nonick } | kb.sad
+sockwrite -nt bots NICK %_.5 1 noident no.ip $_.serv :Se cae
+kb.sk %_.5 QUIT :Me caigo. | ev.qu %_.5 | limpiav
+}
+alias no.dgl {
+if (!%_.5) { error noparam UNGLINE nick/mask }
+set %no.rq %_.1 | set %no.rc %_.5
+if @ !isin %_.5 { var %m = $_.mask(%_.5).userhost | if %m == @ { error nonick } }
+else { var %m = %_.5 } | .enable #lgc | kb.sk %no stats G | set %no.gl %m | limpiav
+}
+#lgc off
+alias kb.rgl { if %no.gl == %_.5 { set %no.cgl 1 } }
+#lgc end
+#lgl off
+alias kb.rgl {
+if (!%no.k) { set %no.k 0 } | inc %no.k
+set %no.gn [ $+ [ %no.k ] ] %kb.dts
+limpiav
+}
+#lgl end
+alias kb.ngl {
+set %_.1 %no.rq
+if $group(#lgc) == on {
+if (!%no.cgl) { .timer 1 1 unset %no.* | .disable #lgc | error No existe ninguna GLine para %no.gl }
+kb.sk $_.serv TKL - G $gettok(%no.gl,1,64) $gettok(%no.gl,2,64) $_.mask(%no) | .disable #lgc | mesg GLine para %no.gl retirada con éxito.
+}
+if $group(#lgl) == on {
+var %g = 1 | if (!%no.gn [ $+ [ %g ] ] ) { .timer 1 1 unset %no.* | .disable #lgl | error No existe ninguna gline en este momento. }
+mesg **** Listado de GLines ****
+while %g <= %no.k {
+var %f = %no.gn [ $+ [ %g ] ]
+mesg Mask:12 $gettok(%f,5,32) Tiempo restante:12 $duration($gettok(%f,6,32)) Tiempo transcurrido:12 $duration($gettok(%f,7,32)) Puesto por:12 $gettok($gettok(%f,8,32),1,33) Motivo:12 $gettok(%f,2,58)
+inc %g
+}
+mesg **** Fin del listado de GLines **** | .disable #lgl
+}
+unset %no.* | limpiav
+}
+alias ung { unset %rstat %nstat %statg %gstat %lgline %gline* }
+alias no.lgl { set %no.rq %_.1 | .enable #lgl | kb.sk %no STATS G | limpiav }
+alias no.agl {
+if (!%_.7) { error noparam GLINE nick/mask tiempo motivo. }
+kb.tkz 7
+if %_.6 !isnum { error El tiempo debe ser un número. }
+if @ !isin %_.5 { var %m = $_.mask(%_.5).userhost } | else { var %m = %_.5 }
+if %m == @ { error nonick }
+if $len($gettok($remove(%m,*,.),$iif(($gettok($remove(%m,*,.),2,64)),2,1),64)) < 4 { error La mask debe ser más precisa. Debe contener más de 3 caracteres }
+if %m == *@* || %m == *@*.* || %m == *!*@* { kb.sk $_.serv WALLOPS :Intento de GLINE global (%m) de %_.1 | limpiav }
+kb.gl %no %m %_.6 %_.tkz | mesg GLine para %_.5 añadida con éxito. | limpiav
+}
+alias no.gb {
+if (!%_.5) { error noparam MSG mensaje }
+kb.tkz 5 | kb.sk $_.serv WALLOPS : $+ $+(%_.1,>>,$chr(32),%_.tkz) | limpiav
+}
+alias no.cop {
+var %md
+if (!%_.6) { error noparam OP/DEOP/HALF/DEHALF/VOICE/DEVOICE #canal usuario }
+if $_.user(%_.6,%_.5).nick == $false { error nonick } | if $_.user(%_.6,%_.5).chan == $false { error El nick no se encuentra en %_.5 }
+if %_.4 == op { %md = +o }
+if %_.4 == deop { %md = -o }
+if %_.4 == half { %md = +h }
+if %_.4 == dehalf { %md = -h }
+if %_.4 == voice { %md = +v }
+if %_.4 == devoice { %md = -v }
+kb.sk %_.3 MODE %_.5 %md %_.6 | limpiav
+}
+alias no.dml {
+if (!%_.5) { error noparam GRATIX servidordecorreo }
+writeini -n otros.dat cuentas %_.5 gratix@gratix
+mesg Servidor %_.5 añadido a la lista de mails no válidos. | limpiav
+}
+alias no.dxl {
+if (!%_.5) { error noparam UGRATIX servidorcorreo }
+if (!$readini(otros.dat,n,cuentas,%_.5)) { error Este servidor no figura en la lista. }
+remini otros.dat cuentas %_.5 | mesg Servidor %_.5 borrado de la lista de mails no válidos | limpiav
+}
+alias no.rbt { set %_.5 Los Servicios $_.net se están reiniciando para ofrecerle un mejor servicio. Rogamos disculpen las molestias. En breves momentos estarán disponibles. | set %_.4 global | ng.sm rt }
+alias no.chl {
+if (!%_.6) { error noparam LIMITE nick nuevolimite }
+if (!$readini(nicks\ $+ $_.correc(%_.5),n,datos,pass)) { error noreg }
+writeini -n nicks\ $+ $_.correc(%_.5) memos numero %_.6
+mesg Límite de mensajes para %_.5 modificado a %_.6 | limpiav
+}
+alias no.ap {
+if (!%_.5) { error noparam ADDPREOPER nick }
+if (!$readini(nicks\ $+ $_.correc(%_.5),n,datos,pass)) { error noreg }
+if ($readini(nicks\ $+ $_.correc(%_.5),n,datos,preoper)) { error Este nick ya es PreOper. }
+writeini -n nicks\ $+ $_.correc(%_.5) datos preoper 1 | hadd -m preopers %_.5 1 | mesg OK,12 %_.5 registrado como PreOper. | limpiav
+}
+alias no.dp {
+if (!%_.5) { error noparam DELPREOPER PreOper }
+if (!$readini(nicks\ $+ $_.correc(%_.5),n,datos,preoper)) { error Ese nick no está registrado como PreOper. }
+remini nicks\ $+ $_.correc(%_.5) datos preoper | hdel preopers %_.1 | mesg OK, %_.5 borrado de la lista de PreOpers. | limpiav
+}
+alias no.lp {
+if (!$hget(preopers,0).item) { mesg No hay Pre-Opers en la red. | limpiav }
+mesg **** PreOpers en la red **** | var %r = 1
+while %r <= $hget(preopers,0).item { mesg $hget(preopers,%r).item | inc %r }
+mesg **** Fin de la Lista de PreOpers **** | limpiav
+}
+alias no.nrt {
+if (!%_.5) { error noparam ROOTING nuevoroot passroot }
+if (!$readini(nicks\ $+ $_.correc(%_.5),n,datos,pass)) { error noreg }
+if (!$readini(nicks\ $+ $_.correc(%_.5),n,datos,ircop)) { error Este nick no es un IRCop. }
+writeini -n source\conf.dll conf root $_.correc(%_.5) | writeini -n source\conf.dll conf pass %_.6 | kb.sk %no PRIVMSG %_.5 :Ahora eres Root. La clave es %_.6
+mesg Root cambiado a %_.5 con el pass %_.6 | writeini -n nicks\ $+ $_.correc(%_.1) datos status 5 | limpiav
+}
+alias nn.ghp {
+if (!%_.5) { error noparam GETPASS nick }
+if (!$readini(nicks\ $+ $_.correc(%_.5),n,datos,pass)) { error noreg }
+kb.sad | mesg La clave de %_.5 es $readini(nicks\ $+ $_.correc(%_.5),n,datos,pass) | limpiav
+}
+alias no.inf {
+if (!$readini(nicks\ $+ $_.correc(%_.5),n,datos,pass)) { error noreg }
+mesg Información del nick12 %_.5
+mesg Real Name:12 $_.uncod($readini(nicks\ $+ $_.correc(%_.5),n,datos,real)) HIDE12 $upper($readini(nicks\ $+ $_.correc(%_.5),n,datos,oreal))
+mesg Último Mask:12 $readini(nicks\ $+ $_.correc(%_.5),n,datos,mask) HIDE12 $upper($readini(nicks\ $+ $_.correc(%_.5),n,datos,omask))
+mesg Última hora:12 $date($readini(nicks\ $+ $_.correc(%_.5),n,datos,out)) $time($readini(nicks\ $+ $_.correc(%_.5),n,datos,out)) HIDE12 $upper($readini(nicks\ $+ $_.correc(%_.5),n,datos,otime))
+mesg Último quit:12 $_.uncod($readini(nicks\ $+ $_.correc(%_.5),n,datos,quit)) HIDE12 $upper($readini(nicks\ $+ $_.correc(%_.5),n,datos,oquit))
+mesg E-mail:12 $_.uncod($readini(nicks\ $+ $_.correc(%_.5),n,datos,mail)) HIDE12 $upper($readini(nicks\ $+ $_.correc(%_.5),n,datos,omail))
+mesg URL:12 $_.uncod($readini(nicks\ $+ $_.correc(%_.5),n,datos,web)) HIDE12 $upper($readini(nicks\ $+ $_.correc(%_.5),n,datos,oweb))
+if ($readini(nicks\ $+ $_.correc(%_.5),n,datos,kill)) { mesg Proteccion por KILL activada a12 $ifmatch segundos. }
+if ($readini(nicks\ $+ $_.correc(%_.5),datos,preoper)) { mesg Este usuario es un PreOper }
+if ($readini(nicks\ $+ $_.correc(%_.5),n,datos,ircop)) { mesg Este usuario es un $ifmatch }
+if ($readini(nicks\ $+ $_.correc(%_.5),n,sms,num)) { mesg Reconocido en la BDD de %ns }
+mesg Status:12 $_.st(%_.5) ( $+ $_.st(%_.5).st $+ ) | limpiav
+}
+alias nc.cac {
+if (!%_.7) { error noparam REGISTER #canal pass descripción }
+if ($readini(canales\ $+ %_.5,n,datos,fun)) { error Ya existe un canal registrado con este nombre. }
+if ($readini(otros.dat,cdeny,%_.5)) { error Este canal esta prohibido. }
+if ($readini(creg\ $+ %_.5,n,datos,fundador)) { error Este canal está en fase de registro. Primero debe dropearse. } | nr.cac
+}
+alias ng.sm {
+if (!%_.5) { error noparam GLOBAL[N] mensaje }
+if (!$hget(users,1).item) { mesg No hay ningún usuario conectado. | limpiav }
+kb.tkz 5 | kb.sk $_.serv CHATOPS : $+ 4 %_.1  envia un Global
+var %r = 1
+while %r <= $hget(users,0).item {
+if %_.4 == global { kb.sk %ng PRIVMSG $hget(users,%r).item :4<10Global4> %_.tkz }
+else { kb.sk %ng NOTICE $hget(users,%r).item :4<10Global4> %_.tkz }
+inc %r
+}
+mesg Nicks notificados:12 $calc(%r - 1)
+if $1 == rt { kb.stp | kb.bgn }
+if $1 == st { mesg Los SeRvIcEs $_.net han sido desconectados de la red $_.net | kb.stp }
+limpiav
+}
+alias ng.smc {
+if (!%_.5) { error noparam GLOBALC mensaje }
+kb.tkz 5 | if $hget(cops,0).item == 0 { mesg No hay IRCops conectados en la red. | limpiav }
+var %r = 1
+while %r <= $hget(cops,0).item { kb.sk %ng PRIVMSG $hget(cops,%r).item :Mensaje Masivo IRCops: %_.tkz | inc %r }
+mesg IRCops conectados:12 $calc(%r - 1) | limpiav
+}
+alias no.ckg {
+if (!%_.6) { error noparam CHANKILL #canal motivo }
+if (!$readini(canales\ $+ %_.5,n,datos,modos)) { error nochan }
+kb.tkz 6 | nc.cl.kc %_.4
+}
+alias no.lum {
+if (!%_.7) { error noparam SR Número-Raw NICK MENSAJE }
+kb.tkz 7 | kb.sk $_.serv %_.5 %_.6 : $+ %_.tkz | limpiav
+}
+alias no.ldm {
+if (!%_.5) { error noparam RELOAD/UNLOAD archivo.upz }
+if . !isin %_.5 || upz !isin %_.5 { error nosin RELOAD/UNLOAD archivo.upz }
+if (!$findfile(\,%_.5,1)) { error El archivo %_.5 no pudo ser encontrado. }
+if %_.4 == reload { .reload -rs $findfile(\,%_.5,1) | kb.sk $_.serv CHATOPS : $+ %_.1 hace RELOAD del módulo %_.5 }
+if %_.4 == unload { .unload -rs $findfile(\,%_.5,1) | kb.sk $_.serv CHATOPS : $+ %_.1 hace UNLOAD del módulo %_.5 }
+limpiav
+}
+alias no.lgn {
+if (!%_.5) { error noparam LOG ON/OFF }
+if %_.5 != on && %_.5 != off { error nosin LOG ON/OFF }
+if %_.5 == on { writeini -n source\conf.dll conf log si | mesg Modo LOGGING 12ON }
+else { writeini -n source\conf.dll conf log no | mesg Modo LOGGING 12OFF }
+limpiav
+}
+alias no.chn {
+if (!%_.6) { error noparam CHANGE nickvictima nuevonick }
+if (!$hget(users,%_.5)) { error nonick }
+if ($hget(users,%_.6)) { error El nick elegido para poner por el actual ya es utilizado por otro usuario. }
+mesg El nick %_.5 ha cambiado a %_.6 | kb.sk $_.serv SVSNICK %_.5 %_.6 $ctime | limpiav
+}
+alias no.chm {
+if (!%_.6) { error noparam MODE nickvictima +-nuevosmodos }
+if $chr(35) !isin %_.5 {
+if $_.user(%_.5).nick == $false { error nonick }
+if o isin %_.6 { error El modo +o no lo pueden dar los bots. }
+kb.sk %no SVS2MODE %_.5 %_.6 $ctime
+}
+else { kb.sk %no MODE %_.5 %_.6 %_.7 }
+mesg Modos %_.6 aplicados a %_.5 | limpiav
+}

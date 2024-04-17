@@ -1,0 +1,23 @@
+[datos]
+pass=pass
+omail=on
+mail=Trocotronic@telefonica.net
+oweb=on
+web=http://rallados.hopto.org
+oreal=off
+real=Anonymous 
+otime=off
+out=1026845724
+identified=1026845740
+omask=on
+mask=PxY@Trocotronic
+reg=1004142099
+status=1
+kill=15
+secure=on
+quit=one day...
+oquit=off
+smail=ok
+
+[memos]
+numero=5

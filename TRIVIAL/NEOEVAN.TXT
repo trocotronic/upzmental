@@ -1,0 +1,549 @@
+ver#1.1
+Personajes©Yasmeen«¿Cómo se llama la madre de Shinji?*Yui Ikari
+GAINAX©Yasmeen«¿En qué año se realizó Otaku no video?*1991
+Ángeles©Yasmeen«¿Cómo se llama el quinto ángel?*Ramiel
+Evas©Yasmeen«¿Cuántos evas de las serie 05 hay (letra)?*Nueve
+Personajes©Yasmeen«¿Cuál es el nombre de soltero del padre de Shinji?*Gendô Rokubungi
+Personajes©Yasmeen«¿Cuál es el nombre completo de Asuka?*Sohryu Asuka Langley Zeppelin
+Ángeles©Yasmeen«¿Qué ángel se fusionó con Rei?*Lilith
+Personajes©Yasmeen«¿Cómo se llama la madre de Ritsuko?*Naoko Akagi
+Personajes©Yasmeen«¿De qué color tiene los ojos Rei?*Rojos
+Personajes©Yasmeen«¿Cuál es el nombre completo de Misato?*Misato Katsuragi
+Personajes©Yasmeen«¿A qué rango fue ascendida Misato mientras trabajaba en NERV?*Comandante
+Personajes©Yasmeen«¿Cuál es el nombre completo de Ritsuko?*Ritsuko Akagi
+Personajes©Yasmeen«¿De quién estaba enamorada ritsuko al igual que su madre?*Gendô Ikari
+Personajes©Yasmeen«¿Cuál es el nombre completo de Fuyutsuki?*Kôzo Fuyutsuki
+Personajes©Yasmeen«¿Qué profesión tenía Fuyutsuki antes de incorporarse a NERV?*Profesor
+Personajes©Yasmeen«¿Cómo se llama el mejor amigo de Tôji después de Shinji?*Kensuke Aida
+Personajes©Yasmeen«¿A qué personaje de Evangelion se le puede considerar un otaku militar?*Kensuke
+Paridas©Yasmeen«¿De quién está enamorada Hikari Hokari?*De Tôji Suzuhara
+Paridas©Yasmeen«¿Cuál es la operadora más guapa que hay en NERV?*Maya Ibuki
+Personajes©Yasmeen«¿Qué operador de NERV es aficionado a los mangas y está enamorado de Misato?*Makoto Hyuga
+Paridas©Yasmeen«¿De quién está enamorada Misato?*De Kaji
+Paridas©Yasmeen«¿De quién está enamorada Asuka?*De Kaji
+Paridas©Yasmeen«¿Cuándo se afeita Kaji?*En navidades
+Ángeles©Yasmeen«¿Cómo se llama el primer ángel?*Adam
+Ángeles©Yasmeen«¿De qué ángel se extrae el L.C.L?*Lilith
+Ángeles©Yasmeen«¿Cuál fue el primer ángel que atacó NERV?*Sachiel
+Ángeles©Yasmeen«¿Qué piloto de evas venció al cuarto ángel?*Shinji
+Ángeles©Yasmeen«¿Qué ángel estuvo a punto de engullir al Eva-02?*Gaghiel
+Ángeles©Yasmeen«¿Qué ángel tenía la habilidad de duplicarse?*Israfel
+Ángeles©Yasmeen«¿A qué ángel encontró Asuka durmierdo en un volcán?*Sandalphon
+Ángeles©Yasmeen«¿Qué ángel tenía forma de araña?*Matarael
+Ángeles©Yasmeen«¿Qué ángel se arrojó cotra NERV en plan "kamikaze"?*Sahaquiel
+Ángeles©Yasmeen«¿Qué ángel intentó invadir a M.A.G.I?*Ireul
+Ángeles©Yasmeen«¿Qué ángel usaba la habilidad "mar de dirac"?*Leliel
+Ángeles©Yasmeen«¿Cuál es el ángel más poderoso de todos físicamente?*Zeruel
+Ángeles©Yasmeen«¿Qué ángel invadió al Eva-03?*Bardiel
+Ángeles©Yasmeen«¿Qué ángel usaba los ataques psicológicos?*Arael
+Ángeles©Yasmeen«¿Qué ángel tiene forma de anillo?*Armisael
+Paridas©Yasmeen«¿Qué ángel era gay?*Tabris
+Música©Yasmeen«¿Qué cantante compuso la canción "Fly me to the moon"?*Frank Sinatra
+Música©Yasmeen«¿Cuántas canciones tiene el cd 3 de Evangelion?*34
+Evas©Yasmeen«¿De qué color era antes el Eva-00?*Naranja
+Evas©Yasmeen«¿Qué Eva tiene instalado un nucleo S2 aparte de los Evas de serie?*Eva-01
+Evas©Yasmeen«¿Qué alma se encuentra dentro del Eva-01?*Yui Ikari
+Evas©Yasmeen«¿De qué país procede el Eva-02?*Alemania
+Evas©Yasmeen«¿Qué alma está dentro del Eva-02?*Kyoko Zeppelin
+Evas©Yasmeen«¿Qué Eva tiene una capacidad de regeneración superior a los demás evas?*Los Evas de Serie
+Evas©Yasmeen«¿Qué Eva se declaró oficialmente desaparecido?*Eva-04
+Evas©Yasmeen«¿De qué país viene el Eva-03?*Estados Unidos
+Evas©Yasmeen«¿Qué serie de Evas están pilotados por el dummy plug de Kaworu?*Los Evas de serie
+Evas©Yasmeen«¿Qué Eva llegó a rebasar el 400% de sicronización con su piloto?*Eva-01
+Evas©Yasmeen«¿Cuál es la mujer de Adam?*Eva 
+Evas©Yasmeen«¿Cuántos Evas se llegaron a crear?*14
+Manga©Yasmeen«¿Quién dibujó el manga de evangelion?*Yoshiyuki Sadamoto
+NERV©Yasmeen«¿De qué organización depende NERV aparte de SEELE?*ONU
+SEELE©Yasmeen«¿Quién es el presidente de SEELE?*Keel Lorentz
+NERV©Yasmeen«¿Qué significa la palabra NERV?*Nervio
+SEELE©Yasmeen«¿Cuántas personas forman SEELE?*12
+SEELE©Yasmeen«¿Qué significa la palabra SEELE?*Alma
+NERV©Yasmeen«¿Quién fue la creadora de los ordenadores M.A.G.I?*Naoko Akagi
+Varios©Yasmeen«¿Quién es la dobladora de Rei Ayanami en Japón?*Megumi Hayashibara
+Varios©Yasmeen«¿Dónde encontró NERV la lanza de Longinus?*En el polo sur
+Varios©Yasmeen«¿Qué significan las siglas A.T.F en Evangelion?*Absolute Terror Field
+Varios©Yasmeen«¿Qué significa L.C.L?*Link Connect Liquid
+Varios©Yasmeen«¿Quién sale en la portada del libro "Eve photo file"?*Rei Ayanami
+Varios©Yasmeen«¿Qué empresa de videojuegos patrocina Evangelion?*Sega
+Paridas©Yasmeen«¿Existen calzoncillos,sujetadores y condones de Evangelion?*Sí
+Varios©Yasmeen«¿Qué editorial editó el art book de Evangelion en España?*Norma
+Varios©Yasmeen«¿Cuántos episodios hay de Evangelion?*26
+Varios©Yasmeen«¿Cuántas películas hay de Evangelion (letra)?*Tres
+Varios©Yasmeen«¿Cuántos pilotos de Evas hay (letra)?*Cinco
+Paridas©Yasmeen«¿Qué es lo que no reconoce Shinji?*El techo
+Paridas©Yasmeen«¿Cuántas veces se ríe Rei a lo largo de la serie (letra)?*Una
+Paridas©Yasmeen«¿A qué personaje de Evangelion se le puede considerar una borracha?*Misato
+Paridas©Yasmeen«¿De quién está enamorado Kaworu?*De Shinji
+Varios©Yasmeen«¿Qué animal es Pen-Pen?*Un pingüino
+Otros©Yasmeen«¿En qué mes nació Asuka?*Diciembre
+Paridas©Yasmeen«¿Cómo se llama la cerveza que bebe Misato?*Yebisu
+Otros©Yasmeen«¿Qué serie hizo GAINAX después de Evangelion?*Karekano
+Personajes©Yasmeen«¿Cómo se llama la chica nueva que aparece en el videojuego de Evangelion?*Mana
+Manga©[faye]«Último libro de ilustraciones de Sadamoto*Der Mond
+Manga©[faye]«Título del libro de ilustraciones de Sadamoto anterior al "Der Mond"?*Alpha
+Manga©[faye]«Serie de imagen real producida por GAINAX*Love and pop
+Manga©[faye]«Personaje más carismático de la serie "Karekano"*Pero-Pero
+Manga©[faye]«¿Qué lleva Gendô implantado en una mano?*El embrión de Adam
+Manga©[faye]«¿Qué Rei es la que más dura y por tanto la que más se humanizó?*La segunda
+Manga©[faye]«¿Qué es lo que cultiva Kaji en sus ratos libres?*Sandías
+Manga©[faye]«¿Quién le trae a Gendô el embrión del Adam?*Kaji
+Manga©[faye]«Nombre del disco de evangelion en el que aparece una especie de drama*Addition
+Manga©[faye]«¿Quiénes sobreviven al tercer impacto?*Shinji y Asuka
+Manga©[faye]«Nombre del gigante blanco crucificado en Evangelion*Lilith
+Manga©K-yori«Nombre japonés de Neon Genesis Evangelion*Shin Seiki Evangelion
+Manga©K-yori«¿Por quiénes está formado MAGI?*Melchior, Balthasar y Casper
+Manga©K-yori«¿Cuántos "Ángels" aparecen en la serie de Evangelion?*18
+Manga©K-yori«¿Qué Evas aparecen en la serie?*Eva-00, Eva-01, Eva-02 y Eva-03
+Manga©K-yori«Nombres de los pilotos de los Evangelions (por orden de "niño")*Rei, Asuka, Shinji, Tôji y Kaworu
+Manga©I0RI«¿Cómo se llama la delegada de la clase de Shinji?*Hikari Hokari
+Manga©I0RI«¿Cuál es el nombre completo de Kaji (Evangelion)?*Ryouji Kaji
+Manga©I0RI«¿Quién derrotó al ángel Ireul?*Ritsuko Akagi
+Manga©I0RI«¿A qué es debido el color naranja del Eva-00 al principio de la serie?*Lo usaban para los prototipos militares
+Manga©I0RI«¿Cómo se llamó al Eva-00 cuando lo arreglaron y pintaron en azul?*Eva-00 Kai
+Manga©I0RI«¿Cómo se llamaba la organización antecesora de NERV?*GEHIRN
+Manga©I0RI«¿Qué significa la palabra GEHIRN?*Cerebro
+Manga©I0RI«¿Qué personaje del anime nace el 13 de Septiembre del año 2000?*Kaworu Nagisa
+Manga©I0RI«¿De qué color tiene los ojos Kaworu?*Rojos
+Manga©I0RI«En Escaflowne se habla de la atlantida pero, ¿en qué serie de GAINAX también se hace referencia a la atlantida?*Fushigi no umi no Nadia
+Manga©I0RI«¿Cómo se le llamó en España a la serie de Nadia?*El misterio de la piedra azul
+Bobadas©I0RI«¿Qué es lo que pasaría si Rei se dejase caer por el Pans & Company?*LA solución en los créditos de Macross Plus
+Bobadas©I0RI«¿Qué es lo último que aparece al final del End of Evangelion(sin contar los créditos)?*Fin
+Manga©I0RI«¿Qué hace Shinji en la habitación de Asuka del hospital al principio de el End?*Masturbarse
+Manga©I0RI«¿Qué dice Shinji después de Masturbarse delante de una Asuka semi-desnuda e inconsciente?*Soy asqueroso
+Manga©I0RI«¿Quién ataca a NERV por orden de SEELE en el End of Evangelion?*La JSSDF
+Manga©I0RI«¿Qué significan las siglas JSSDF?*Fuerza Estratégica de Autodefensa de Japón
+Manga©I0RI«¿En qué parte del Geo-front se esconde Lilith?*En el Terminal Dogma
+Manga©I0RI«¿Contra qué ángel se utilizó el dummy plug de Rei?*Bardiel
+Manga©I0RI«¿Cómo se llama al estado de locura del Eva-01?*Berserk
+Manga©I0RI«¿En qué película de actores reales sale una cosa parecida al LCL(Perfluorocarbonatos(PFC))?*En Abbys
+Manga©I0RI«¿Qué texto pone en el logotipo de NERV?*God's in his heaven. All's right with the world
+Manga©I0RI«¿Cómo se llama el videojuego de Evangelion en el que salía Mana?*Girlfriend of Steel
+Manga©I0RI«¿Para qué plataformas salió el juego de Evangelion en el que salía Mana?*Sega saturn, Playstation y Pc
+Manga©I0RI«Título de la canción del opening de Evangelion (japonés)*Zankoku na tenshi no teze
+Manga©I0RI«Título del opening de Evangelion en Español*La tesis del ángel cruel
+Manga©I0RI«¿Qué tipo de Eva es el Eva-00?*Proto Type
+Manga©I0RI«¿Qué tipo de Eva es el Eva-01?*Test Type
+Manga©I0RI«¿Qué tipo de Eva es el Eva-02?*Production model
+Manga©I0RI«¿Qué tipo de Eva es el Eva-03?*Production model
+Manga©I0RI«¿Qué tipo de Eva es el Eva-04?*Production model
+Manga©I0RI«¿Cómo se le llama a los ángeles en el manga de Evangelion?*Apóstoles
+Manga©I0RI«Nombre del comic de Evangelion en España*Neogénesis Evangelion
+Manga©Kether«¿Cuál es el número de la casa de Rei Ayanami?*402
+Manga©Kether«¿Cuál es la clase de Shinji?*2-A
+Manga©Kether«¿Cuántos plazos del coche le quedaban por pagar a Misato en el ep.1 de Evangelion?*33
+Manga©Kether«¿De qué color es la señal que da MAGI en el ep.20 cuando no puede sacar a Shinji del Eva-01?*Sepia
+Manga©I0RI«¿Qué personaje dice la última frase del End of Evangelion?*Asuka
+Manga©I0RI«¿Cuál es la última frase que se dice en el End of Evangelion?*Que asco
+Manga©I0RI«¿Qué personaje dice la última palabra de la serie de TV de Evangelion?*Shinji Ikari
+Manga©I0RI«¿Cuál es la última palabra que se dice en la serie de TV de Evangelion?*Felicidades
+Manga©I0RI«¿Cómo se llama esa serie alternativa de Evangelion echa por aficionados?*Evangelion R
+Evangelion©Armi«¿Qué tiene en el suelo y en el techo en su despacho Gendô?*El árbol de la Vida
+Evangelion©Armi«¿Cómo se llama la sombra que proyectaba Leliel?*Mar de Dirac
+Evangelion©Armi«¿Qué nombre recibe la Tokyo actual?*Neo-Tokyo 3
+Evangelion©Armi«¿En qué año nació Hideaki Anno, el creador de Evangelion?*1960
+Evangelion©Armi«Finalmente, ¿quién provoca el tercer impacto?*Adam, compactado en la mano de Gendô cuando Rei se la absorve
+Evangelion©Armi«¿Cuántas alas tiene el Eva-01 cuando se convierte en Dios?*10 alas
+Evangelion©Armi«¿Cuántas alas tiene Dios?*12 alas
+Evangelion©Armi«¿Con qué otro nombre se conoce a Ramiel?*Uruel
+Evangelion©Armi«¿Qué otro nombre recibe Ramiel además de Uruel?*Rubik
+Evangelion©Armi«¿Con qué otro nombre se conoce a Zeruel?*Zeruch
+Evangelion©Armi«Verdadero o falso:Ireul tiene el tamaño de una uña*Falso
+Evangelion©Armi«¿Cuántos años tiene Shinji?*14 años
+Evangelion©Armi«¿Qué niño es Tôji Suzuhara en el orden de pilotos?*El cuarto
+Evangelion©Armi«¿Cómo se llama el programa de personalidad artificial que emula la personalidad del piloto en Evangelion?*Dummy Plug
+Evangelion©Armi«¿Cómo se denomina el traje al cual van sujetos todos los pilotos de Evas?*Plug Suit
+Evangelion©Armi«¿Cómo se llama el cuchillo que usan los pilotos de Evas?*Progressive knife
+Evangelion©Armi«¿Cómo se llama el rifle que usan para vencer a Ramiel?*Positron rifle
+Evangelion©Armi«¿Cómo se llama el rifle que usan generalmente los evas?*Palet rifle
+Evangelion©Armi«¿Cómo se llama el hacha que usan para partir en dos a Israfel?*Smash Hawk
+Evangelion©Armi«¿Cómo se llaman las bombas que usa la ONU?*N2
+Evangelion©Armi«¿Cómo se llama el núcleo autosuficiente de los ángeles y de los EVAs de serie?*S2
+Evangelion©Armi«¿Cómo se llama el creador y director de Evangelion?*Hideaki Anno
+Evangelion©Armi«¿Cómo se llama en Japonés el episodio 23 donde Rei se autodestruye?*Namida
+Evangelion©Armi«¿Cuánto tiempo tiene de autonomía la batería del EVA?*5 minutos
+Evangelion©Armi«¿Qué pasa en el año 2000 en Evangelion?*Se produce el segundo impacto
+Evangelion©Armi«¿Cómo se llama el padre de Misato?*Señor Katsuragi
+Evangelion©Armi«¿Cuál es la fecha de nacimiento de Shinji?*6 de Junio de 2001
+Evangelion©Armi«¿Cuál es la frase que Asuka repite más veces?*Shinji, ¡eres tonto!
+Evangelion©Armi«¿Cuál es el grupo sanguíneo de Rei?*Desconocido
+Evangelion©Armi«¿Qué empresa ha creado Evangelion?*Gainax
+Evangelion©Armi«¿Qué hay de esencial en el interior del Eva-01?*La esencia de Yui
+Evangelion©Armi«¿Qué cargo recibe Ritsuko(el cargo completo)?*Responsable del Departamento de Desarrollo Tecnológico
+Evangelion©Armi«¿Qué nombre designan al Proyecto Evangelion?*Proyecto E
+Evangelion©Armi«¿Qué nombre designan al Proyecto para salvar a la humanidad?*Proyecto de Complementación Humana
+Evangelion©Armi«¿Entorno a qué descubrimiento real en el 1947 se basa toda la serie?*El descubrimiento de Los Manuscritos del Mar Muerto
+Evangelion©Armi«¿Cómo se llaman las cuevas donde se encontraron Los Manuscritos del Mar Muerto?*Qumran
+Evangelion©Armi«¿Qué nombre recibe el líquido que cubre a los pilotos en la cabina del EVA?*LCL
+Evangelion©Armi«¿Qué intenta Gendô hacer con Lilith?*Convertirse en su alma
+Evangelion©Armi«¿Qué carencia tiene Lilith?*El alma
+Evangelion©Armi«¿Cuál es la frase más destacada que pronuncia Fuyutsuki quando Gendô se retira del mando?*Dale recuerdos a Yui de mi parte
+Evangelion©Armi«¿Quién o qué ayuda a Asuka de salir de su estado catatónico?*El alma de su madre
+Evangelion©Armi«¿Cómo se llama la operación que consiste en recojer toda la energia de Japón?*Operación Yashima
+Evangelion©Armi«¿Cúantos disparos efectúa Shinji para derrotar a Ramiel (letra)?*Dos
+Evangelion©Armi«¿Qué es lo que pronuncia Rei cuando absorve la mano a Gendô?*Ya no soy tu muñeca
+Evangelion©Armi«¿En qué tres proyectos se basa NERV para lograr sus objectivos (por favor en orden al que aparecen en la serie)?*Proyecto E, Proyecto de Complementación Humana y Los Manuscritos del Mar Muerto
+Evangelion©Armi«¿En qué consiste el Proyecto de Complementación Humana?*Unir todas las almas en una
+Evangelion©Armi«¿Qué intenta Shinji cuando se encuentra en el cuarto a solas con Asuka?*Darle un beso
+Evangelion©Armi«¿Contra cuál de los ángeles luchan por primera vez los tres EVAs juntos?*Matarael
+Evangelion©Armi«¿Dónde se encuentra el centro de control de NERV?*En el Central Dogma
+Evangelion©Armi«¿Cómo se llama la esfera instalada debajo de Tokyo-3?*Geofront
+Evangelion©Armi«¿En qué dos episodios luchan dos EVAs entre sí*18 y 24
+Evangelion©Armi«Sabemos que el ángel poderoso es Tabris.¿Cuál el segundo más poderoso?*Zeruel
+Evangelion©Armi«¿De dónde proviene el nombre Longinus en la vida real?*De un soldado romano
+Evangelion©Armi«Qué característica tenía el soldado Longinus?*Era muy alto
+Evangelion©Armi«¿Con qué otro nombre se conoce el Terminal Dogma?*La sala de los horrores
+Evangelion©Armi«¿Cuántos ojos tiene Lilith (letra)*Siete
+Evangelion detalles©Armi«¿Cómo se llama el jefe del proyecto "Jet Alone"?*Tokida
+Evangelion detalles©Armi«¿Qué dos iniciales aparecen en los Aviones del Ejército de Las Naciones Unidas?*UN
+Evangelion detalles©Armi«¿Qué marca tiene el coche de Misato?*Renault Alpine-A310
+Evangelion detalles©Armi«¿De qué marca es el walkman de Shinji?*Sony
+Evangelion detalles©Armi«¿De qué modelo es el walkman de Shinji?*SDAT
+Evangelion detalles©Armi«¿Cuál es el número de identifiación de Rei?*0001-225-09
+Evangelion detalles©Armi«¿De qué dos colores es el bañador de Asuka?*Rojo y blanco
+Evangelion detalles©Armi«¿Qué animal de felpa era el de Asuka cuando era pequeña?*Un monito
+Evangelion detalles©Armi«¿Qué enfermedad tuvo Misato cuando era pequeña y después del Segundo Impacto?*Afasia
+Evangelion detalles©Armi«¿En qué episodio es el único donde Ritsuko no lleva la bata blanca para andar por las instalaciones de Nerv?*En el primero
+Evangelion detalles©Armi«¿Cuál es la marca de la tabla de surf de Kaji?*Piratesurf
+Evangelion detalles©Armi«¿De qué marca es la videocámara de Kensuke?*Sony
+Evangelion detalles©Armi«¿De qué cuatro países son los integrantes del Comité sin contar Keel y Gendô (en orden alfabético)*América, Francia, Inglaterra y Rusia
+Evangelion detalles©Armi«¿Cuántos ojos tiene Matarael (letra)?*Nueve
+Death & Rebith©Armi«¿Qué hace Misato con MAGI en el Rebirth?*Piratearlo
+Death & Rebith©Armi«Verdadero o falso: los humanos y los ángeles somos hermanos*Verdadero
+Death & Rebith©Armi«¿Qué frase se supone que dice Gendô en el Terminal Dogma a Risuko cuya voz no se oye (sólo mueve labios)?*Yo te amé
+Death & Rebith©Armi«¿Qué arma especial tienen los nueves EVAs de serie?*Una lanza de Longinus
+Death & Rebith©Armi«¿Quién ordena a las tropas niponas que ataquen a NERV?*SEELE
+Death & Rebith©Armi«¿Qué une tanto Shinji a su Eva?*La esencia de su madre
+Death & Rebith©Armi«¿Por qué los EVAs de serie se regeneran?*Porque tiene el núcleo S2
+The End of Evangelion©Armi«¿Por qué monta todo este pollo Gendô?*Por estar con Yui
+The End of Evangelion©Armi«¿A quién hace alusión la Luna Negra?*A Lilith
+The End of Evangelion©Armi«¿Qué hace Misato cuando está explicando su fracaso en ser una madre para Shinji?*Hacer el amor con Kaji
+The End of Evangelion©Armi«Verdadero o falso: Shinji es un salío*Verdadero
+The End of Evangelion©Armi«¿Quién es el/la amante de Maya?*Ritsuko
+The End of Evangelion©Armi«¿Cuál es el máximo miedo de Gendô?*Amar a Shinji
+The End of Evangelion©Armi«¿Qué emerje del ojo de Lilith en el End?*El Eva-01
+The End of Evangelion©Armi«¿Qué ocurre con el Proyecto de Complementación Humana en el End?*Se interrumpe
+The End of Evangelion©Armi«¿Qué aparecen crucificados al final del End of Evangelion?*Los EVAs
+The End of Evangelion©Armi«¿Qué ve Shinji en la arena?*El cuerpo de Rei flotando
+The End of Evangelion©Armi«¿Qué significa Neon Génesis Evangelion?*El mensaje del Nuevo Siglo
+The End of Evangelion©Armi«¿En cuántas cuevas se encontraron los Manuscritos del Mar Muerto?*En 14
+Paridas©I0RI«¿A qué se parece el cuchillo que utiliza el Eva-02 (es una pregunta de coña ^_^)*A un Cutter
+Manga©I0RI«¿Qué cualidad fundamental tenía la Lanza de Longinus?*Romper cualquier AT Field
+Manga©Armi«¿Cuál es el principal sospechoso de la muerte de Kaji?*Gendô 
+Manga©I0RI«¿De qué es copia el Eva-01?*De Lilith
+Manga©I0RI«¿Cómo se llama la primera película de Evangelion?*Death & Rebirth
+Manga©I0RI«¿Cómo se llama la segunda película de Evangelion?*The end of Evangelion
+Manga©I0RI«¿Cuál es la supuesta tercera película de Evangelion?*True
+Manga©^Shinji^«¿De qué color tiene los ojos el Eva-01?*Verdes
+Manga©I0RI«¿Cuál es la fecha exacta del segundo impacto?*13 de septiembre de 2000
+Manga©^Shinji^«Día exacto de la emisión del primer capítulo de Evangelion en Japón*4 de Octubre de 1995
+Manga©^Shinji^«Día exacto de la emisión del último capítulo de Evangelion en Japón*27 de Marzo de 1996
+Manga©^Shinji^«Título del primer capítulo de Evangelion(inglés)*Angel Attack
+Manga©I0RI«Título del último capítulo de Evangelion(inglés)*Take care of yourself
+Manga©I0RI«Mes y año del estreno del Death & Rebirth en Japón*Marzo de 1997
+Manga©I0RI«Mes y año del estreno del End of Evangelion en Japón*Julio de 1997
+Manga©I0RI«¿Con qué otro nombre se conoce el Girlfriend of steel?*Iron Maiden
+Manga©I0RI«¿Qué tipo de sangre tienen los ángeles en Evangelion?*Azul
+Manga©Armi«¿De qué especie proviene Pen-Pen?*Baños termales
+Manga©Armi«¿Cómo se llama el laboratorio donde crionizaron a Pen-Pen?*Laboratorio de ingeniería genética
+Manga©Armi«¿Dónde vive Pen-Pen?*En una nevera
+Manga©Armi«¿De qué color tiene las cejas Pen-Pen?*Rojas
+Manga©Armi«¿De qué color tiene los ojos Pen-Pen?*Verdes
+Manga©Armi«¿Qué número de referencia tiene Pen-Pen?*BX293A
+Manga©Armi«¿Con qué otro nombre llaman a Pen-Pen?*Pen2
+Manga©Armi«¿Quién es la compañera de Pen-Pen al principio de la serie?*Misato Katsuragi
+Evangelion Pen_Pen©Armi«¿Cuántos interruptores tiene en su tablero (letra)?*Dos
+Evangelion Pen_Pen©Armi«¿Cuántos displays tiene en su tablero (letra)?*Tres
+Evangelion Pen_Pen©Armi«¿Cuántos pisos tiene su nevera (letra)?*Dos
+Evangelion Pen_Pen©Armi«¿Qué hay en el primer piso de la nevera?*Su habitación
+Evangelion Pen_Pen©Armi«¿Qué hay en el segundo piso de la nevera?*Un cuarto secreto
+Evangelion Pen_Pen©Armi«¿De qué está hecha su cama?*De agua
+Evangelion Pen_Pen©Armi«¿Cómo es la puerta de la nevera?*Corredera
+Evangelion Pen_Pen©Armi«¿De qué es el suelo?*De alfombra
+Evangelion Pen_Pen©Armi«¿Cuántos botones tiene el mando de su TV (letra)?*Cuatro
+Evangelion Pen_Pen©Armi«¿Qué peculiaridad tiene?*Es vulnerable al frío
+Evangelion Pen_Pen©Armi«¿Qué enfermedad padece?*Alcoholismo
+Evangelion Pen_Pen©Armi«¿Qué marca de cerveza bebe?*Yebisu
+Evangelion Pen_Pen©Armi«¿Cuántos "dedos" posee (letra)?*Seis
+Evangelion Pen_Pen©Armi«¿Cuál es su apellido?*Pen
+Evangelion Pen_Pen©Armi«¿Con quién comparte piso?*Misato, Shinji y Asuka
+Evangelion©Armi«¿QUÉ TRAJE UTILIZA EL EVA-02 PARA DERROTAR A SANDALPHON?*El D-type
+Evangelion©Armi«¿CÓMO SE LLAMAN RESPECTIVAMENTE LOS EPISODIOS 25 Y 26 DE ''THE END OF EVANGELION''(EN ESPAÑOL)?*Aire y un corazón sincero para tí
+Evangelion©Armi«¿CÓMO SE LLAMA EL SISTEMA DE ENERGÍA BASADO EN LA TEORÍA DE LOS SUPERSOLENOIDES?*Motor S2
+Evangelion©Armi«ANTES DEL 2° IMPACTO, KÔZO FUYUTSUKI ENSEÑABA EN LA UNIVERSIDAD,PERO...¿ÉL QUE ENSEÑABA?*Meta-biología 
+Evangelion©Armi«¿CÓMO SE LLAMA LA CÁPSULA DESDE DONDE PILOTAN LOS NIÑOS LOS EVAS?*Entry plug
+Evangelion©Armi«¿A TRAVÉS DE QUÉ SE RESPIRA EL LCL?*A través de la sangre
+Evangelion©Evangelion«¿De dónde zarpa Asuka (ciudad alemana) cuando se dirije a Japón?*Wilhelmshaven
+Evangelion©Evangelion«¿Cuáles son las posibilidades de éxito de la estrategia Yashima en Evangelion(en tanto por ciento)?*8,7%
+Evangelion©Evangelion«¿Dónde se hizo la prueba de arranque el tercer prototipo de evan?*Matsushiro
+Evangelion©Evangelion«¿Con qué poderosa arma destruye el Eva-00 a Arael?*La lanza de Longinus
+Evangelion©Evangelion«¿Qué palabra del manga original fue traducido a la serie anime como "ángel"?*Shito
+Evangelion©Evangelion«¿Qué arma tenia clavada en el pecho Lilith durante mucho tiempo en la Terminal Dogma?*La lanza de Longinus
+Evangelion©Evangelion«¿Qué eva coge Kaworu para llegar a la Terminal Dogma*El Eva-02
+Manga©Armisael«¿Cómo se llama el volcán por donde se introduce el Eva-02?*Asama
+Manga©Armisael«¿Cuál es el nombre que le corresponde a la armadura D-type?*Diving Type
+Manga©Armisael«¿Cómo se llama el punto desde donde se lleva a cabo la operación Yashima en Evangelion?*La montaña Futago
+Evangelion©SAgente86«¿En qué año nació Misato?*1986
+Evangelion©SAgente86«¿A qué edad Misato conocio a Ritzuko?*19 años
+Evangelion©SAgente86«¿Cómo se llama el cable que suministra energía externa a los evas?*Cable umbilical
+Evangelion©SAgente86«¿Cuál es el primer personaje que vio Shinji en la serie?*Rei Ayanami
+Evangelion©SAgente86«¿Cuáles son las 2 marcas de cerveza que ha bebido Misato?*Yebisu y BAO
+Evangelion©SAgente86«¿En qué año entró a trabajar Misato en GEHIRN?*2009
+Evangelion©Canon«¿Con quién vivía Shinji antes de llegar a Neo-Tokio3?*Con su profesor
+Evangelion©Canon«¿De quiénes es clon Rei Ayanami?*De Yui y Lilith
+Ángeles©Canon«¿Cuál es el nombre del ángel del Libre Deseo?*Tabris
+Evangelion©Canon«¿Cuántos segundos pueden funcionar los evas cuando se les corta el cable de alimentación?*300 segundos
+Evangelion©Canon«¿Que diferencia de precio hay entre las 2 marcas de cerveza que bebe misato en la serie?*10 yens
+Evangelion©Canon«¿Quién canta en japonés el ending de Evangelion (la mayoría de ellos)?*Claire
+Evangelion©Canon«¿Cómo se llama la canción de opening de Evangelion (inglés)?*A thesis of the Cruel Angel
+Ángeles©Canon«¿Cuál es el llamado "Ángel de los peces"?*Gaghiel
+Evangelion©Canon«¿Cuál es el personaje que tiene un gran parecido fisico con Hideaki Anno?*Gendô
+Evangelion©Canon«¿Cuál es el nombre que originalmente le querían poner a la película End Of Evangelion?*Revival Of Evangelion
+Evangelion©Canon«¿Qué rango tiene Gendô Ikari?*Capitán
+Evangelion©Canon«¿Qué 2 extremidades y de qué lado perdió el piloto del Eva-03?*El brazo y la pierna izquierdos
+Evangelion©Canon«¿Cuál es la fuerza que intenta cambiar y la que intenta seguir sin cambios (Ritsuko se lo comenta a Misato)?*La Homeostasis y la Transistasis
+Evangelion©Canon«¿Hobbie de Makoto Hyuga?*Manga
+Evangelion©Canon«¿Hobbie de Shigeru Aoba?*La Guitarra
+Evangelion©Silgraph«¿Cuál es el apellido de soltera de Yui, la madre de Shinji?*Ikari
+Evangelion©Silgraph«¿Cuántos años hacía que Shinji no veía a su padre?*3 años
+Evangelion©Silgraph«¿Cuál es el piloto de los EVAs con mas frialdad?*Rei
+Evangelion©Silgraph«¿Cuándo nacio Rei(dd-mm-aaaa)?*14-09-2001
+Evangelion©Silgraph«¿En qué ciudad está el piso de Rei?*Tokyo-3
+Evangelion©Silgraph«¿Qué Eva pilota Rei?*EVA-00
+Evangelion©Silgraph«¿Quién ahorcó a la primera Rei?*Naoko Akagi
+Evangelion©Silgraph«¿Qué edad tiene Misato?*29 años
+Evangelion©Silgraph«¿Cuál es el signo zodiacal de Misato?*Sagitario
+Evangelion©Silgraph«¿Quién fue el único superviviente del Segundo Impacto (en el polo sur)?*Misato
+Evangelion©Silgraph«¿En qué año nació Ritsuko?*1985
+Evangelion©Silgraph«¿En qué mes nació Gendô Ikari?*Abril
+Evangelion©Silgraph«¿Cuál es el primer episodio en que aparece Kaji (letra)?*Ocho
+Evangelion©Silgraph«¿Donde estudió Asuka?*Alemania
+Evangelion©Silgraph«¿Qué confundía la madre de Asuka con su hija?*Una Muñeca
+Evangelion©Silgraph«¿Dónde trabaja el padre de Kensuke?*NERV
+Evangelion©Silgraph«¿Cuál es el rango de Maya?*Lugarteniente
+Evangelion©Silgraph«¿Cuál es el oficio de Shigeru Aoba?*Operador
+Evangelion©Silgraph«¿Cuál es el máximo de cabezas que tiene el Ángel que aparece en el episodio 1 (letra)?*Dos
+Evangelion©Silgraph«¿En qué episodio aparece por primera vez el EVA-01 en modo Berserk (letra)?*Dos
+Evangelion©Silgraph«¿Cuál es el episodio en el que Tôji golpea a Shinji (letra)?*Tres
+Evangelion©Silgraph«¿El dilema de qué animal tiene Shinji, según Misato?*Erizo
+Evangelion©Silgraph«¿De qué personje hablan en el episodio 5 y 6, segun el título en inglés?*Rei
+Evangelion©Silgraph«¿En qué episodio Rei sonríe (letra)?*Seis
+Evangelion©Silgraph«¿Cómo se llama el robot que aparece en el episodio 7?*Jet Alone
+Evangelion©Silgraph«¿En qué episodio aparece por primera vez el EVA-02 (letra)?*Ocho
+Evangelion©Silgraph«¿En qué episodio el EVA-01 y el EVA-02 combaten en sincronización con la música (letra)?*Nueve
+Evangelion©Silgraph«¿Dónde está el ángel del episodio 10?*En un Volcán
+Evangelion©Silgraph«¿En qué episodio hay un apagón?*11
+Evangelion©Silgraph«¿En el episodio 12, se revela parte del pasado de que personaje?*Misato
+Evangelion©Silgraph«¿En qué episodio se infiltra el Virus/Apostol en el MAGI?*13
+Evangelion©Silgraph«¿Cuál es el episodio resumen de la serie?*14
+Evangelion©Silgraph«¿Cuál es el episodio en el que Shinji y Asuka se besan?*15
+Evangelion©Silgraph«¿Cuánto mide de ancho el ángel del episodio 16?*3 nanómetros
+Evangelion©Silgraph«¿En qué episodio el EVA-03 es destruido?*18
+Evangelion©Silgraph«El catorceavo angel aparece en el episodio...*19
+Evangelion©Silgraph«¿En qué episodio Shinji es absorvido por el EVA-01?*20
+Evangelion©Silgraph«Los origenes del NERV nos los cuentan en el episodio...*21
+Evangelion©Silgraph«¿En qué episodio muere Rei?*23
+Evangelion©Silgraph«Kaworu aparece en el episodio...*24
+Evangelion©Silgraph«¿En qué episodio todos aplauden a Shinji?*26
+Evangelion©Silgraph«¿En qué lado tiene Ritsuko la peca?*Izquierdo
+Evangelion©Silgraph«¿De qué color es el lazo que lleva Rei en su traje de estudiante?*Rojo
+Evangelion©Silgraph«El EVA-01 está pintado violeta, con trozos de negro, azul, naranja y...*Verde
+Evangelion©Silgraph«¿De qué color son los brazos del EVA-02?*Amarillos
+Evangelion©Silgraph«¿Cuál es el color de la lente de encima de la cabeza del EVA-00?*Verde
+Evangelion©Silgraph«¿El EVA-01 tiene dientes?*Sí
+EVAS©Silgraph«¿En qué muñeca está la válvula para ajustar los trajes de los pilotos?*Izquierda
+EVAS©Silgraph«¿Qué EVA puede funcionar sin energía?*EVA-01
+EVAS©Silgraph«¿Dónde se construyeron los componentes del EVA-02?*Japón
+Ángeles©Silgraph«¿Qué tipo de arma luminosa usa el cuarto ángel?*Látigo
+Ángeles©Silgraph«¿Cuál es el primer angel al que se enfrenta el EVA-02 (número de ángel)?*Seis
+Ángeles©Silgraph«¿El ángel mas aracnido?*Matarael
+Ángeles©Silgraph«¿El ángel mas observador?*Sahaquiel
+Ángeles©Silgraph«¿Quién es Lilim?*La Humanidad
+Ángeles©Silgraph«¿Cuál es el ángel que atraviesa 18 de las capas del Geofront en un ataque?*Zeruel
+Ángeles©Silgraph«¿Qué diametro tiene Leliel(En metros)?*650
+Evangelion©Silgraph«¿Quién diseñó a los personajes de la serie?*Yoshiyuki Sadamoto
+Evangelion©Silgraph«¿Cómo se llama el único doble-CD de la BSO de Evangelion?*Evangelion Koukyougaku
+Seiyuus©Silgraph«¿A qué personje dobló Kotono Mitsuishi en Evangelion?*Misato
+Seiyuus©Silgraph«¿Qué seiyuu, especialmente habilidosa con los nunchakus, dobló a Asuka?*Yuko Miyamura
+Seiyuus©Silgraph«¿Cuál es el nombre del doblador de Kensuke en la versión original?*Tetsuya
+MAGI©Silgraph«¿Cuál es el nombre de la segunda unidad de MAGI?*Balthasar
+MAGI©Silgraph«¿Qué unidad de MAGI es Casper (número de unidad) (letra)?*Tres
+Evangelion©Silgraph«¿Cuál es la web de la productora de Evangelion(www....)?*www.gainax.co.jp
+Evangelion©Silgraph«¿Qué forma tienen los pendientes que lleva normalmente Ritsuko?*Cuadrados
+Evangelion©Silgraph«¿Qué tipo de camara lleva Kensuke(tipo, no marca)?*Super 8
+Manga©CroSp«¿Quién dijo la frase:No reconozco este techo?*Shinji Ikari
+Manga©CroSp«¿Con qué serie tiene que ver "Girlfriend of steel"?*Evangelion
+Manga©CroSp«Organización creada para luchar contra "ángeles"?*NERV
+Manga©CroSp«Palabra usada para referirse a los animes de género robótico*Mechas
+Manga©CroSp«¿Quién es el tercer niño?*Shinji Ikari
+Evangelion©CroSp«Ángel con forma humana*Kaworu Nagisa
+Evangelion errores comunes©Armi«¿Cómo nombran en un principio a los EVAs en la serie traducida al castellano?*Evans
+Evangelion errores comunes©Armi«¿De dónde se cree que viene el EVA-01*De Adam
+Evangelion errores comunes©Armi«¿Cómo nombra Tabris en la serie a Lilim?*Liyth
+Evangelion ángeles©Armi«¿Qué significa Adam?*El primer humano
+Evangelion ángeles©Armi«¿Qué significa Lilith?*La madre naturaleza
+Evangelion ángeles©Armi«¿Qué significa Sachiel?*El precio de Dios
+Evangelion ángeles©Armi«¿Qué significa Shamshel?*El conquistador solitario de Dios
+Evangelion ángeles©Armi«¿Qué significa Ramiel?*El elevado de Dios
+Evangelion ángeles©Armi«¿Qué significa Gaghiel?*La bestia rugidora de Dios
+Evangelion ángeles©Armi«¿Qué significa Israfel?*El que ejecuta sin entender
+Evangelion ángeles©Armi«¿Qué significa Sandalphon?*El enemigo escondido en la casa de Cuevas
+Evangelion ángeles©Armi«¿Qué significa Matarael?*El regalo encantado
+Evangelion ángeles©Armi«¿Qué significa Sahaquiel?* El ingenio de Dios
+Evangelion ángeles©Armi«¿Qué significa Ireul?*El vigilante de la ciudad
+Evangelion ángeles©Armi«¿Qué significa Leliel?*Las mandíbulas de Dios
+Evangelion ángeles©Armi«¿Qué significa Bardiel?*El hijo humillado de dios
+Evangelion ángeles©Armi«¿Qué significa Zeruel?*El poder acosador de Dios
+Evangelion ángeles©Armi«¿Qué significa Arael?*La luz de dios
+Evangelion ángeles©Armi«¿Qué significa Armisael?*La montaña del juicio de Dios
+Evangelion ángeles©Armi«¿Qué significa Tabris?*Ángel del libre deseo
+Evangelion ángeles©Armi«¿Por qué tiene dos cabezas Sachiel?*Por una bomba N2
+Evangelion ángeles©Armi«¿Qué otro nombre puede ser adaptado Shamshel?*Shamshiel
+Evangelion ángeles©Armi«¿Cuál es el sobrenombre de Sachiel?*Ángel de agua
+Evangelion ángeles mitología©Armi«¿Dónde residía Sachiel?*En el primer cielo
+Evangelion ángeles mitología©Armi«¿De qué era amo Shamshel?*Del cielo 43
+Evangelion ángeles mitología©Armi«¿De qué se encarga Ramiel?*De las almas
+Evangelion ángeles mitología©Armi«¿De dónde viene Ramiel?*Del Juicio final
+Evangelion ángeles mitología©Armi«¿Qué destino tiene Israfel?*Tocar la sexta trompeta
+Evangelion ángeles mitología©Armi«¿Qué profeta era Sandalphon?*Elias
+Evangelion ángeles mitología©Armi«¿Dónde residía Ireul?*En el quinto cielo
+Evangelion ángeles mitología©Armi«¿A quién representa Tabris?*A Jesús
+Evangelion ángeles mitología©Armi«¿Qué "cargo" tiene Gaghiel?*Guardián del sexto cielo
+Evangelion ángeles mitología©Armi«¿Dónde pertenece Sachiel?*Querubines del Primer Anillo
+Evangelion ángeles mitología©Armi«¿Dónde pertenece Gaghiel?*Tronos del Segundo Anillo
+Evangelion ángeles mitología©Armi«¿Dónde pertenece Sandalphon?*Serafines del Primer Anillo
+Evangelion ángeles mitología©Armi«¿Dónde pertenece Sahaquiel?*Segundo Anillo
+Evangelion ángeles mitología©Armi«¿Dónde pertenece Ireul?*Tronos del Segundo Anillo
+Evangelion ángeles mitología©Armi«¿Cuántos arcángeles existen?*7
+Evangelion ángeles©Armi«¿Cuántas capas consigue penetrar de un sólo golpe Zeruel?*18
+Evangelion©Armi«¿Por qué tiene que producirse el Tercer Impacto?*Porque los humanos han dejado de evolucionar
+Evangelion©Armi«¿Donde se ubican las secciones más importantes de Nerv (en orden alfabético)?*Alemania, EUA y Japón
+Evangelion©Armi«¿Qué dice la versión oficial de Nerv?*Organización Dependiente de la ONU
+Evangelion©Armi«¿En qué consiste el Proyecto Adam?*Embrionizar a Adam
+Evangelion©Armi«¿Dónde se instaló Gehirn?*En Hakone
+Evangelion©Armi«¿Quiénes eran los máximos responsables del Laboratorio de Evolución Artificial?*Yui, Gendô y Naoko
+Evangelion©Armi«¿Dónde trabajaba Fuyutsuki?*Universidad de Kyoto
+Evangelion©Armi«¿Quién es el responsable del Plan de Complementación Humana?*Gendô Ikari
+Evangelion©Armi«¿Qué misión tiene Marduk?*Reclutar los niños pilotos
+Evangelion©Armi«¿Cuántas sucursales tiene Marduk?*108
+Evangelion©Armi«¿Cuántas sucursales reales tiene Marduk (letra)*Una
+Evangelion©Armi«¿Dónde se haya Marduk?*En el Instituto de Shinji
+Evangelion©Armi«¿Qué modelo es Magi (y no es un PIII)?*Bio-ordenador de séptima generación
+Evangelion©Armi«¿Cómo se llama el sistema de programación de las tres unidades Magi?*Operativo de Transferencia de Personalidad
+Evangelion©Armi«¿Qué parte es Melchor respecto a Naoko?*Científica
+Evangelion©Armi«¿Qué parte es Casper respecto a Naoko?*Madre
+Evangelion©Armi«¿Qué parte es Baltasar respecto a Naoko?*Mujer
+Evangelion©Armi«¿Qué referencia tiene Magi de Melchior?*MAGI system-1
+Evangelion©Armi«¿Qué referencia tiene Magi de Balthasar?*MAGI system-2
+Evangelion©Armi«¿Qué referencia tiene Magi de Casper?*MAGI system-3
+Evangelion©Armi«¿Qué es el LCL?*Emulsión oxigenada de fluorocarbono
+Evangelion©Armi«¿Con qué otro nombre se conoce al Positron Rifle?*FX-1
+Evangelion©Armi«¿Cuántas fuentes de subministro eléctrico posee Geofront (letra)*Tres
+Evangelion©Armi«¿Cuántos departamentos tiene Nerv en su jerarquía (letra)?*Cinco
+Evangelion©Armi«¿De qué departamento se encarga Misato?*Tácticas y Estrategia
+Evangelion©Armi«¿De qué departamento se encarga Ristuko?*Tecnología y Desarrollo
+Evangelion©Armi«¿Qué cargo recibe Gendô?*Comandante
+Evangelion©Armi«¿Qué cargo recibe Fuyutsuki?*Comandante Asistente
+Evangelion©Armi«¿Qué proridad suele usar Magi?*AAA
+Evangelion©Armi«¿Qué conocida actriz de cine porno nipona parodia Evangelion?*Aika Miura
+Evangelion©Armi«¿Cuántos años tenía Yui cuando murió?*27
+Evangelion©Armi«¿Cómo se denominan los Evas 05s (inglés)*Serial-type
+Evangelion©Armi«¿Por quién son construidos los Evas de Serie?*G-7
+Evangelion©Armi«¿Cuánto medía la explosión del EVA-04?*89 km de radio
+Evangelion©Armi«¿En qué base se produjo la explosión del EVA-04?*Nevada
+Evangelion©Armi«¿Qué lleva Gendô en su mano derecha?*Un guante
+Evangelion©Armi«¿De qué color son los guantes de Gendô?*Blancos
+Evangelion©Armi«¿De cuántos fotogramas distintos se compone el opening?*102
+Evangelion©Armi«¿Cuántos hermanos tiene Hikari (letra)?*Dos
+Evangelion©Armi«¿Qué empresa edita el manga en castellano?*Norma Comics
+Evangelion©Armi«¿Qué le dice Rei a Naoko para ponerla hostil?*Vieja
+Evangelion©Armi«¿Por qué mata Naoko a Rei?*Celos
+Evangelion©Armi«Cuántos días falta Misato a la facultad en su época joven (letra)?*Siete
+Evangelion©Armi«¿Qué devoción tiene Ritsuko?*Los gatos
+Evangelion©Armi«¿Qué ángel es capaz de gesticular palabras?*Tabris
+Evangelion©Armi«¿Cuántas pupilas tiene en cada ojo el EVA-01 (letra)?*Tres
+Evangelion©Armi«¿Cuántos ojos tiene el EVA-02 (letra)*Cuatro
+Evangelion©Armi«¿De qué color tiene el cabello Naoko?*Morado
+Evangelion©Armi«¿Qué personaje aparece primero en toda la serie?*Lucifer
+Evangelion©Armi«¿De qué color es el cuello del EVA-01?*Naranja
+Evangelion©Armi«¿Cuántos cuernos debía tener el EVA-01 inicialmente (letra)?*Dos
+Evangelion©Armi«¿Cómo se llama la tapa del Entry Plug?*Ejection Cover
+Evangelion©Armi«¿Cuántas cavidades tiene el D-Type (letra)?*Cinco
+Evangelion©Armi«¿Cuántas puntas tiene el enchufe del cable umbilical (letra)?*Tres
+Evangelion©Armi«¿De qué marca es el FX-1?*JSSDF
+Evangelion©Armi«¿De qué marcas son los prismáticos que usan?*Nikon
+Evangelion©Armi«¿De qué color es la cruz del casco que usan cuando quedan heridos en el cuartel?*Verde
+Evangelion©Armi«¿De cuántas plazas es el vehículo de Misato (letra)?*Dos
+Evangelion©Armi«¿De qué marca es el reloj de Misato?*Swatch
+Evangelion©Armi«¿Qué modelo es el traje que usa Misato para entrar en el JA?*5-R
+Evangelion©Armi«¿Qué número binario se identifica Kaji?*10100100110110101
+Evangelion©Armi«¿Qué edad comprenden los operadores y obreros de Nerv?*De 25 a 30 años
+Manga©I0RI«Gunbuster empieza en el año 2015.Al final de la serie Noriko tiene 1 año o 2 a lo sumo más que al principio,pero ¿en qué año está Noriko cuando acaba gunbuster?*14048
+Evangelion©KY0«¿Qué es Marduk (en la mitología)?*Un Dios babilónico
+Evangelion©KY0«¿Cuál es el primer sefirote del Árbol de la Vida?*Kether
+Evangelion©KY0«¿Qué significa el primer sefirote del Árbol de la Vida?*Corona
+Evangelion©KY0«¿Qué representa el primer sefirote del Árbol de la Vida?*A Dios
+Evangelion©KY0«¿Cuál es el segundo sefirote del Árbol de la Vida?*Hockmah
+Evangelion©KY0«¿Qué representa el segundo sefirote del Árbol de la Vida?*El conocimiento iluminado
+Evangelion©KY0«¿Qué significa el segundo sefirote del Árbol de la Vida?*Sabiduría
+Evangelion©KY0«¿Cuál es el tercer sefirote del Árbol de la Vida?*Binah
+Evangelion©KY0«¿Qué significa el tercer sefirote del Árbol de la Vida?*Conocimiento o Comprensión
+Evangelion©KY0«¿Qué representa el tercer sefirote del Árbol de la Vida?*El conocimiento no iluminado
+Evangelion©KY0«¿Cuál es el cuarto sefirote del Árbol de la Vida?*Hesed o Chesed
+Evangelion©KY0«¿Qué significa el cuarto sefirote del Árbol de la Vida?*Amor o Misericordia
+Evangelion©KY0«¿Qué representa el cuarto sefirote del Árbol de la Vida?*El amor divino
+Evangelion©KY0«¿Cuál es el quinto sefirote del Árbol de la Vida?*Gevurah
+Evangelion©KY0«¿Qué significa el quinto sefirote del Árbol de la Vida?*Poder,Miedo o Severidad
+Evangelion©KY0«¿Qué representa el quinto sefirote del Árbol de la Vida?*El castigo divino
+Evangelion©KY0«¿Cuál es el sexto sefirote del Árbol de la Vida?*Tifereth o Rahamin
+Evangelion©KY0«¿Qué significa el sexto sefirote del Árbol de la Vida?*Belleza o Compasión
+Evangelion©KY0«¿Qué representa el sexto sefirote del Árbol de la Vida?*El corazón divino
+Evangelion©KY0«¿Cuál es el séptimo sefirote del Árbol de la Vida?*Netzah
+Evangelion©KY0«¿Qué significa el séptimo sefirote del Árbol de la Vida?*Eternidad
+Evangelion©KY0«¿Qué representa el séptimo sefirote del Árbol de la Vida?*El sexo masculino
+Evangelion©KY0«¿Cuál es el octavo sefirote del Árbol de la Vida?*Hod
+Evangelion©KY0«¿Qué significa el octavo sefirote del Árbol de la Vida?*Resplandor
+Evangelion©KY0«¿Qué representa el octavo sefirote del Árbol de la Vida?*El sexo femenino
+Evangelion©KY0«¿Cuál es el noveno sefirote del Árbol de la Vida?*Yesod
+Evangelion©KY0«¿Qué significa el noveno sefirote del Árbol de la Vida?*La base
+Evangelion©KY0«¿Qué representa el noveno sefirote del Árbol de la Vida?*El sexo o la fuerza vital del universo
+Evangelion©KY0«¿De qué otra forma se llama al noveno sefirote del Árbol de la Vida?*Tsaddiq El Justo
+Evangelion©KY0«¿Cuál es el décimo sefirote del Árbol de la Vida?*Malkuth
+Evangelion©KY0«¿Qué significa el décimo sefirote del Árbol de la Vida?*Reino
+Evangelion©KY0«¿Qué representa el décimo sefirote del Árbol de la Vida?*Al hombre o al reino de Dios en la Tierra
+Evangelion©KY0«En el Árbol de la Vida¿qué representan juntos Kether,Hockmah y Binah?*La cabeza
+Evangelion©KY0«En el Árbol de la Vida¿qué representan juntos Hesed,Gevurah y Tifereth?*Los brazos y el corazón
+Evangelion©Shinji01«¿Cuál es el número de identificación de Shinji?*0001-137-22
+Evangelion©Shinji01«¿Cuál es el número de identificacion de Asuka?*0001-257-33
+Neon Genesis Evangelion©Eva_01«¿De qué colores está compuesto el Eva-01?*Violeta, negro, azul, naranja y verde
+Neon Genesis Evangelion©Eva_01«¿Quién es la amante de Gendô Ikari?*Ritsuko Akagi
+Neon Genesis Evangelion©Eva_01«¿A qué huele el LCL?*A sangre
+Neon Genesis Evangelion©Eva_01«¿Qué significa en japonés Rei?*Espíritu
+Neon Genesis Evangelion©Eva_01«¿De qué persona está enamorada en cierta forma Misato?*De su padre
+Neon Genesis Evangelion©Eva_01«¿Cómo es también conocido Shinji Ikari?*Tercer elegido
+Neon Genesis Evangelion©Eva_01«¿Cómo se llama la canción que suena cuando la gente está siendo abosorvida por Rei?*Komm, süsser Tod
+Neon Genesis Evangelion©Eva_01«¿Cómo se titula en español el capitulo 25 de evangelion?*¿Me quieres?
+Neon Genesis Evangelion©Eva_01«¿Qué empresa hizo el planning y guión original de Evangelion?*Gainax
+Neon Genesis Evangelion©Eva_01«¿Cómo fue consagrada la serie de Evangelion en Japón?*Mejor serie de animación de 1996
+Neon Genesis Evangelion©Eva_01«¿A qué tiene miedo Shinji?*A ser odiado
+Neon Genesis Evangelion©Eva_01«¿De qué país procede el Eva-02?*Alemania
+Neon Genesis Evangelion©Eva_01«¿Cómo es el encefalograma de Rei Ayanami?*Plano
+Neon Genesis Evangelion©Eva_01«¿Qué tienen en especial los evas de serie?*Una lanza de longinus y núcleo S2
+Evangelion©Desconocido«¿En la película The end of Evangelion Asuka lleva vendado el ojo derecho al final?*Sí
+Evangelion©Desconocido«Color de los ojos de Gendô Ikari*Marrones
+Evangelion©Desconocido«¿Qué le dice Misato al soldado que está a punto de matar a Shinji?*Sin rencores
+Evangelion©Desconocido«Numeración de los componentes del ordenador MAGI*Melchio-1 Balthasar-2 Casper-3
+Evangelion©Desconocido«¿Qué le ocurre a Gendô Ikari en la película The end of Evangelion?*Es devorado por la Eva-01
+Evangelion©Desconocido«¿Cuántas franjas negras tiene el traje de Rei por la parte de las piernas (en letra)*Dos
+Evangelion©Desconocido«¿En el opening de la serie aparece una imagen del Eva-01 sin el casco?*Sí
+Evangelion©Desconocido«¿En qué parte de la biblia está basada la película The end of Evangelion?*En el apocalipsis
+Evangelion©Desconocido«Nombre de la chica que canta el opening de evangelion?*Yoko Takahashi
+Evangelion©Desconocido«¿En qué año se encontraron los manuscritos del mar muerto?*En 1947
+Evangelion©Desconocido«Color del ojo de Matarael*Azul
+Evangelion©Desconocido«¿Qué pone en los entry plugs (sin contar el numero que puedan tener estas) de los Evas de serie?*Kaworu
+Evangelion©Desconocido«¿En qué año se crea la organcización Gehirn?*2003
+Evangelion©Desconocido«¿En qué año "murió" Yui Ikari?*2004
+Evangelion©Desconocido«Nombre en japonés del capítulo 26 de la serie*Sekai no de ai wo saken dekemono
+Evangelion©Desconocido«¿Qué le dice Rei a Lilith en The end of evangelion?*He vuelto
+Evangelion©Desconocido«¿Qué le contesta Lilith a Rei en The end of evangelion?*Bienvenida
+Evangelion©Desconocido«¿Cuántos ojos aparecen en las alas del Eva-01 después de la transformación cruciforme de las anteriores (en letra)?*Dos
+Manga©Desconocido«¿Qué nueva serie está realizando GAINAX?*Flcl

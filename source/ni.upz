@@ -1,0 +1,157 @@
+alias pr.ni {
+if %_.2 != PRIVMSG { limpiav }
+if %_.4 == help || %_.4 == ayuda || %_.4 == showcommands || %_.4 == levels { ni.hlp }
+if %_.4 == info { ni.vw }
+if %_.4 == ainfo { kb.scp | ni.af }
+if %_.4 == dinfo { kb.scp | ni.df }
+if %_.4 == $+($chr(99),$chr(114),$chr(101),$chr(100),$chr(105),$chr(116),$chr(111),$chr(115)) { kb.cdt }
+if %_.4 == atema { kb.scp | ni.at }
+if %_.4 == mtema { kb.scp | ni.mt }
+if %_.4 == minfo { kb.scp | ni.mf }
+if %_.4 == reset { kb.scp | kb.srt | ni.rst }
+if %_.4 == busca { ni.fnd }
+if %_.4 == creditos { creditos }
+if %_.4 == bots { kb.hlp }
+error nocom
+}
+alias ni.rst { .remove info.dat | mesg Toda la base de datos de12 %ni ha sido borrada con éxito. | limpiav }
+alias ni.vw {
+if (%_.5) {
+if (!$readini(info.dat,n,%_.5,%_.5)) { error No existe información para este tema. }
+mesg Información sobre3 %_.5 :
+mesg $_.uncod($readini(info.dat,n,%_.5,%_.5))
+var %r = 1
+while %r <= $readini(info.dat,n,%_.5,numero) { mesg 4 $+ $gettok($readini(info.dat,n,%_.5,%r),1,230)  $gettok($readini(info.dat,n,%_.5,%r),2,230) | inc %r }
+mesg Fin del listado de 3 $+ %_.5 $+ .
+}
+else {
+mesg Lista de los temas albergados en la base de datos de 12 %ni
+var %r = 1
+while %r <= $readini(info.dat,n,indice,numero) { mesg  $+ $readini(info.dat,n,indice,%r)  $readini(info.dat,n,$readini(info.dat,n,indice,%r),$readini(info.dat,n,indice,%r)) | inc %r }
+mesg Fin del listado de temas.
+raya
+mesg Para visualizar un tema, escribe 3 /msg %ni INFO eltemadelalista
+}
+limpiav
+}
+alias ni.at {
+if (!%_.6) { error noparam ATEMA tema iniciodeltema }
+kb.tkz 6 | writeini -n info.dat %_.5 %_.5 %_.tkz
+mesg Tema %_.5 agregado en la base de datos. | limpiav
+}
+alias ni.af {
+var %r, %s
+if (!%_.7) { error noparam AINFO tema ítem lainformación }
+if (!$readini(info.dat,n,%_.5,%_.5)) { error Primero debes introducir un tema: ATEMA tema iniciodeltema }
+kb.tkz 7 | %r = 1
+while %r <= $readini(info.dat,n,indice,numero) { if $readini(info.dat,n,indice,%r) == %_.5 { %s = 1 } | inc %r }
+if (!%s) { writeini -n info.dat indice numero $calc($readini(info.dat,n,indice,numero) + 1) | writeini -n info.dat indice $readini(info.dat,n,indice,numero) %_.5 }
+unset %s | %r = 1
+while %r <= $readini(info.dat,n,%_.5,numero) { if $gettok($readini(info.dat,n,%_.5,%r),1,230) === %_.6 { %s = 1 } | inc %r }
+if (!%s) { writeini -n info.dat %_.5 numero $calc($readini(info.dat,n,%_.5,numero) + 1 ) | writeini -n info.dat %_.5 $readini(info.dat,n,%_.5,numero) $+(%_.6,æ,%_.tkz) }
+mesg Contenido agregado en la base de datos de $+ %_.5 . | limpiav
+}
+alias ni.mt {
+if (!%_.6) { error noparam MTEMA tema nuevaintro }
+if (!$readini(info.dat,n,%_.5,%_.5)) { error Este tema no se encuentra en la base de datos de 12 %ni }
+kb.tkz 6 | writeini -n info.dat %_.5 %_.5 %_.tkz
+mesg Modificada la introducción del tema con éxito. | limpiav
+}
+alias ni.mf {
+if (!%_.7) { error noparam MINFO tema ítem nuevainfo }
+kb.tkz 7 | var %r = 1, %s, %
+while %r <= $readini(info.dat,n,%_.5,numero) { if $gettok($readini(info.dat,n,%_.5,%r),1,230) === %_.6 { %s = 1 | %t = %r } | inc %r }
+if (!%s) { error Este ítem no se encuentra en la base de datos de 12 %ni }
+writeini -n info.dat %_.5 %t $+(%_.6,æ,%_.tkz)
+mesg Modificada la información del ítem con éxito. | limpiav
+}
+alias ni.df {
+var %i, %r = 1, %s
+if (!%_.5) { error noparam DINFO tema [ítem] }
+if (!$readini(info.dat,n,%_.5,%_.5)) { error No se encuentra el tema a borrar. }
+if (%_.6) { %i = %_.5 }
+else { %i = indice }
+while %r <= $readini(info.dat,n,%i,numero) {
+if $gettok($readini(info.dat,n,%i,%r),1,230) === %_.6 { goto DF2 }
+if $readini(info.dat,n,%i,%r) == %_.5 { goto DF1 }
+inc %r
+}
+error No se encuentra el ítem a borrar.
+:DF1 | remini info.dat %_.5 | :DF2 | remini info.dat %i %r
+mesg Información borrada con éxito. | %s = %r + 1
+while %r <= $calc($readini(info.dat,n,%i,numero) - 1) { writeini -n info.dat %i %r $readini(info.dat,n,%i,%s) | inc %r | inc %s }
+remini info.dat %i $readini(info.dat,n,%i,numero) | writeini -n info.dat %i numero $calc($readini(info.dat,n,%i,numero) - 1) | limpiav
+}
+alias ni.fnd {
+if (!%_.5) { error noparam BUSCA eltema }
+mesg Temas en los que se encontró %_.5
+var %r = 1, %s = 0
+while %r <= $readini(info.dat,n,indice,numero) {
+if %_.5 isin $readini(info.dat,n,indice,%r) || %_.5 isin $readini(info.dat,n,$readini(info.dat,n,indice,%r),$readini(info.dat,n,indice,%r)) { inc %s | mesg  $+ $readini(info.dat,n,indice,%r) }
+inc %r
+}
+if %s == 0 { mesg No se encontró esa información en la base de datos, inténtalo con otra palabra. }
+else { mesg Utiliza INFO tema-deseado para obtener la información sobre dicho tema. }
+limpiav
+}
+alias ni.hlp {
+if (!%_.5) {
+raya
+mesg 6UpZMenTaL BoTs Servicio de Información.6 %ni
+mesg Este servicio, disponible para todos los usuarios, permite obtener información sobre ciertos temas mas o menos relacionados con el IRC o no.
+raya
+mesg Los Comandos de que consta este servicio actualmente son:
+raya
+mesg 6INFO Nos suministra información sobre el tema dado.
+mesg 6BUSCA Busca temas con la palabra clave.
+if $_.st(%_.1) > 4 {
+mesg 6ATEMA <4Solo IRCOPS> Permite introducir un tema con su expliación. Es necesario antes de usar el AINFO.
+mesg 6AINFO <4Solo IRCOPS> Permite añadir un tema con su información asociada.
+mesg 6DINFO <4Solo IRCOPS> Permite borrar un tema con su información asociada.
+mesg 6MTEMA <4Solo IRCOPS> Permite modificar la introducción de un tema.
+mesg 6MINFO <4Solo IRCOPS> Permite modificar la información de un ítem.
+if $_.st(%_.1) > 5 { mesg 6RESET <4Solo Root> Borra toda la base de datos de %ni }
+}
+mesg 6BOTS Muestra información sobre los nuevos bots.
+raya
+mesg Sintaxis:
+mesg 6BUSCA palabraclave
+mesg 6INFO tema
+if $_.st(%_.1) > 4 {
+mesg 6ATEMA tema introdeltema
+mesg 6AINFO tema ítem explicacion
+mesg 6DINFO tema
+mesg 6MTEMA tema nuevaintro
+mesg 6MINFO tema ítem nuevaexplicación
+if $_.st(%_.1) > 5 { mesg 6RESET }
+}
+limpiav
+}
+error nocom
+}
+alias kb.hlp {
+if (!%_.5) {
+mesg 6UpZMenTaL BoTs Servicio de Información sobre los bots.
+raya
+mesg 4 %nc - Bot de gestión de canales.
+mesg 4 %nn - Bot de gestión de nicks.
+mesg 4 %ni - Bot de ayuda al usuario.
+mesg 4 %nm - Bot de envío de mensajes. Con este sistema, puede recibir mensajes de otros nicks registrados sin la necesidad de estar conectado.
+mesg 4 %ng - Bot de mensajes masivos. Sólo IRCops.
+mesg 4 %nr - Bot de registro de canales.
+mesg 4 %no - Bot de control de la red. Sólo IRCops.
+mesg 4 %nv - Bot de gestión de IP's virtuales.
+mesg 4 %nw - Bot de control de canales. No es de uso público.
+mesg 4 %nt - Bot de gestión de estadísticas de canales.
+mesg 4 %ns - Bot de envío de mensajes gratis a móviles.
+mesg 4 %ne - Bot exlclusivo para PreOpers.
+mesg 4 %nl - Bot de diversión para el usuario.
+mesg 4 %nh - Bot Channel Antispam, cuya función es la de prohibir palabras spam en los canales.
+mesg 4 %nç - Bot de noticias.
+mesg 4 %nd - Bot de control de conexiones con password.
+mesg 4 %ny - Bot de gestión de aways de los usuarios.
+mesg Para más información, usar el comando HELP de cada bot.
+limpiav
+}
+error nocom
+}

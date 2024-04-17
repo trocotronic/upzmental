@@ -1,0 +1,1002 @@
+dialog bots {
+option dbu
+title UpZMenTaL BoTs v $+ $_.ver Ventana de configuración
+size 150 100 200 275
+button "OCU",1000,4000 4000 40 40,ok
+button Aceptar,900,90 251 50 20
+button Cancelar,901,145 251 50 20
+icon 716,0 248 100 25,graphs\upz.ico
+tab Configuración,1,5 0 190 245
+tab Root,2
+tab Servidor,3
+tab Bots,4
+tab Usuarios,5
+box Conexión automática al empezar,100,10 20 180 20,tab 1
+radio "Sí",101,20 27 25 10,tab1,group
+radio "No",102,150 27 25 10,tab 1
+box Reconectar en desconexión involuntaria,103,10 45 180 20,tab 1
+radio "Sí",104,20 52 25 10,tab 1,group
+radio "No",105,150 52 25 10,tab 1
+box Loguear,106,10 70 180 20,tab 1
+radio "Sí",107,20 77 25 10,tab 1,group
+radio "No",108,150 77 25 10,tab 1
+box Canales de salida debug,109,10 95 180 30,tab 1
+text "Debug de operadores",110,20 104 80 10,tab 1
+text "Debug de control de canal",111,20 113 80 10,tab 1
+edit "",112,100 102 85 10,tab 1
+edit "",113,100 111 85 10,tab 1
+box "Actualización automática",114,10 130 180 40,tab 1
+radio "Sí",115,20 140 25 10,tab 1,group
+radio "No",116,150 140 25 10,tab 1
+button Actualizar UpZMenTaL BoTs     v $+ $_.ver a la v $+ %nver,117,15 152 170 15,center,tab 1
+text "Servidor SMTP",118,30 185 50 10,tab 1
+edit "",119,90 183 70 10,tab 1,autohs
+text "Puerto de envíos",120,30 228 50 10,tab 1
+edit "",121,90 225 17 10,center,tab 1
+button Recuperar archivos,122,120 223 65 15,tab 1
+box Servidor SMTP,124,10 175 180 40,tab 1
+text Login:,125,20 200 25 10,tab 1
+edit "",126,45 198 50 10,tab 1,autohs
+text Pass:,127,110 200 25 10,tab 1
+edit "",128,135 198 50 10,tab 1,pass,autohs
+button Guardar configuración,123,30 224 155 15,tab 2
+text Nick del root,200,30 30 50 10,tab 2
+edit "",201,90 28 50 10,autohs,tab 2
+text Pass del root,202,30 50 50 10,tab 2
+edit "",203,90 48 50 10,tab 2,autohs,pass
+button Pre-Opers,204,10 70 60 15,tab 2
+button IRCops,221,75 70 55 15,tab 2
+button IP's especiales,205,135 70 55 15,tab 2
+box Control de clones,206,20 90 160 35,tab 2
+radio Activar,207,30 100 50 10,tab 2,group
+radio Desactivar,208,130 100 45 10,tab 2
+text Número máximo,209,30 112 50 10,tab 2
+edit "",210,80 111 15 10,center,tab 2
+box Tipo de kill de nick,211,20 130 160 25,tab 2
+radio Por cambio de nick,212,30 140 55 10,tab 2,group
+radio Por kill de nick,213,130 140 45 10,tab 2
+box Canal de autojoin,214,20 160 160 35,tab 2
+radio Activar,215,30 170 50 10,tab 2,group
+radio Desactivar,216,130 170 45 10,tab 2
+text Canal de autojoin,217,30 182 50 10,tab 2
+edit "",218,80 181 50 10,tab 2
+check Activar protección de proxies,219,10 200 85 20,push,tab 2
+button Ip's proxy,220,105 200 40 20,tab 2
+button Puertos proxy,222,150 200 40 20,tab 2
+button Drop,223,150 35 40 20,tab 2
+box Conexión por defecto del servidor,300,10 20 180 22,tab 3
+text Conectar a,301,20 30 30 10,tab 3
+edit "",302,55 28 60 10,tab 3
+text en puerto,303,125 30 50 10,tab 3
+edit "",304,160 28 20 10,center,tab 3
+text Nombre del servidor,305,25 60 50 10,tab 3
+edit "",306,110 58 70 10,tab 3,autohs
+text Información del servidor,307,25 80 70 10,tab 3
+edit "",308,110 78 70 10,tab 3,autohs
+text Contraseña de conexión local,309,25 100 80 10,tab 3
+edit "",310,110 98 70 10,tab 3,autohs
+text Contraseña de conexión remota,311,25 120 70 20,tab 3
+edit "",312,110 122 70 10,tab 3,autohs
+text Nombre de la red,313,25 150 50 10,tab 3
+edit "",314,110 148 70 10,tab 3,autohs
+box Realizar comprobación de seguridad de contraseñas de conexión,315,20 170 160 25,tab 3
+radio Sí,316,30 180 50 10,tab 3,group
+radio No,317,140 180 20 10,tab 3
+text Host virtual,318,20 200 50 10,tab 3
+edit "",319,60 200 75 10,tab 3,autohs
+box Servidor de aways,320,20 210 160 30,tab 3
+text Nombre servidor,321,35 220 50 10,tab 3
+edit "",322,85 218 90 10,tab 3
+text Descripción,323,35 230 50 10,tab 3
+edit "",324,85 228 90 10,autohs,tab 3
+box "Tipo de host",410,10 16 180 20,tab 4
+radio "Global",411,14 23 25 10,tab 4,group
+edit "",412,45 23 75 10,tab 4,autohs
+radio "Individual",413,130 23 50 10,tab 4
+box "Nick de los bots",414,10 40 106 190,tab 4
+text "Canales",415,25 50 50 10,tab 4
+text "Nicks",416,25 60 50 10,tab 4
+text "Operadores",417,25 70 50 10,tab 4
+text "Información",418,25 80 50 10,tab 4
+text "Mensajes masivos",419,25 90 50 20,tab 4
+text "Estadísticas",420,25 100 37 20,tab 4
+text "Mensajería",421,25 110 37 10,tab 4
+text "Registro de canales",422,25 120 50 10,tab 4
+text "IP's Virtuales",423,25 130 50 10,tab 4
+text "Control Mass Spam",424,25 140 50 10,tab 4
+text "Control canal",425,25 150 50 10,tab 4
+text "Envío de SMS",426,25 160 50 10,tab 4
+text "Control C.Spam",427,25 170 50 10,tab 4
+text "Pre-Opers",428,25 180 50 10,tab 4
+text "Juegos",429,25 190 50 10,tab 4
+edit "",430,75 48 35 10,autohs,tab 4
+edit "",431,75 58 35 10,autohs,tab 4
+edit "",432,75 68 35 10,autohs,tab 4
+edit "",433,75 78 35 10,autohs,tab 4
+edit "",434,75 88 35 10,autohs,tab 4
+edit "",435,75 98 35 10,autohs,tab 4
+edit "",436,75 108 35 10,autohs,tab 4
+edit "",437,75 118 35 10,autohs,tab 4
+edit "",438,75 128 35 10,autohs,tab 4
+edit "",439,75 138 35 10,autohs,tab 4
+edit "",440,75 148 35 10,autohs,tab 4
+edit "",441,75 158 35 10,autohs,tab 4
+edit "",442,75 168 35 10,autohs,tab 4
+edit "",443,75 178 35 10,autohs,tab 4
+edit "",444,75 188 35 10,autohs,tab 4
+box "Host de los bots",445,115 40 75 190,tab 4
+edit "",446,120 48 65 10,autohs,tab 4
+edit "",447,120 58 65 10,autohs,tab 4
+edit "",448,120 68 65 10,autohs,tab 4
+edit "",449,120 78 65 10,autohs,tab 4
+edit "",450,120 88 65 10,autohs,tab 4
+edit "",451,120 98 65 10,autohs,tab 4
+edit "",452,120 108 65 10,autohs,tab 4
+edit "",453,120 118 65 10,autohs,tab 4
+edit "",454,120 128 65 10,autohs,tab 4
+edit "",455,120 138 65 10,autohs,tab 4
+edit "",456,120 148 65 10,autohs,tab 4
+edit "",457,120 158 65 10,autohs,tab 4
+edit "",458,120 168 65 10,autohs,tab 4
+edit "",459,120 178 65 10,autohs,tab 4
+edit "",460,120 188 65 10,autohs,tab 4
+text Noticias,467,25 200 50 10,tab 4
+edit "",468,75 198 35 10,autohs,tab 4
+edit "" 469,120 198 65 10,autohs,tab 4
+text Passwords,470,25 210 50 10,tab 4
+edit "",471,75 208 35 10,autohs,tab 4
+edit "",472,120 208 65 10,autohs,tab 4
+text Aways,473,25 220 50 10,tab 4
+edit "",474,75 218 35 10,autohs,tab 4
+edit "",475,120 218 65 10,autohs,tab 4
+text Nº apoyos,461,15 235 50 10,tab 4
+edit "",462,50 233 10 10,center,tab 4
+text Máximo c/u,463,130 235 50 10,tab 4
+edit "",464,175 233 10 10,center,tab 4
+text Días antigüedad,465,70 235 50 10,tab 4
+edit "",466,115 233 10 10,center,tab 4
+check ,476,15 48 10 10,tab 4
+check ,477,15 58 10 10,tab 4
+check ,478,15 68 10 10,tab 4
+check ,479,15 78 10 10,tab 4
+check ,480,15 88 10 10,tab 4
+check ,481,15 98 10 10,tab 4
+check ,482,15 108 10 10,tab 4
+check ,483,15 118 10 10,tab 4
+check ,484,15 128 10 10,tab 4
+check ,485,15 138 10 10,tab 4
+check ,486,15 148 10 10,tab 4
+check ,487,15 158 10 10,tab 4
+check ,488,15 168 10 10,tab 4
+check ,489,15 178 10 10,tab 4
+check ,490,15 188 10 10,tab 4
+check ,491,15 198 10 10,tab 4
+check ,492,15 208 10 10,tab 4
+check ,493,15 218 10 10,tab 4
+box Modos de usuario al conectar,500,20 20 160 45,tab 5
+check Invisible +i,501,40 30 50 10,tab 5
+check Recibe wallops +w,502,40 40 55 10,tab 5
+check Ip virtual +x,503,110 30 50 10,tab 5
+check Recibe noticias +s,504,110 40 55 10,tab 5
+check Rechaza envíos infectados +v,505,40 50 82 10,tab 5
+text Otros,506,130 52 20 10,tab 5
+edit "",507,145 50 30 10,tab 5
+box Modos NO permitidos,508,20 70 160 45,tab 5
+text En canales,509,50 82 50 10,tab 5
+edit "",510,100 80 50 10,tab 5
+text En IRCops,511,50 92 50 10,tab 5
+edit "",512,100 90 50 10,tab 5
+text En usuarios,513,50 102 50 10,tab 5
+edit "",514,100 100 50 10,tab 5
+box Configuración del spam,515,20 120 160 67,tab 5
+button Palabras mass spam,516,25 130 72 15,tab 5
+check Activar mass spam,517,25 145 72 15,tab 5,push
+button Palabras C.Spam,518,103 130 72 15,tab 5
+check Activar C.Spam,519,103 145 72 15,tab 5,push
+check C.Spam invisible,520,25 163 50 10,tab 5
+text Nº usuarios,521,105 165 80 10,tab 5
+edit "",522,160 163 13 10,center,tab 5
+text Tiempo,523,25 175 50 10,tab 5
+edit "",524,50 174 20 10,center,tab 5
+box Registro,525, 20 190 160 50,tab 5
+text Usuario,526, 50 200 50 10,tab 5
+edit "",527,100 198 50 10,autohs,tab 5
+text Pass,528,50 215 50 10,tab 5
+edit "",529,100 213 50 10,pass autohs, tab 5
+button Registrar producto,530,49 226 103 12,tab 5,center
+button (?),531,165 226 12 12,tab 5,center
+menu &Configuración,700
+menu Co&nectar,701,700
+item 127.0.0.1,702,701
+item Otro?,703,701
+item &Desconectar,704,700
+item &Actualizar,712,700
+item break,705,700
+item &Limpiar,706,700
+item break,707,700
+item Ce&rrar,708,700
+menu A&bout,709
+item A&yuda,710,709
+item break,711,709
+item No&tificación de errores,717,709
+item break,718,709
+item &Sobre los bots,713,709
+item &Web,714,709
+item &Email,715,709
+button pos,666,1 1 1 1
+}
+on 1:dialog:bots:*:*: {
+if $devent == init {
+if ($sock(bots)) { did -b $dname 701 }
+else { did -b $dname 704 }
+dialog -bpr $dname | did -t $dname 900 | did -g $dname 716 graphs\logo.bmp | did -b $dname 312
+dll source\sys\upz.dll SetIcon -w $dialog($dname).hwnd graphs\upz.ico
+dll $_.mdx SetMircVersion $version
+dll $_.mdx MarkDialog $dname
+;dll source\mdx.dll SetBorderStyle 117,122,123,204,205,219,220,221,222,516,517,518,519,530,531,900,901 clientedge
+dll $_.mdx SetControlMDX $dname 302 IPAddress > source\sys\ctl_gen.mdx
+dll $_.mdx SetControlMDX $dname 666 positioner noclose > source\sys\dialog.mdx
+var %r = 1, %g, %f
+while %r <= 600 { dll $_.mdx SetFont $dname %r 13 100 Tahoma | inc %r }
+dll $_.mdx SetFont $dname 900,901 13 100 Tahoma
+did -c $dname $iif($readini(source\conf.dll,n,conf,auto) == si,101,102)
+did -c $dname $iif($readini(source\conf.dll,n,conf,reconect) == si,104,105)
+did -c $dname $iif($readini(source\conf.dll,n,conf,log) == si,107,108)
+did -ra $dname 112 $readini(source\conf.dll,n,conf,chan)
+did -ra $dname 113 $readini(source\conf.dll,n,conf,shadow)
+did -c $dname $iif($group(#autoupdate) == on,115,116)
+if (!%nver) || %nver == $_.ver { did -b $dname 117 | did -o $dname 117 1 No existe ninguna actualización }
+did -ra $dname 119 $readini(source\conf.dll,n,conf,smtp)
+did -ra $dname 121 $readini(source\conf.dll,n,conf,sends)
+did -ra $dname 126 $readini(source\conf.dll,n,conf,stlogin)
+did -ra $dname 128 $readini(source\conf.dll,n,conf,stpass)
+did -ra $dname 201 $iif($readini(source\conf.dll,n,conf,root),$_.uncorrec($ifmatch),root)
+did -ra $dname 203 $iif($readini(source\conf.dll,n,conf,pass),$ifmatch,pass)
+if $readini(source\conf.dll,n,conf,status) == on { did -c $dname 207 | did -ra $dname 210 $readini(source\conf.dll,n,conf,clons) }
+if $readini(source\conf.dll,n,conf,status) == off { did -c $dname 208 | did -b $dname 210 }
+did -c $dname $iif($readini(source\conf.dll,n,conf,kill) == nick,212,213)
+if ($readini(source\conf.dll,n,conf,sajoin)) { did -c $dname 215 | did -ra $dname 218 $ifmatch }
+else { did -c $dname 216 | did -b $dname 218 }
+if $readini(source\conf.dll,n,conf,proxy) == on { did -c $dname 219 | did -ra $dname 219 Desactivar protección de proxies }
+did -i $dname 302 1 %kb.sv | did -ra $dname 304 %kb.pt
+did -ra $dname 306 $_.serv | did -ra $dname 308 $readini(source\conf.dll,n,conf,info) | did -ra $dname 310 $readini(source\conf.dll,n,conf,local)
+did -ra $dname 314 $_.net
+if $readini(source\conf.dll,n,conf,securnet) == on { did -c $dname 316 | did -e $dname 312 | did -ra $dname 312 $readini(source\conf.dll,n,conf,remote) } | else { did -c $dname 317 }
+did -ra $dname 319 $readini(source\conf.dll,n,conf,hidden) | did -ra $dname 322 $readini(source\conf.dll,n,conf,saw) | did -ra $dname 324 $readini(source\conf.dll,n,conf,sawin)
+did -ra $dname 430 %nc | did -ra $dname 431 %nn | did -ra $dname 432 %no | did -ra $dname 433 %ni | did -ra $dname 434 %ng | did -ra $dname 435 %nt
+did -ra $dname 436 %nm | did -ra $dname 437 %nr | did -ra $dname 438 %nv | did -ra $dname 439 %np | did -ra $dname 440 %nw | did -ra $dname 441 %ns
+did -ra $dname 442 %nh | did -ra $dname 443 %ne | did -ra $dname 444 %nl | did -ra $dname 468 %nç | did -ra $dname 471 %nd | did -ra $dname 474 %ny
+did -ra $dname 462 $readini(source\conf.dll,n,conf,apy) | did -ra $dname 464 $readini(source\conf.dll,n,conf,rmax) | did -ra $dname 466 $calc($readini(source\conf.dll,n,conf,older) / 86400)
+%g = 476,477,478,479,480,481,482,483,484,485,486,487,488,489,490,491,492,493 | %r = 1
+while %r <= $numtok(%g,44) { did $iif($gettok(%kb.pb,%r,44) == 1 || (!$gettok(%kb.pb,%r,44) && $gettok(%kb.pb,%r,44) != 0),-c,-u) $dname $gettok(%g,%r,44) $gettok(%kb.pb,%r,44) | inc %r }
+%g = 446,447,448,449,450,451,452,453,454,455,456,457,458,459,460,469,472,475
+if $readini(source\conf.dll,n,conf,glob) == 1 {
+did -c $dname 411 | did -ra $dname 412 $readini(source\conf.dll,n,conf,hnc) | %r = 1
+while %r <= $numtok(%g,44) { did -b $dname $gettok(%g,%r,44) | did -ra $dname $gettok(%g,%r,44) $readini(source\conf.dll,n,conf,hnc) | inc %r }
+}
+else {
+%f = hnc hnn hno hni hng hnt hnm hnr hnv hnp hns hnw hnh hne hnl hnç hnd hny
+did -c $dname 413 | did -b $dname 412 | %r = 1
+while %r <= $numtok(%g,44) { did -ra $dname $gettok(%g,%r,44) $readini(source\conf.dll,n,conf,$gettok(%f,%r,32)) | inc %r }
+}
+if i isincs $readini(source\conf.dll,n,conf,umodes) { did -c $dname 501 } | if w isincs $readini(source\conf.dll,n,conf,umodes) { did -c $dname 502 }
+if x isincs $readini(source\conf.dll,n,conf,umodes) { did -c $dname 503 } | if s isincs $readini(source\conf.dll,n,conf,umodes) { did -c $dname 504 }
+if v isincs $readini(source\conf.dll,n,conf,umodes) { did -c $dname 505 } | did -ra $dname 507 $removecs($readini(source\conf.dll,n,conf,umodes),i,s,w,x,v)
+did -ra $dname 510 $readini(source\conf.dll,n,conf,nochans)
+did -ra $dname 512 $readini(source\conf.dll,n,conf,nocops)
+did -ra $dname 514 $readini(source\conf.dll,n,conf,nousers)
+did -h $dname 520,521,522
+if $readini(source\conf.dll,n,conf,npinv) == 1 { did -c $dname 520 }
+if $readini(source\conf.dll,n,conf,smass) == on { did -c $dname 517 | did -ra $dname 517 Desactivar mass spam }
+if $readini(source\conf.dll,n,conf,scan) == on { did -c $dname 519 | did -ra $dname 519 Desactivar C.Spam | did -v $dname 520,521,522 }
+did -ra $dname 522 $readini(source\conf.dll,n,conf,umax) | did -ra $dname 524 $readini(source\conf.dll,n,conf,ctime)
+if ($_.creg) { did -b $dname 527,529,530 }
+did -ra $dname 527 $readini(source\conf.dll,n,conf,userlogin) | did -ra $dname 529 $readini(source\conf.dll,n,conf,userpass)
+if $did($dname,464) == 0 { did -b $dname 462 } | did -b $dname 115
+}
+if $devent == edit {
+if $did == 412 { did -ra $dname 446,447,448,449,450,451,452,453,454,455,456,457,458,459,460,469,472,475 $did($dname,412) }
+if $did == 464 && $did($dname,464) == 0 { did -b $dname 462 }
+else { did -e $dname 462 }
+}
+if $devent == sclick {
+if $did == 900 { sbd.save }
+if $did == 117 { url -an http://www.rallados.tk }
+if $did == 123 { dg.svk }
+if $did == 204 { set %dg preopers | dg.gp }
+if $did == 205 { set %dg ips | dg.gp }
+if $did == 221 { set %dg ircops | dg.gp }
+if $did == 222 { set %dg ports | dg.gp }
+if $did == 207 { did -e $dname 210 }
+if $did == 208 { did -b $dname 210 | did -r $dname 210 }
+if $did == 215 { did -e $dname 218 }
+if $did == 216 { did -b $dname 218 | did -r $dname 218 }
+if $did == 219 { if $did($dname,219).state == 1 { did -ra $dname 219 Desactivar protección proxies } | else { did -ra $dname 219 Activar protección proxies } }
+if $did == 220 { set %dg proxies | dg.gp }
+if $did == 223 { kb.dn }
+if $did == 316 { did -e $dname 312 }
+if $did == 317 { did -rb $dname 312 }
+if $did == 411 { did -b $dname 446,447,448,449,450,451,452,453,454,455,456,457,458,459,460,469,472,475 | did -e $dname 412 | did -ra $dname 446,447,448,449,450,451,452,453,454,455,456,457,458,459,460,469,472,475 $did($dname,412) }
+if $did == 413 { did -e $dname 446,447,448,449,450,451,452,453,454,455,456,457,458,459,460,469,472,475 | did -b $dname 412 }
+if $did == 516 { set %dg mass | dg.gp }
+if $did == 517 { if $did($dname,517).state == 1 { did -ra $dname 517 Desactivar mass spam } | else { did -ra $dname 517 Activar mass spam } }
+if $did == 518 { set %dg cspam | dg.gp }
+if $did == 519 { if $did($dname,519).state == 1 { did -ra $dname 519 Desactivar C.Spam | did -v $dname 520,521,522 } | else { did -ra $dname 519 Activar C.Spam | did -h $dname 520,521,522 } }
+if $did == 122 { kb.mkf }
+if $did == 901 { unset %cn.pas | dialog -k bots }
+if $did == 531 { url -n http://www.arkania.org/~rallados/register.php }
+if $did == 530 {
+if (!$did($dname,527)) { did -f $dname 5,527 | berror nusin } | if (!$did($dname,529)) { did -f $dname 5,529 | berror nuspass }
+writeini -n source\conf.dll conf userlogin $did($dname,527) | writeini -n source\conf.dll conf userpass $did($dname,529)
+dg.mv
+} }
+if $devent == menu {
+if $did == 702 { set %kb.sv 127.0.0.1 | set %kb.pt 6667 | sbd.save | kb.bgn }
+if $did == 703 { .timer -m 1 1 sbd.find }
+if $did == 704 { kb.stp }
+if $did == 712 { url -an http://www.rallados.tk | dialog -k $dname }
+if $did == 706 { did -r $dname 112,113,119,121,201,203,210,218,302,304,306,308,310,312,314,319,322,324,412,430,431,432,433,434,435,436,437,438,439,440,441,442,443,444,446,447,448,449,450,451,452,453,454,455,456,457,458,459,460,462,464,466,468,469,471,472,474,475,507,510,512,514,522,524 | did -u $dname 501,502,503,504,505,520 }
+if $did == 708 { dialog -k $dname }
+if $did == 710 { run upzbots52.hlp }
+if $did == 713 { cr.bg }
+if $did == 714 { url -an http://www.rallados.tk }
+if $did == 715 { run mailto:Trocotronic@Telefonica.net?subject=UpZMenTaL%20BoTs%20 $+ $_.ver }
+if $did == 717 { sbd.mk }
+} }
+alias sbd.find { sbd.save | kb.cx }
+alias sbd.save {
+if (!$did(bots,112)) { did -f bots 1,112 | berror chan }
+if (!$did(bots,113)) { did -f bots 1,113 | berror shadow }
+if (!$did(bots,119)) { did -f bots 1,119 | berror smtp }
+if (!$did(bots,121)) { did -f bots 1,121 | berror sends } | if $did(bots,121) !isnum { did -f bots 1,121 | berror pnum } | if $portfree($did(bots,121)) == $false && $did(bots,121) != $readini(source\conf.dll,n,conf,sends) { did -f bots 1,121 | berror pfree }
+if (!$did(bots,201)) { did -f bots 2,201 | berror root } | if (!$findfile(nicks\,$_.correc($did(bots,201)),1)) && $did(bots,201) != root { did -f bots 2,201 | berror noroot }
+if (!$did(bots,203)) { did -f bots 2,203 | berror pass }
+if $did(bots,207).state == 1 { if (!$did(bots,210)) { did -f bots 2,210 | berror clons } | if $did(bots,210) !isnum { did -f bots 2,210 | berror nclons } }
+if $did(bots,215).state == 1 && (!$did(bots,218)) { did -f bots 2,218 | berror sajoin }
+if $did(bots,219).state == 1 && (!$read(source\proxies.sys,1)) { set %dg proxies | dg.gp | berror lprox }
+if (!$did(bots,302)) { did -f bots 3,302 | berror ip }
+if $count($did(bots,302),$chr(46)) != 3 { did -f bots 3,302 | berror nip }
+if (!$did(bots,304)) { did -f bots 3,304 | berror port }
+if $did(bots,304) !isnum { did -f bots 3,304 | nport }
+if (!$did(bots,306)) { did -f bots 3,306 | berror serv } | if $count($did(bots,306),$chr(46)) < 1 { did -f bots 3,306 | berror nserv }
+if (!$did(bots,308)) { did -f bots 3,308 | berror info }
+if (!$did(bots,310)) { did -f bots 3,310 | berror local }
+if (!$did(bots,312)) && $did(bots,316).state == 1 { did -f bots 3,312 | berror remote }
+if (!$did(bots,314)) { did -f bots 3,314 | berror net }
+if (!$did(bots,319)) { did -f bots 3,319 | berror hidden }
+if (!$did(bots,322)) { did -f bots 3,322 | berror saw } | if $count($did(bots,322),$chr(46)) < 1 { did -f bots 3,322 | berror nserv }
+if (!$did(bots,324)) { did -f bots 3,324 | berror sawin }
+if (!$did(bots,430)) { did -f bots 4,430 | berror nchan }
+if (!$did(bots,431)) { did -f bots 4,431 | berror nnick }
+if (!$did(bots,432)) { did -f bots 4,432 | berror noper }
+if (!$did(bots,433)) { did -f bots 4,433 | berror ninfo }
+if (!$did(bots,434)) { did -f bots 4,434 | berror nglob }
+if (!$did(bots,435)) { did -f bots 4,435 | berror nstat }
+if (!$did(bots,436)) { did -f bots 4,436 | berror nmemo }
+if (!$did(bots,437)) { did -f bots 4,437 | berror ncreg }
+if (!$did(bots,438)) { did -f bots 4,438 | berror nvirt }
+if (!$did(bots,439)) { did -f bots 4,439 | berror nspam }
+if (!$did(bots,440)) { did -f bots 4,440 | berror nshadow }
+if (!$did(bots,441)) { did -f bots 4,441 | berror nsms }
+if (!$did(bots,442)) { did -f bots 4,442 | berror ncspam }
+if (!$did(bots,443)) { did -f bots 4,443 | berror npre }
+if (!$did(bots,444)) { did -f bots 4,444 | berror nludo }
+if (!$did(bots,468)) { did -f bots 4,468 | berror nnews }
+if (!$did(bots,471)) { did -f bots 4,471 | berror npass }
+if (!$did(bots,474)) { did -f bots 4,474 | berror naw }
+var %h = 446,447,448,449,450,451,452,453,454,455,456,457,458,459,460,469,472,475, %g = 1, %r
+while %g <= $numtok(%h,44) { if (!$did(bots,$gettok(%h,%g,44))) { did -f bots 4, $+ $gettok(%h,%g,44) | berror host } | inc %g }
+if (!$did(bots,462)) && $did(bots,462) != 0 { did -f bots 4,462 | berror apy }
+if $did(bots,462) < 0 || $did(bots,462) > 99 { did -f bots 4,462 | berror npy }
+if ((!$did(bots,464)) && $did(bots,464) != 0) || $did(bots,464) < 0 { did -f bots 4,464 | berror rmax }
+if ((!$did(bots,466)) && $did(bots,466) != 0) || $did(bots,466) < 0 { did -f bots 4,466 | berror old }
+if o isincs $did(bots,510) || v isincs $did(bots,510) || b isincs $did(bots,510) { berror nomod }
+if $did(bots,517).state == 1 && (!$readini(source\conf.dll,n,conf,spam)) { set %dg mass | dg.gp | berror lmass }
+if $did(bots,519).state == 1 && (!$readini(source\conf.dll,n,conf,cspam)) { set %dg cspam | dg.gp | berror lcspam }
+if $did(bots,519).state == 1 {
+if (!$did(bots,522)) { did -f bots 5,522 | berror umax }
+if $did(bots,522) !isnum || $did(bots,522) < 1 || $did(bots,522) > 999 { did -f bots 5,522 | berror numax }
+if (!$did(bots,524)) { did -f bots 5,524 | berror notime }
+if $did(bots,524) !isnum { did -f bots 5,524 | berror nptime }
+}
+if (!$did(bots,527)) { did -f bots 5,527 | berror nusin }
+if (!$did(bots,529)) { did -f bots 5,529 | berror nuspass }
+writeini -n source\conf.dll conf auto $iif($did(bots,101).state == 1,si,no)
+writeini -n source\conf.dll conf reconect $iif($did(bots,104).state == 1,si,no)
+writeini -n source\conf.dll conf log $iif($did(bots,107).state == 1,si,no)
+writeini -n source\conf.dll conf chan $iif($left($did(bots,112),1) != $chr(35),$chr(35)) $+ $did(bots,112)
+writeini -n source\conf.dll conf shadow $iif($left($did(bots,112),1) != $chr(35),$chr(35)) $+ $did(bots,113)
+if $did(bots,115).state == 1 { .enable #autoupdate } | else { .disable #autoupdate }
+writeini -n source\conf.dll conf smtp $did(bots,119)
+writeini -n source\conf.dll conf sends $did(bots,121)
+if ($did(bots,126)) { writeini -n source\conf.dll conf stlogin $_.correc($ifmatch) }
+else { remini source\conf.dll conf stlogin }
+if ($did(bots,128)) { writeini -n source\conf.dll conf stpass $ifmatch }
+else { remini source\conf.dll conf stpass }
+writeini -n source\conf.dll conf root $_.correc($did(bots,201))
+writeini -n source\conf.dll conf pass $did(bots,203)
+writeini -n source\conf.dll conf status $iif($did(bots,207).state == 1,on,off)
+if $did(bots,207).state == 1 { writeini -n source\conf.dll conf clons $did(bots,210) }
+writeini -n source\conf.dll conf kill $iif($did(bots,212).state == 1,nick,kill)
+if $did(bots,215).state == 1 { writeini -n source\conf.dll conf sajoin $iif($left($did(bots,218),1) != $chr(35),$chr(35)) $+ $did(bots,218) } | else { remini source\conf.dll conf sajoin }
+writeini -n source\conf.dll conf proxy $iif($did(bots,219).state == 1,on,off)
+set %kb.sv $did(bots,302) | set %kb.pt $did(bots,304)
+writeini -n source\conf.dll conf lastserver %kb.sv | writeini -n source\conf.dll conf lastport %kb.pt
+writeini -n source\conf.dll conf server $did(bots,306)
+writeini -n source\conf.dll conf info $did(bots,308)
+writeini -n source\conf.dll conf local $_.correct($did(bots,310))
+if $did(bots,316).state == 1 { writeini -n source\conf.dll conf remote $_.correct($did(bots,312)) }
+writeini -n source\conf.dll conf net $did(bots,314)
+writeini -n source\conf.dll conf securnet $iif($did(bots,316).state == 1,on,off)
+writeini -n source\conf.dll conf hidden $did(bots,319)
+writeini -n source\conf.dll conf saw $did(bots,322) | writeini -n source\conf.dll conf sawin $did(bots,324)
+set %nc $did(bots,430) | set %nn $did(bots,431) | set %no $did(bots,432) | set %ni $did(bots,433) | set %ng $did(bots,434)
+set %nt $did(bots,435) | set %nm $did(bots,436) | set %nr $did(bots,437) | set %nv $did(bots,438) | writeini -n source\conf.dll conf nickspam $did(bots,439)
+set %nw $did(bots,440) | set %ns $did(bots,441) | set %nh $did(bots,442) | set %ne $did(bots,443) | set %nl $did(bots,444)
+set %nç $did(bots,468) | set %nd $did(bots,471) | set %ny $did(bots,474)
+%g = 476,477,478,479,480,481,482,483,484,485,486,487,488,489,490,491,492,493 | %r = 1 | unset %kb.pb
+while %r <= $numtok(%g,44) { set %kb.pb $instok(%kb.pb,$did(bots,$gettok(%g,%r,44)).state,%r,44) | inc %r }
+writeini -n source\conf.dll conf glob $did(bots,411).state
+writeini -n source\conf.dll conf hnc $did(bots,446) | writeini -n source\conf.dll conf hnn $did(bots,447) | writeini -n source\conf.dll conf hno $did(bots,448)
+writeini -n source\conf.dll conf hni $did(bots,449) | writeini -n source\conf.dll conf hng $did(bots,450) | writeini -n source\conf.dll conf hnt $did(bots,451)
+writeini -n source\conf.dll conf hnm $did(bots,452) | writeini -n source\conf.dll conf hnr $did(bots,453) | writeini -n source\conf.dll conf hnv $did(bots,454)
+writeini -n source\conf.dll conf hnp $did(bots,455) | writeini -n source\conf.dll conf hnw $did(bots,456) | writeini -n source\conf.dll conf hns $did(bots,457)
+writeini -n source\conf.dll conf hnh $did(bots,458) | writeini -n source\conf.dll conf hne $did(bots,459) | writeini -n source\conf.dll conf hnl $did(bots,460)
+writeini -n source\conf.dll conf hnç $did(bots,469) | writeini -n source\conf.dll conf hnd $did(bots,472) | writeini -n source\conf.dll conf hny $did(bots,475)
+writeini -n source\conf.dll conf apy $did(bots,462) | writeini -n source\conf.dll conf rmax $did(bots,464) | writeini -n source\conf.dll conf older $calc($did(bots,466) * 86400)
+remini source\conf.dll conf umodes | remini source\conf.dll conf nochans | remini source\conf.dll conf nocops | remini source\conf.dll conf nousers
+if $did(bots,501).state == 1 { writeini -n source\conf.dll conf umodes $readini(source\conf.dll,n,conf,umodes) $+ i }
+if $did(bots,502).state == 1 { writeini -n source\conf.dll conf umodes $readini(source\conf.dll,n,conf,umodes) $+ w }
+if $did(bots,503).state == 1 { writeini -n source\conf.dll conf umodes $readini(source\conf.dll,n,conf,umodes) $+ x }
+if $did(bots,504).state == 1 { writeini -n source\conf.dll conf umodes $readini(source\conf.dll,n,conf,umodes) $+ s }
+if $did(bots,505).state == 1 { writeini -n source\conf.dll conf umodes $readini(source\conf.dll,n,conf,umodes) $+ v }
+if ($did(bots,507)) { writeini -n source\conf.dll conf umodes $readini(source\conf.dll,n,conf,umodes) $+ $remove($ifmatch,+,-) }
+if ($did(bots,510)) { writeini -n source\conf.dll conf nochans $remove($ifmatch,+,-) }
+if ($did(bots,512)) { writeini -n source\conf.dll conf nocops $remove($ifmatch,+,-) }
+if ($did(bots,514)) { writeini -n source\conf.dll conf nousers $remove($ifmatch,+,-) }
+writeini -n source\conf.dll conf smass $iif($did(bots,517).state == 1,on,off)
+writeini -n source\conf.dll conf scan $iif($did(bots,519).state == 1,on,off)
+if $did(bots,519).state == 1 { writeini -n source\conf.dll conf npinv $did(bots,520).state | writeini -n source\conf.dll conf umax $did(bots,522) | writeini -n source\conf.dll conf ctime $did(bots,524) }
+if ($did(bots,527)) { writeini -n source\conf.dll conf userlogin $_.correc($ifmatch) }
+if ($did(bots,529)) { writeini -n source\conf.dll conf userpass $ifmatch }
+unset %dg %cn.pas | dialog -k bots
+}
+alias dg.gp { if ($dialog(lists)) { dialog -k lists } | dialog -mo lists lists }
+dialog lists {
+option dbu
+title Listas
+size 200 200 150 150
+button OCU,1000,900 900 9 9,ok
+text Elemento,1,5 5 50 10
+edit "",2,5 20 105 10
+button Añadir,3,115 15 30 20
+list 4,5 45 105 100,size,sort,extsel,hsbar
+button Borrar,5,115 45 30 20
+button Aceptar,6,115 100 30 20
+button Cancelar,7,115 125 30 20,cancel
+button Importar,8,115 75 30 20
+button pos,666,1 1 1 1
+text * IRCops ** Admins,9,95 5 50 10
+}
+on 1:dialog:lists:*:*: {
+var %r
+if $devent == init {
+dialog -bpr $dname | did -t $dname 6 | did -h $dname 8,9
+dll source\sys\upz.dll SetIcon -w $dialog($dname).hwnd graphs\upz.ico
+dll $_.mdx SetMircVersion $version
+dll $_.mdx MarkDialog $dname
+;dll $_.mdx SetBorderStyle 3,4,5,6,7,8 clientedge
+dll $_.mdx SetFont $dname 1,2,3,4,5,6,7,8 13 0 Tahoma
+dll $_.mdx SetControlMDX $dname 666 positioner noclose > source\sys\dialog.mdx
+did -b $dname 3,5
+window -hl @HideList | clear @HideList
+if %dg == mass { dialog -t $dname Lista de palabras mass spam | %r = 1 | while %r <= $numtok($readini(source\conf.dll,n,conf,spam),230) { aline @HideList $gettok($readini(source\conf.dll,n,conf,spam),%r,230) | inc %r } }
+if %dg == cspam { dialog -t $dname Lista de palabras Channels Spam | %r = 1 | while %r <= $numtok($readini(source\conf.dll,n,conf,cspam),230) { aline @HideList $gettok($readini(source\conf.dll,n,conf,cspam),%r,230) | inc %r } }
+if %dg == ips { dialog -t $dname Lista de IP's immunes a los proxies | %r = 1 | while %r <= $numtok($readini(source\conf.dll,n,conf,allow),230) { aline @HideList $gettok($readini(source\conf.dll,n,conf,allow),%r,230) | inc %r } }
+if %dg == ports { dialog -t $dname Lista de puertos proxy | %r = 1 | while %r <= $numtok($readini(source\conf.dll,n,conf,pports),230) { aline @HideList $gettok($readini(source\conf.dll,n,conf,pports),%r,230) | inc %r } }
+if %dg == ircops {
+did -v $dname 9 | dialog -t $dname Lista de IRCops | %r = 1 | while %r <= $hget(ircops,0).item { aline @HideList $+($hget(ircops,%r).item,$chr(32),$iif($hget(ircops,%r).data == ircop,(*),$iif($hget(ircops,%r).data == admin,(**)))) | inc %r }
+%r = 1 | while %r <= $line(@HideList,0) { remini nicks\ $+ $_.correc($gettok($line(@HideList,%r),1,32)) datos ircop | inc %r }
+}
+if %dg == preopers {
+dialog -t $dname Lista de Preopers | %r = 1 | while %r <= $hget(preopers,0).item { aline @HideList $hget(preopers,%r).item | inc %r }
+%r = 1 | while %r <= $line(@HideList,0) { remini nicks\ $+ $_.correc($gettok($line(@HideList,%r),1,32)) datos preoper | inc %r }
+}
+if %dg == proxies { dialog -t $dname Lista de ip's proxy | loadbuf -r @HideList source\proxies.sys | did -v $dname 8 }
+%r = 1
+while %r <= $line(@HideList,0) { did -a $dname 4 $gettok($line(@HideList,%r),1,61) | inc %r }
+}
+if $devent == edit { if ($did($dname,2)) { did -e $dname 3 } | else { did -b $dname 3 } }
+if $devent == sclick {
+if $did == 4 { did -e $dname 3,5 | did -ra $dname 2 $gettok($did(lists,4,$did(lists,4,$did(lists,4,0).sel).sel),1,32) }
+if $did == 5 {
+%r = 1
+while 0 < $did($dname,4,0).sel { did -d $dname 4 $did($dname,4,1).sel } | did -b $dname 3,5 | did -r $dname 2
+}
+if $did == 3 {
+if %dg == ircops {
+if (!$isfile(nicks\ $+ $_.correc($gettok($did($dname,2),1,32)))) { berror nocop }
+if ($didwm($dname,4,$gettok($did($dname,2,),1,32) *)) { return }
+}
+else if %dg == preopers { if (!$isfile(nicks\ $+ $_.correc($gettok($did($dname,2),1,32)))) { berror nopreo } }
+if $didwm($dname,4,$gettok($did($dname,2),1,32)) == 0 { did -a $dname 4 $gettok($did($dname,2),1,32) | did -r $dname 2 | did -b $dname 3 }
+}
+if $did == 6 {
+if %dg == preopers {
+%r = 1 | hfree preopers
+while %r <= $did($dname,4).lines {
+writeini -n nicks\ $+ $_.correc($did($dname,4,%r)) datos preoper 1
+hadd -m preopers $did($dname,4,%r) 1
+inc %r
+} }
+if %dg == ircops {
+%r = 1 | hfree ircops
+while %r <= $did($dname,4).lines {
+writeini -n nicks\ $+ $_.correc($gettok($did($dname,4,%r),1,32)) datos ircop $iif($count($did($dname,4,%r),$chr(42)) == 2,Admin,$iif($count($did($dname,4,%r),$chr(42)) == 1,IRCop,Oper))
+hadd -m ircops $gettok($did($dname,4,%r),1,32) $iif($count($did($dname,4,%r),$chr(42)) == 2,Admin,$iif($count($did($dname,4,%r),$chr(42)) == 1,IRCop,Oper))
+inc %r
+} }
+if %dg == mass {
+%r = 1 | remini source\conf.dll conf spam
+while %r <= $did($dname,4).lines { writeini -n source\conf.dll conf spam $addtok($readini(source\conf.dll,n,conf,spam),$did($dname,4,%r),230) | inc %r }
+}
+if %dg == cspam {
+%r = 1 | remini source\conf.dll conf cspam
+while %r <= $did($dname,4).lines { writeini -n source\conf.dll conf cspam $addtok($readini(source\conf.dll,n,conf,cspam),$did($dname,4,%r),230) | inc %r }
+}
+if %dg == ips {
+%r = 1 | remini source\conf.dll conf allow
+while %r <= $did($dname,4).lines { writeini -n source\conf.dll conf allow $addtok($readini(source\conf.dll,n,conf,allow),$did($dname,4,%r),230) | inc %r }
+}
+if %dg == ports {
+%r = 1 | remini source\conf.dll conf pports
+while %r <= $did($dname,4).lines { writeini -n source\conf.dll conf pports $addtok($readini(source\conf.dll,n,conf,pports),$did($dname,4,%r),230) | inc %r }
+}
+if %dg == proxies {
+.remove source\proxies.sys
+%r = 1
+while %r <= $did($dname,4).lines { write -n source\proxies.sys $did($dname,4,%r) | inc %r }
+}
+unset %dg | if ($dialog(bots)) { dialog -v bots } | dialog -k $dname
+}
+if $did == 8 {
+var %dg.f = $sfile(*.*,Selecciona el archivo fuente,Importar), %r = 1
+while %r <= $lines(%dg.f) { if $didwm($dname,4,$_.gettok($read(%dg.f,%r),1)) == 0 { did -a $dname 4 $_.gettok($read(%dg.f,%r),1) } | inc %r }
+} } }
+alias dg.mk { if ($dialog(error)) { dialog -v error } | else { dialog -mo error error } }
+dialog error {
+option dbu
+title "¡Error!"
+size 200 200 210 80
+button OCU,1000,900 900 900 900,ok
+button "Aceptar",1,145 56 60 20
+icon 2,5 2 17 16,graphs\admi.ico
+edit "",3,4 21 201 30,read multi autovs vsbar
+text "¡Error!",4, 25 7 25 10
+button pos,666,1 1 1 1
+}
+on 1:dialog:error:*:*: {
+if $devent == init {
+dialog -bpr $dname | did -t $dname 1
+dll source\sys\upz.dll SetIcon -w $dialog($dname).hwnd graphs\upz.ico
+dll $_.mdx SetMircVersion $version
+dll $_.mdx MarkDialog $dname
+;dll $_.mdx SetBorderStyle 1,3 clientedge
+dll $_.mdx SetFont $dname 1,3,4 0 Tahoma
+dll $_.mdx SetControlMDX $dname 666 positioner noclose > source\sys\dialog.mdx
+}
+if $devent == sclick {
+if $did == 1 {
+if ($dialog(bots)) { dialog -v bots }
+if ($dialog(lists)) { dialog -v lists }
+if ($dialog(mail)) { dialog -v mail }
+dialog -k $dname
+}
+if ($window(@Progreso)) {
+var %r = 99 | .timerWIN 1 1 window -c @Progreso | while %r >= 0 { emi %r %r Abortando... | dec %r } | .timerCIE 1 1 exit
+} } }
+alias berror { dg.mk | did -ra error 3 $iif((!$2),$readini(source\mk.dll,mk,$1),$1-) | halt }
+alias dg.nf { if ($dialog(info)) { dialog -k info } | dialog -mo info info }
+dialog info {
+option dbu
+title "Información"
+size 200 200 210 80
+button OCU,1000,900 900 900 900,ok
+button "Aceptar",1,145 56 60 20
+icon 2,5 2 17 16,graphs\info.ico
+edit "",3,4 21 201 30,read multi autovs vsbar
+text "Información",4, 25 7 50 10
+button pos,666,1 1 1 1
+}
+on 1:dialog:info:*:*: {
+if $devent == init {
+dialog -bpr $dname | did -t $dname 1
+dll source\sys\upz.dll SetIcon -w $dialog($dname).hwnd graphs\upz.ico
+dll $_.mdx SetMircVersion $version
+dll $_.mdx MarkDialog $dname
+;dll $_.mdx SetBorderStyle 1,3 clientedge
+dll $_.mdx SetFont $dname 1,3,4 13 0 Tahoma
+dll $_.mdx SetControlMDX $dname 666 positioner noclose > source\sys\dialog.mdx
+}
+if $devent == sclick { dialog -k $dname }
+}
+alias info { dg.nf | did -ra info 3 $iif((!$2),$readini(source\mk.dll,mk,$1),$1-) | halt }
+alias dg.q { if ($dialog(q)) { dialog -k q } | dialog -mo q q }
+dialog q {
+option dbu
+title "Conexión"
+size 200 200 210 70
+button OCU,1000,900 900 900 900,ok
+button "Aceptar",1,80 46 60 20
+icon 2,5 2 17 16,graphs\question.ico
+edit "",3,4 31 201 10
+text "Pregunta",4, 25 7 50 10
+text bla,5,5 20 150 10
+button Cerrar,6,145 46 60 20,cancel
+button pos,666,1 1 1 1
+}
+on 1:dialog:q:*:*: {
+if $devent == init {
+dialog -bpr $dname | did -t $dname 1 | did -f $dname 3
+dll source\sys\upz.dll SetIcon -w $dialog($dname).hwnd graphs\upz.ico
+dll $_.mdx SetMircVersion $version
+dll $_.mdx MarkDialog $dname
+;dll $_.mdx SetBorderStyle 1,3,6 clientedge
+dll $_.mdx SetFont $dname 1,3,4,5,6 13 0 Tahoma
+dll $_.mdx SetControlMDX $dname 666 positioner noclose > source\sys\dialog.mdx
+if (!%kb.pt) { did -o $dname 5 1 Introduce el puerto al cual deseas establecer la conexión. | did -ra $dname 3 $readini(source\conf.dll,n,conf,lastport) }
+if (!%kb.sv) { did -o $dname 5 1 Introduce la IP la cual deseas establecer la conexión. | did -ra $dname 3 $readini(source\conf.dll,n,conf,lastserver) }
+did -f $dname 3
+}
+if $devent == sclick {
+if $did == 1 {
+if (!%kb.sv) { set %kb.sv $iif(($did($dname,3)),$ifmatch,$readini(source\conf.dll,n,conf,lastserver)) | dialog -k q | .timer -m 1 1 dg.q | halt }
+if (!%kb.pt) && (%kb.sv) { set %kb.pt $iif(($did($dname,3)),$ifmatch,$readini(source\conf.dll,n,conf,lastport)) | dialog -k $dname | kb.bgn }
+} } }
+alias kb.cx { unset %kb.pt %kb.sv | if ($dialog(bots)) { dialog -k bots } | dg.q }
+alias sbd.mk { if ($dialog(mail)) { dialog -v mail } | else { dialog -m mail mail } }
+dialog mail {
+option dbu
+title Notificación de errores
+size 200 200 150 100
+button OCU,1000,900 900 900 900,ok
+button Enviar,1,80 5 30 20
+button Cancelar,2,115 5 30 20
+text Tu correo,3,5 5 50 10
+edit "",4,5 15 65 10,autohs
+text Mensaje,5,5 27 50 10
+edit "",6,5 35 140 50,multi return autovs vsbar size
+text Preparado para enviar,7,5 90 150 10
+button pos,666,1 1 1 1
+}
+on 1:dialog:mail:*:*: {
+if $devent == init {
+dialog -bpr $dname | did -t $dname 1 | did -f $dname 3
+dll source\sys\upz.dll SetIcon -w $dialog($dname).hwnd graphs\upz.ico
+dll $_.mdx SetMircVersion $version
+dll $_.mdx MarkDialog $dname
+;dll $_.mdx SetBorderStyle 1,2,6,8 clientedge
+dll $_.mdx SetFont $dname 1,2,3,4,5,6,7 13 0 Tahoma
+dll $_.mdx SetControlMDX $dname 666 positioner noclose > source\sys\dialog.mdx
+did -ra $dname 4 $readini(source\conf.dll,n,conf,notif)
+}
+if $devent == sclick {
+if $did == 1 {
+if (!$did($dname,4)) { berror nomail }
+if @ !isin $did($dname,4) || . !isin $did($dname,4) { berror nocmail }
+if (!$did($dname,6)) { berror nomtext }
+.timerMAIL -o 0 1 sbd.chk | did -o mail 7 1 Enviando... | did -b mail 1
+sockopen mail $readini(source\conf.dll,n,conf,smtp) 25 | writeini -n source\conf.dll conf notif $did($dname,4)
+}
+if $did == 2 { dialog -k mail }
+} }
+on 1:sockopen:mail: {
+if $sockerr > 0 { sockclose mail | .timerMAIL off | did -o mail 7 1 No es posible conectar. | did -e mail 1 | return }
+sockwrite -nt mail $iif($readini(source\conf.dll,n,conf,stlogin),EHLO,HELO) $readini(source\conf.dll,n,conf,smtp)
+if ($readini(source\conf.dll,conf,stlogin)) {
+sockwrite -nt mail AUTH LOGIN
+sockwrite -nt mail $encode($readini(source\conf.dll,n,conf,stlogin),m)
+sockwrite -nt mail $encode($readini(source\conf.dll,n,conf,stpass),m)
+}
+sockwrite -nt mail MAIL FROM: $did(mail,4)
+sockwrite -nt mail RCPT TO: Trocotronic@telefonica.net
+sockwrite -nt mail DATA
+sockwrite -nt mail Subject: Notificación de errores UpZMenTaL BoTs v $+ $_.ver
+sockwrite -nt mail From: " $+ $_.uncorrec($readini(source\conf.dll,n,conf,root)) $+ " $did(mail,4)
+sockwrite -nt mail To: Trocotronic
+sockwrite -nt mail DATE: $date
+var %r = 1 | while %r <= $did(mail,6).lines { sockwrite -nt mail $did(mail,6,%r) | inc %r }
+sockwrite -nt mail .
+sockwrite -nt mail QUIT
+did -o mail 7 1 Notificación procesada con éxito. | did -e mail 1
+.timerMAIL off
+}
+on 1:sockread:mail: sockread %ml | kb.dg 30 %ml | unset %ml
+alias sbd.chk { if (!$dialog(mail)) { .timerMAIL off | sockclose mail | sbd.mk | berror nodialog } }
+alias dg.ht { if (!$dialog(hash)) { dialog -m hash hash } | else { dialog -v hash } }
+dialog hash {
+option dbu
+title Gestor de Hash Tables
+size 200 200 225 100
+button Ok,1,5 5 50 10,ok
+button Refrescar,2,60 5 50 10
+button Editar,3,115 5 50 10
+button Cambiar,4,170 5 50 10
+list 5,5 20 70 75
+list 6, 80 20 70 75
+edit "",7,155 20 65 75,multi
+}
+on 1:dialog:hash:*:*: {
+var %r = 1, %h = 1
+if $devent == init {
+while %h <= $hget(0) { did -a $dname 5 $hget(%h) | inc %h }
+did -b $dname 3,4,7
+}
+if $devent == sclick {
+did -b $dname 3,4,7
+if ($did($dname,5,1).seltext) && ($did($dname,6,1).seltext) { did -ra $dname 7 $hget($did($dname,5,1).seltext,$did($dname,6,1).seltext) | did -e $dname 3 }
+if $did == 5 {
+did -r $dname 6,7
+while %h <= $hget($did($dname,5,1).seltext,0).item { did -a $dname 6 $hget($did($dname,5,1).seltext,%h).item | inc %h }
+}
+if $did == 6 { did -ra $dname 7 $hget($did($dname,5,1).seltext,$did($dname,6,1).seltext) | did -e $dname 3 }
+if $did == 2 { did -r $dname 5,6,7 | %h = 1 | while %h <= $hget(0) { did -a $dname 5 $hget(%h) | inc %h } }
+if $did == 3 { did -e $dname 4,7 | did -b $dname 3 }
+if $did == 4 {
+hdel $did($dname,5,1).seltext $did($dname,6,1).seltext | %h = 1
+while %h <= $did($dname,7).lines { hadd $did($dname,5,1).seltext $did($dname,6,1).seltext $hget($did($dname,5,1).seltext,$did($dname,6,1).seltext) $+ $did($dname,7,%h) | inc %h }
+did -b $dname 3,4,7
+} }
+if $devent == dclick {
+if $did == 5 { hfree $did($dname,5,1).seltext | did -d $dname 5 $did($dname,5,1).sel }
+if $did == 6 { hdel $did($dname,5,1.).seltext $did($dname,6,1).seltext }
+} }
+alias cr.bg {
+window -dfhkop +fL @Creditos $round($calc(($window(-1).w - 700) / 2),0) $round($calc(($window(-1).h - 420) / 2),0) 700 420 @Creditos
+window -a @creditos
+drawfill -r @Creditos $rgb(72,70,100) $rgb(72,70,100) 1 1
+drawrect -rfd @creditos $rgb(10,10,10) 1 15 15 670 390 15 15
+drawrect -rfd @creditos $rgb(232,230,230) 1 17 17 670 390 15 15
+drawrect -rfd @creditos $rgb(92,110,150) 1 16 16 670 390 15 15
+drawrect -rf @creditos $rgb(82,100,140) 1 590 20 90 90
+drawrect -rf @creditos $rgb(72,90,130) 1 591 21 88 88
+drawrect -rf @creditos $rgb(62,80,120) 1 592 22 86 86
+drawrect -rf @creditos $rgb(52,70,110) 1 593 23 84 84
+drawrect -rf @creditos $rgb(42,60,100) 1 594 24 82 82
+drawpic -st @Creditos $rgb(0,255,0) 655 375 30 30 graphs\x.bmp
+drawpic -s @Creditos 595 25 80 80 graphs\ico.bmp
+drawtext -rocn @creditos $not($rgb(212,220,220)) Verdana 15 32 32 999 99 UpZMenTaL BoTs v $+ $_.ver
+drawtext -rocn @creditos $rgb(212,220,220) Verdana 15 30 30 999 99 UpZMenTaL BoTs v $+ $_.ver
+var %k = 60, %y = 1
+while %k <= 400 && ($readini(source\mk.dll,credits,%y)) { cr.dw 30 %k $readini(source\mk.dll,credits,%y) | inc %k 14 | inc %y }
+drawdot @Creditos
+}
+menu @creditos {
+mouse: {
+if $inrect($mouse.x,$mouse.y,655,375,685,395) == $true { dll source\sys\cursor.dll SetStdMouseCursor hand }
+else { dll source\sys\cursor.dll RestoreCursor }
+}
+sclick { if $inrect($mouse.x,$mouse.y,655,375,685,395) == $true { dll source\sys\cursor.dll RestoreCursor | window -c @creditos } }
+Cerrar: { dll source\sys\cursor.dll RestoreCursor | window -c @Creditos }
+}
+alias cr.dw {
+drawtext -rc @creditos $not($rgb(212,220,220)) Verdana 9 $calc($1 + 1) $calc($2 + 1) 999 99 $3-
+drawtext -rc @creditos $rgb(212,220,220) Verdana 9 $1 $2 999 99 $3-
+}
+alias dg.mv { if ($_.creg) { var %p = $input(Su producto ya está registrado.,100,Registro realizado) | return } | if ($dialog(mv)) { dialog -v mv } | else { var %p = $dialog(mv,mv,2) } }
+dialog mv {
+title Verificación
+size -1 -1 110 54
+option dbu
+button Ok,99,999 999 99 99,ok
+text ID Bots, 1, 5 1 25 8
+edit "", 2, 5 10 100 10,read,center,autohs
+text Clave, 3, 5 22 20 8
+edit "", 4, 5 30 100 10,center
+button Verificar, 5, 40 41 37 12
+button (?),6,93 41 13 12
+button »,7,5 41 13 12
+text Usuario,8,5 53 25 10
+edit "",9,5 62 100 10,center
+text Pass,10,5 74 15 10
+edit "",11,5 82 100 10,center,pass
+button Solicitar clave,12,5 115 100 12,center
+text Tu mail,13,5 94 25 10
+edit "",14,5 104 100 10,center
+}
+on 1:dialog:mv:*:*: {
+var %r
+if $devent == init {
+dll source\sys\upz.dll SetIcon -w $dialog($dname).hwnd graphs\upz.ico
+var %cn = $_.reg(ComputerName)
+did -ra $dname 2 $dll(source\sys\cr.dll,encrypt,%cn) $+ - $+ $dll(source\sys\cr.dll,encrypt,$dll(source\sys\cr.dll,encrypt,%cn))
+did -ra $dname 9 $did(bots,527) | did -ra $dname 11 $did(bots,529) | did -ra $dname 14 $readini(source\conf.dll,n,conf,notif)
+}
+if $devent == sclick {
+if $did == 5 {
+if $numtok($did($dname,4),45) != 2 { goto noreg }
+if $dll(source\sys\cr.dll,decrypt,$gettok($did($dname,2),1,45)) == $dll(source\sys\cr.dll,dec,$_.tn($gettok($did($dname,4),1,45),16,10) $gettok($did($dname,4),2,45)) {
+if $input(La clave es válida. $+ $crlf $+ El producto se ha registrado con éxito.,100,Clave correcta) == $ok {
+dll source\sys\registry.dll SetKeyValue REG_SZ HKEY_LOCAL_MACHINE\SOFTWARE\UpZMenTaL
+dll source\sys\registry.dll SetKeyValue REG_SZ HKEY_LOCAL_MACHINE\SOFTWARE\UpZMenTaL\captionP $cr $gettok($did($dname,4),1,45)
+dll source\sys\registry.dll SetKeyValue REG_SZ HKEY_LOCAL_MACHINE\SOFTWARE\UpZMenTaL\captionR $cr $gettok($did($dname,4),2,45)
+dll source\sys\upz.dll Titlebar -m UpZMenTaL BoTs v $+ $_.ver $+($chr(84),$chr(114),$chr(111),$chr(99),$chr(111),$chr(116),$chr(114),$chr(111),$chr(110),$chr(105),$chr(99)) 2001-2002 :: Registrado a: $iif($_.creg,$ifmatch,Freeware)
+if ($dialog(bots)) { did -b bots 527,529,530 }
+dialog -k $dname
+} }
+else {
+:noreg
+if $input(La clave es inválida. $+ $crlf $+ No se ha podido registrar el producto.,300,Clave errónea) == $yes {
+dll source\sys\registry.dll DeleteKey HKEY_LOCAL_MACHINE\SOFTWARE\UpZMenTaL
+dll source\sys\upz.dll Titlebar -m UpZMenTaL BoTs v $+ $_.ver $+($chr(84),$chr(114),$chr(111),$chr(99),$chr(111),$chr(116),$chr(114),$chr(111),$chr(110),$chr(105),$chr(99)) 2001-2002 :: Registrado a: $iif($_.creg,$ifmatch,Freeware)
+dialog -k $dname
+} }
+}
+if $did == 6 { info noreg }
+if $did == 7 {
+if $dialog($dname).ch == $calc(128 * 2) { %r = $calc(128 * 2) | while %r >= $calc(54 * 2) { dialog -s $dname -1 -1 $dialog($dname).cw %r | dec %r } | did -o $dname $did 1 » }
+else { %r = $calc(54 * 2) | while %r <= $calc(128 * 2) { dialog -s $dname -1 -1 $dialog($dname).cw %r | inc %r } | did -o $dname $did 1 « }
+}
+if $did == 12 {
+if (!$did($dname,9)) || (!$did($dname,11)) || (!$did($dname,14)) { if $input(Faltan datos,300,Faltan datos) == $yes { return } }
+sockopen stsock $readini(source\conf.dll,n,conf,smtp) 25
+}
+}
+}
+on 1:sockopen:stsock: {
+if $sockerr > 0 { sockclose stsock | if $input(No puede conectar,300,Error) == $yes { return } }
+sockwrite -nt stsock $iif($readini(source\conf.dll,n,conf,stlogin),EHLO,HELO) $readini(source\conf.dll,n,conf,smtp)
+if ($readini(source\conf.dll,conf,stlogin)) {
+sockwrite -nt stsock AUTH LOGIN
+sockwrite -nt stsock $encode($readini(source\conf.dll,n,conf,stlogin),m)
+sockwrite -nt stsock $encode($readini(source\conf.dll,n,conf,stpass),m)
+}
+sockwrite -nt stsock MAIL FROM: $did(mv,14)
+sockwrite -nt stsock RCPT TO: rallados@arkania.org
+sockwrite -nt stsock DATA
+sockwrite -nt stsock Subject: Solicitud de clave UpZMenTaL BoTs v $+ $_.ver
+sockwrite -nt stsock From: " $+ $_.uncorrec($readini(source\conf.dll,n,conf,root)) $+ " $did(mv,14)
+sockwrite -nt stsock To: Trocotronic
+sockwrite -nt stsock DATE: $date
+sockwrite -nt stsock Solicitud de clave para UpZMenTaL BoTs v $+ $_.ver
+sockwrite -nt stsock
+sockwrite -nt stsock Usuario: $did(mv,9)
+sockwrite -nt stsock Pass: $did(mv,11)
+sockwrite -nt stsock ID Bots: $did(mv,2)
+sockwrite -nt stsock Mail: $did(mv,14)
+sockwrite -nt stsock .
+sockwrite -nt stsock QUIT
+if $input(Solicitud de clave cursada con éxito. En poco tiempo recibirá su clave de registro.,100,Correcto) == $ok { dialog -k mv }
+}
+on 1:sockread:stsock: sockread %sk | kb.dg 30 %sk | unset %sk
+alias _.mdx return source\sys\mdx.dll
+alias _.reg {
+if $1 == ComputerName { return $dll(source\sys\registry.dll,GetKeyValue,HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\ComputerName\ComputerName\\ComputerName) }
+if $1 == P { return $dll(source\sys\registry.dll,GetKeyValue,HKEY_LOCAL_MACHINE\SOFTWARE\UpZMenTaL\captionP) }
+if $1 == R { return $dll(source\sys\registry.dll,GetKeyValue,HKEY_LOCAL_MACHINE\SOFTWARE\UpZMenTaL\captionR) }
+return $false
+}
+alias _.creg {
+var %cP = $_.reg(P), %cR = $_.reg(R), %cN = $_.reg(ComputerName)
+if (!%cP) || (!%cR) { return $false }
+if $dll(source\sys\cr.dll,dec,$_.tn(%cP,16,10) %cR) == %cN { return $readini(source\conf.dll,conf,userlogin) }
+else { return $false }
+}
+alias _.tn {
+var %alfa = ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789, %alnum = 83920195748395827694028196732548293057839201958473615582930302
+var %r = 1 | while %r <= $len($1) { var %ct = %ct $+ $mid(%alnum,$poscs(%alfa,$mid($1,%r,1)),1) | inc %r }
+return %ct
+}
+alias unreg {
+dll source\sys\registry.dll DeleteKey HKEY_LOCAL_MACHINE\SOFTWARE\UpZMenTaL
+dll source\sys\upz.dll Titlebar -m UpZMenTaL BoTs v $+ $_.ver $+($chr(84),$chr(114),$chr(111),$chr(99),$chr(111),$chr(116),$chr(114),$chr(111),$chr(110),$chr(105),$chr(99)) 2001-2002 :: Registrado a: $iif($_.creg,$ifmatch,Freeware)
+if ($dialog(bots)) { did -e bots 527,529,530 }
+}
+alias debug { if ($dialog(debug)) { dialog -v debug } | else { dialog -m debug debug } }
+dialog debug {
+title Debug
+option dbu
+size -1 -1 350 200
+button ocu,999,999 999 999 999,ok
+tab Bots,1,1 15 350 185
+tab sMs,2
+tab Mails,3
+edit "",10,5 33 340 162,autohs multi,tab 1
+edit "",20,5 33 340 162,autohs multi,tab 2
+edit "",30,5 33 340 162,autohs multi,tab 3
+}
+on 1:dialog:debug:*:*: {
+if $devent == init {
+dll source\sys\upz.dll SetIcon -w $dialog($dname).hwnd graphs\upz.ico
+dll $_.mdx SetMircVersion $version
+dll $_.mdx MarkDialog $dname
+dll $_.mdx SetBorderStyle $dname 10,20,30 staticedge
+dll $_.mdx SetControlMDX $dname 10,20,30 richedit nohidesel read autohs multi return > source\sys\ctl_gen.mdx
+dll $_.mdx SetFont $dname 10,20 11 0 Verdana
+;dll $_.mdx SetColor $dname 10 background $rgb(0,0,0)
+var %r = 1 | while %r <= 33 { did -a $dname 10,20,30 text +m 1,1 $str($chr(9),30) $crlf | inc %r }
+} }
+alias kb.dg { if ($dialog(debug)) { did -i debug $1 1 text +m 0,01 $+ $2- $+ 1,1 $+ $str($chr(9),20) } }
+alias kb.dn { if ($dialog(dp)) { dialog -v dp } | else { dialog -m dp dp } }
+dialog dp {
+title Dropeo
+option dbu
+button ocu,999,999 999 999 999,ok
+button pos,666,1 1 1 1
+size -1 -1 223 190
+tab Nicks,1,1 3 222 198
+tab Canales,2
+list 3,5 30 213 150,extsel,tab 1
+list 4,5 30 213 150,extsel,tab 2
+text Tiempo caducidad:,5,5 178 50 10
+edit "",6,55 176 10 10,tab 1
+edit "",7,55 176 10 10,tab 2
+text días,8,67 178 15 10
+button Guardar cambios,9,165 176 54 10
+button Borrar nicks,10,110 176 54 10,tab 1
+button Borrar canales,11,110 176 54 10,tab 2
+check Auto,12,5 20 50 10,tab 1
+check Auto,13,5 20 50 10,tab 2
+button Refrescar,14,169 19 50 10
+}
+on 1:dialog:dp:*:*: {
+var %r = 2, %p = 0
+if $devent == init {
+dll source\sys\upz.dll SetIcon -w $dialog($dname).hwnd graphs\upz.ico
+dll $_.mdx SetMircVersion $version
+dll $_.mdx MarkDialog $dname
+dll $_.mdx SetControlMDX $dname 3,4 ListView sortascending grid report rowselect single rowselect infotip headerdrag checkboxes > source\sys\views.mdx
+did -i $dname 3,4 1 headerdims 140:1 141:2 120:3
+did -i $dname 3,4 1 headertext 0 $+(Nick,$chr(9),Identificado,$chr(9),Estado)
+dll $_.mdx SetControlMDX $dname 666 positioner noclose > source\sys\dialog.mdx
+did -ra $dname 6 $calc($readini(source\conf.dll,n,conf,nexp) / 86400)
+did -ra $dname 7 $calc($readini(source\conf.dll,n,conf,cexp) / 86400)
+if ($_.drop(nicks)) { did -c $dname 12 | did -h $dname 3 }
+if ($_.drop(canales)) { did -c $dname 13 | did -h $dname 4 }
+dp.bc nicks $calc($readini(source\conf.dll,n,conf,nexp) / 86400) | dp.bc canales $calc($readini(source\conf.dll,n,conf,cexp) / 86400)
+}
+if $devent == sclick {
+if $did == 9 {
+if (!$did($dname,6)) { did -f $dname 1,6 | berror nexp } | if $did($dname,6) !isnum { did -f $dname 1,6 | berror nexpnum } | if $did($dname,6) < 0 { did -f $dname 1,6 | beror nexpneg }
+if (!$did($dname,7)) { did -f $dname 2,7 | berror cexp } | if $did($dname,7) !isnum { did -f $dname 2,7 | berror cexpnum } | if $did($dname,7) < 0 { did -f $dname 2,7 | berror cexpneg }
+writeini -n source\conf.dll conf nexp $calc($did($dname,6) * 86400) | writeini -n source\conf.dll conf cexp $calc($did($dname,7) * 86400)
+writeini -n source\conf.dll conf autodropn $did($dname,12).state | writeini -n source\conf.dll conf autodropc $did($dname,13).state
+dialog -k $dname
+}
+if $did == 12 { if ($did($dname,12).state) { did -h $dname 3 } | else { did -v $dname 3 } }
+if $did == 13 { if ($did($dname,13).state) { did -h $dname 4 } | else { did -v $dname 4 } }
+if $did == 10 {
+while ($did($dname,3,%r)) { if $gettok($ifmatch,5,32) == 2 { inc %p } | inc %r }
+if (!%p) { return }
+if $input(Vas a borrar %p nick(s) $+ $chr(44) ¿estás segur@?,200,Confirmar) == $true {
+%r = 1 | while ($did($dname,3,%r)) { if $gettok($ifmatch,5,32) == 2 { ev.en45 $gettok($gettok($did($dname,3,%r),6,32),1,9) } | inc %r }
+dp.bc nicks $did($dname,6)
+} }
+if $did == 14 { dp.bc nicks $did($dname,6) | dp.bc canales $did($dname,7) }
+if $did == 11 {
+while ($did($dname,4,%r)) { if $gettok($ifmatch,5,32) == 2 { inc %p } | inc %r }
+if (!%p) { return }
+if $input(Vas a borrar %p canal(es) $+ $chr(44) ¿estás segur@?,200,Confirmar) == $true {
+%r = 1 | while ($did($dname,4,%r)) { if $gettok($ifmatch,5,32) == 2 { ev.ec45 $gettok($gettok($did($dname,3,%r),6,32),1,9) } | inc %r }
+dp.bc canales $did($dname,7)
+} } }
+if $devent == edit {
+if $did == 6 { dp.bc nicks $did($dname,6) }
+if $did == 7 { dp.bc canales $did($dname,7) }
+} }
+alias dp.bc {
+var %r = 1, %t
+if $1 == nicks {
+did -r dp 3
+while %r <= $findfile(nicks\,*,0) {
+%t = $findfile(nicks\,*,%r)
+did -a dp 3 $+($nopath(%t),$chr(9),$asctime($readini(%t,n,datos,identified)),$chr(9),$iif($calc($readini(%t,n,datos,identified) + $2 * 86400) < $ctime,Caducado,Activo))
+inc %r
+} }
+if $1 == canales {
+did -r dp 4
+while %r <= $findfile(canales\,#*,0) {
+%t = $findfile(canales\,*,%r)
+did -a dp 4 $+($nopath(%t),$chr(9),$asctime($readini(%t,n,datos,last)),$chr(9),$iif($calc($readini(%t,n,datos,last) + $2 * 86400) < $ctime,Caducado,Activo))
+inc %r
+} } }

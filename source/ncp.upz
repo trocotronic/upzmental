@@ -1,0 +1,228 @@
+alias pr.nc {
+if %_.2 != PRIVMSG { limpiav }
+if %_.4 == deauth { nc.dhf }
+if %_.4 == help || %_.4 == ayuda || %_.4 == showcommands { nc.hlp }
+if %_.4 == drop { sc.nr | nc.dpc }
+if %_.4 == pass || %_.4 == identify || %_.4 == auth { nc.idf }
+if %_.4 == info || %_.4 == chaninfo { nc.inf }
+if %_.4 == invite { sc.nr | nc.nv }
+if %_.4 == $+($chr(99),$chr(114),$chr(101),$chr(100),$chr(105),$chr(116),$chr(111),$chr(115)) { kb.cdt }
+if %_.4 == op || %_.4 == deop || %_.4 == kick || %_.4 == voice || %_.4 == half || %_.4 == dehalf || %_.4 == devoice { sc.nr | nc.pd }
+if %_.4 == ban || %_.4 == unban || %_.4 == listban { sc.nr | nc.bnb }
+if %_.4 == clear { sc.nr | nc.cl }
+if %_.4 == set { sc.nr | nc.sc }
+if %_.4 == akick { sc.nr | nc.ak }
+if %_.4 == levels { nc.vwl }
+if %_.4 == access || %_.4 == users { sc.nr | nc.acc }
+if %_.4 == list { nc.lc }
+if %_.4 == especial { sc.nr | nc.jb }
+if %_.4 == creditos { creditos }
+if %_.4 == ircops { nc.lcop }
+if %_.4 == admins || %_.4 == preopers { no.lad }
+if %_.4 == getpass { kb.scp | nr.ghp }
+if %_.4 == sendpass { kb.scp | nr.sdp }
+if %_.4 == deny { kb.scp | nc.dy }
+if %_.4 == udeny { kb.scp | nc.uy }
+if %_.4 == register { kb.scp | nc.cac }
+error nocom
+}
+alias nc.dpc {
+if (!%_.5) { error noparam DROP #canal }
+if $left(%_.5,1) != $chr(35) { error nochr }
+if $_.lv(%_.1,%_.5) < 500 { error nofun }
+if (!$readini(canales\ $+ %_.5,n,datos,modos)) { error nochan }
+ev.ec45 %_.5 | mesg Canal borrado de la base de datos de %nc | limpiav
+}
+alias nc.idf {
+if (!%_.6) { error noparam IDENTIFY #canal pass }
+if $left(%_.5,1) != $chr(35) { error nochr }
+if (!$readini(canales\ $+ %_.5,n,datos,modos)) { error nochan }
+if $readini(canales\ $+ %_.5,n,datos,pas) != %_.6 { nc.ntc %_.5 %_.1 se identifica con clave incorrecta en %_.5 | error Contraseña incorrecta. }
+writeini -n canales\ $+ %_.5 datos owner $addtok($readini(canales\ $+ %_.5,n,datos,owner),$_.correc(%_.1),230)
+if $istok($hget(chans,%_.5),%_.1,32) == $true { kb.sk $_.serv MODE %_.5 +q %_.1 }
+mesg 3Ok, %_.1 contraseña aceptada | nc.ntc %_.5 %_.1 se identifica como fundador en %_.5 | limpiav
+}
+alias nc.dhf {
+if (!%_.5) { error noparam DEAUTH #canal }
+if (!$readini(canales\ $+ %_.5,n,datos,modos)) { error nochan }
+if $_.lv(%_.1,%_.5) < 500 { error nofun }
+if $readini(canales\ $+ %_.5,n,datos,fun) == $_.correc(%_.1) { error El fundador no puede quitarse este estatus. }
+if ($remtok($readini(canales\ $+ %_.5,n,datos,owner),$_.correc(%_.1),230)) { writeini -n canales\ $+ %_.5 datos owner $ifmatch }
+else { remini canales\ $+ %_.5 datos owner }
+if $istok($hget(chans,%_.5),%_.1,32) == $true { kb.sk $_.serv MODE %_.5 -q %_.1 }
+mesg Ahora eres un usuario corriente en el canal %_.5 . | limpiav
+}
+alias nc.inf {
+if (!%_.5) { error noparam INFO #canal }
+if $left(%_.5,1) != $chr(35) { error nochr }
+if (!$readini(canales\ $+ %_.5,n,datos,modos)) { error nochan }
+mesg **** Información del canal %_.5  ****
+if ($readini(otros.dat,cdeny,%_.5)) { mesg Este canal esta PROHIBIDO. Motivo: $_.uncod($ifmatch) }
+mesg Fundador:12 $readini(canales\ $+ %_.5,n,datos,fun)
+mesg Descripción:12 $_.uncod($readini(canales\ $+ %_.5,n,datos,des))
+mesg Registrado en la fecha:12 $date($readini(canales\ $+ %_.5,n,datos,registro)) a las:12 $time($readini(canales\ $+ %_.5,n,datos,registro))
+mesg Mensaje de Bienvenida:12 $_.uncod($readini(canales\ $+ %_.5,n,datos,welcome))
+mesg URL:12 $_.uncod($readini(canales\ $+ %_.5,n,datos,url))  Email:12 $_.uncod($readini(canales\ $+ %_.5,n,datos,mail))
+mesg Modos:12 $gettok($readini(canales\ $+ %_.5,n,datos,modos),1,32) Candado modos:12 $readini(canales\ $+ %_.5,n,datos,rmodos)
+mesg Retención Topic:12 $readini(canales\ $+ %_.5,n,datos,ctopic) Candado topic:12 $readini(canales\ $+ %_.5,n,datos,rtopic) Topic:12 $_.uncod($readini(canales\ $+ %_.5,n,datos,topic))
+mesg Topic puesto por :12 $_.uncorrec($readini(canales\ $+ %_.5,n,datos,topicpor))
+mesg Secureops:12 $readini(canales\ $+ %_.5,n,datos,secureops)
+mesg Canal Privado:12 $readini(canales\ $+ %_.5,n,datos,secur)
+if ($readini(canales\ $+ %_.5,n,datos,expia)) { mesg Fecha de expiración:12 $date($calc($ifmatch + 864000)) }
+limpiav
+}
+alias nc.lc {
+if (!%_.5) {
+var %r = 1, %s = 0
+while %r <= $findfile(canales\,#*,0) {
+if $readini($findfile(canales\,#*,%r),n,datos,hidelist) == on { inc %s | goto LC }
+mesg 3 $nopath($findfile(canales\,#*,%r)) - $readini($findfile(canales\,#*,%r),n,datos,des)
+:LC
+inc %r
+}
+mesg Total canales registrados:4 $calc(%r - 1) | mesg Total canales ocultos:4 %s | limpiav
+}
+if (%_.5) && (!%_.6) {
+if $left(%_.5,1) != $chr(35) { error nochr }
+if \ isin %_.5 || / isin %_.5 || : isin %_.5 || æ isin %_.5 || ? isin %_.5 || < isin %_.5 || > isin %_.5 || $chr(124) isin %_.5 { error No existen canales registrados que incluyan alguno de los caracteres: \ / : æ ? " < > $chr(124)   }
+var %r = 1, %s = 0, %t = 0
+while %r <= $findfile(canales\,#*,0) {
+if %_.5 isin $nopath($findfile(canales\,#*,%r)) {
+if $readini($findfile(canales\,#*,%numreg),n,datos,hidelist) == on { inc %s | LC1 }
+mesg 3 $nopath($findfile(canales\,#*,%numreg)) - $readini($findfile(canales\,#*,%numreg),n,datos,des)
+:LC1
+inc %t
+}
+inc %r
+}
+mesg Total canales que corresponden con la búsqueda:4 %t de4 $calc($findfile(canales\,#*,0) - %s) | limpiav
+}
+if (%_.6) {
+if $left(%_.5,1) != $chr(35) { error nochr }
+if \ isin %_.5 || / isin %_.5 || : isin %_.5 || æ isin %_.5 || ? isin %_.5 || < isin %_.5 || > isin %_.5 || $chr(124) isin %_.5 { error No existen canales registrados que incluyan alguno de los caracteres: \ / : æ ? " < > $chr(124)   }
+var %r = 1, %s = 0, %t = 0
+while %r <= $findfile(canales\,#*,0) {
+if %_.5 isin $nopath($findfile(canales\,#*,%r)) {
+if $readini($findfile(canales\,#*,%numreg),n,datos,hidelist) == on { inc %s | goto LC2 }
+mesg 3 $nopath($findfile(canales\,#*,%numreg)) - $readini($findfile(canales\,#*,%numreg),n,datos,des)
+:LC2 | inc %t
+if %t == %_.6 { break }
+}
+inc %r
+}
+mesg Total canales que corresponden con la búsqueda:4 %t de4 $calc($findfile(canales\,#*,0) - %s) | limpiav
+} }
+alias nc.nv {
+if (!%_.5) { error noparam INVITE #canal [nick] }
+if (!$readini(canales\ $+ %_.5,n,datos,modos)) { error nochan }
+if $left(%_.5,1) != $chr(35) { error nochr }
+if $_.lv(%_.1,%_.5,invite)) == $false { error Acceso denegado. }
+if $_.user($iif((%_.6),%_.6,%_.1)).nick == $false { error No existe ningún usuario conectado con este nick. }
+if $_.user($iif((&_.6),%_.6,%_.1),%_.5).chan == $true { error $iif((%_.6),El nick ya se encuentra en el canal,Ya te encuentras en el canal) }
+kb.sk %_.3 INVITE $iif((%_.6),%_.6,%_.1) %_.5 | limpiav
+}
+alias nc.sc {
+if (!%_.7) { error noparam SET #canal opción valor }
+if $left(%_.5,1) != $chr(35) { error nochr }
+if (!$readini(canales\ $+ %_.5,n,datos,modos)) { error nochan }
+if $_.lv(%_.1,%_.5,set)) == $false { error Acceso denegado. }
+if %_.6 == desc { kb.tkz 7 | writeini -n canales\ $+ %_.5 datos des $_.cod(%_.tkz) | mesg Descripción para %_.5 cambiada a:12 %_.tkz | limpiav }
+if %_.6 == url { writeini -n canales\ $+ %_.5 datos url $_.cod(%_.7) | mesg URL para %_.5 cambiada a:12 %_.7 | limpiav }
+if %_.6 == email {
+if (!$regex(%_.7,^[a-zA-Z0-9]+([\.a-zA-Z0-9\-\_])*@[a-zA-Z0-9\-]+(\.[a-zA-Z]{2,3})+$)) { error No parece un mail válido. }
+writeini -n canales\ $+ %_.5 datos mail $_.cod(%_.7) | mesg E-mail para %_.5 cambiado a:12 %_.7 | limpiav
+}
+if %_.6 == topic { kb.tkz 7 | writeini -n canales\ $+ %_.5 datos topic $_.cod(%_.tkz) | mesg Topic para %_.5 cambiado a:12 %_.tkz | kb.sk %nc TOPIC %_.5 : $+ %_.tkz | limpiav }
+if %_.6 == welcome { kb.tkz 7 | writeini -n canales\ $+ %_.5 datos welcome $_.cod(%_.tkz) | mesg Welcome para %_.5 cambiado a:12 %_.tkz | limpiav }
+if %_.6 == rtopic { if %_.7 != on && %_.7 != off { error nosin SET OPCION <on/off> } | writeini -n canales\ $+ %_.5 datos ctopic %_.7 | mesg Retencion de Topic para %_.5 cambiado a:12 %_.7 | limpiav }
+if %_.6 == ktopic { if %_.7 != on && %_.7 != off { error nosin SET OPCION <on/off> } | writeini -n canales\ $+ %_.5 datos rtopic %_.7 | mesg Candado de topic para %_.5 cambiado a:12 %_.7 | limpiav }
+if %_.6 == rmodos { if %_.7 != on && %_.7 != off { error nosin SET OPCION <on/off> } | writeini -n canales\ $+ %_.5 datos rmodos %_.7 | mesg Retencion de Modos para %_.5 cambiado a:12 %_.7 | limpiav }
+if %_.6 == hidelist { if %_.7 != on && %_.7 != off { error nosin SET OPCION <on/off> } | writeini -n canales\ $+ %_.5 datos hidelist %_.7 | mesg Canal oculto para %_.5 cambiado a:12 %_.7 | limpiav }
+if %_.6 == secur { if %_.7 != on && %_.7 != off { error nosin SET OPCION <on/off> } | writeini -n canales\ $+ %_.5 datos secur %_.7 | mesg Canal solo registrados para %_.5 cambiado a:12 %_.7 | limpiav }
+if %_.6 == secureops { if %_.7 != on && %_.7 != off { error nosin SET OPCION <on/off> } | writeini -n canales\ $+ %_.5 datos secureops %_.7 | mesg Secureops para %_.5 cambiado a:12 %_.7 | limpiav }
+if %_.6 == debug { if %_.7 != on && %_.7 != off { error nosin SET OPCION <on/off> } | writeini -n canales\ $+ %_.5 datos debug %_.7 | mesg Modo debug para %_.5 cambiado a:12 %_.7 | limpiav }
+if %_.6 == modos {
+var %r = 1, %p, %n, %nochars = ohvbeqar, %f = 1
+if $len(%_.7) < 2 || + !isin %_.7 && - !isin %_.7 { error nosin SET #canal modos +/-modos }
+if $mid(%_.7,%r,1) == + { goto pos } | if $mid(%_.7,%r,1) == - { goto neg }
+:pos
+inc %r | if (!$mid(%_.7,%r,1)) { goto fin } | if $mid(%_.7,%r,1) == - { goto neg }
+%p = %p $+ $mid(%_.7,%r,1) | goto pos
+:neg
+inc %r | if (!$mid(%_.7,%r,1)) { goto fin } | if $mid(%_.7,%r,1) == + { goto pos }
+%n = %n $+ $mid(%_.7,%r,1) | goto neg
+:fin
+kb.tkz 7 | set %_.tkz $replace(%_.tkz,$chr(160),$chr(32))
+%r = 1
+while %r <= $len(%_.7) { if $poscs(%_.7,$mid(%_.7,%r,1),0) > 1 { error El modo $mid(%_.7,%r,1) se encuentra repetido. } | inc %r }
+%r = 1
+while %r <= $len(%_.7) { if $mid(%_.7,%r,1) isincs %nochars { error Los modos %nochars no pueden especificarse. } | inc %r }
+if L isincs %p && l !isincs %p { error El especificar el +L implica especificar el +l. }
+if $poscs(%p,L) < $poscs(%p,l) && L isincs %p && l isincs %p { error Debes especificar primero el modo +l (+lL max #canal) }
+if s isincs %p && p isincs %p { error Los modos +s y +p no pueden en el lado positivo. }
+%r = 1 | while %r <= $len(%p) {
+if $mid(%p,%r,1) === k { inc %f | if $gettok(%_.tkz,%f,32) !isalnum { error La contraseña debe ser una palabra o número } }
+if $mid(%p,%r,1) === l { inc %f | if $gettok(%_.tkz,%f,32) !isnum { error El límite debe ser un número. } }
+if $mid(%p,%r,1) === L { inc %f | if $chr(35) != $left($gettok(%_.tkz,%f,32),1) { error El modo +L necesita un canal precedido por $chr(35) } }
+if $mid(%p,%r,1) === f { inc %f | if : !isin $gettok(%_.tkz,%f,32) { error El flood debe especificarse lines:segs } }
+inc %r
+}
+writeini canales\ $+ %_.5 datos modos $iif((%p),+ $+ %p) $+ $iif((%n),- $+ %n) $gettok(%_.tkz,2-,32)
+mesg Modos para %_.5 cambiados a:12 %_.tkz
+kb.sk %nc MODE %_.5 + $+ %p $+ - $+ $removecs(%n,k) $gettok(%_.tkz,2-,32)
+if k isincs %n { kb.sk %nc MODE %_.5 -k $readini(canales\ $+ %_.5,n,datos,clave) }
+remini canales\ $+ %_.5 datos clave | remini canales\ $+ %_.5 datos limite | remini canales\ $+ %_.5 datos auxiliar | remini canales\ $+ %_.5 datos flood
+%r = 1 | %f = 1
+while %r <= $len(%p) {
+if $mid(%p,%r,1) === k { inc %f | writeini canales\ $+ %_.5 datos clave $gettok(%_.tkz,%f,32) | hadd -m claves %_.5 $gettok(%_.tkz,%f,32) }
+if $mid(%p,%r,1) === l { inc %f | writeini canales\ $+ %_.5 datos limite $gettok(%_.tkz,%f,32) }
+if $mid(%p,%r,1) === L { inc %f | writeini canales\ $+ %_.5 datos auxiliar $gettok(%_.tkz,%f,32) }
+if $mid(%p,%r,1) === f { inc %f | writeini canales\ $+ %_.5 datos flood $gettok(%_.tkz,%f,32) }
+inc %r
+}
+nw.jw $+(+,%p,-,%n) %_.5
+limpiav
+}
+if %_.6 == pass {
+if $_.lv(%_.1,%_.5) == 500 { writeini -n canales\ $+ %_.5 datos pas %_.7 | mesg Clave para %_.5 cambiada a %_.7 | limpiav }
+else { error nofun }
+}
+if %_.6 == fundador {
+if $_.lv(%_.1,%_.5) == 500 {
+if (!$readini(nicks\ $+ $_.correc(%_.7),n,datos,pass)) { error noreg }
+remini canales\ $+ %_.5 usuarios $readini(canales\ $+ %_.5,n,datos,fun) | remini nicks\ $+ $readini(canales\ $+ %_.5,n,datos,fun) regs %_.5 | remini canales\ $+ %_.5 datos expia
+writeini -n canales\ $+ %_.5 datos fun $_.correc(%_.7) | writeini -n canales\ $+ %_.5 usuarios $_.correc(%_.7) 500 | writeini -n nicks\ $+ $_.correc(%_.7) regs %_.5 Founder
+mesg Fundador para %_.5 cambiado a %_.7 | limpiav
+}
+else { error nofun }
+}
+if %_.6 == level {
+if (!%_.8) { error noparam SET #CANAL LEVEL opcion nivel }
+if %_.8 !isnum { error El nivel ha de ser un número. }
+if %_.8 > 500 || %_.8 < -1 { error Los valores válidos para el nivel van del -1 al 500 (ambos incluídos). }
+if $istok(set*acc-edit*acc-list*autohalf*autoop*autovoice*opdeop*banunban*clear*akick*invite*especial,%_.7,42) == $false { error La opción especificada para el SET LEVEL no es válida. }
+writeini -n canales\ $+ %_.5 levels %_.7 %_.8
+mesg El nivel de acceso para la opción $upper(%_.7) ha sido establecido como $upper(%_.8) | limpiav
+}
+error La opción no es válida.
+}
+alias nc.jb {
+var %r
+if (!%_.6) && %_.6 != 0 { error noparam ESPECIAL #canal numero }
+if $left(%_.5,1) != $chr(35) { error nochr }
+if (!$readini(canales\ $+ %_.5,n,datos,modos)) { error nochan }
+if $_.lv(%_.1,%_.5,especial) == $false { error Acceso denegado. }
+if %_.6 !isnum { goto JB }
+if %_.6 > 13 || %_.6 < 0 { error La combinación debe estar entre 0 y 13 }
+%r = 1 | while %r <= $calc($numtok(%kb.bb,32) - 4) { kb.sk $gettok(%kb.bb,%r,32) PART %_.5 | inc %r }
+%r = 1 | while %r <= %_.6 { kb.sk $gettok(%kb.bb,%r,32) JOIN %_.5 | inc %r }
+kb.sk $_.serv MODE %_.5 + $+ $str(o,%_.6) $gettok(%kb.bb,1- $+ %_.6,32)
+writeini -n canales\ $+ %_.5 datos especial %_.6 | mesg Valor de bots especial fijado en:12 %_.6
+limpiav | :Jb | kb.tkz 6 | set %_.tkz $replace(%_.tkz,$chr(160),$chr(32))
+%r = 1 | while %r <= $numtok(%_.tkz,32) { if $istok(%kb.bb,$gettok(%_.tkz,%r,32),32) == $false { error $chr(160) $+ $gettok(%_.tkz,%r,32) no es un bot de servicio. } | inc %r }
+writeini -n canales\ $+ %_.5 datos especial %_.tkz
+%r = 1 | while %r <= $calc($numtok(%kb.bb,32) - 4) { kb.sk $gettok(%kb.bb,%r,32) PART %_.5 | inc %r }
+%r = 1 | while %r <= $numtok(%_.tkz,32) { kb.sk $gettok(%_.tkz,%r,32) JOIN %_.5 | inc %r }
+kb.sk $_.serv MODE %_.5 + $+ $str(o,$numtok(%_.tkz,32)) %_.tkz
+mesg Valor de bots fijado para %_.5 en %_.tkz | limpiav
+}

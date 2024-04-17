@@ -1,0 +1,212 @@
+alias nc.pd {
+if (!%_.6) { error noparam COMANDO #canal usuario }
+if (!$readini(canales\ $+ %_.5,n,datos,modos)) { error nochan }
+if $istok(%kb.bb,%_.6,32) == $true { error No puedes efectuar comandos que recaigan sobre bots. }
+if $_.user(%_.6,%_.5).nick == $false { error nonick } | if $_.user(%_.6,%_.5).chan == $false { error Este nick no se encuentra en %_.5 }
+if $_.lv(%_.1,%_.5,opdeop)) == $false { error Acceso denegado. }
+if %_.4 == op { kb.sk %nc MODE %_.5 +o %_.6 | sc.nv op | kb.tkz 7 | nc.ntc %_.5 %_.1 hace OP a %_.6 en %_.5 %_.tkz | limpiav }
+if %_.4 == deop { kb.sk %nc MODE %_.5 -o %_.6 | kb.tkz 7 | nc.ntc %_.5 %_.1 hace DEOP a %_.6 en %_.5 %_.tkz | limpiav }
+if %_.4 == kick { kb.tkz 7 | kb.sk %nc KICK %_.5 %_.6 :Has sido kickeado de %_.5 $iif(%_.tkz,> %_.tkz) | ev.pu %_.6 %_.5 | nc.ntc %_.5 %_.1 hace KICK ha %_.6 en %_.5 %_.tkz | limpiav }
+if %_.4 == voice { kb.sk %nc MODE %_.5 +v %_.6 | kb.tkz 7 | nc.ntc %_.5 %_.1 hace VOICE a %_.6 en %_.5 %_.tkz | limpiav }
+if %_.4 == devoice { kb.sk %nc MODE %_.5 -v %_.6 | kb.tkz 7 | nc.ntc %_.5 %_.1 hace DEVOICE a %_.6 en %_.5 %_.tkz | limpiav }
+if %_.4 == half { kb.sk %nc MODE %_.5 +h %_.6 | sc.nv half | kb.tkz 7 | nc.ntc %_.5 %_.1 hace HALFOP a %_.6 en %_.5 %_.tkz | limpiav }
+if %_.4 == dehalf { kb.sk %nc MODE %_.5 -h %_.6 | kb.tkz 7 | nc.ntc %_.5 %_.1 hace DEHALFOP a %_.6 en %_.5 %_.tkz | limpiav }
+limpiav
+}
+alias nc.bnb {
+if %_.4 == listban { goto BNb }
+if (!$readini(canales\ $+ %_.5,n,datos,modos)) { error nochan }
+if (!%_.6) { error noparam COMANDO #canal usuario }
+if $_.lv(%_.1,%_.5,banunban)) == $false { error Acceso denegado. }
+if %_.4 == ban {
+if @ isin %_.6 { kb.sk %nc MODE %_.5 +b %_.6 | writeini -n canales\ $+ %_.5 bans %_.6 $iif($_.correc(%_.1) != $readini(source\conf.dll,n,conf,servlo),$_.correc(%_.1),*) | nc.ntc %_.5 %_.1 hace BAN ha %_.6 en %_.5 }
+else {
+if $_.user(%_.6).nick == $false { error nonick }
+kb.sk %nc MODE %_.5 +b $mask($_.mask(%_.6),9)
+writeini -n canales\ $+ %_.5 bans $mask($_.mask(%_.6),9) $_.correc(%_.1)
+nc.ntc %_.5 %_.1 hace BAN a %_.6 en %_.5
+} }
+if %_.4 == unban {
+if (!$readini(canales\ $+ %_.5,bans,%_.6)) { error Este ban no se encuentra. }
+nc.ntc %_.5 %_.1 hace UNBAN a %_.6 en %_.5
+kb.sk %nc MODE %_.5 -b %_.6 | remini canales\ $+ %_.5 bans %_.6 | mesg El ban ha sido retirado de %_.5
+}
+limpiav
+:BNb
+if %_.4 == listban {
+if (!%_.5) { error noparam LISTBAN #canal }
+if (!$ini(canales\ $+ %_.5,bans)) { mesg No hay ningún ban en %_.5 | limpiav }
+flushini canales\ $+ %_.5 | window -hl @HideList | loadbuf -rtbans @HideList canales\ $+ %_.5
+mesg **** Lista de bans para %_.5 **** | var %r = 1
+while %r <= $line(@HideList,0) { mesg Ban:12 $gettok($line(@HideList,%r),1,61) $iif($gettok($line(@HideList,%r),2,61) != *,Puesto por:12 $_.uncorrec($gettok($line(@HideList,%r),2,61))) | inc %r }
+mesg Todos los bans listados en %_.5 .
+}
+limpiav
+}
+alias nc.cl {
+if (!%_.6) { error noparam CLEAR #canal opción }
+if (!$readini(canales\ $+ %_.5,n,datos,modos)) { error nochan }
+if $_.lv(%_.1,%_.5,clear)) == $false { error Acceso denegado. }
+if %_.6 == users { nc.cl.kc }
+if %_.6 == ops || %_.6 == voices || %_.6 == halfs { nc.cl.pd }
+if %_.6 == regs { nc.cl.eg }
+if %_.6 == modos { nc.cl.ed }
+if %_.6 == levels { nc.cl.el }
+if %_.6 == bans { nc.cl.eb }
+error nocom
+}
+alias nc.cl.eb {
+flushini canales\ $+ %_.5 | if (!$ini(canales\ $+ %_.5,bans)) { error No existe ningún ban en %_.5 }
+window -hl @HideList | loadbuf -rtbans @HideList canales\ $+ %_.5 | var %r = 1
+while %r <= $line(@HideList,0) { kb.sk %nc MODE %_.5 -b $gettok($line(@HideList,%r),1,61) | inc %r }
+remini canales\ $+ %_.5 bans | mesg Todos los bans de %_.5 han sido eliminados. | limpiav
+}
+alias nc.cl.kc {
+set %_.r 1 | set %w $numtok($hget(chans,%_.5),32) | set %f $hget(chans,%_.5)
+while %_.r <= %w {
+if ($1) {
+if $1 == chankill {
+kb.sk $_.serv WALLOPS : $_.uncorrec($gettok(%f,%_.r,32)) Killed, motivo: %_.tkz
+kb.sk $_.serv KILL $_.uncorrec($gettok(%f,%_.r,32)) $+(:,%no,:,$chr(160),%_.tkz)
+}
+if $1 == changline {
+kb.gl %no $_.mask($gettok(%f,%_.r,32)).userhost 60 %_.tkz
+kb.sk $_.serv WALLOPS : $_.uncorrec($gettok(%f,%_.r,32)) G-LINED motivo: %_.tkz
+}
+ev.qu $gettok(%f,%_.r,32)
+}
+else {
+kb.sk %nc KICK %_.5 $_.uncorrec($gettok(%f,%_.r,32)) :Comando Clear Users
+ev.pu $gettok(%f,%_.r,32) %_.5
+}
+inc %_.r
+}
+unset %f %w %_.r | limpiav
+}
+alias nc.cl.pd {
+if %_.6 == ops { var %md = -o } | if %_.6 == voices { var %md = -v } | if %_.6 == halfs { var %md = -h }
+var %r = 1
+while ($gettok($hget(chans,%_.5),%r,32)) { kb.sk %nc MODE %_.5 %md $_.uncorrec($ifmatch) | inc %r }
+limpiav
+}
+alias nc.cl.eg {
+if $_.lv(%_.1,%_.5) < 500 { error nofun }
+remini canales\ $+ %_.5 usuarios
+writeini -n canales\ $+ %_.5 usuarios $readini(canales\ $+ %_.5,n,datos,fun) 500
+mesg Todos los registros de %_.5 han sido eliminados. | limpiav
+}
+alias nc.cl.ed { writeini -n canales\ $+ %_.5 datos modos +nt | mesg Modos reseteados a +nt | limpiav }
+alias nc.cl.el {
+writeini -n canales\ $+ %_.5 levels fundador 500
+writeini -n canales\ $+ %_.5 levels set 500
+writeini -n canales\ $+ %_.5 levels acc-edit 450
+writeini -n canales\ $+ %_.5 levels acc-list 1
+writeini -n canales\ $+ %_.5 levels autoop 300
+writeini -n canales\ $+ %_.5 levels autohalf 100
+writeini -n canales\ $+ %_.5 levels autovoice 75
+writeini -n canales\ $+ %_.5 levels opdeop 300
+writeini -n canales\ $+ %_.5 levels clear 450
+writeini -n canales\ $+ %_.5 levels banunban 300
+writeini -n canales\ $+ %_.5 levels akick 450
+writeini -n canales\ $+ %_.5 levels invite 300
+writeini -n canales\ $+ %_.5 levels especial 400
+mesg Levels reseteados. | limpiav
+}
+alias nc.acc {
+if (!%_.6) { error noparam ACCESS #canal ADD/DEL/LIST }
+if %_.6 == add { nc.acc.ad }
+if %_.6 == del { nc.acc.dl }
+if %_.6 == list { nc.acc.lt }
+error nocom
+}
+alias nc.acc.ad {
+if (!%_.8) { error noparam ACCESS #canal add nick nivel }
+if %_.8 !isnum { error El nivel debe ser un número. }
+if (!$readini(canales\ $+ %_.5,n,datos,modos)) { error nochan }
+if (!$readini(nicks\ $+ $_.correc(%_.7),n,datos,pass)) { error noreg }
+if $_.lv(%_.1,%_.5,acc-edit)) == $false { error Acceso denegado. }
+if $_.lv(%_.1,%_.5) <= %_.8 { error Solo puedes añadir/modificar usuarios con nivel inferior al tuyo. }
+if %_.8 == 500 { error No puedes añadir a nadie más con 500. }
+writeini -n canales\ $+ %_.5 usuarios $_.correc(%_.7) %_.8 | writeini -n nicks\ $+ $_.correc(%_.7) regs %_.5 %_.8
+mesg Usuario añadido en %_.5 con nivel %_.8 . | nc.ntc %_.5 %_.1 añade en %_.5 a %_.7 con %_.8 | limpiav
+}
+alias nc.acc.dl {
+if (!%_.7) { error noparam ACCESS #canal del nick }
+if (!$readini(canales\ $+ %_.5,n,datos,modos)) { error nochan }
+if $_.lv(%_.1,%_.5,acc-edit)) == $false { error Acceso denegado. }
+if (!$readini(canales\ $+ %_.5,usuarios,$_.correc(%_.7))) { error No existe ningún usuario registrado con ese nick en el canal. }
+if $_.lv(%_.1,%_.5) <= $readini(canales\ $+ %_.5,usuarios,$_.correc(%_.7)) { error Solo puedes borrar usuarios con nivel inferior al tuyo. }
+remini canales\ $+ %_.5 usuarios $_.correc(%_.7) | remini nicks\ $+ $_.correc(%_.7) regs %_.5
+mesg Usuario %_.7 eliminado de la lista. | nc.ntc %_.5 %_.1 borra de %_.5 a %_.7 | limpiav
+}
+alias nc.acc.lt {
+if (!$readini(canales\ $+ %_.5,n,datos,modos)) { error nochan }
+if $_.lv(%_.1,%_.5,acc-list)) == $false { error Acceso denegado. }
+flushini canales\ $+ %_.5 | if (!$ini(canales\ $+ %_.5,usuarios)) { mesg No hay ningún usuario registrado. | limpiav }
+window -hl @HideList | loadbuf -rtusuarios @HideList canales\ $+ %_.5
+mesg **** Usuarios de %_.5 **** | var %r = 1
+while %r <= $line(@HideList,0) { mesg Nick:12 $_.uncorrec($gettok($line(@HideList,%r),1,61)) $+ $chr(160) Nivel:12 $gettok($line(@HideList,%r),2,61) | inc %r }
+mesg Usuarios en total:4 $calc(%r - 1) | limpiav
+}
+alias nc.ak {
+if (!%_.6) { error noparam AKICK #canal add/del/list }
+if $left(%_.5,1) != $chr(35) { error nochr }
+if $_.lv(%_.1,%_.5,akick)) == $false { error Acceso denegado. }
+if %_.6 == add { nc.ak.ak }
+if %_.6 == del { nc.ak.dk }
+if %_.6 == list { nc.ak.lk }
+}
+alias nc.ak.ak {
+var %m
+if (!%_.7) { error noparam AKICK #canal add usuario motivo }
+if (!$readini(canales\ $+ %_.5,n,datos,modos)) { error nochan }
+if + isin %_.7 && @ isin %_.7 { error Opción incorrecta: no se permite el uso de + y @ en la mask. Use sólo uno. }
+if @ !isin %_.7 && + isin %_.7 { %m = $_.mask($_.correc($remove(%_.7,+))) }
+else { %m = %_.7 | goto NCak }
+if (!$gettok(%m,2,64)) { error nonick }
+if x isincs $hget(modes,$remove(%_.7,+)) { %m = $replace($_.mask($_.correc($remove(%_.7,+))),$_.ip($remove(%_.7,+)),$_.ip($remove(%_.7,+)).virt) }
+:NCak | if (%_.8) { kb.tkz 8 } | else { set %_.tkz No eres bienvenid@. }
+writeini -n canales\ $+ %_.5 akick %m $+(%_.tkz,æ,$_.correc(%_.1))
+mesg Usuario %_.7 añadido a la lista de kick-ban automático de %_.5
+if $istok($hget(chans,%_.5),$remove(%_.7,+),32) == $true && $_.st($remove(%_.7,+)) > 2 { kb.sk %nc KICK %_.5 $remove(%_.7,+) : $+ AKICK: %_.1 > %_.tkz | ev.pu $remove(%_.7,+) %_.5 }
+limpiav
+}
+alias nc.ak.dk {
+var %m
+if (!%_.6) { error noparam AKICK #canal del usuario }
+if $left(%_.5,1) != $chr(35) { error nochr }
+if (!$readini(canales\ $+ %_.5,n,datos,modos)) { error nochan }
+if + isin %_.7 && @ isin %_.7 { error Opción incorrecta: no se permite el uso de + y @ en la mask. }
+if @ !isin %_.7 && + isin %_.7 { %m = $_.mask($_.correc($remove(%_.7,+))) }
+else { %m = %_.7 | goto NCak }
+if x isincs $hget(modes,$remove(%_.7,+)) { %m = $replace($_.mask($_.correc($remove(%_.7,+))),$_.ip($remove(%_.7,+)),$_.ip($remove(%_.7,+)).virt) }
+:NCak
+if (!$readini(canales\ $+ %_.5,akick,%m)) { error No existe ninguna entrada así en la lista. Consulte AKICK #canal list }
+remini canales\ $+ %_.5 akick %m | mesg Usuario %_.7 borrado de la lista de kick-ban automático de %_.5 . | limpiav
+}
+alias nc.ak.lk {
+flushini canales\ $+ %_.5 | if (!$ini(canales\ $+ %_.5,akick)) { mesg No hay ningún usuario en la lista de AKICK. | limpiav }
+window -hl @HideList | loadbuf -rtakick @HideList canales\ $+ %_.5
+mesg **** Lista AKICK de %_.5 **** | var %r = 1
+while %r <= $line(@HideList,0) { mesg Nick:12 $_.uncorrec($gettok($line(@HideList,%r),1,61)) Puesto por:12 $_.uncorrec($gettok($gettok($line(@HideList,%r),2,61),2,230)) Motivo:12 $gettok($gettok($line(@HideList,%r),2,61),1,230) | inc %r }
+mesg Usuarios en total:4 $calc(%r - 1) | limpiav
+}
+alias nc.vwl {
+if (!%_.5) { error noparam LEVELS #canal }
+if $left(%_.5,1) != $chr(35) { error nochr }
+if (!$readini(canales\ $+ %_.5,n,datos,modos)) { error nochan }
+mesg Niveles de acceso para %_.5
+mesg -Editar opciones de canal:12 $readini(canales\ $+ %_.5,levels,set)
+mesg -Editar lista de usuarios:12 $readini(canales\ $+ %_.5,levels,acc-edit)
+mesg -Listar los usuarios registrados:12 $readini(canales\ $+ %_.5,levels,acc-list)
+mesg -Op automático al entrar:12 $readini(canales\ $+ %_.5,levels,autoop)
+mesg -Modo +h al entrar:12 $readini(canales\ $+ %_.5,levels,autohalf)
+mesg -Modo +v automático al entrar:12 $readini(canales\ $+ %_.5,levels,autovoice)
+mesg -Op,Deop,Kick,Half,Dehalf,Voice,Devoice:12 $readini(canales\ $+ %_.5,levels,opdeop)
+mesg -Clear:12 $readini(canales\ $+ %_.5,levels,clear)
+mesg -Ban, Unban:12 $readini(canales\ $+ %_.5,levels,banunban)
+mesg -Editar lista de Autokick:12 $readini(canales\ $+ %_.5,levels,akick)
+mesg -Pedir a %nc que nos invite:12 $readini(canales\ $+ %_.5,levels,invite)
+mesg -Permitir la entrada de los bots al canal:12 $readini(canales\ $+ %_.5,levels,especial)
+limpiav
+}

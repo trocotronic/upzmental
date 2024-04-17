@@ -1,0 +1,180 @@
+ver#1.1
+Ciencia©ToPPo«unidad de fuerza en el sistema internacional*newton
+Ciencia©ToPPo«cual es la principal molecula de la materia viva?*agua
+Ciencia©ToPPo«la fotosintesis es un proceso anabolico o catabolico*anabolico
+Ciencia©ToPPo«nombre de la principal celula del tejido nervioso*neurona
+Musica©StRiXx«Como se llama el primer disco de Mike Oldfield*Tubular Bells
+Deporte©StRiXx«Nombre de la cantera donde creció Luis Enrique*La Braña
+Musica©StRiXx«Gran éxito dedicado a Japón por los Deep Purple*Made In Japan
+Deporte©StRiXx«En que equipo juega J.A.Pizzi?*Rosario Central
+Deportes©triki«¿cuándo nació Raúl González Blanco?*27 de junio de 1977
+Deportes©triki«¿cuándo nació Julen  Guerrero?*7 de enero de 1974
+Deportes©triki«¿cuándo nació Andoni Zubizarreta?*13 de noviembre de 1961
+Deportes©triki«¿cuándo nació Ivan de la Peña?*6 de mayo de 1976
+Deportes©triki«¿cuándo nació Pep Guardiola?*18 de enero de 1971
+Deportes©triki«¿cuándo nació Alfonso?*26 de septiembre de 1972
+Deportes©triki«¿cuándo nació Kiko?*26 de abril de 1972
+Deportes©triki«¿cuándo nació Butragueño?*22 de julio de  1963
+Deportes©triki«¿cuándo nació Julio Salinas?*1 de septiembre de 1962
+Deportes©triki«¿cuándo nació Bakero?*11 de febrero de 1963
+Deportes©triki«¿cuándo nació Caminero?*8 de noviembre de 1966
+Deportes©triki«¿cuándo nació Hierro?*23 de marzo  de 1968
+Deportes©triki«¿cuándo nació Nadal?*28 de julio  de 1966
+Deportes©triki«¿cuándo nació Michel?*23 de marzo de 1963
+Deportes©triki«¿cuándo nació Luis Enrique?*8 de mayo de 1970
+Deportes©triki«¿con cuantos años debuto Raúl en primera division?*17
+Deportes©triki«¿con cuantos años debuto  Zubizarreta en primera division?*19
+Deportes©triki«¿con cuantos años debuto Julen Guerrero en primera division?*18 
+Deportes©triki«¿con cuantos años debuto Alfonso en primera division?*17 
+Deportes©triki«¿con cuantos años debuto Alkorta en primera division?*19 
+Deportes©triki«¿quién es conocido como “la perla de Portugalete”?*Julen Guerrero 
+Deportes©triki«¿quién tiene el récord de minutos jugados en primera  division?*Andoni Zubizarreta 
+Deportes©triki«¿en qué equipos ha jugado Zubizarreta?*Alaves Athletic de Bilbao FC Barcelona Valencia 
+Deportes©triki«¿en qué fases mundiales ha jugado Zubizarreta?*Mexico86 Italia90 EEUU94 
+Deportes©triki«¿quién entreno al FC Barcelona durante la primera temporada de Zubizarreta?*Terry Venables
+Deportes©triki«¿cuál es la única cosa que no ha conseguido superar Raul?*La selectividad 
+Deportes©triki«¿cómo se conoce el estadio  de  San Mames?*La catedral 
+Deportes©triki«¿a que quinta perteneció Ivan de la Peña?*a la quinta del mini 
+Deportes©triki«¿cono se le conoce a Ivan de la Peña?*el pequeño Buda 
+Deportes©triki«¿quiénes forman la “quinta del mini”?*Celades Roger Toni Velamazan Quique Alvarez Ivan de la  Peña 
+Deportes©triki«¿cómo se llama la residencia del FC Barcelona?*La Masía 
+Deportes©triki«¿a qué  equipo se le denomino “dream team”?*FC Barcelona
+Deportes©triki«¿quién entreno al “dream team”?*Johan Cruyff
+Deportes©triki«¿cómo se llama el hijo de Johan Cruyff?*Jordi
+Deportes©triki«¿quién ha ganado  el trofeo Bravo?*Guardiola
+Deportes©triki«¿a quien se le otorga el trofeo “Bravo”?*al mejor jugador europeo menor de 21 años 
+Deportes©triki«¿hasta cuando no consiguió marcar Guardiola?*Hasta su quinta temporada
+Deportes©triki«¿qué baja cubrió Guardiola en el FC Barcelona?*la de Luis Milla 
+Deportes©triki«¿dónde jugaba Luis Milla antes de fichar por el Real Madrid?*FC Barcelona 
+Deportes©triki«¿quién fue el  primer entrenador que le dio continuidad a Alfonso?*Llorenç Serra Ferrer 
+Deportes©triki«¿en qué equipo debuto Kiko?*Cadiz
+Deportes©triki«¿en qué equipo mexicano jugo Butragueño?*Atletico Celaya 
+Deportes©triki«¿en qué equipo mexicano jugo Bakero?*Veracruz
+Deportes©triki«¿en qué equipo mexicano jugo Michel?*Atletico Celaya 
+Deportes©triki«¿en qué equipo japonés jugo Julio Salinas?*Yokohama Marinos
+Deportes©triki«¿qué jugador se fue del Oviedo a jugar en la liga mexicana?*Carlos 
+Deportes©triki«¿en qué estadio debuto Raul?*La Romareda 
+Deportes©triki«¿quién le dio la oportunidad de debutar en primera división a Raul?*Jorge Valdano 
+Deportes©triki«¿dónde celebran los seguidores del Atl. de Madrid los titulos?*Plaza Neptuno
+Deportes©triki«¿quiénes formaron la “quinta del buitre”?*Emilio Butragueño Michel Sanchis Pardeza Martin Vazquez
+Deportes©triki«¿qué le dijo Irureta a Lendoiro que necesitaba el Deportivo?*una españolizacion de la plantilla
+Deportes©triki«¿Cuántos goles marco Butragueño en la temporada 90-91?*diecinueve goles 
+Deportes©triki«¿quién era conocido como “el Buitre”?*Emilio Butragueño 
+Deportes©triki«¿en qué equipos ha jugado Julio Salinas en la liga española?*Athletic Atletico de Madrid FC Barcelona  Deportivo de la Coruña Sporting de Gijon Deportivo Alaves   
+Deportes©triki«¿cómo se llama el hermano de Julio Salinas?*Patxi Salinas 
+Deportes©triki«¿cómo se llama el hermano de Julen Guerrrero?*Jose  Felix Guerrero 
+Deportes©triki«¿cuántas y con quien gano Julio Salinas ligas en el Athletic de Bilbao?*dos ligas con Clemente
+Deportes©triki«¿cuántos goles tenia que marcar Julio Salinas para renovar automáticamente con el Sporting?*quince 
+Deportes©triki«¿quién fue el “gran capitán” del FC Barcelona?*Jose Mari Bakero 
+Deportes©triki«¿en qué posiciones jugaba Bakero?*extremo ariete centrocampista 
+Deportes©triki«¿con cuantos años debuto Bakero en primera  division?*17 
+Deportes©triki«¿a quien entrego Bakero su ultima camiseta?*Jordi Pujol 
+Deportes©triki«¿a quien marco Caminero sus dos primeros goles con la selección?*Bolivia 
+Deportes©triki«¿en qué cantera se formo Caminero?*Real Madrid 
+Deportes©triki«¿en qué cantera se formo Raul?*Atletico de Madrid 
+Deportes©triki«¿quién dirigía el Real Madrid cuando se ficho a Hierro?*Ramon Mendoza 
+Deportes©triki«¿qué día debuto Fernando  Hierro con el Real Madrid?*3 de  septiembre de 1989 
+Deportes©triki«¿quién hizo debutar como internacional a Hierro?*Luis Suarez 
+Deportes©triki«¿quiénes han sido seleccionadores nacionales después de Luis Suarez?*Vicente Miera Clemente Camacho 
+Deportes©triki«¿quién era el complemento ideal de Ronald Koeman?*Nadal 
+Deportes©triki«¿quién se opuso al traspaso de Nadal al Manchester?*Bobby Robson 
+Deportes©triki«¿por qué no jugó Nadal los dos primeros partidos del Mundial94?*por  sancion 
+Deportes©triki«¿en qué equipos ha jugado Luis Enrique?*Sporting de Gijon Real Madrid FC Barcelona 
+Deportes©triki«¿con quien jugo en el Sporting y juega ahora en el FC Barcelona Luis Enrique?*Abelardo 
+Deportes©triki«¿quién le  rompió la nariz a Luis Enrique en el mundial94?*Mauro Tassotti 
+Deportes©triki«¿quién se lamento públicamente del fichaje de Luis Enrique por el FC Barcelona?*Fabio Capello  
+Deportes©triki«¿cuál es el palmares de Michel?*seis ligas dos copas del rey dos copas de la UEFA tres  supercopas de España 
+Deportes©triki«¿cuál es el nombre real de Michel?*Jose Miguel Gonzalez Martin del Campo
+Deportes©triki«¿a quien toco los genitales Michel durante un partido de liga?*a Valderrama
+Deportes©triki«¿a quien marco su ultimo gol  Michel?*al portero del Merida Leal
+Geografia©Jordi-«en que municipio se encuentra la playa de la desembocadura del Tordera*Malgrat de Mar
+Ciencia©Jordi-«que extraña ciencia introdujo en España Mariano Cubí, que consistia en relacionar el tamaño del cráneo con la capacidad intelectual de las personas*frenologia
+Literatura©Jordi-«que gran poeta español contrajo matrimonio con Zenobia Camprubi, nacinda en Malgrat y gran traductora de Rabridanah Tagore*Juan Ramon Jimenez
+Geografia-Ciudades©Jordi-«paso por el puente de piedra, paseo por la rambla y subo los 90 escalones que llevan a la catedral, estoy en...*Girona
+Ciencia©Jordi-«cumulonimbus es el nombre cientifico de...*una nube de tormenta
+Geografia©Jordi-«de donde eran los dos catalanes que descubrieron el salto angel, la cascada mas alta del mundo*Barcelona y Malgrat
+Lógica©][PaLaN][«Que pesa mas un kilo de hierro o uno de paja?*igual
+Lógica©][PaLaN][«Si en una granja hay 4 perros y 10 gallinas.. Cuantas patas hay en la granja?*36
+Lógica©][PaLaN][«Hay un accidente de coche y muere el padre y al hijo lo llevan al hospital. Al llegar al hospital dice el cirujano..... "MI HIJO". El cirujano es.... *su madre
+Literatura©][PaLaN][«Autor de la serie de libros Pesadillas*R. L. Stine
+Matematicas©][PaLaN][«Cuanto da..... 3,2 x 5=....*16
+Matematicas©][PaLaN][«Valor del numero pi (dos decimales)*3,14
+Refranes©][PaLaN][«A quien se coje antes... a un cojo o a un mentiroso?*mentiroso
+Refranes©][PaLaN][«No dejes para mañana lo que puedas hacer...*hoy
+Miscelanea©][PaLaN][«Quien me pone la pierna encima para que no levante la cabeza?!.Autor....(Gran Hermano)*Jorge
+Geografia©][PaLaN][«Situacion del unico monumento dedicado a los españoles por la guerra ante los estadounidenses en Cavite (Cuba)*Cartagena
+Deportes©][PaLaN][«Cuantos millones costo Anelka al Real Madrid??*5800
+Deportes©][PaLaN][«Numero que lleva siempre el portero titular*1
+Deportes©][PaLaN][«numero que lleva normalmente el delantero centro de un equipo*9
+Deportes©][PaLaN][«Nacionalidad de Engonga*Española
+Deportes©][PaLaN][«Cuantas copas de europa tiene el Real Madrid?*8
+Deportes©][PaLaN][«Jugador que estuvo en el Barcelona y ahora milita en el Inter de Milan*Ronaldo
+Deportes©][PaLaN][«Cual es la nacionalidad (no española) que mas hay en la alineacion del Barcelona??*holandesa
+Deportes©][PaLaN][«Cuantos cambios se hacen en un partido oficial de futbol?*3
+Deportes©][PaLaN][«Entrenador que llevo al Real Madrid a ganar la 8ª Copa de Europa*Vicente del Bosque
+Deportes©][PaLaN][«nacionalidad de Roberto Carlos*brasileña
+Deportes©][PaLaN][«nacionalidad de Pires*Francesa
+Deportes©][PaLaN][«nacionalidad de Rivaldo*brasileña
+Deportes©][PaLaN][«nacionalidad de Riquelme*argentina
+Deportes©][PaLaN][«nacionalidad de Kluivert*holandesa
+Deportes©][PaLaN][«nacionalidad de Seedorf*holandesa
+Deportes©][PaLaN][«nacionalidad de Marcelo Salas*chilena
+Deportes©][PaLaN][«nacionalidad de Vieira*Francesa
+Música©karndolla«¿En qué grupo militaba Dave Mustaine antes de formar Megadeth?*Metallica
+Música©karndolla«¿Quién cantaba "Diary of a mad man?*Ozzy Osbourne
+Biología©karndolla«¿Cuál es el alimento preferido de un abejaruco?*Abejas reinas
+Cine©karndolla«¿Qué religión practica Mel Gibson?*Testigo de Jehová
+Cine©karndolla«¿Quién dirigió "El bueno, el feo y el malo?*Sergio Leone
+Cine©karndolla«¿Quién compuso la banda sonora de "La misión"?*Ennio Morricone
+Astronomía©yos«Cual es la estrella más brillante de la constelación El Boyero*Arturo
+Astronomía©yos«Que otro nombre recibe M1*El Cangrejo
+Astronomía©yos«Que tipo de objeto es en realidad la llamada Nebulosa del Cangrejo*Remanente de supernova
+Astronomía©yos«Por que otro nombre popular se conoce a las Pléyades*Las siete hermanas
+Astronomía©yos«Qué tipo de objeto astronómico es M57*Nebulosa planetaria
+Astronomía©yos«Como se llama la estrella que señalaba el Norte en la época de las pirámides*Thuban
+Astronomía©yos«Cual es el nombre original árabe de la estrella llamada La melena del León en la constelación de Leo*Algieba
+Astronomía©yos«Cual es el Corazon del Escorpion*Antares
+Astronomía©yos«Cual es el objeto astronomico mas relevante de la constelación de Hércules*M13
+Astronomía©yos«En qué constelación se encuentra la famosa nebulosa de La cabeza de caballo*Orion
+Astronomía©yos«Cual es la estrella más brillante del firmamento del hemisferio Norte*Sirio
+Astronomía©yos«Como se llama la estrella doble que forma la cabeza del Cisne*Albireo
+Astronomía©yos«Como se llaman, de mayor a menor brillo, las tres estrellas que forman el asterismo conocido como El Triángulo de Verano*Vega Altair Deneb
+Astronomía©yos«Como se llaman las dos superestrellas de Géminis*Castor Polux
+Astronomía©yos«Como se llamaba el amante de Andromeda que la liberó de sus cadenas*Perseo
+Astronomía©yos«Como se llama, en latin,  la estrella más brillante de la Constelación de Leo*Regulus
+Astronomía©yos«Que tipo de objetos astronómicos son los más abundantes en la Constelación de Auriga*Cumulos abiertos
+Astronomía©yos«Con que cúmulo abierto del catalogo Messier relacionarias una bandada de patos*M11
+Astronomía©yos«Cual es es satélite de Jupiter de orbita mas cercana al planeta*Io
+Astronomía©yos«Entre que dos planetas del sistema solar se encuentra el Cinturón de Asteroides*Marte y Jupiter
+Astronomía©yos«Como se llama la montaña mas alta de la Luna*Mont Blanc
+Astronomía©yos«Bajo que denominación comun se conoce a Io, Europa, Ganimedes y Calisto*Satelites Galileanos
+Astronomía©yos«De que color es la estrella de Orion Betelgeuse*Rojo
+Astronomía©yos«Cuantos años de vida le quedan aproximadamente a nuestro sol, en letras*seis mil millones
+Astronomía©yos«Como se conoce popularmente a la Constelación Orion*El cazador
+Astronomía©yos«Los selenitas son los habitantes de...*La luna
+Astronomía©yos«Los dos satelites de Marte son...*Fobos y Deimos
+Astronomía©yos«Como se llama la Lluvia de Estrellas que tiene lugar a mediados de Noviembre*Las leonidas
+Astronomía©yos«Que lluvia de estrellas tiene lugar la noche de San Lorenzo*Las perseidas
+TV©psaj«nombre de los tres actores protagonistas de Dawson's Creek*Joshua Jackson, Kerr Smith y James Van der Beek
+TV©psaj«como se llama el gato de Sabrina*Salem
+Idiomas©psaj«català-castellano murrió*bozal
+Literatura©psaj«quien escribió Cruel y extraño*Patricia D. Cornwell
+Medicina©psaj«como se denomina la deficiencia del factor X de coagulación*Enfermedad de Stuart Prower
+Música©psaj«De quien es la canción Good enough*Sarah McLachlan
+Medicina©psaj«como se denomina la deficiencia del factor VIII de coagulación*Hemofilia
+Medicina©psaj«Si en humanos el macho es XY, como es en aves*ZZ
+Medicina©psaj«nombre de la proteina plasmática que liga y transporta la Tiroxina y el Retinol*Transtiretina
+Música©psaj«Dequein es el CD Fumbling towards ecstasy*Sarah McLachlan
+Medicina©psaj«Como se denomina el material proteináceo e inerte anormal, que se deposita extracelularmente en algunas zonas del organismo*Amiloide
+Medicina©psaj«Que es la Malacia*Necrosis del sistema nervioso central
+Idiomas©psaj«español-ingles: Franela*Flannel
+Idiomas©psaj«inglés-español: Embowel*Destripar
+Literatura©psaj«En que año nació Lucía Etxebarria*1966
+Música©psaj«Dequien es la canción Say goodnight*Beth Nielsen Chapman
+Literatura©psaj«Quien escribió Las dos después de medianoche*Stephen King
+Música©psaj«De quien es la canción I don't want to wait*Paula Cole
+Cine©psaj«quien hacia el papel de Blaine Tuttle en crueles intenciones*Joshua Jackson
+TV©psaj«nombre de las tres actrices protagonistas de Dawson's Creek*Katie Holmes, Meredith Monroe y Michelle Williams
+Medicina©psaj«como se denomina la salida de sangre por la nariz*Epistaxis
+TV©psaj«nombre de la actriz que protagoniza a Buffy cazavampiros*Sarah Michelle Gellar
+Cine©psaj«nombre del personaje que interpretaba Eduardo Noriega en Tesis*Bosco

@@ -1,0 +1,69 @@
+alias pr.nv {
+if %_.2 != PRIVMSG { limpiav }
+if %_.4 == help || %_.4 == ayuda { kb.scp | nv.hlp }
+if %_.4 == addvhost { kb.scp | nv.ah }
+if %_.4 == $+($chr(99),$chr(114),$chr(101),$chr(100),$chr(105),$chr(116),$chr(111),$chr(115)) { kb.cdt }
+if %_.4 == delvhost { kb.scp | nv.dh }
+if %_.4 == vhost { kb.scp | nv.lh }
+if %_.4 == creditos { creditos }
+error nocom
+}
+alias nv.hlp {
+mesg 6UpZMenTaL BoTs Servicio de IPs Virtuales 6 %nv
+raya
+mesg Este servicio está destinado a la asignación de IPs virtuales a los usuarios VIP del servidor
+raya
+mesg 6ADDVHOST Añade un Host Virtual a un nick predeterminado.
+mesg 6DELVHOST Borra un Host Virtual al nick elegido.
+mesg 6VHOST Mira un VHOST al nick elegido.
+raya
+mesg Sintaxis:
+mesg 6ADDVHOST nick host.virtual
+mesg 6DELVHOST nickaborrar
+mesg 6VHOST nick
+limpiav
+}
+alias nv.ah {
+if (!%_.6) { error noparam ADDVHOST nick vhost }
+if (!$readini(nicks\ $+ $_.correc(%_.5),n,datos,pass)) { error noreg }
+writeini -n nicks\ $+ $_.correc(%_.5) datos vhost %_.6
+mesg Dirección virtual para %_.5 es %_.6 | nv.mv %_.5 %_.6 | hadd -m virt %_.5 %_.6 | limpiav
+}
+alias nv.dh {
+if (!%_.5) { error noparam DELVHOST nick }
+if (!$readini(nicks\ $+ $_.correc(%_.5),n,datos,vhost)) { error Ese nick no tiene un Vhost. }
+remini nicks\ $+ $_.correc(%_.5) datos vhost | mesg Dirección de %_.5 eliminada
+if x isincs $hget(modes,%_.5) { nv.mv %_.5 $_.ip(%_.5).virtual } | limpiav
+}
+alias nv.lh {
+if (!%_.5) { error noparam VHOST nick }
+if (!$readini(nicks\ $+ $_.correc(%_.5),n,datos,vhost)) { error El nick no dispone de Vhost. }
+mesg Vhost de %_.5 es $readini(nicks\ $+ $_.correc(%_.5),n,datos,vhost)) | limpiav
+}
+alias _.ip {
+if (!$readini(source\conf.dll,n,conf,uptime)) { writeini -n source\conf.dll conf uptime $ctime }
+if (!$readini(source\conf.dll,n,conf,algoritmo)) { writeini -n source\conf.dll conf algoritmo $rand(0,65535) }
+if (!$readini(source\conf.dll,n,conf,logoritmo)) { writeini -n source\conf.dll conf logoritmo $rand(0,65535) }
+if $ctime >= $calc($readini(source\conf.dll,n,conf,uptime) + 604800) { writeini -n source\conf.dll conf uptime $ctime | writeini -n source\conf.dll conf algoritmo $rand(0,65535) | writeini -n source\conf.dll conf logoritmo $rand(0,65535) }
+dll source\sys\crypt.dll setkey $readini(source\conf.dll,n,conf,algoritmo) | dll source\sys\crypt.dll setskip $readini(source\conf.dll,n,conf,logoritmo)
+if $prop == virt && x isincs $hget(modes,$1) {
+if (!$hget(virt,$1)) && ($gettok($hget(users,$1),2,32)) { var %defhost = $+($left($_.correct($gettok($dll(source\sys\crypt.dll,krypt,$gettok($hget(users,$1),2,32)),2,32)),12),$chr(46),$readini(source\conf.dll,n,conf,hidden)) }
+else { var %defhost = $hget(virt,$1) }
+if $_.st($1) == 3 && ($readini(nicks\ $+ $_.correc($1),n,datos,vhost)) { return $readini(nicks\ $+ $_.correc($1),n,datos,vhost) }
+else { return %defhost }
+}
+if $prop == virtual { return $+($left($_.correct($gettok($dll(source\sys\crypt.dll,krypt,$gettok($hget(users,$1),2,32)),2,32)),12),$chr(46),$readini(source\conf.dll,n,conf,hidden)) }
+else { return $gettok($hget(users,$1),2,32) }
+}
+;alias en fase de pruebas
+alias descifra {
+if (!%_.5) { error Parámetros insuficientes. Sintaxis: DESCIFRA ip/+nick }
+if $readini(source\conf.dll,n,conf,hidden) !isin %_.5 && $chr(43) !isin %_.5 { error No parece que la ip esté encriptada. }
+var %bus = $gettok(%_.5,1,46)
+if $left(%_.5,1) == $chr(43) { var %bus = $readini(ips.dat,n,virtual,$gettok($readini(users.dat,n,usuarios,$remove(%_.5,$chr(43))),2,32)) }
+dll source\sys\crypt.dll setkey $readini(source\conf.dll,n,conf,algoritmo)
+dll source\sys\crypt.dll setskip $readini(source\conf.dll,n,conf,logoritmo)
+if $gettok($dll(source\sys\crypt.dll,dekrypt,%bus),1,32) == OK: { mesg La IP es $gettok($dll(source\sys\crypt.dll,dekrypt,%bus),2,32) }
+else { error No se ha podido descifrar la ip. }
+limpiav
+}

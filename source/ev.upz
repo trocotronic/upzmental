@@ -1,0 +1,324 @@
+alias ev.qu {
+if ($hget(users,$1)) {
+if (!$hget(chans,$1)) { goto EUs }
+var %r = 1
+while ($gettok($hget(chans,$1),%r,32)) {
+if $numtok($hget(chans,$gettok($hget(chans,$1),%r,32)),32) == 1 { hdel chans $gettok($hget(chans,$1),%r,32) }
+else { hadd -m chans $gettok($hget(chans,$1),%r,32) $remtok($hget(chans,$gettok($hget(chans,$1),%r,32)),$1,32) }
+if ($readini(canales\ $+ $gettok($hget(chans,$1),%r,32),n,datos,modos)) {
+if ($remtok($readini(canales\ $+ $gettok($hget(chans,$1),%r,32),n,datos,owner),$_.correc($1),230)) { writeini -n canales\ $+ $gettok($hget(chans,$1),%r,32) datos owner $ifmatch }
+else { remini canales\ $+ $gettok($hget(chans,$1),%r,32) datos owner }
+}
+if $numtok($hget(chans,$gettok($hget(chans,$1),%r,32)),32) < $readini(source\conf.dll,n,conf,umax) {
+hdel cspam $gettok($hget(chans,$1),%r,32) | kb.sk %nh PART $gettok($hget(chans,$1),%r,32)
+}
+inc %r
+}
+hdel chans $1
+:EUs
+remini ip.dat id $_.correc($1) | remini ip.dat rg $_.correc($1)
+if ($hget(ip,$_.ip($1))) {
+if $hget(ip,$_.ip($1)) == 1 { hdel ip $_.ip($1) | hdel virt $1 }
+else { hadd -m ip $_.ip($1) $calc($hget(ip,$_.ip($1)) - 1) }
+}
+if ($hget(cops,$1)) { hdel cops $1 }
+remini otros.dat $_.correc($1) | hdel users $1 | hdel modes $1 | hdel virt $1
+}
+if ($readini(nicks\ $+ $_.correc($1),n,datos,pass)) { writeini -n nicks\ $+ $_.correc($1) datos status 1 | writeini -n nicks\ $+ $_.correc($1) datos out $ctime | if ($2) { writeini -n nicks\ $+ $_.correc($1) datos quit $_.cod($2-) } }
+sockclose proxç $+ $1 $+ * | unset %prox. $+ $1 $+ *
+}
+alias ev.pu {
+hadd -m chans $1 $remtok($hget(chans,$1),$2,32)
+hadd -m chans $2 $remtok($hget(chans,$2),$1,32)
+if (!$hget(chans,$2)) { hdel chans $2 }
+if $numtok($hget(chans,$2),32) < $readini(source\conf.dll,n,conf,umax) { hdel cspam $2 | kb.sk %nh PART $2 }
+if (!$readini(canales\ $+ $2,datos,pas)) && (!$hget(chans,$2)) { nw.jw -mipsk $2 }
+}
+alias kb.ptmd {
+var %nochars = psmntirRcOAQKVHGCuzN, %pchars = okLlfvqhb, %nchars = okLqhfb, %r = 0, %n = $gettok(%kb.dts,5-,32), %f = 0, %pos, %neg, %mopos, %moneg, %m = 1, %g = 1, %c, %b
+:modes
+if %r == $len(%_.4) { goto sigue }
+inc %r | if $mid(%_.4,%r,1) == + { goto pos } | if $mid(%_.4,%r,1) == - { goto neg }
+:pos
+inc %r | if (!$mid(%_.4,%r,1)) { goto fin } | if $mid(%_.4,%r,1) == - { goto neg }
+%pos = %pos $+ $mid(%_.4,%r,1) | if $mid(%_.4,%r,1) isincs %pchars { inc %f | %mopos = %mopos $gettok(%n,%f,32) }
+goto pos
+:neg
+inc %r | if (!$mid(%_.4,%r,1)) { goto fin } | if $mid(%_.4,%r,1) == + { goto pos }
+%neg = %neg $+ $mid(%_.4,%r,1) | if $mid(%_.4,%r,1) isincs %nchars { inc %f | %moneg = %moneg $gettok(%n,%f,32) }
+goto neg
+:fin
+while %m <= $len(%nochars) { if $mid(%nochars,%m,1) isincs %pos { %pos = $removecs(%pos,$mid(%nochars,%m,1)) } | if $mid(%nochars,%m,1) isincs %neg { %neg = $removecs(%neg,$mid(%nochars,%m,1)) } | inc %m }
+%g = 1
+while %g <= $len(%pos) {
+if $mid(%pos,%g,1) === o { var %opos = %opos $gettok(%mopos,%g,32) }
+if $mid(%pos,%g,1) === h { var %hpos = %hpos $gettok(%mopos,%g,32) }
+if $mid(%pos,%g,1) === b { var %bpos = %bpos $gettok(%mopos,%g,32) }
+if $mid(%pos,%g,1) === k { var %kpos = %kpos $gettok(%mopos,%g,32) }
+if $mid(%pos,%g,1) === q { var %qpos = %qpos $gettok(%mopos,%g,32) }
+inc %g
+}
+%g = 1
+while %g <= $len(%neg) {
+if $mid(%neg,%g,1) === o { var %oneg = %oneg $gettok(%moneg,%g,32) }
+if $mid(%neg,%g,1) === h { var %hneg = %hneg $gettok(%moneg,%g,32) }
+if $mid(%neg,%g,1) === b { var %bneg = %bneg $gettok(%moneg,%g,32) }
+if $mid(%neg,%g,1) === k { var %kneg = %kneg $gettok(%moneg,%g,32) }
+inc %g
+}
+if k isincs %neg && (!%k) { hdel claves %_.3 }
+if (%kpos) && (!%k) && ((!$readini(canales\ $+ %_.3,n,datos,clave)) || $readini(canales\ $+ %_.3,n,datos,rmodos) == off) { hadd -m claves %_.3 %kpos }
+if (%opos) {
+if $readini(canales\ $+ %_.3,n,datos,secureops) == on {
+%r = 1
+while %r <= $numtok(%opos,32) {
+if $_.lv($gettok(%opos,%r,32),%_.3,autoop) == $false && $gettok(%opos,%r,32) !isnum { kb.sk %nc MODE %_.3 -o $gettok(%opos,%r,32) }
+inc %r
+} } }
+if (%hpos) {
+if $readini(canales\ $+ %_.3,n,datos,secureops) == on {
+%r = 1
+while %r <= $numtok(%hpos,32) {
+if $_.lv($gettok(%hpos,%r,32),%_.3,autohalf) == $false && $gettok(%hpos,%r,32) !isnum { kb.sk %nc MODE %_.3 -h $gettok(%hpos,%r,32) }
+inc %r
+} } }
+if (%oneg) {
+%r = 1
+while %r <= $numtok(%oneg,32) { if $istok(%kb.bb,$gettok(%oneg,%r,32),32) == $true { kb.sk $_.serv MODE %_.3 +o $gettok(%oneg,%r,32) | %c = 1 } | inc %r }
+if (%c) { kb.sk %nc MODE %_.3 -o %_.1 }
+}
+if (%bpos) {
+%r = 1
+while %r <= $numtok(%bpos,32) {
+%b = 1 | unset %c
+while %b <= $numtok(%kb.bb,32) {
+if ($wildtok($+($gettok(%kb.bb,%b,32),$chr(33),$gettok(%kb.bb,%b,32),@,$readini(source\conf.dll,n,conf,h $+ $gettok(%kb.nb,$findtok(%kb.bb,$gettok(%kb.bb,%b,32),32),32))),$gettok(%bpos,%r,32),1,32)) {
+kb.sk $_.serv MODE %_.3 -b $gettok(%bpos,%r,32) | %c = 1
+if $chr(46) !isin %_.1 { kb.sk $_.serv KILL %_.1 :No está autorizado a banear a los bots. | ev.qu %_.1 }
+}
+inc %b
+}
+if (!%c) && ($readini(canales\ $+ %_.3,n,datos,modos)) { writeini -n canales\ $+ %_.3 bans $gettok(%bpos,%r,32) $iif($_.correc(%_.1) != $readini(source\conf.dll,n,conf,servlo),$_.correc(%_.1),*) }
+inc %r
+} }
+if (%bneg) { %r = 1 | while %r <= $numtok(%bneg,32) { remini canales\ $+ %_.3 bans $gettok(%bneg,%r,32) | inc %r } }
+if (%qpos) {
+if $chr(46) isin %_.1 {
+%r = 1
+while %r <= $numtok(%qpos,32) {
+if $_.lv($gettok(%qpos,%r,32),%_.3) < 500 && $gettok(%qpos,%r,32) !isnum { kb.sk %nc MODE %_.3 -q $gettok(%qpos,%r,32) }
+inc %r
+} } }
+unset %k | limpiav
+}
+alias kb.ptkc {
+var %r = 1
+while %r <= $numtok(%kb.bb,32) { if %_.4 == $gettok(%kb.bb,%r,32) { kb.sk %_.4 JOIN %_.3 | kb.sk %_.4 MODE %_.3 -o %_.1 | kb.sk $_.serv MODE %_.3 o %_.4 } | inc %r }
+}
+alias kb.ptc {
+kb.tkz 6
+if $readini(canales\ $+ %_.3,n,datos,rtopic) == on {
+if $readini(canales\ $+ %_.3,n,datos,topic) == $remove(%_.tkz,:) { limpiav }
+kb.sk %nc TOPIC %_.3 : $+ $_.uncod($readini(canales\ $+ %_.3,n,datos,topic))
+limpiav
+}
+if $readini(canales\ $+ %_.3,n,datos,ctopic) == on {
+writeini -n canales\ $+ %_.3 datos topic $_.cod($remove(%_.tkz,:)) | writeini -n canales\ $+ %_.3 datos topicpor $_.correc(%_.1)
+}
+limpiav
+}
+alias kb.ptm {
+var %r = 0, %w = %_.4, %pos, %neg, %m, %ineg, %ipos, %p
+:modes
+if %r == $len(%w) { goto sigue }
+inc %r
+if $mid(%w,%r,1) == + { goto pos } | if $mid(%w,%r,1) == - { goto neg }
+:pos
+inc %r
+if (!$mid(%w,%r,1)) { goto fin } | if $mid(%w,%r,1) == - { goto neg }
+%pos = %pos $+ $mid(%w,%r,1)
+goto pos
+:neg
+inc %r
+if (!$mid(%w,%r,1)) { goto fin } | if $mid(%w,%r,1) == + { goto pos }
+%neg = %neg $+ $mid(%w,%r,1)
+goto neg
+:fin
+if $readini(canales\ $+ %_.3,n,datos,rmodos) == on {
+%r = 1
+while %r <= $len(%pos) { if $mid(%pos,%r,1) isincs $gettok($readini(canales\ $+ %_.3,n,datos,modos),2,45) { %ineg = %ineg $+ $mid(%pos,%r,1) } | inc %r }
+%r = 1
+while %r <= $len(%neg) { if $mid(%neg,%r,1) isincs $gettok($gettok($readini(canales\ $+ %_.3,n,datos,modos),1,43),1,45) { %ipos = %ipos $+ $mid(%neg,%r,1) } | inc %r }
+%r = 1
+if k isincs %pos && k isincs $gettok($gettok($readini(canales\ $+ %_.3,n,datos,modos),1,43),1,45) && ($istok($gettok(%kb.dts,5-,32),$readini(canales\ $+ %_.3,n,datos,clave),32) == $false && $istok($gettok(%kb.dts,5-,32),$hget(claves,%_.3),32) == $false) { %ipos = %ipos $+ k }
+while %r <= $len(%ipos) {
+if $mid(%ipos,%r,1) === k { %m = %m $readini(canales\ $+ %_.3,n,datos,clave) | hadd -m claves %_.3 $readini(canales\ $+ %_.3,n,datos,clave) | set %k 1 }
+if $mid(%ipos,%r,1) === l { %m = %m $readini(canales\ $+ %_.3,n,datos,limite) }
+if $mid(%ipos,%r,1) === L { %m = %m $readini(canales\ $+ %_.3,n,datos,auxiliar) }
+if $mid(%ipos,%r,1) === f { %m = %m $readini(canales\ $+ %_.3,n,datos,flood) }
+inc %r
+}
+if l isincs %pos && $istok($gettok(%kb.dts,5-,32),$readini(canales\ $+ %_.3,n,datos,limite),32) == $false && ($readini(canales\ $+ %_.3,n,datos,limite)) { %ipos = %ipos $+ l | %m = %m $readini(canales\ $+ %_.3,n,datos,limite) }
+if L isincs %pos && $istok($gettok(%kb.dts,5-,32),$readini(canales\ $+ %_.3,n,datos,auxiliar),32) == $false && ($readini(canales\ $+ %_.3,n,datos,auxiliar)) { %ipos = %ipos $+ L | %m = %m $readini(canales\ $+ %_.3,n,datos,auxiliar) }
+if f isincs %pos && $istok($gettok(%kb.dts,5-,32),$readini(canales\ $+ %_.3,n,datos,flood),32) == $false && ($readini(canales\ $+ %_.3,n,datos,flood)) { %ipos = %ipos $+ f | %m = %m $readini(canales\ $+ %_.3,n,datos,flood) }
+if k isincs %ineg { hdel claves %_.3 | set %k 1 }
+kb.sk %nc MODE %_.3 $+(-,%ineg,+,%ipos) %m %_.5 %_.6 %_.7 %_.8
+}
+%r = 1 | var %nmd = $readini(source\conf.dll,n,conf,nochans) | %p = %pos
+while %r <= $len(%pos) { if $mid(%nmd,%r,1) isincs %pos { kb.sk %nc MODE %_.3 - $+ $mid(%nmd,%r,1) %_.5 %_.6 %_.7 %_.8 | kb.sk %nc NOTICE %_.3 :No se permite el uso del modo + $+ $mid(%nmd,%r,1) en esta red | %p = $removecs(%pos,$mid(%nmd,%r,1)) } | inc %r }
+%pos = %p
+nw.jw $+(+,%pos,-,%neg) %_.3
+}
+alias kb.ptg {
+if %_.4 == +*@* || %_.4 == +*!*@* || %_.4 == +*@*.* || %_.4 == +*!*@*.* || %_.4 == +**@* { kb.sk $_.serv GLINE * $replace(%_.4,+,-) | kb.sk $_.serv WALLOPS :Se ha puesto una Gline Global. | echo -se GLINE GLOBAL!!!? }
+limpiav
+}
+alias ev.ju {
+if %_.1 == %np || $_.st(%_.1) == -1 { limpiav }
+var %r = 1
+while %r <= $numtok(%_.3,44) {
+set %c $gettok(%_.3,%r,44)
+if $_.ispass(%_.1) == $true && (!$readini(ip.dat,n,id,$_.correc(%_.1))) { kb.sk %no SAPART %_.1 %c | inc %r | continue }
+if $_.st(%_.1) > 4 { kb.sk %no MODE %c +o %_.1 }
+hadd -m chans %_.1 $addtok($hget(chans,%_.1),%c,32)
+hadd -m chans %c $addtok($hget(chans,%c),%_.1,32) | ev.cn | nt.jp
+if (!$gettok(%kb.st,4,32)) { set %kb.st $puttok(%kb.st,0,4,32) } | if $hmatch(chans,#*,0) > $gettok(%kb.st,4,32) { set %kb.st $puttok(%kb.st,$hmatch(chans,#*,0),4,32) }
+if $numtok($hget(chans,%c),32) == $readini(source\conf.dll,n,conf,umax) { kb.sk %nh JOIN %c | hadd -m cspam %c 1 }
+if ($readini(otros.dat,cdeny,%c)) && $_.st(%_.1) < 4 { kb.sk $_.serv SAPART %_.1 %c | kb.sk %nc NOTICE %_.1 :Acceso dengado para el canal %c }
+inc %r
+}
+unset %c | limpiav
+}
+alias ev.rhs {
+var %r
+if %_.2 == NICK && (%_.5) {
+kb.sbl %_.1 | kb.tkz 10
+if $_.st(%_.1) != -1 { hadd -m users %_.1 %_.6 %_.7 %_.8 %_.tkz }
+if ($readini(nicks\ $+ $_.correc(%_.1),n,datos,pass)) && $_.st(%_.1) != -1 { writeini -n nicks\ $+ $_.correc(%_.1) datos status 2 } | sv.ju
+}
+if %_.1 == NICK && (%_.5) {
+if $istok(%kb.bb,%_.2,32) == $true { kb.sk $_.serv KILL %_.2 :Está usando un nick de servicios. Por favor, escoja otro nick. | kb.stp | kb.bgn }
+kb.tkz 11 | if $_.st(%_.2) != -1 { hadd -m users %_.2 %_.5 %_.6 %_.7 $_.cod(%_.tkz) } | if $hget(users,0).item > $gettok(%kb.st,1,32) { set %kb.st $puttok(%kb.st,$hget(users,0).item,1,32) }
+kb.sbl %_.2 | if %_.2 != %np { kb.prx }
+if $_.ispass(%_.2) == $true {
+kb.sk $_.serv 98 %_.2 :CServices UpZMenTaL BoTs v $+ $_.ver - $gettok(%kb.bb,1- $+ $numtok(%kb.bb,32),32) - $_.serv
+ev.cln | kb.sk %nd PRIVMSG %_.2 :Estás usando una conexión que requiere un password. Tienes12 60 segundos para identificarte. Para hacerlo, 6/msg %nd PASS elpass. Recuerda que es sensible a las minúsculas/mayúsculas.
+writeini -n ip.dat rg $_.correc(%_.2) $ctime | limpiav
+}
+kb.sk $_.serv 928 %_.2 :CServices UpZMenTaL BoTs v $+ $_.ver - $gettok(%kb.bb,1- $+ $numtok(%kb.bb,32),32) - $_.serv
+if ($readini(source\conf.dll,n,conf,umodes)) { kb.sk $_.serv SVS2MODE %_.2 $ifmatch $ctime }
+kb.sk $_.serv SWHOIS %_.2 :es usuario de la red  $+ $_.net
+if ($readini(nicks\ $+ $_.correc(%_.2),n,datos,pass)) && $_.st(%_.2) != -1 { writeini -n nicks\ $+ $_.correc(%_.2) datos status 2 }
+set %_.9 $remove(%_.9,+)
+var %nmd = $readini(source\conf.dll,n,conf,nocops) $+ $readini(source\conf.dll,n,conf,nousers)
+if (%nmd) {
+%r = 1
+while %r <= $len(%nmd) { if $mid(%nmd,%r,1) isincs %_.9 { kb.sk %no SVS2MODE %_.2 - $+ $mid(%nmd,%r,1) $ctime | kb.sk %nn PRIVMSG %_.2 :No puede utilizar el modo + $+ $mid(%nmd,%r,1) en esta red } | inc %r }
+}
+if o isincs %_.9 {
+if (!$readini(nicks\ $+ $_.correc(%_.2),n,datos,pass)) { kb.sk %no PRIVMSG %_.2 :Error, no puedes ser IRCop sin tener el nick registrado. | kb.sk %no SVS2MODE %_.2 -owhWNzTAaCO $ctime }
+hadd -m cops %_.2 1
+writeini -n nicks\ $+ $_.correc(%_.2) datos status 5
+if (!$readini(nicks\ $+ $_.correc(%_.2),n,datos,ircop)) { writeini -n nicks\ $+ $_.correc(%_.2) datos ircop IRCop | hadd -m ircops %_.2 IRCop }
+kb.sk %no CHGHOST %_.2 $+($_.correct(%_.2),.IRCop.,$_.net) | hadd -m virt %_.2 $+($_.correct(%_.2),.IRCop.,$_.net) | kb.sk %no SVS2MODE %_.2 h $ctime
+if $readini(nicks\ $+ $_.correc(%_.2),n,datos,secure) == on { kb.sk %no SVS2MODE %_.2 z $ctime }
+}
+if x isincs %_.9 {
+if x !isincs $hget(modes,%_.2) && $_.st(%_.2) < 4 { hadd -m modes %_.2 $hget(modes,%_.2) $+ x | nv.mv %_.2 $_.ip(%_.2).virtual }
+if x !isincs $hget(modes,%_.2) && $_.st(%_.2) == 4 { hadd -m modes %_.2 $hget(modes,%_.2) $+ x | nv.mv %_.2 $+($_.correct(%_.2),.PreOper.,$_.net) }
+if x !isincs $hget(modes,%_.2) && $_.st(%_.2) == 5 { hadd -m modes %_.2 $hget(modes,%_.2) $+ x | nv.mv %_.2 $+($_.correct(%_.2),.IRCop.,$_.net) }
+if x !isincs $hget(modes,%_.2) && $_.st(%_.2) == 6 { hadd -m modes %_.2 $hget(modes,%_.2) $+ x | nv.mv %_.2 $+($_.correct(%_.2),.Admin.,$_.net) }
+}
+if i isincs %_.9 { hadd -m modes %_.2 $hget(modes,%_.2) $+ i }
+if N isincs %_.9 {
+kb.sk $_.serv WALLOPS :2 %_.2 se identifica como Administrador de la red $iif(%kb.rd != nored,%kb.rd)
+writeini -n nicks\ $+ $_.correc(%_.2) datos ircop Admin | kb.sk %no CHGHOST %_.2 $+($_.correct(%_.2),.Admin.,$_.net) | hadd -m virt %_.2 $+($_.correct(%_.2),.Admin.,$_.net) | hadd -m modes %_.2 $hget(modes,%_.2) $+ N
+writeini -n nicks\ $+ $_.correc(%_.2) datos status 6
+}
+if x isincs $readini(source\conf.dll,n,conf,umodes) && x !isincs $hget(modes,%_.2) { hadd -m modes %_.2 $hget(modes,%_.2) $+ x | nv.mv %_.2 $_.ip(%_.2).virtual }
+if i isincs $readini(source\conf.dll,n,conf,umodes) { hadd -m modes %_.2 $hget(modes,%_.2) $+ i } | sv.ju | ev.cln
+}
+if %_.2 == NICK && (!%_.5) {
+if (!%_.4) { limpiav }
+if %_.1 == %_.3 { limpiav }
+;if $_.correc(%_.1) == trocotronic { kb.sk $_.serv SVSNICK %_.1 jeje $ctime }
+if ($hget(cops,%_.1)) { hadd -m cops %_.3 1 | hdel cops %_.1 }
+if (%prox.nick) { set %prox.nick %_.3 } | ev.chn
+} }
+alias ev.nch {
+if %_.2 == NICK && (!%_.5) { .timer $+ %_.1 off | .timer $+ %_.1 $+ * off }
+if %_.2 == NICK { set %_.2 %_.3 }
+if (%kb.rd) { kb.sk %nn SVS2MODE %_.2 -r $ctime }
+if x isincs $hget(modes,%_.2) && (!$hget(cops,%_.2)) && (!%_.5) { nv.mv %_.2 $_.ip(%_.2).virt }
+if ($readini(admins.dat,n,suspendidos,$_.correc(%_.2))) { kb.sk %nn PRIVMSG %_.2 :Está usando un nick suspendido. | return }
+if $_.ispass(%_.3) == $true && (!$readini(ip.dat,n,id,$_.correc(%_.3))) { }
+else {
+if ($readini(nicks\ $+ $_.correc(%_.2),n,datos,pass)) { kb.sk %nn PRIVMSG %_.2 :Este nick está registrado. Si es el dueño, identifíquese mediante el comando 6/msg $+(%nn,@,$_.serv) IDENTIFY tupass o cambia de nick. }
+if ($readini(nicks\ $+ $_.correc(%_.2),n,datos,kill)) {
+kb.sk %nn PRIVMSG %_.2 :De no hacerlo serás desconectado en12 $readini(nicks\ $+ $_.correc(%_.2),n,datos,kill) segundos.
+if $readini(source\conf.dll,n,conf,kill) == nick { .timer $+ %_.2 1 $readini(nicks\ $+ $_.correc(%_.2),n,datos,kill) { kb.sk $_.serv SVSNICK %_.2 $+(UpZ,%_.2,$rand(999,9999)) $ctime } }
+if $readini(source\conf.dll,n,conf,kill) == kill || (!$readini(source\conf.dll,n,conf,kill)) { .timer $+ %_.2 1 $readini(nicks\ $+ $_.correc(%_.2),n,datos,kill) { kb.sk %nn KILL %_.2 :Protección de Nick Registrado } | .timer $+ %_.2 $+ * 1 $readini(nicks\ $+ $_.correc(%_.2),n,datos,kill) ev.qu %_.2 }
+} } }
+alias ev.chn {
+if i isincs $hget(modes,%_.1) || x isincs $hget(modes,%_.1) { hadd -m modes %_.3 $hget(modes,%_.1) | hdel modes %_.1 }
+if ($readini(ip.dat,n,id,$_.correc(%_.1))) { writeini -n ip.dat id $_.correc(%_.3) ok | remini ip.dat id $_.correc(%_.1) }
+if ($readini(ip.dat,n,rg,$_.correc(%_.1))) { writeini -n ip.dat rg $_.correc(%_.3) $ifmatch | remini ip.dat rg $_.correc(%_.1) }
+hadd -m users %_.3 $hget(users,%_.1) | if ($hget(virt,%_.1)) { hadd -m virt %_.3 $hget(virt,%_.1) | hdel virt %_.1 }
+if (%nns.n) { set %nns.n %_.3 }
+if ($readini(nicks\ $+ $_.correc(%_.3),n,datos,pass)) && $_.st($_.correc(%_.3)) != -1 { writeini -n nicks\ $+ $_.correc(%_.3) datos status 2 }
+if ($readini(nicks\ $+ $_.correc(%_.1),n,datos,pass)) { writeini -n nicks\ $+ $_.correc(%_.1) datos status 1 | writeini -n nicks\ $+ $_.correc(%_.1) datos out $ctime }
+if ($hget(chans,%_.1)) {
+hadd -m chans %_.3 $hget(chans,%_.1)
+var %r = 1
+while %r <= $numtok($hget(chans,%_.1),32) {
+hadd -m chans $gettok($hget(chans,%_.1),%r,32) $reptok($hget(chans,$gettok($hget(chans,%_.1),%r,32)),%_.1,%_.3,32)
+if $istok($readini(canales\ $+ $gettok($hget(chans,%_.1),%r,32),n,datos,owner),$_.correc(%_.1),230) == $true { writeini -n canales\ $+ $gettok($hget(chans,%_.1),%r,32) datos owner $reptok($readini(canales\ $+ $gettok($hget(chans,%_.1),%r,32),n,datos,owner),$_.correc(%_.1),$_.correc(%_.3),230) }
+inc %r
+}
+hdel chans %_.1 | hdel users %_.1
+}
+kb.sbl %_.3
+}
+alias ev.umd {
+if $_.st(%_.1) == -1 { limpiav }
+if %_.1 != %nd && $_.ispass(%_.1) == $true && (!$readini(ip.dat,n,id,$_.correc(%_.1))) { kb.sk %no SVS2MODE %_.1 $replace(%_.3,+,-) | limpiav }
+var %pos = $iif(+ isin %_.3,$gettok($gettok(%_.3,1,43),1,45)), %neg = $gettok(%_.3,$iif(+ isin %_.3,2,1),45), %nmd = $readini(source\conf.dll,n,conf,nocops) $+ $readini(source\conf.dll,n,conf,nousers), %r
+if (%nmd) {
+%r = 1
+while %r <= $len(%nmd) { if $mid(%nmd,%r,1) isincs %pos { kb.sk %no SVS2MODE %_.1 - $+ $mid(%nmd,%r,1) $ctime | kb.sk %nn PRIVMSG %_.1 :No puede utilizar el modo + $+ $mid(%nmd,%r,1) en esta red } | inc %r }
+}
+if x isincs %pos && o !isincs %pos {
+if x !isincs $hget(modes,%_.1) && $_.st(%_.1) < 4 { hadd -m modes %_.1 $hget(modes,%_.1) $+ x | nv.mv %_.1 $_.ip(%_.1).virtual }
+if x !isincs $hget(modes,%_.1) && $_.st(%_.1) == 4 { hadd -m modes %_.1 $hget(modes,%_.1) $+ x | nv.mv %_.1 $+($_.correct(%_.1),.PreOper.,$_.net) }
+if x !isincs $hget(modes,%_.1) && $_.st(%_.1) == 5 { hadd -m modes %_.1 $hget(modes,%_.1) $+ x | nv.mv %_.1 $+($_.correct(%_.1),.IRCop.,$_.net) }
+if x !isincs $hget(modes,%_.1) && $_.st(%_.1) == 6 { hadd -m modes %_.1 $hget(modes,%_.1) $+ x | nv.mv %_.1 $+($_.correct(%_.1),.Admin.,$_.net) }
+}
+if x isincs %neg { hadd -m modes %_.1 $removecs($hget(modes,%_.1),x) }
+if o isincs %pos {
+if (!$readini(nicks\ $+ $_.correc(%_.1),n,datos,pass)) { kb.sk %no PRIVMSG %_.1 :Error, no puedes ser IRCop sin tener el nick registrado. | kb.sk %no SVS2MODE %_.1 -owhWNzTAaCO $ctime | kb.sk %nv CHGHOST %_.1 $_.ip(%_.1).virtual | hadd -m virt %_.1 $_.ip(%_.1).virtual | limpiav }
+hadd -m cops %_.1 1
+writeini -n nicks\ $+ $_.correc(%_.1) datos status 5
+if (!$readini(nicks\ $+ $_.correc(%_.1),n,datos,ircop)) { writeini -n nicks\ $+ $_.correc(%_.1) datos ircop IRCop | hadd -m ircops %_.1 IRCop }
+kb.sk %no CHGHOST %_.1 $+($_.correct(%_.1),.IRCop.,$_.net) | hadd -m virt %_.1 $+($_.correct(%_.1),.IRCop.,$_.net) | kb.sk %no SVS2MODE %_.1 h $ctime
+if $readini(nicks\ $+ $_.correc(%_.1),n,datos,secure) == on { kb.sk %no SVS2MODE %_.1 z $ctime }
+}
+if i isincs %pos { hadd -m modes %_.1 $hget(modes,%_.1) $+ i }
+if i isincs %neg { hadd -m modes %_.1 $removecs($hget(modes,%_.1),i) }
+if o isincs %neg {
+hdel cops %_.1
+if ($readini(nicks\ $+ $_.correc(%_.1),n,datos,pass)) { writeini -n nicks\ $+ $_.correc(%_.1) datos status 3 }
+if x isincs $hget(modes,%_.1) { nv.mv %_.1 $_.ip(%_.1).virtual }
+kb.sk %no SVS2MODE %_.1 :-oaAsNWzh | hadd -m modes %_.1 $removecs($hget(modes,%_.1),N)
+}
+if N isincs %pos {
+kb.sk $_.serv WALLOPS :2 %_.1 se identifica como Administrador de la red $iif(%kb.rd != nored,%kb.rd)
+writeini -n nicks\ $+ $_.correc(%_.1) datos ircop Admin | kb.sk %no CHGHOST %_.1 $+($_.correct(%_.1),.Admin.,$_.net) | hadd -m virt %_.1 $+($_.correct(%_.1),.Admin.,$_.net) | hadd -m modes %_.1 $hget(modes,%_.1) $+ N
+writeini -n nicks\ $+ $_.correc(%_.1) datos status 6 | return
+}
+if T isincs %pos { kb.sk $_.serv WALLOPS :2 %_.1 se identifica como Administrador Técnico | return }
+if a isincs %pos { kb.sk $_.serv WALLOPS :2 %_.1 se identifica como Operador de Servicios | return }
+if C isincs %pos { kb.sk $_.serv WALLOPS :2 %_.1 se identifica como Co Administrador | return }
+if A isincs %pos { kb.sk $_.serv WALLOPS :2 %_.1 se identifica como Administrador del Servidor | return }
+if o isincs %pos { kb.sk $_.serv WALLOPS :2 %_.1 se identifica como IRCop | return }
+if O isincs %pos { kb.sk $_.serv WALLOPS :2 %_.1 se identifica como Local IRCop | return }
+}

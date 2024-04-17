@@ -1,0 +1,192 @@
+alias pr.nt {
+if %_.2 != PRIVMSG && %_.2 != NOTICE { limpiav }
+if %_.4 == new { sc.nr | nt.nw }
+if %_.4 == set { sc.nr | nt.st }
+if %_.4 == $+($chr(99),$chr(114),$chr(101),$chr(100),$chr(105),$chr(116),$chr(111),$chr(115)) { kb.cdt }
+if %_.4 == inicia { sc.nr | nt.bgn }
+if %_.4 == para { sc.nr | nt.sup }
+if %_.4 == view { sc.nr | nt.vw }
+if %_.4 == info { nt.inf }
+if %_.4 == global { nt.gl }
+if %_.4 == help || %_.4 == ayuda { nt.hlp }
+if %_.4 == creditos { creditos }
+error nocom
+}
+alias nt.gl {
+mesg **** Estadísticas globales de la red $_.net ****
+mesg Nº usuarios máximo:12 $gettok(%kb.st,1,32)
+mesg Nº usuarios actual:12 $hget(users,0).item
+mesg Nº canales actual:12 $hmatch(chans,#*,0)
+mesg Nº canales máximo:12 $gettok(%kb.st,4,32)
+mesg Nº bots:12 $numtok(%kb.bb,32) (+ 1)
+mesg Tiempo online bots:12 $duration($calc($ctime - $gettok(%kb.st,3,32)))
+mesg Nº comandos solicitados a los bots:12 $gettok(%kb.st,2,32)
+mesg Fecha actual: $asctime($ctime,dddd dd mmmm yyyy) $time (GMT $replace($calc($timezone / 3600),-,+) $+ )
+mesg Nº nicks registrados:12 $findfile(nicks\,*,0) Nº canales registrados:12 $findfile(canales\,#*,0)
+limpiav
+}
+alias nt.nw {
+if (!%_.6) { error noparam NEW #canal duración }
+if (!$readini(canales\ $+ %_.5,n,datos,modos)) { error nochan }
+if $left(%_.5,1) != $chr(35) { error nochr } | if $_.lv(%_.1,%_.5) < 500 { error nofun }
+if %_.6 != 1h && %_.6 != 1d && %_.6 != 1s { error La duración sólo puede ser 1h, 1d o 1s. Consulta la ayuda para más información }
+if ($readini(stats\ $+ %_.5,options,time)) { error Este canal ya está en fase de estadística }
+if $isdir(stats) == $false { mkdir stats }
+writeini stats\ $+ %_.5 options time %_.6 | writeini stats\ $+ %_.5 options status off
+mesg El canal ha sido añadido en la lista de estadísticas. Para iniciar la estadísitca 6/msg %nt INICIA #canal | limpiav
+}
+alias nt.st {
+if (!%_.7) { error noparam SET #canal opcion valor }
+if (!$readini(canales\ $+ %_.5,n,datos,modos)) { error nochan }
+if $left(%_.5,1) != $chr(35) { error nochr } | if $_.lv(%_.1,%_.5) < 500 { error nofun }
+if (!$readini(stats\ $+ %_.5,options,time)) { error El canal no está en fase de estadística. Para iniciar una fase, 6/msg %nt NEW #canal duracion }
+if $readini(stats\ $+ %_.5,options,status) == on { error Una vez iniciado el proceso de estadística, no se puede ni para ni modificar. }
+if %_.6 == time {
+if %_.7 != 1h && %_.7 != 1d && %_.7 != 1s { error La duración sólo puede ser 1h, 1d o 1s. Consulta la ayuda para más información }
+writeini stats\ $+ %_.5 options time %_.7 | mesg Valor de duración cambiado a %_.7
+}
+limpiav
+}
+alias nt.bgn {
+if (!%_.5) { error noparam INICIA #canal }
+if $left(%_.5,1) != $chr(35) { error nochr }
+if (!$readini(canales\ $+ %_.5,n,datos,modos)) { error nochan } | if $_.lv(%_.1,%_.5) < 500 { error nofun }
+if (!$readini(stats\ $+ %_.5,options,time)) { error El canal no está en fase de estadística. Para iniciar una fase, 6/msg %nt NEW #canal duracion }
+writeini -n otros.dat stats canales $addtok($readini(otros.dat,n,stats,canales),%_.5,230)
+writeini stats\ $+ %_.5 options status on | writeini stats\ $+ %_.5 options inicio $ctime | kb.sk %nt JOIN %_.5 | kb.sk %no MODE %_.5 +o %nt
+mesg Se ha iniciado el proceso de estadística. | limpiav
+}
+alias nt.wr {
+var %ftime, %d
+if $istok($readini(otros.dat,n,stats,canales),%_.3,230) == $true {
+if $readini(stats\ $+ %_.3,options,time) == 1h { %ftime = 3600 }
+if $readini(stats\ $+ %_.3,options,time) == 1d { %ftime = 86400 }
+if $readini(stats\ $+ %_.3,options,time) == 1s { %ftime = 604800 }
+if $calc($readini(stats\ $+ %_.3,options,inicio) + %ftime) < $ctime { nt.stp }
+writeini stats\ $+ %_.3 lines $_.correc(%_.1) $calc($readini(stats\ $+ %_.3,lines,$_.correc(%_.1)) + 1) | kb.tkz 4
+writeini stats\ $+ %_.3 letters $_.correc(%_.1) $calc($readini(stats\ $+ %_.3,letters,$_.correc(%_.1)) + $len(%_.tkz))
+if $gettok($time,1,58) > 0 && $gettok($time,1,58) < 6 { %d = 0-6 }
+if $gettok($time,1,58) > 6 && $gettok($time,1,58) < 12 { %d = 6-12 }
+if $gettok($time,1,58) > 12 && $gettok($time,1,58) < 18 { %d = 12-18 }
+if $gettok($time,1,58) > 18 && $gettok($time,1,58) < 24 { %d = 18-24 }
+writeini stats\ $+ %_.3 %d $_.correc(%_.1) $calc($readini(stats\ $+ %_.3,%d,$_.correc(%_.1)) + 1)
+}
+limpiav
+}
+alias nt.jp { if $istok($readini(otros.dat,n,stats,canales),%c,230) == $true { writeini stats\ $+ %c joins $_.correc(%_.1) $calc($readini(stats\ $+ %c,joins,$_.correc(%_.1)) + 1) } }
+alias nt.sup {
+if (!%_.5) { error noparam PARA #canal }
+if $left(%_.5,1) != $chr(35) { error nochr }
+if (!$readini(canales\ $+ %_.5,n,datos,modos)) { error nochan } | if $_.lv(%_.1,%_.5) < 500 { error nofun }
+if $readini(stats\ $+ %_.5,options,status) == on { error Una vez iniciado el proceso de estadística, no se puede ni para ni modificar. }
+if (!$readini(stats\ $+ %_.5,options,time)) { error El canal no está en fase de estadística. Para iniciar una fase, 6/msg %nt NEW #canal duracion }
+set %_.3 %_.5 | mesg Estadísticas terminadas. | nt.stp
+}
+alias nt.stp {
+if ($remtok($readini(otros.dat,n,stats,canales),%_.3,230)) { writeini -n otros.dat stats canales $ifmatch }
+else { remini otros.dat stats canales }
+writeini stats\ $+ %_.3 options status off | writeini stats\ $+ %_.3 options inicio $ctime
+kb.sk %nt PRIVMSG %_.3 :Las estadísticas han sido terminadas. Para verlas, 6/msg %nt VIEW %_.3 | kb.sk %nt PART %_.3
+writeini -n nicks\ $+ $_.correc($readini(canales\ $+ %_.3,n,datos,fun)) memos $_.memo($readini(canales\ $+ %_.3,n,datos,fun)) $+(%nt,æ,$date,æ,$time,æ,$_.cod(Las estadísticas para su canal han terminado. Para verlas, 6/msg [ %nt ] VIEW [ %_.3 ] ))
+nm.cm $_.uncorrec($readini(canales\ $+ %_.3,n,datos,fun)) | limpiav
+}
+alias nt.vw {
+var %r = 1, %stat = stats\ $+ %_.5
+if (!%_.5) { error noparam VIEW #canal }
+if $left(%_.5,1) != $chr(35) { error nochr }
+if (!$readini(canales\ $+ %_.5,n,datos,fun)) { error nochan }
+if (!$readini(stats\ $+ %_.5,options,time)) { error El canal no está en fase de estadística. Para iniciar una fase, 6/msg %nt NEW #canal duracion }
+if $readini(stats\ $+ %_.5,options,status) == on { error Una vez iniciado el proceso de estadística, no se pueden visualizar las estadísticas. Debe esperar a que se terminen. }
+flushini %stat | if (!$ini(%stat,joins)) { mesg No hay entradas al canal. | goto pro }
+window -hl @statsh | loadbuf -rtjoins @statsh %stat
+mesg **** Estadísticas de nicks que han entrado en 12 %_.5 **** | %r = 1
+while %r <= $line(@statsh,0) { mesg Nick:12 $_.uncorrec($gettok($line(@statsh,%r),1,61)) Total de entradas:12 $gettok($line(@statsh,%r),2,61) | inc %r }
+:pro | if (!$ini(%stat,lines)) { mesg No hay líneas escritas al canal. | goto pro2 }
+window -hl @statsh | loadbuf -rtlines @statsh %stat
+mesg **** Estadísticas de líneas escritas en 12 %_.5 **** | %r = 1
+while %r <= $line(@statsh,0) { mesg Nick:12 $_.uncorrec($gettok($line(@statsh,%r),1,61)) Total de líneas:12 $gettok($line(@statsh,%r),2,61) | inc %r }
+:pro2 | if (!$ini(%stat,letters)) { mesg No hay caracteres escritos al canal. | goto pro3 }
+window -hl @statsh | loadbuf -rtletters @statsh %stat
+mesg **** Estadísticas de longitud de líneas 12 %_.5 **** | %r = 1
+while %r <= $line(@statsh,0) { mesg Nick:12 $_.uncorrec($gettok($line(@statsh,%r),1,61)) Total de caracteres:12 $gettok($line(@statsh,%r),2,61) Mediana de longitud de línea:12 $round($calc($gettok($line(@statsh,%r),2,61) / $readini(%stat,lines,$gettok($line(@statsh,%r),1,61)) ),2) caracteres | inc %r }
+:pro3 | if (!$ini(%stat,0-6)) { mesg No hay nicks de 0-6h en este horario del canal | goto pro4 }
+window -hl @statsh | loadbuf -rt0-6 @statsh %stat
+mesg **** Estadísticas de horarios de 0-6 horas para 12 %_.5 **** | %r = 1
+while %r <= $line(@statsh,0) { mesg Nick:12 $_.uncorrec($gettok($line(@statsh,%r),1,61)) Número de líneas de 0-6h:12 $gettok($line(@statsh,%r),2,61) | inc %r }
+:pro4 | if (!$ini(%stat,6-12)) { mesg No hay nicks de 6-12h en horario del canal | goto pro5 }
+window -hl @statsh | loadbuf -rt6-12 @statsh %stat
+mesg **** Estadísticas de horarios de 6-12 horas para 12 %_.5 **** | %r = 1
+while %r <= $line(@statsh,0) { mesg Nick:12 $_.uncorrec($gettok($line(@statsh,%r),1,61)) Número de líneas de 6-12h:12 $gettok($line(@statsh,%r),2,61) | inc %r }
+:pro5 | if (!$ini(%stat,12-18)) { mesg No hay nicks de 12-18h en este horario del canal | goto pro6 }
+window -hl @statsh | loadbuf -rt12-18 @statsh %stat
+mesg **** Estadísticas de horarios de 12-18 horas para 12 %_.5 **** | %r = 1
+while %r <= $line(@statsh,0) { mesg Nick:12 $_.uncorrec($gettok($line(@statsh,%r),1,61)) Número de líneas de 12-18h:12 $gettok($line(@statsh,%r),2,61) | inc %r }
+:pro6 | if (!$ini(%stat,18-24)) { mesg No hay nicks de 18-24h en este horario del canal | goto pro7 }
+window -hl @statsh | loadbuf -rt18-24 @statsh %stat
+mesg **** Estadísticas de horarios de 18-24 horas para 12 %_.5 **** | %r = 1
+while %r <= $line(@statsh,0) { mesg Nick:12 $_.uncorrec($gettok($line(@statsh,%r),1,61)) Número de líneas de 18-24h:12 $gettok($line(@statsh,%rl),2,61) | inc %r }
+:pro7 | mesg **** Fin de las estadísticas para 12 %_.5 **** | limpiav
+}
+alias nt.inf {
+if (!%_.5) { error noparam INFO #canal }
+if (!$readini(stats\ $+ %_.5,options,time)) { error No hay ningún canal en fase de estadística. }
+mesg ***Información para el canal %_.5 ****
+raya
+var %d
+if $readini(stats\ $+ %_.5,options,time) == 1h { %d = 1 hora }
+if $readini(stats\ $+ %_.5,options,time) == 1s { %d = 1 semana }
+if $readini(stats\ $+ %_.5,options,time) == 1d { %d = 1 día }
+mesg Duración de las estadísticas:12 %d
+if $readini(stats\ $+ %_.5,options,status) == on {
+mesg Las estadísticas están en curso.
+mesg Inicio:12 $date($readini(stats\ $+ %_.5,options,inicio)) $time($readini(stats\ $+ %_.5,options,inicio))
+}
+if $readini(stats\ $+ %_.5,options,status) == off && (!$readini(stats\ $+ %_.5,options,inicio)) { mesg No se han iniciado las estadísticas. }
+if $readini(stats\ $+ %_.5,options,status) == off && ($readini(stats\ $+ %_.5,options,inicio)) {
+mesg Las estadísticas finalizaron. | mesg Inicio:12 $date($readini(stats\ $+ %_.5,options,inicio)) $time($readini(stats\ $+ %_.5,options,inicio)) }
+limpiav
+}
+alias nt.hlp {
+if (!%_.5) {
+mesg 6UpZMenTaL BoTs Servicio de Estadísticas. 6 %nt
+raya
+mesg Este bot permite realizar varias estadísticas para su canal. Para solicitar este servicio, debe identificarse como fundador del canal.
+mesg Una vez empezadas las estadísticas, no se podrán parar en ningún momento ni modificar sus opciones hasta su finalización.
+mesg El solicitante puede escoger la duración de las estadísticas: 1 hora, 1 día o 1 semana. Una vez finalizadas, será notificado de ello.
+mesg Actualmente, este servicio evalúa los siguientes apartados:
+mesg -El número de líneas emitidas por un nick.
+mesg -El total de caracteres emitidos por un nick.
+mesg -La mediana de caracteres por línea emitida por un nick.
+mesg -El horario en que frecuenta el canal: de 0-6h, de 6-12h, de 12-18h y de 18-24h.
+mesg -El número total de entradas que realiza un nick al canal.
+raya
+mesg Este servicio se compone de los siguientes comandos.
+raya
+mesg 6NEW Solicita una evaluación de estadísticas.
+mesg 6SET Fija las opciones de evaluación.
+mesg 6INICIA Empieza el proceso de evaluación de un canal.
+mesg 6PARA Para el proceso de estadísticas de un canal.
+mesg 6VIEW Muestra las estadísticas resultantes de un canal.
+mesg 6INFO Muestra la información de un canal.
+mesg 6GLOBAL Muestra las estadísticas globales de la red.
+raya
+mesg Sintaxis:
+mesg 6/msg %nt NEW #canal duración
+mesg 6/msg %nt SET #canal opción valor
+mesg 6/msg %nt INICIA #canal
+mesg 6/msg %nt PARA #canal
+mesg 6/msg %nt VIEW #canal
+mesg 6/msg %nt INFO #canal
+mesg 6/msg %nt GLOBAL
+limpiav
+}
+if %_.5 == SET {
+mesg 3SET
+raya
+mesg La opción SET permite fijar las distintas opciones de un canal.
+mesg Dichas opciones son:
+raya
+mesg 6TIME   Fija la duración de las estadísticas.
+raya
+limpiav
+} }

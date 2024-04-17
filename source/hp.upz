@@ -1,0 +1,814 @@
+alias no.hlp {
+if (!%_.5) {
+mesg 6UpZMenTaL BoTs Servicio de Administración. 6 %_.3
+mesg Este Servicio está destinado a facilitar las tareas de mantenimiento tanto de la red como de los respectivos servicios.
+raya
+if $_.st(%_.1) > 3 {
+mesg ****Comandos para Pre-Opers e IRCops****
+mesg 6ROOT Te identifica como Root de los BoTs. 12ROOT <pass>
+mesg 6KILL Pone un kill a un nick. 12KILL <nick> <motivo>
+mesg 6BLINE Pone una B Line a un nick. 12BLINE <nick> <motivo>
+mesg 6DBLINE Borra una B Line a un nick. 12DBLINE <nick>
+mesg 6LISTBLINES Lista las B Lines actuales. 12LISTBLINES
+mesg 6LISTGLINES Lista las G Lines actuales. 12LISTGLINES
+mesg 6LISTSC Lista los canales secretos. Si se especifica un canal, lista los usuarios de dicho canal secreto. 12LISTSC [#canal]
+mesg 6INFO Muestra toda la información de un nick/#canal. 12INFO <#canal>
+mesg 6MSG Envía un mensaje vía Wallop. 12MSG <mensaje>
+mesg 6OP/DEOP/HALF/DEHALF/VOICE/DEVOICE  $_.serv da op al nick en un canal. 12OP <#canal> <nick>
+mesg 6GRATIX Ajusta las cuentas de correo prohibidas en el registro de nicks. 12GRATIX <servidor.com>
+mesg 6UGRATIX Borra una cuenta de correo prohibida con GRATIX. 12UGRATIX <servidor.com>
+mesg 6ESPECIAL Entra a los BoTs especificados. 12ESPECIAL <#canal> <NumeroCombinacion>
+mesg 6INVITE  %no invita a un canal el nick especificado. Si no se especifica, serás tú el invitado. 12INVITE <#canal> [nick]
+mesg 6KEY Te da el pass de un canal. 12KEY <#canal>
+mesg 6SR Ejecuta un número RAW a un nick. 12SR <numraw> <nick> <mensaje>
+mesg 6CLON Pone clones virtuales a la red tipo BoT. 12CLON <nick> <ident> <host> <descripción>
+mesg 6CHANGE Cambia el nick de otro nick. 12CHANGE <nick> <nuevonick>
+mesg 6LISTPREOPER Muestra la lista de Pre-Opers. 12LISTPREOPER
+mesg 6LISTIP Muestra la lista de ip's con derecho a más clones. 12LISTIP
+mesg 6SAJOIN Fuerza la entrada de un nick a un canal. 12SAJOIN <nick> <#canal>
+mesg 6IP Muestra la IP del nick especificado. 12IP <nick>
+}
+if $_.st(%_.1) > 4 && %_.3 == %no {
+raya
+mesg ****Comandos para IRCops****
+mesg 6SETUSER Fija las opciones de un nick registrado. 12SETUSER <nick> <opción> <valor>
+mesg 6GLINE Prohibe la conexión de un nick o mask hasta que no se elimina. 12GLINE <nick> <tiempo> <motivo>
+mesg 6UNGLINE Quita la prohibición de conexión de un nick o mask. Elimina la G Line. 12UNGLINE <nick>
+mesg 6COLISION Desconecta un nick simulando una colisión. 12COLISION <nick>
+mesg 6LINK/LINKP Conecta servidores. 12LINK/LINKP <nombreserveridor> <comentario>
+mesg 6UNLINK Borra de la base de datos un servidor. 12UNLINK <nombreservidor>
+mesg 6SQUIT Desconencta un servidor de la red. 12SQUIT <nombreservidor> <motivo>
+mesg 6CHANKILL/CHANGLINE Pone un Kill/G Line a todos los usuarios de un canal. 12CHANKILL/CHANGLINE <#canal> <motivo>
+mesg 6MODE Cambia los modos de usuario de un nick. 12MODE <nick> <+/-><modos>
+mesg 6LIMITE Cambia el número máximo de memos que puede recibir un nick. 12LIMITE <nick> <valor>
+mesg 6RAWCMD El bot especificado manda un comando al nick con el texto. 12RAWCMD <botdeorigen> <comando> <nickdestino/#canaldestino> <:el texto que quieras>
+mesg 6SYSTEM Muestra la información del sistema del servidor de los bots. 12SYSTEM
+}
+if $_.st(%_.1) > 5 && %_.3 == %no {
+raya
+mesg ****Comandos para Admins****
+mesg 6ADDPREOPER Añade un Pre-Oper a la lista. 12ADDPREOPER <nick>
+mesg 6DELPREOPER Borra un Pre-Oper de la lista. 12DELPREOPER <nick>
+mesg 6ADDIRCOP Añade un IRCop sin O Line. 12ADDIRCOP OPER <nick> (nota: los admins sólo pueden añadir opers)
+mesg 6DELIRCOP Borra un IRCop sin O Line. 12DELIRCOP <nick> (nota: los admins sólo pueden borrar ircops)
+}
+if $_.st(%_.1) > 6 && %_.3 == %no {
+raya
+mesg *****Comandos para Root****
+mesg 6RESTART Resetea los bots. 12RESTART
+mesg 6PARA Desconecta los bots. 12PARA
+mesg 6RELOAD/UNLOAD Carga/descarga un módulo. 12RELOAD/UNLOAD <archivo>
+mesg 6LOG Activa/desactiva la opción de logging de los bots. 12LOG <on/off>
+mesg 6ADDIRCOP Añade un Admin/Oper sin O Line. 12ADDIRCOP <admin/oper> <nick>
+mesg 6DELIRCOP Borra un Admin/Oper sin O Line. 12DELIRCOP <nick>
+mesg 6ADDIP Añade una ip con otro número máximo de clones permitidos. 12ADDIP <ip> <nummaxclones>
+mesg 6DELIP Borra una ip de la lista de ip's privilegiadas. 12DELIP <ip>
+mesg 6LIMITECLON Activa/desactiva el límite de clones. 12LIMITECLON <on/off>
+mesg 6ROOTING Cambia el Root de los bots. 12ROOTING <nick> <pass>
+mesg 6SETCLON Fija el número máximo de clones permitidos por defecto en la red. 12SETCLON <nummaxclones>
+mesg 6MODOKILL Fija el método de nick kill. 12MODOKILL <nick/kill>
+mesg 6ASAJOIN Activa/desactiva la opción de entrada automática a un canal. 12ASAJOIN on/off [#canal]
+mesg 6SECURE Especifica un operador con conexión segura. Al darse de alta el ircop, automáticamente se le dará el modo +z (SSL) 12SECURE ircop
+mesg 6USECURE Borra el operador con conexión segura. 12USECURE ircop
+mesg 6ALLOW Añade una IP a la lista de ip's immunes a los proxies. 12ALLOW <ip>
+mesg 6UNALLOW Borra una IP de la lista de ip's immunes a los proxies. 12UNALLOW <ip>
+}
+limpiav
+}
+if %_.5 == RAWCMD {
+mesg 6RAWCMD
+raya
+mesg Este comando lo que hace es ejecutar una acción no establecida en los bots a través de uno de ellos para un nick.
+mesg Su sintaxis es algo variada, por ello recomiendo que te mires la ayuda de 12 %ni
+raya
+mesg Sintaxis: 6/msg %no RAWCMD botdeorigen comando nickdestino/canaldestino :el texto
+raya
+mesg Ejemplos:
+mesg 6/msg %no RAWCMD %nr PRIVMSG Trocotronic :hola, hace un día muy feo.
+mesg En este ejemplo, %nr le abre un privado (PRIVMSG) a Trocotronic diciéndole "hola, hace un día muy feo."
+mesg 6/msg %no RAWCMD %nt TOPIC #Upzmental :Este es un nuevo topic
+mesg En este caso, %nt cambia el topic de #Upzmental por "Este es un nuevo topic"
+raya
+mesg Como se aprecia, la variabilidad es un tanto amplia y los bots no pueden configurarse ante tantas posibilidades.
+mesg Por este motivo, se requiere que los IRCops que usen este comando deben conocer almenos su funcionamiento.
+mesg Un uso indebido de este comando puede producir un error en los bots, con su consiguiente reseteo.
+raya
+mesg 3Comando y alias base cedido por Kether_
+limpiav
+}
+if %_.5 == MODOKILL {
+mesg 6MODOKILL 4<solo Root>
+raya
+mesg Permite fijar la opción de kill de un nick registrado con un kill puesto.
+mesg Las opciones a modificar son nick/kill.
+mesg Si se especifica kill, el usuario no identificado en un nick registrado con kill, será killeado por el servidor en el tiempo especificado en el kill.
+mesg Si se especifica nick, el usuario no identificado en un nick registrado con kill, le será cambiado el nick por uno de aleatorio.
+raya
+mesg Sintaxis: 6/msg %no MODOKILL {nick/kill}
+limpiav
+}
+if %_.5 == SETUSER {
+mesg 6 SETUSER (no PreOper)
+RAYA
+mesg Permite modificar las opciones de los usuarios al igual que cada usuario puede hacerlo con su nick registrado con la salvedad de que no necesitamos estar identificados para dicho nick.
+mesg Las opciones a modificar son las mismas que las del comando SET (incluida la opción SET PASS) + mask.
+mesg Así si quisieramos cambiar el último mask que se vió, escribiríamos: SETUSER nickdelusuario MASK nuevo@mask.es
+raya
+mesg Sintaxis: 6/msg %no SETUSER <usuario> <opcion> <valor>
+limpiav
+}
+if %_.5 == SUSPENDER {
+mesg 6SUSPENDER (no PreOper)
+RAYA
+mesg Paraliza el uso de dicho nick, sin desregistrarle, solo debe ser aplicado en castigos muy duros.
+RAYA
+mesg Sintaxis: 6/msg %no SUSPENDER <usuario> <motivo>
+limpiav
+}
+if %_.5 == GLINE || %_.5 == UNGLINE {
+mesg 6 GLINE/UNGLINE
+mesg Establece prohibiciones de acceso global a la red para una determinada mask, último recurso a usar con usuarios especialmente molestos. Los glines actuan restringiendo el acceso a la red de IRC a una determinada mask con lo que se debe ser muy cuidadoso con la mask que se restringe para evitar injusticias. NUNCA pongas glines a masks globales.
+RAYA
+mesg Si usas un nick, el bot se encargará de averiguar su mask y pondrá un gline a la mask exacta (user@host.domain). La duración es opcional, se especifica con un + delante, de no ponerse duración se aplicará un gline por 30 segundos. Los motivos del gline son obligatorios.
+mesg Ejemplos: gline patan 50 por usar nukes , gline patan@s23.mundivia.es por usar nukes
+mesg El comando UNGLINE regira una gline previa, su sintaxis es UNGLINE mask glineada.
+raya
+mesg Sintaxis: 6/msg %no GLINE <nick/mask> duración <motivo>
+limpiav
+}
+if %_.5 == SQUIT {
+mesg 6 SQUIT (no PreOper)
+RAYA
+mesg Desconecta un servidor de la red, nunca lo utilices con los bots o con el servidor al que están conectados.
+RAYA
+mesg Sintaxis: 6/msg %no SQUIT <servidor> <motivo>
+limpiav
+}
+if %_.5 == SAJOIN {
+mesg 6SAJOIN
+RAYA
+mesg Fuerza la entrada de un nick a un canal.
+RAYA
+mesg Sintaxis: 6/msg %no SAJOIN <nick> <#canal>
+limpiav
+}
+if %_.5 == LINK || %_.5 == unlink || %_.5 == linkp {
+mesg 6LINK/UNLINK/LINKP (no PreOper)
+RAYA
+mesg Link introduce un servidor virtual impidiendo que otro con el mismo nombre sea introducido. Linkp lo apunta además en la lista permanente con lo que se introducirá siempre que el bot haga un restart. Unlink borra de la lista permanente. Para quitar un servidor de la red usa SQUIT.
+mesg Cualquier LINK erroneo matará a los bots, por ello no deben linkarse servidores con caracteres no permitidos (ñ,ç y similares...) o servidores que ya se encuentren linkados a la red.
+mesg Para introducir un servidor permanente, usa el comando LINKP en vez de LINK.
+RAYA
+mesg Sintaxis:
+MESG 6/msg %no LINK/LINKP <nombreservidor> <Información>
+MESG 6/msg %no UNLINK <nombreservidor>
+limpiav
+}
+if %_.5 == ROOT {
+mesg 6ROOT
+raya
+mesg Se utiliza para identificarte y poder acceder a todos los comandos disponibles en los bots.
+mesg Su sintanxis es muy simple.
+raya
+mesg Sintaxis:
+mesg 6/msg %no ROOT <pass>
+limpiav
+}
+if %_.5 == DROP {
+mesg 6DROP
+raya
+mesg Desregistra un nick registrado préviamente con el bot %nn .
+mesg A diferencia de SUSPENDER, con este comando eliminamos de la base de datos el nick especificado.
+raya
+mesg Sintaxis:
+mesg 6/msg %no DROP <nick>
+limpiav
+}
+if %_.5 == KILL {
+mesg 6KILL
+raya
+mesg Desconecta a un usuario al instante.
+raya
+mesg Sintaxis:
+mesg 6/msg %no KILL <nick>
+limpiav
+}
+if %_.5 == ESPECIAL {
+mesg 6 ESPECIAL
+RAYA
+mesg Con este comando podremos introducir los bots que no sean de permanencia explícita (todos los bots a excepción de %nl %nt %nc y %nh los cuales desempeñan una función específica en los canales)
+mesg Existen unas combinaciones preestablecidas, aun así se puede introducir bot a bot.
+mesg Pej: 6ESPECIAL #canal %no %nc %ni introducirá al canal #canal los bots %no %nc y %ni
+RAYA
+mesg 60 No hay ningún BoT, valor por defecto. Quita a los bots.
+mesg 61 %nc
+mesg 62 %nc y %no
+mesg 63 %nc , %no y %ni
+mesg 64 %nc , %no , %ni y %nn
+mesg 65 %nc , %no , %ni , %nn y %nm
+mesg 66 %nc , %no , %ni , %nn , %nm y %ng
+mesg 67 %nc , %no , %ni , %nn , %nm , %ng y %nr
+mesg 68 %nc , %no , %ni , %nn , %nm , %ng , %nr y %nv
+mesg 69 %nc , %no , %ni , %nn , %nm , %ng , %nr , %nv y %ns
+mesg 610 %nc , %no , %ni , %nn , %nm , %ng , %nr , %nv , %ns y %ne
+mesg 611 %nc , %no , %ni , %nn , %nm , %ng , %nr , %nv , %ns , %ne y %nç
+mesg 612 %nc , %no , %ni , %nn , %nm , %ng , %nr , %nv , %ns , %ne , %nç y %nd
+mesg 613 %nc , %no , %ni , %nn , %nm , %ng , %nr , %nv , %ns , %ne , %nç , %nd y %ny
+RAYA
+mesg Sintaxis: 6/msg %no ESPECIAL <#canal> <numero> 
+limpiav
+}
+if %_.5 == CLON {
+mesg 6 CLON
+RAYA
+mesg Nos permite meter "usuarios virtuales" con la mask que nos apetezca y actuar a través de ellos (usarlos de marionetas).
+mesg Solo es posible introducir uno por administrador, el clon solo responde a los comandos que ejecute quien lo creó, para mas información haz un query al clon una vez creado y pon: -ayuda
+mesg Los clones de este modo creados no pueden interactuar con los otros bots (se ignoran mutuamente para evitar bucles poco apetecibles), se ruega nunca se intente afectar a un clon con comandos de los bots oficiales (kill, gline...) ya que además de no funcionar darán toda clase de problemas.
+mesg Puedes ver qué usuarios son clones y quienes son sus dueños usando el comando CLONES en %no .
+RAYA
+mesg Sintaxis: 6/msg %no CLON <nick> <ident> <host> <Información del clon>
+limpiav
+}
+if %_.5 == control {
+mesg 6 CONTROL
+mesg Estos comandos están destinados a una mejor administración de la red así como al desarrollo de los bots.
+mesg 6DEBUG   Activa o desactiva la salida de todo lo que llega al server hacia un canal.
+mesg 6LOG     Activa o desactiva la grabación de todos los datos que entran al servidor de los bots.
+mesg 6RELOAD  Recarga un archivo.ini en la memoria.
+mesg 6UNLOAD  Descarga un archivo.ini de la memoria.
+mesg 6SR      Envía un raw directamente a un usuario (no funciona en todos los servidores).
+raya
+mesg Para más información sobre estos comandos consulta la documentación suministrada con los bots.
+limpiav
+}
+if %_.5 == bline || %_.5 == dbline || %_.5 == listbline {
+mesg 6 BLINES
+raya
+mesg 6LISTBLINES Lista las blines actuales.
+mesg 6DBLINE    Sirve para suprimir un BLINE.
+mesg 6BLINE     Sirve para prohibir la utilización de un determinado nick, sin parámetros muestra los blines existentes.
+raya
+mesg Sintaxis:
+mesg 6/msg %no LISTBLINE
+mesg 6/msg %no BLINE <nick> <motivo> (el motivo NO es opcional)
+mesg 6/msg %no DBLINE <nick>
+limpiav
+}
+if %_.5 == addpreoper || %_.5 == delpreoper || %_.5 == listpreoper {
+mesg 6 PREOPERS
+RAYA
+mesg Estos comandos permiten el control de los PreOpers, solo podrán ser ejecutados por el root.
+mesg 6/msg %no ADDPREOPER <nick>    Añade un PerOper a la lista.
+mesg 6/msg %no DELPREOPER <nick> Borra un PreOper de la lista.
+mesg 6/msg %no LISTPREOPER   Muestra la lista de Preopers (este comando es ejecutable por cualquier IRCOP)
+limpiav
+}
+error nocom
+}
+alias nn.hlp {
+if (!%_.5) {
+mesg 6UpZMenTaL BoTs Servicio Gestión de Nicks. 6 %nn
+raya
+mesg Este Servicio permite que los usuarios registren el nick que usan habitualmente con el fin de evitar que otros usuarios lo ocupen cuando él no está. El tener un nick registrado da acceso a lo servicios de los BoTs.
+mesg 6REGISTER Registrar un nick.
+mesg 6IDENTIFY Identificarse como el dueño de un determinado nick registrado.
+mesg 6DROP Desregistrar tu nick.
+mesg 6DEAUTH Desidentificarte ante %nn $+ .
+mesg 6STATUS Conocer el status de conexión de un nick registrado.
+mesg 6INFO Obtener información sobre un nick registrado.
+mesg 6GHOST Desconectar a un usuario que está ocupando tu nick registrado.
+mesg 6SET Configurar algunas opciones con respecto a tu nick.
+mesg 6INFOCREG Saber el número de canales registrados con %nr $+ .
+mesg 6IRCOPS Muestra los IRCops conectados en ese momento al IRC.
+mesg 6LIST Lista los usuarios conectados al momento siguiendo un patrón.
+mesg 6ADMINS Muestra los Admins conectados en ese momento al IRC.
+mesg 6PREOPERS Muestra los PreOpers conectados en ese momento al IRC.
+mesg 6RESEND Manda a tu mail la clave de verificación.
+mesg 6VERIFY Valida tu clave de verificación.
+mesg 6SMAIL Breve ayuda sobre el nuevo sistema de comprobación de e-mails.
+if $_.st(%_.1) > 4 {
+mesg 6SENDPASS <4Solo IRcops> Manda el password de un nick a su direccion E-mail.
+mesg 6GETPASS <4Solo IRcops> Muestra el password de un nick.
+mesg 6GETVERIFY <4Solo IRcops> Muestra la clave de verificación de un nick.
+mesg 6SUSPENDER <4Solo IRcops> Inhabilita el uso de un nick registrado.
+mesg 6LIBERAR <4Solo IRcops> Borra el nick de la lista de suspendidos.
+mesg 6SUSPENDIDOS <4Solo IRcops> Muestra la lista de nicks suspendidos.
+mesg 6DROP <4Solo IRcops> Dropea un nick.
+}
+mesg 6CREDITOS Muestra versión, autor y dedicatorias del bot.
+raya
+mesg Se ruega a los usuarios que no registren mas de un nick por motivos obvios. El registro malintencionado de nicks ajenos será duramente perseguido. Para obtener ayuda mas detallada sobre cada comando usa 6/msg %nn AYUDA <comando>.
+mesg Nota importante: transcurridos12 $calc($readini(source\conf.dll,n,conf,nexp) / 86400) días sin identificarse, el nick será dado de baja.
+limpiav
+}
+if %_.5 == SMAIL {
+mesg 6SMAIL
+raya
+mesg Nuevo sistema de comprobación de mails: Secure Mail.
+raya
+mesg Este sistema tiene la finalidad de verificar que los e-mails utilizados en los registros de los nicks, sean cuentas e-mails existentes y así poder detener el registro de nicks de manera incondicional.
+mesg Para ello, se ha usado un sistema de claves de verificación. Cuando el usuario solicita dicha clave, es enviada de manera inmediata (o de manera breve) a su cuenta e-mail, la cual figura en las opciones del nick.
+mesg Cuando el usuario recibe esta clave en su mail, debe proceder a su validación mediante el comando 12VERIFY. Entonces, si la clave es correcta, quedará registrado como usuario validado y podrá identificarse normalmente.
+mesg Esta validación sólo debe procederse una vez.
+mesg En el caso que se haya escrito un mail incorrecto, no podrá validar su nick. Entonces no podrá identificarse y deberá proceder a su dropeo.
+mesg Para dropear el nick sin identificación, se puede añadir el parámetro de password en el comando 12DROP. Así pues, con el comando 12/msg %nn DROP password se podrá autodropearse, siendo el password correcto.
+raya
+mesg El mismo sistema se usa cuando se quiere registrar un nick. Cuando un usuario cursa una solicitud para registrar su nick, se le envía al mail especificado una clave de verificación.
+mesg Si tiene alguna duda, dirijase a un IRCop.
+limpiav
+}
+if %_.5 == LIST {
+mesg 6LIST
+raya
+mesg Este comando permite listar los nicks siguiendo un patrón. Su sintaxis es algo especial y algo variada.
+raya
+mesg Sintaxis:
+mesg 6/msg %nn LIST
+mesg Este comando sin ningún parámetro listará todos los usuarios conectados. No es recomendable ya que puede dar flood.
+raya
+mesg 6/msg %nn LIST nick*!*@*
+mesg Este comando listará todos los nicks que empiecen el nick especificado, sin tener encuenta ni la ident ni el host.
+raya
+mesg 6/msg %nn LIST nick!*@*
+mesg Este comando listará todos los nicks que sean identicos al nick especificado, sin tener encuenta ni la ident ni el host.
+raya
+mesg Y así succesivamente. Evaluando la ident, el host y el nick y valiéndose de el símbolo * para aproximar.
+mesg Es importante decir que los nicks que tengan el modo +i no se listarán, al ser invisibles.
+if $_.st(%_.1) > 4 { mesg Y en IRCops, además de visualizar la ip virtual, también especifica la ip real independientemente si es invisible (+i) o no. }
+limpiav
+}
+if %_.5 == REGISTER {
+mesg 6REGISTER
+raya
+mesg Permite registrar un nick asignándole una clave, apartir del momento del registro ese nick solo podrá ser utilizado por aquellos que conozcan la clave.
+mesg Sintaxis: 6/MSG %nn REGISTER tupass tu@email.es
+raya
+mesg Para la identificación, use 6/msg $+(%nn,@,$_.serv) IDENTIFY supass.
+limpiav
+}
+if %_.5 == INFOCREG {
+mesg 6INFOCREG
+raya
+mesg Este comando muestra información sobre el número de canales registrados actualmente con %nr .
+RAYA
+mesg Sintaxis: 6/MSG %nn INFOCREG
+limpiav
+}
+if %_.5 == IDENTIFY {
+mesg 6 IDENTIFY
+raya
+mesg Debes usar este comando para identificarte una vez registrado tu nick. Una vez identificado, podrás acceder a los servicios BoT.
+mesg Si se cambia de nick, deberá volver a identificarse cuando use su nick registrado.
+mesg Puedes cambiar tu clave usando la opcion SET PASS nuevaclave, si por algún motivo deseas dejar de estar identificado puedes usar el comando DEAUTH.
+RAYA
+mesg Sintaxis: 6/MSG $+(%nn,@,$_.serv) IDENTIFY tupass
+limpiav
+}
+if %_.5 == DROP {
+mesg 6DROP
+raya
+mesg Puedes usar este comando para desregistrar tu nick si no deseas que siga estando registrado.
+raya
+mesg Sintaxis: 6/MSG %nn DROP
+limpiav
+}
+if %_.5 == DEAUTH {
+mesg 6DEAUTH
+mesg Puedes usar este comando para desidentificarte ante %nn.
+mesg Sintaxis: 6/MSG %nn DEAUTH
+limpiav
+}
+if %_.5 == STATUS {
+mesg 6STATUS
+raya
+mesg Nos informa del status de conexión del usuario, este puede ir de -1 a 6.
+raya
+mesg Sintaxis: 6/MSG %nn STATUS nick
+raya
+mesg La equivalencia de valores es:
+mesg -1 BoTLined
+mesg 0 No registrado
+mesg 1 Registado, no conectado
+mesg 2 Registado, conectado, no identificado
+mesg 3 Identificado
+mesg 4 PreOper
+mesg 5 IRCop
+mesg 6 Admin
+mesg 7 Root
+mesg 8 BoT de Servicios
+limpiav
+}
+if %_.5 == INFO {
+mesg 6INFO
+raya
+mesg Nos muestra información sobre un determinado nick registrado como puede ser: real name, url, email o última vez que se conectó.
+raya
+mesg Sintaxis: 6/MSG %nn INFO nick
+limpiav
+}
+if %_.5 == IRCOPS {
+mesg 6IRCOPS
+raya
+mesg Nos da la lista de IRCops (IRC OPERATORS) conectados en ese momento. Los ircops son los responsables de los diversos servidores y son los encargados de velar que todo esté en orden.
+raya
+mesg Sintaxis: 6/MSG %nn IRCOPS
+limpiav
+}
+if %_.5 == GHOST {
+mesg 6GHOST
+raya
+mesg Permite desconectar a un usuario que está ocupando nuestro nick, no necesitamos estar identificados para ejecutarlo (basicamente porque entonces no podríamos usar nunca este comando.)
+raya
+mesg Sintaxis: 6/MSG %nn GHOST nick pass
+limpiav
+}
+if %_.5 == SENDPASS && $_.st(%_.1) > 4 {
+mesg 6SENDPASS 4<Solo IRCops>
+raya
+mesg 10< 4Solo Opers 10> Envía el pass del nick al email fijado en su registro.
+raya
+mesg Sintaxis: 6/MSG %nn SENDPASS elnick
+limpiav
+}
+if %_.5 == SET {
+if (!%_.6) {
+mesg 6SET
+mesg Permite ajustar las diferentes opciones para nuestro nick, fundamentalmente se trata de información que aparece cuando alguien nos hace un info nick. Actualmente las opciones disponibles son:
+raya
+mesg 6REALNAME Un nombre o una frase que aparece con esa entrada.
+mesg 6EMAIL Tu cuenta de email.
+mesg 6URL Una URL que quieras asociar a tu nick, (nula por defecto).
+mesg 6PASS Cambia tu contraseña de identificación.
+mesg 6KILL Activa o desactiva la protección por kill de nicks.
+mesg 6HIDE Nos permite ocultar los valores de las diferentes opciones de forma que no aparecerán al hacer un info nick.
+raya
+mesg Sintaxis: 6/MSG %nn SET OPCION VALOR (excepto HIDE)
+mesg Para más información sobre HIDE o sobre KILL usa ayuda set HIDE o ayuda set KILL.
+limpiav
+}
+if %_.6 == HIDE {
+mesg 6SET HIDE
+raya
+mesg Activando o desactivando esta opción para cada uno de los valores realname, email, url y mask podemos evitar o permitir que dicha información sea mostrada cuando alguien hace un info nick.
+raya
+mesg Sintaxis: 6SET HIDE VALOR ON/OFF (donde valor puede ser realname, email, url o mask)
+mesg Un SET HIDE email ON hará que cuando alguien haga un INFO a nuestro nick, la información sobre nuestro e-mail no le sea mostrada.
+limpiav
+}
+if %_.6 == KILL {
+mesg 6SET KILL
+raya
+mesg Activar esta opción hace que el bot %nn desconecte o cambie de nick a un usuario que está usando su nick si este no se identifica con su clave (o cambia de nick) en un tiempo que usted establezca.
+raya
+mesg Sintaxis: 6/MSG %nn SET KILL ON/OFF [tiempo] (en caso de poner on debemos especificar el tiempo en segundos que esperará %nn antes de hacer el kill.
+limpiav
+} }
+error nocom
+}
+alias nm.hlp {
+mesg 6UpZMenTaL BoTs Servicio Gestión de Mensajería. 6 %nm
+raya
+mesg Este servicio permite a usuarios registrados dejar mensajes a otros nicks registrados si están off-line.
+mesg Al listar los memos que tienes, los que se visualicen en verde corresponden a los memos leídos; los que aparezcan en rojo son los memos no leídos.
+raya
+mesg 6SEND Enviar un mensaje a un nick registrado
+mesg 6READ Nos permite leer un determinado mensaje
+mesg 6LIST Nos lista todos los mensajes que tengamos en el buzón
+mesg 6DEL Borra los mensajes. Si especificas un número, se borrará dicho mensaje. Si especificas 0 en vez de un número, se borrarán todos los mensajes.
+mesg 6LIMITE Permite modificar el número máximo de mensajes (por defecto 5)
+raya
+mesg Sintaxis:
+mesg 6/msg %nm SEND nickdestino mensaje
+mesg 6/msg %nm READ numeromensaje
+mesg 6/msg %nm LIST
+mesg 6/msg %nm LIMITE nuevolímite
+mesg 6/msg %nm DEL <num>/0
+raya
+limpiav
+}
+alias ng.hlp {
+mesg 6UpZMenTaL BoTs Servicio Gestión de Mensajes Globales. 6 %ng
+raya
+mesg Este servicio permite a IRCOPS mandar diversos mensajes dirigidos a todos los usuarios de la red. Las opciones disponibles son las siguientes:
+raya
+mesg 6GLOBAL Envia un mensaje masivo en forma de PRIVMSG a todos los usuarios conectados.
+mesg 6GLOBALN Envia un mensaje masivo en forma de NOTICE a todos los usuarios conectados.
+mesg 6GLOBALC Envia un mensaje masivo en forma de PRIVMSG a todos los IRCOPS.
+raya
+mesg Sintaxis:
+mesg 6/msg %ng GLOBAL mensaje
+mesg 6/msg %ng GLOBALN mensaje
+mesg 6/msg %ng GLOBALC mensaje 
+limpiav
+}
+alias nç.hlp {
+mesg 6UpZMenTaL BoTs Servicio Noticias. 6 %nç
+raya
+mesg Este servicio permite notificar o anunciar a los usuarios que se conecten un mensaje que la administración de la red crea oportuna.
+raya
+mesg 6MOTD Ajusta dicho mensaje. Puede incluir colores, subrayado y/o negrita.
+mesg 6REGULAR Envia un mensaje a todos los usuarios de manera regular, es decir cada X minutos.
+raya
+mesg Sintaxis:
+mesg 6/msg %nç REGULAR ON/OFF mins mensaje
+mesg 6/msg %nç MOTD ON/OFF mensaje
+limpiav
+}
+alias nr.hlp {
+if (!%_.5) {
+mesg 6UpZMenTaL BoTs Servicio de Gestión Registro de Canales. 6 %nr
+raya
+mesg Este servicio permite a los usuarios registrar canales. El fundador deberá disponer de $readini(source\conf.dll,n,conf,apy) apoyos para registrar un canal en un máximo de 7 días. Los apoyos los tendrán que dar las personas interesadas mediante el comando 12APOYA.
+mesg El único requisito que se debe cumplir es que, tanto como el que apoya como el que registra, ambos deben tener una antigüedad de $calc($readini(source\conf.dll,n,conf,older) / 86400) días con el nick registrado.
+raya
+mesg 6INFO Suministra información sobre el estado de registro del canal especificado.
+mesg 6REGISTER Permite iniciar la fase de registro del canal especificado, solo dispones de $readini(source\conf.dll,n,conf,rmax) registros mediante el bot %nr
+mesg 6DROP Borra de la fase de registro al canal especificado, el canal eliminado se te descontará de tus canales totales
+mesg 6APOYA Permite apoyar al canal especificado, solo se permite un solo apoyo al mismo canal.
+mesg 6FASE Muestra la lista de canales en fase de registro.
+mesg 6APOYOS Muestra los apoyos de un canal en fase de registro o los apoyos que has emitido.
+mesg Para más información, usar 12/msg %nr AYUDA COMANDO
+if $_.st(%_.1) > 4 {
+raya
+mesg 6IRCops Commands
+mesg 6LISTA Muestra los canales con los apoyos suficientes para su registro.
+mesg 6ACEPTAR Registra el canal que tenga todos los apoyos y este de acuerdo con las normas de la red.
+mesg 6CANCELAR Cancela el registro de un canal con los apoyos.
+mesg 6EXPIA Dropea el canal que no ha conseguido el número de apoyos dentro del tiempo reglamentario.
+}
+limpiav
+}
+if %_.5 == INFO {
+mesg 6INFO
+raya
+mesg Este comando porporciona información sobre el canal deseado, su estado de registro, el número de apoyos hasta el momento, etc.
+raya
+mesg Sintaxis: 6/msg %nr INFO #canal
+limpiav
+}
+IF %_.5 == REGISTER {
+mesg 6REGISTER
+raya
+mesg Este comando permite iniciar la fase de registro del canal especificado, solo se pueden registrar un máximo de $readini(source\conf.dll,n,conf,rmax) canales.
+raya
+mesg Sintaxis: 6/msg %nr REGISTER #canal pass descripción
+limpiav
+}
+if %_.5 == DROP {
+mesg 6DROP
+raya
+mesg Este comando desregistra el canal especificado, por razones evidentes solo podrá hacerse por el fundador del canal en fase de registro.
+mesg El canal se te descontará de tus canales registrados hasta ahora, teniendo un máximo de $readini(source\conf.dll,n,conf,rmax) en total.
+raya
+mesg Sintaxis: 6/msg %nr DROP #canal
+limpiav
+}
+if %_.5 == APOYA {
+mesg 6APOYA
+raya
+mesg Este comando permite apoyar al canal especificado, sólo podras apoyar una vez al mismo canal.
+raya
+mesg Sintaxis: 6/msg %nr APOYA #canal
+limpiav
+}
+if %_.5 == APOYOS {
+mesg 6APOYOS
+raya
+mesg Este comando lista los apoyos de un canal, o bien, los apoyos que has emitido.
+mesg Si no se especifica ningún canal, se mostrarán tus apoyos emitidos con su correspondiente fecha.
+raya
+mesg Sintaxis: 6/msg %nr APOYOS [#canal]
+limpiav
+}
+error nocom
+}
+alias nc.hlp {
+if (!%_.5) {
+mesg 6UpZMenTaL BoTs Servicio Gestión de Canales. 6 %nc
+raya
+mesg El registro de canales permite mantener un cierto control sobre nuestro canal evitando take overs, permitiendo dejar un topic, manteniendo una lista de prohibiciones (bans) etc. Para poder acceder a los servicios del bot de canales es necesario que nuestro nick esté registrado con %nn.
+raya
+mesg 6IDENTIFY Identificarse como fundador del canal.
+mesg 6DROP Desregistrar tu canal.
+mesg 6INFO Muestra información sobre el canal.
+mesg 6ACCESS Muestra las opciones de la lista de usuarios registrados en el canal.
+mesg 6LEVELS Muestra los niveles necesarios para las distintas acciones.
+mesg 6SET Configurar algunas opciones con respecto a un canal.
+mesg 6INVITE  $+ %nc te invitará al canal en cuestión o al nick especificado.
+mesg 6ESPECIAL Permite poner a determinados BoTs en un canal.
+mesg 6DEAUTH Te desidentifica como fundador de un canal.
+mesg 6LIST Muestra la lista de canales registrados que correspondan con la búsqueda.
+mesg 6AKICK Muestra las opciones de edicion de la lista de akick del canal.
+mesg 6CLEAR Muestra los comandos de clear del canal.
+mesg 6OP/HALF/VOICE  $+ %nc dará op/half/voice al nick especificado.
+mesg 6DEOP/DEHALF/DEVOICE  $+ %nc quitará op/half/voice al nick especificado.
+mesg 6BAN/UNBAN  $+ %nc baneará/unbaneará al nick especificado.
+mesg 6LISTBAN Lista los bans de un canal.
+mesg 6IRCOPS Muestra los IRCops conectados en ese momento al IRC.
+mesg 6ADMINS Muestra los IRCops que hay en toda la red.
+mesg 6PREOPERS Muestra los PreOpers que hay en toda la red.
+if $_.st(%_.1) > 4 {
+mesg 6GETPASS <4Solo IRcops> Muestra el pass de un canal.
+mesg 6SENDPASS <4Solo IRcops > Envía el pass de un canal al mail de su founder.
+mesg 6DENY <4Solo IRcops > Prohibe un canal de manera que no se pueda entrar en él.
+mesg 6UDENY <4Solo IRcops > Permite la entrada de un canal prohibido con DENY.
+mesg 6REGISTER <4Solo IRcops > Registra un canal sin la necesidad de conseguir apoyos.
+mesg 6DROP <4Solo IRcops > Dropea un canal.
+}
+raya
+mesg Para obtener ayuda más detallada sobre cada comando usa 6/MSG %nc AYUDA COMANDO.
+mesg Nota importante: transcurridos12 $calc($readini(source\conf.dll,n,conf,cexp) / 86400) días sin la entrada de un nick identificado de la lista de acceso, el canal será dropeado.
+limpiav
+}
+if %_.5 == deauth {
+mesg 6DEAUTH
+raya
+mesg Con él, nos quitaremos el privilegio de estar identificado como fundador y pasaremos a ser un usuario corriente.
+raya
+mesg Sintaxis: 6/msg %nc DEAUTH #canal
+limpiav
+}
+if %_.5 == LIST {
+mesg 6LIST
+raya
+mesg Este comando nos lista los canales registrados en la base de datos de %nc. Podemos especificar un patrón a seguir y el número máximo que deseamos que %nc nos liste.
+RAYA
+mesg Sintaxis: 6/msg %nc LIST [MASCARA] [NUM]
+mesg Pej:6 /msg %nc LIST upz 5 Nos listará los 5 primeros canales que contengan la palabra "upz".
+limpiav
+}
+if %_.5 == IDENTIFY {
+mesg 6IDENTIFY
+raya
+mesg Debes utilizar este comando para identificarte como fundador de un canal lo que te permitirá usar los comandos disponibles para esta categoría.
+RAYA
+mesg Sintaxis: 6/msg $+(%nc,@,$_.serv) IDENTIFY #canal clave
+limpiav
+}
+if %_.5 == DROP {
+mesg 6DROP
+raya
+mesg Usa este comando para borrar un canal que hayas registrado. Cuando borras un canal toda la información sobre el mismo se pierde y NO puede ser recuperada. Si borras un canal recuperas la capacidad de registrar otro nuevo.
+mesg Evidentemente tienes que identificarte como fundador del canal antes de poder borrarlo.
+RAYA
+mesg Sintaxis: 6/msg %nc DROP #canal
+limpiav
+}
+if %_.5 == INFO {
+mesg 6INFO
+raya
+mesg Nos muestra información sobre un determinado canal registrado.
+RAYA
+mesg Sintaxis: 6/MSG %nc INFO #canal
+limpiav
+}
+if %_.5 == INVITE {
+mesg 6INVITE
+raya
+mesg Si estamos registrados en el canal y nos hemos identificado ante %nn , %nc nos invitará al canal permitiendonos así saltarnos un modo +i o +b.
+mesg Si se especifica un nick, %nc invitará dicho nick al canal. Si no se especifica, reicibirás tú la invitación.
+RAYA
+mesg Sintaxis: 6/msg %nc INVITE #canal [nick]
+limpiav
+}
+if %_.5 == AKICK {
+mesg 6AKICK
+raya
+mesg Añade un nick o un mask a la lista de prohibiciones del canal. Dicho de otro modo: cada vez que un usuario cuyo nick o mask coincida con el añadido a la lista, éste será pateado y baneado del canal. Por motivos obvios nunca deben usarse masks genéricos.
+mesg En la prohibición tenemos 3 opciones: añadir un nick como tal, añadir su mask o bien dar nosotros el nick y que el bot busque el mask y añada el mask actual del nick.
+mesg Si usamos esta última modalidad, la sintaxis es: AKICK #canal ADD +nickusuario motivo, es decir: poniendo un + al nick le estamos diciendo al bot que busque la mask y la añada a la banlist.
+RAYA
+mesg Sintaxis:
+mesg 6/msg %nc AKICK #canal ADD (+)nick/mask motivo añade un usuario a la lista de akick.
+mesg 6/msg %nc AKICK #canal DEL nick/mask borra un nick de la lista de akick.
+mesg 6/msg %nc AKICK #canal LIST lista todos los nicks de la lista de akick.
+raya
+limpiav
+}
+if %_.5 == ACCESS {
+mesg 6ACCESS
+raya
+mesg Nos permite obtener una lista con los nicks y sus niveles de acceso asociados del canal en cuestión.
+mesg Dicho de otra forma: podemos usar ACCESS #canal ADD usuario nivel para añadir usuarios y ACCESS #canal DEL usuario para borrarlos.
+RAYA
+mesg Sintaxis:6/msg %nc ACCESS #canal ADD elnick elnivel
+mesg Sintaxis:6/msg %nc ACCESS #canal DEL elnick
+mesg Sintaxis:6/msg %nc ACCESS #canal LIST
+limpiav
+}
+if %_.5 == LEVELS {
+mesg 6LEVELS
+raya
+mesg Muestra los niveles de acceso que es necesario tener en un determinado canal para cada acción que deseamos realizar. Solo si tenemos un nivel igual o superior al presentado, podremos ejecutar el/los comandos.
+RAYA
+mesg Sintaxis: 6/msg %nc LEVELS #canal
+limpiav
+}
+if %_.5 == OP || %_.5 == DEOP || %_.5 == BAN || %_.5 == UNBAN || %_.5 == HALF || %_.5 == DEHALF || %_.5 == KICK || %_.5 == VOICE || %_.5 == DEVOICE {
+mesg 6OP/DEOP/BAN/UNBAN/KICK
+raya
+mesg Se encarga de realizar la correspondiente acción sobre el nick en el canal especificado.
+mesg Sintaxis: 6/msg %nc COMANDO #canal usuario (motivo)
+limpiav
+}
+if %_.5 == LISTBAN {
+mesg 6LISTBAN
+raya
+mesg Lista los bans de un canal.
+mesg Nota: solo se mostrarán los orígenes del ban si ha sido puesto por un nick. Al mismo tiempo, no se visualizarán los orígenes si se trata de bots, akicks o del servidor cuya función es la de ocultar dicho comando.
+mesg Sintaxis: 6/msg %nc LISTBAN #canal
+limpiav
+}
+if %_.5 == ESPECIAL {
+mesg 6 ESPECIAL
+RAYA
+mesg Con este comando podremos introducir los bots que no sean de permanencia explícita (todos los bots a excepción de %nl %nt %nc y %nh los cuales desempeñan una función específica en los canales)
+mesg Existen unas combinaciones preestablecidas, aun así se puede introducir bot a bot.
+mesg Pej: 6ESPECIAL #canal %no %nc %ni introducirá al canal #canal los bots %no %nc y %ni
+RAYA
+mesg 60 No hay ningún BoT, valor por defecto. Quita a los bots.
+mesg 61 %nc
+mesg 62 %nc y %no
+mesg 63 %nc , %no y %ni
+mesg 64 %nc , %no , %ni y %nn
+mesg 65 %nc , %no , %ni , %nn y %nm
+mesg 66 %nc , %no , %ni , %nn , %nm y %ng
+mesg 67 %nc , %no , %ni , %nn , %nm , %ng y %nr
+mesg 68 %nc , %no , %ni , %nn , %nm , %ng , %nr y %nv
+mesg 69 %nc , %no , %ni , %nn , %nm , %ng , %nr , %nv y %ns
+mesg 610 %nc , %no , %ni , %nn , %nm , %ng , %nr , %nv , %ns y %ne
+mesg 611 %nc , %no , %ni , %nn , %nm , %ng , %nr , %nv , %ns , %ne y %nç
+mesg 612 %nc , %no , %ni , %nn , %nm , %ng , %nr , %nv , %ns , %ne , %nç y %nd
+mesg 613 %nc , %no , %ni , %nn , %nm , %ng , %nr , %nv , %ns , %ne , %nç , %nd y %ny
+RAYA
+mesg Sintaxis: 6/msg %nc ESPECIAL <#canal> <numero>
+limpiav
+}
+if %_.5 == SET {
+if (!%_.6) {
+mesg 6SET
+raya
+mesg Permite ajustar las diferentes opciones para un canal, fundamentalmente se trata de información que aparece cuando alguien hace un INFO #canal. Actualmente las opciones disponibles son:
+raya
+mesg 6FUNDADOR Nick (registrado) del fundador del canal. Este nick se usa en la identificación.
+mesg 6EMAIL E-mail asociado al canal.
+mesg 6URL Una URL (ftp, página web, etc) asociada al canal.
+mesg 6PASS Cambiar la contraseña de identificación como fundador.
+mesg 6DESC Ajusta una breve descripción sobre la temática del canal.
+mesg 6TOPIC Ajusta el topic por defecto del canal.
+mesg 6RTOPIC Activar/Desactivar la retención de topic.
+mesg 6KTOPIC Activar/Desactivar el candado de topic.
+mesg 6MODOS Ajusta los modos-defecto del canal. Es importante especificar que algunos modos necesitan especificaciones adicionales y en orden según el modo puesto. Pej: +ntklL-im pass 4 #canal. Para usar el modo +L es necesario especificar el modo +l.
+mesg 6RMODOS Activar/Desactivar la opción de solo %nc cambia modos de canal.
+mesg 6SECUR Activar/Desactivar la opción de solo los registrados pueden entrar al canal.
+mesg 6WELCOME Ajusta el mensaje de bienvenida al canal, si ponemos no no dará ningún mensaje.
+mesg 6LEVEL Permite ajustar los niveles requeridos para las diferentes opciones.
+mesg 6SECUREOPS Activa/Desactiva la opción de sólo registrados con nivel suficiente pueden recibir op o halfop (%).
+mesg 6DEBUG Activa/Desactiva la opción de salida de debug de las acciones del canal.
+mesg 6HIDELIST Activa/Desactiva la opción de ocultar el canal cuando se hace un /msg %nc LIST
+raya
+mesg Sintaxis: 6/msg %nc SET #canal OPCION VALOR
+limpiav
+}
+if %_.6 == LEVEL {
+mesg 6SET LEVEL
+raya
+mesg Nos permite establecer niveles para las diferentes opciones del canal diferentes de los que nos vienen dados por defecto.
+mesg Las opciones válidas son las siguientes:
+raya
+mesg 6ACC-EDIT Añadir, borrar y modificar el registro de usuarios del canal.
+mesg 6ACC-LIST Nivel necesario para poder listar los usuarios registrados del canal.
+mesg 6AUTOOP Nivel necesario para recibir +o automáticamente al entrar al canal.
+mesg 6AUTOHALF Nivel necesario para recibir +h automáticamente al entrar al canal.
+mesg 6AUTOVOICE Nivel necesario para recibir +v automáticamente al entrar al canal.
+mesg 6OPDEOP Nivel necesario para hacer op, deop, half, dehalf, voice, devoice y kick en el canal.
+mesg 6BANUNBAN Nivel necesario para poner y quitar bans en el canal.
+mesg 6AKICK Nivel necesario para modificar la lista de autokick del canal.
+mesg 6CLEAR Nivel necesario para hacer clear en el canal.
+mesg 6INVITE Nivel necesario para poder pedir a %nc que nos invite al canal.
+mesg 6ESPECIAL Nivel necesario para poder meter a los bots al canal.
+mesg 6SET Establece el nivel necesario para modificar las opciones del canal (rmodos, topic etc)
+raya
+mesg Sintaxis: 6/msg %nc SET #canal LEVEL OPCION nivel
+limpiav
+} }
+if %_.5 == clear {
+mesg 6CLEAR
+raya
+mesg Nos permite ver las opciones clear o limpieza masiva en un canal.
+mesg Las opciones válidas son las siguientes:
+raya
+mesg 6USERS Patea a todos los usuarios de un canal.
+mesg 6OPS Quita el privilegio de op a todos los usuarios del canal.
+mesg 6HALFS Quita el privilegio de halfop a todos los usuarios del canal.
+mesg 6VOICES Quita el privilegio de voice a todos los usuarios del canal.
+mesg 6REGS Borra todos los usuarios registrados al canal menos al fundador.
+mesg 6MODOS Resetea los modos del canal. Por defecto +nt
+mesg 6LEVELS Resetea los levels del canal por defecto
+mesg 6BANS Borra todos los bans de un canal.
+raya
+mesg Sintaxis: 6/msg %nc CLEAR #canal OPCION
+limpiav
+}
+error nocom
+}

@@ -1,0 +1,121 @@
+alias pr.nl {
+if %_.2 != PRIVMSG { limpiav }
+if %_.4 == inicia { nl.tv.bg }
+if %_.4 == $+($chr(99),$chr(114),$chr(101),$chr(100),$chr(105),$chr(116),$chr(111),$chr(115)) { kb.cdt }
+if %_.4 == para { nl.tv.st }
+if %_.4 == results { nl.tv.vw }
+if %_.4 == reset { kb.scp | kb.srt | nl.tv.rt }
+if %_.4 == time { nl.tv.tm }
+if %_.4 == help || %_.4 == ayuda { nl.hlp }
+if %_.4 == creditos { creditos }
+error nocom
+}
+alias nl.tv.bg {
+if (!%_.5) { error noparam INICIA #canal }
+if (!$readini(canales\ $+ %_.5,n,datos,modos)) { error nochan }
+if $_.lv(%_.1,%_.5) == 0 { error Acceso denegado. Sólo usuarios registrados en %_.5 }
+if $istok($readini(trivial\ludo.dat,n,trivial,canales),%_.5,230) == $true { error El canal %_.5 ya está jugando un trivial }
+writeini -n trivial\ludo.dat trivial canales $addtok($readini(trivial\ludo.dat,n,trivial,canales),%_.5,230)
+kb.sk %nl JOIN %_.5 | kb.sk $_.serv MODE %_.5 +o %nl | if (!$timer(LUDO)) { nl.tv.nt }
+mesg Trivial iniciado en %_.5 | limpiav
+}
+alias nl.tv.st {
+if (!%_.5) { error noparam PARA #canal }
+if (!$readini(canales\ $+ %_.5,n,datos,modos)) { error nochan }
+if $_.lv(%_.1,%_.5) == 0 { error Acceso denegado. Sólo usuarios registrados en %_.5 }
+if $istok($readini(trivial\ludo.dat,n,trivial,canales),%_.5,230) == $false { error El canal %_.5 no está jugando un trivial }
+if ($remtok($readini(trivial\ludo.dat,n,trivial,canales),%_.5,230)) { writeini -n trivial\ludo.dat trivial canales $ifmatch }
+else { remini trivial\ludo.dat trivial canales }
+kb.sk %nl PART %_.5 | mesg Trivial parado en %_.5 | limpiav
+}
+alias nl.tv.vw {
+if (!$readini(trivial\ludo.dat,n,trivial,dots)) { mesg No hay ningún acertante. | limpiav }
+var %r = 1 | while %r <= $numtok($readini(trivial\ludo.dat,n,trivial,dots),230) { mesg $gettok($readini(trivial\ludo.dat,n,trivial,wins),%r,230) -> $gettok($readini(trivial\ludo.dat,n,trivial,dots),%r,230) aciertos. | inc %r }
+mesg Todos los acertantes listados. | limpiav
+}
+alias nl.tv.nt {
+if (!$readini(trivial\ludo.dat,n,trivial,canales)) { unset %nl.aw | unset %nl.p.* | return }
+var %nl.q = $read($findfile(trivial\,*.txt,$rand(1,$findfile(trivial\,*.*,0)))), %nl.aq = %nl.aw, %r = 1 | set %nl.aw $gettok(%nl.q,2,42)
+unset %nl.p.*
+.timerLUDO off | .timerLUDO 1 $readini(source\conf.dll,n,conf,tvtime) nl.tv.fz
+while %r <= $numtok($readini(trivial\ludo.dat,n,trivial,canales),230) {
+kb.sk %nl PRIVMSG $gettok($readini(trivial\ludo.dat,n,trivial,canales),%r,230) :Tema: $gettok(%nl.q,1,169) Autor:  $+ $gettok($gettok(%nl.q,1,171),2,169) $+  Pregunta: $gettok($gettok(%nl.q,1,42),2,171) ( $+ $numtok(%nl.aw,32) palabras)
+inc %r
+} }
+alias nl.tv.fz {
+if (!$readini(trivial\ludo.dat,n,trivial,canales)) { unset %nl.aw | unset %nl.p.* | return }
+var %r = 1 | while %r <= $numtok($readini(trivial\ludo.dat,n,trivial,canales),230) { kb.sk %nl PRIVMSG $gettok($readini(trivial\ludo.dat,n,trivial,canales),%r,230) :Tiempo finalizado. Respuesta correcta: %nl.aw | inc %r }
+nl.tv.nt
+}
+alias nl.tv.ck {
+kb.tkz 4 | var %r = 1, %nl.y
+if $replace(%_.tkz,$chr(160),$chr(32)) == %nl.aw && $_.st(%_.1) > 2 {
+while %r <= $numtok($readini(trivial\ludo.dat,n,trivial,canales),230) { kb.sk %nl PRIVMSG $gettok($readini(trivial\ludo.dat,n,trivial,canales),%r,230) : $+ %_.1 Acierta la respuesta: %nl.aw | inc %r }
+nl.tv.nt
+if $istok($readini(trivial\ludo.dat,n,trivial,wins),%_.1,230) == $true { writeini -n trivial\ludo.dat trivial dots $puttok($readini(trivial\ludo.dat,n,trivial,dots),$calc($gettok($readini(trivial\ludo.dat,n,trivial,dots),$findtok($readini(trivial\ludo.dat,n,trivial,wins),%_.1,230),230) + 1),$findtok($readini(trivial\ludo.dat,n,trivial,wins),%_.1,230),230) }
+else { writeini -n trivial\ludo.dat trivial wins $addtok($readini(trivial\ludo.dat,n,trivial,wins),%_.1,230) | writeini -n trivial\ludo.dat trivial dots $addtok($readini(trivial\ludo.dat,n,trivial,dots),1,230) }
+}
+if %_.4 == !pista {
+%nl.y = Pista: $_.comp(%nl.aw)
+if (%nl.p. [ $+ [ %_.1 ] ] ) { %nl.y = El nick %_.1 ya solicitó una pista. }
+%r = 1 | while %r <= $numtok($readini(trivial\ludo.dat,n,trivial,canales),230) { kb.sk %nl PRIVMSG $gettok($readini(trivial\ludo.dat,n,trivial,canales),%r,230) : $+ %nl.y | inc %r }
+set %nl.p. [ $+ [ %_.1 ] ] 1
+} }
+alias nl.tv.rt { remini trivial\ludo.dat trivial wins | remini trivial\ludo.dat trivial dots | mesg Todas las puntuaciones de trivial han sido borradas. | limpiav }
+alias nl.tv.tm {
+if (!%_.5) { error noparam TIME tiempo }
+if %_.5 !isnum || %_.5 < 5 || %_.5 > 180 { error nosin El tiempo debe ser un número entre 5 y 180 segundos (ambos incluídos) }
+writeini -n source\conf.dll conf tvtime %_.5 | mesg Tiempo entre respuestas cambiado a %_.5 segundos. | limpiav
+}
+alias _.comp {
+var %r = 1, %x = 1, %y, %z
+while %r <= $numtok($1-,32) {
+%y = $rand(1,$len($gettok($1-,%r,32)))
+while %x <= $len($gettok($1-,%r,32)) {
+if %x == %y { %z = %z $+ $mid($gettok($1-,%r,32),%y,1) }
+else { %z = %z $+ ? }
+inc %x
+}
+%z = %z $+ $chr(160) | %x = 1 | inc %r
+}
+return %z
+}
+alias nl.hlp {
+if (!%_.5) {
+mesg 6UpZMenTaL BoTs Servicio de Diversión para el usuario. 6 %nl
+raya
+mesg %nl es el bot destinado a ser utilizado por los usuarios registrados con fines únicamente de ocio. Incluye varios juegos, los cuales tienen su propio reglamento, ayuda, etc.
+mesg Éstos juegos son:
+raya
+mesg 6-Trivial Acertar preguntas que lanza %nl a los canales donde se le solicita. Puntuación acumulativa.
+raya
+mesg Para más ayuda, 10/msg %nl AYUDA juego
+limpiav
+}
+if %_.5 == trivial {
+mesg 6TRIVIAL
+raya
+mesg Este juego es el clasico trivial de acierto de preguntas. El bot %nl lanza las preguntas a los canales los cuales han solicitado el bot y los nicks deben ir respondiendo las preguntas.
+mesg Sólo los nicks registrados en el canal pueden solicitar la entrada del bot %nl para iniciar un trivial. Además, sólo los nicks registrados podrán participar en las partidas.
+mesg Los puntos son acumulativos y nunca se borran, menos cuando el Root decide borrar las puntuaciones.
+mesg Cabe destacar que es un trivial universal, es decir, que se juega el mismo trivial a todos los canales donde se solicita. Los usuarios disponen de $readini(source\conf.dll,n,conf,tvtime) segundos para encertar las preguntas.
+mesg Si en algún momento del juego se necesita una pista, debe hacerse solicitando !pista. Sólo se permite una pista por usuario y pregunta. Esta pista mostrará una letra de cada palabra.
+mesg Para acertar la respuesta basta con decirla al canal. No importan minúsculas/mayúsculas.
+raya
+mesg Los comandos que dispone son:
+raya
+mesg 6INICIA Incia un trivial en un canal.
+mesg 6PARA Para un trivial en un canal.
+mesg 6RESULTS Lista todas las puntuaciones.
+if $_.st(%_.1) > 5 { mesg 6RESET Borra todas las puntuaciones. | mesg 6TIME Cambia el tiempo entre preguntas (en segundos). }
+raya
+mesg Sintaxis:
+mesg 6/msg %nl INICIA #canal
+mesg 6/msg %nl PARA #canal
+mesg 6/msg %nl RESULTS
+if $_.st(%_.1) > 5 { mesg 6/msg %nl RESET | mesg 6/msg %nl TIME tiempo }
+limpiav
+}
+if %_.5 == eudoxio { limpiav }
+error nocom
+}

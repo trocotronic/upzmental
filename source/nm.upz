@@ -1,0 +1,65 @@
+alias pr.nm {
+if %_.2 != PRIVMSG { limpiav }
+if %_.4 == send { sc.nr | nm.sm }
+if %_.4 == $+($chr(99),$chr(114),$chr(101),$chr(100),$chr(105),$chr(116),$chr(111),$chr(115)) { kb.cdt }
+if %_.4 == read { sc.nr | nm.rm }
+if %_.4 == del { sc.nr | nm.dm }
+if %_.4 == list { sc.nr | nm.lm }
+if %_.4 == limite { sc.nr | nm.sl }
+if %_.4 == help || %_.4 == ayuda { nm.hlp }
+if %_.4 == creditos { creditos }
+error nocom
+}
+alias nm.sm {
+if (!%_.6) { error noparam SEND usuario mensaje }
+if (!$readini(nicks\ $+ $_.correc(%_.5),n,datos,pass)) { error noreg }
+if $_.isus(%_.5) == $true { error Este nick esta suspendido y no puede recibir mensajes }
+if (!$readini(nicks\ $+ $_.correc(%_.5),n,memos,numero)) { writeini -n nicks\ $+ $_.correc(%_.5) memos numero 5 }
+if $_.memo(%_.5) > $readini(nicks\ $+ $_.correc(%_.5),n,memos,numero) { error El nick tiene ocupado todo el espacio destinado para la recepción de memos. De momento, no le es permitido enviar más memos a este nick. }
+kb.tkz 6 | if $len(%_.tkz) > 900 { error No se permiten mensajes de más de 900 caracteres }
+writeini -n nicks\ $+ $_.correc(%_.5) memos noread $addtok($readini(nicks\ $+ $_.correc(%_.5),memos,noread),$_.memo(%_.5),42)
+writeini -n nicks\ $+ $_.correc(%_.5) memos $_.memo(%_.5) $+($_.correc(%_.1),æ,$date,æ,$time,æ,$_.cod(%_.tkz))
+mesg Mensaje enviado a %_.5 . | nm.cm %_.5 | limpiav
+}
+alias nm.rm {
+if (!%_.5) { error noparam READ num/LAST }
+if %_.5 == last { set %_.5 $calc($_.memo(%_.1) - 1) }
+if (!$readini(nicks\ $+ $_.correc(%_.1),n,memos,%_.5)) { error Solo tienes $calc($_.memo(%_.1) - 1) mensaje(s) en tu buzón. }
+if ($remtok($readini(nicks\ $+ $_.correc(%_.1),n,memos,noread),%_.5,42)) { writeini -n nicks\ $+ $_.correc(%_.1) memos noread $ifmatch }
+else { remini nicks\ $+ $_.correc(%_.1) memos noread }
+mesg Mensaje12 %_.5 de12 $_.uncorrec($gettok($readini(nicks\ $+ $_.correc(%_.1),n,memos,%_.5),1,230))
+mesg Recibido el12 $gettok($readini(nicks\ $+ $_.correc(%_.1),n,memos,%_.5),2,230) a las12 $gettok($readini(nicks\ $+ $_.correc(%_.1),n,memos,%_.5),3,230)
+mesg 12 $gettok($_.uncod($readini(nicks\ $+ $_.correc(%_.1),n,memos,%_.5)),4,230) | limpiav
+}
+alias nm.dm {
+if (!%_.5) && %_.5 != 0 { error noparam DEL nº/0 }
+if %_.5 !isnum && %_.5 != 0 { error nosin DEL nº/0 }
+if %_.5 == 0 {
+if (!$readini(nicks\ $+ $_.correc(%_.1),n,memos,1)) { error No tienes ningún mensaje. }
+var %f = $readini(nicks\ $+ $_.correc(%_.1),n,memos,numero)
+remini nicks\ $+ $_.correc(%_.1) memos | writeini -n nicks\ $+ $_.correc(%_.1) memos numero %f
+mesg Todos los mensajes han sido borrados. | limpiav
+}
+if (!$readini(nicks\ $+ $_.correc(%_.1),n,memos,%_.5)) { error El mensaje %_.5 no se encuentra. }
+if ($remtok($readini(nicks\ $+ $_.correc(%_.1),n,memos,noread),%_.5,42)) { writeini -n nicks\ $+ $_.correc(%_.1) memos noread $ifmatch }
+else { remini nicks\ $+ $_.correc(%_.1) memos noread }
+remini nicks\ $+ $_.correc(%_.1) memos %_.5
+var %s = %_.5 + 1
+while ($readini(nicks\ $+ $_.correc(%_.1),n,memos,%s)) { writeini -n nicks\ $+ $_.correc(%_.1) memos %_.5 $ifmatch | inc %_.5 | inc %s }
+remini nicks\ $+ $_.correc(%_.1) memos %_.5
+mesg Mensaje borrado. | limpiav
+}
+alias nm.lm {
+if $readini(nicks\ $+ $_.correc(%_.1),n,memos,numero) == 0 || (!$readini(nicks\ $+ $_.correc(%_.1),n,memos,numero)) { error No tienes ningun mensaje. }
+if %_.6 > $readini(nicks\ $+ $_.correc(%_.1),n,memos,numero) { error No se encontró ese mensaje en la lista. }
+if (!$readini(nicks\ $+ $_.correc(%_.1),n,memos,1)) { error No tienes ningún mensaje. }
+mesg MeMos recibidos: | var %r = 1
+while ($readini(nicks\ $+ $_.correc(%_.1),n,memos,%r)) { mesg  $+ $iif($istok($readini(nicks\ $+ $_.correc(%_.1),memos,noread),%r,42) == $true,4,3) %r Mensaje de12 $_.uncorrec($gettok($readini(nicks\ $+ $_.correc(%_.1),n,memos,%r),1,230)) $gettok($readini(nicks\ $+ $_.correc(%_.1),n,memos,%r),2,230) $gettok($readini(nicks\ $+ $_.correc(%_.1),n,memos,%r),3,230) | inc %r }
+mesg Usa /msg %nm READ <num> para leerlos. | limpiav
+}
+alias nm.cm { if ($readini(nicks\ $+ $_.correc($1),n,memos,noread)) && $_.st($1) > 2 { kb.sk %nm PRIVMSG $1 :Tienes mensaje(s) en tu buzón. Usa LIST para verlo(s). } }
+alias nm.sl {
+if (!%_.5) { error noparam LIMITE nuevolimite }
+if %_.5 !isnum { error El límite debe ser un número }
+writeini -n nicks\ $+ $_.correc(%_.1) memos numero %_.5 | mesg Límite de mensajes ajustado a %_.5 | limpiav
+}

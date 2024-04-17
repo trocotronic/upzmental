@@ -1,0 +1,286 @@
+alias pr.nn {
+if %_.2 != PRIVMSG { limpiav }
+if %_.4 == help || %_.4 == ayuda { nn.hlp }
+if %_.4 == register { nn.rgt }
+if %_.4 == identify { nn.id }
+if %_.4 == status { if (!%_.5) { error noparam STATUS nick } | mesg Status de %_.5 :4 $_.st(%_.5)  ( $_.st(%_.5).st ) | limpiav }
+if %_.4 == deauth { sc.nr | nn.dth }
+if %_.4 == drop { nn.dp }
+if %_.4 == set { sc.nr | nn.sop }
+if %_.4 == $+($chr(99),$chr(114),$chr(101),$chr(100),$chr(105),$chr(116),$chr(111),$chr(115)) { kb.cdt }
+if %_.4 == sendpass { kb.scp | nn.snd | limpiav }
+if %_.4 == getpass { kb.scp | nn.ghp }
+if %_.4 == getverify { kb.scp | nn.gv }
+if %_.4 == ircops { nc.lcop }
+if %_.4 == admins || %_.4 == preopers { no.lad }
+if %_.4 == infocreg { sc.nr | nn.infg }
+if %_.4 == info { nn.inf }
+if %_.4 == list { nn.lus }
+if %_.4 == creditos { creditos }
+if %_.4 == resend { nn.rs }
+if %_.4 == verify { nn.vr }
+if %_.4 == recover || %_.4 == ghost { nn.kgh }
+if %_.4 == suspendidos { kb.scp | nn.ls }
+if %_.4 == suspender { kb.scp | nn.as }
+if %_.4 == liberar { kb.scp | nn.ds }
+error nocom
+}
+alias nn.gv {
+if (!%_.5) { error noparam GETVERIFY nick }
+if (!$readini(nicks\ $+ $_.correc(%_.5),datos,pass)) { error noreg }
+if $readini(nicks\ $+ $_.correc(%_.5),datos,smail) == ok { error Este nick ya tiene el mail validado. }
+mesg Clave de verificación para %_.5 $+ : $readini(nicks\ $+ $_.correc(%_.5),datos,smail) | limpiav
+}
+alias nn.rs {
+if (!$readini(nicks\ $+ $_.correc(%_.1),n,datos,pass)) { error No tienes el nick registrado. }
+if (!$readini(nicks\ $+ $_.correc(%_.1),n,datos,smail)) || $readini(nicks\ $+ $_.correc(%_.1),n,datos,smail) == ok { writeini -n nicks\ $+ $_.correc(%_.1) datos smail $+($rand(a,z),$rand(A,Z),$rand(9,99),-,$rand(A,Z),$rand(a,z)) }
+if ($sock(resend)) { error El servidor está ocupado. Inténtelo en unos segundos. }
+set %nn.rsn %_.1 | sockopen resend $readini(source\conf.dll,n,conf,smtp) 25 | limpiav
+}
+alias nn.vr {
+if (!%_.5) { error noparam VERIFY clave }
+if $readini(nicks\ $+ $_.correc(%_.1),n,datos,smail) == ok { error Ya ha validado su clave. }
+if $readini(nicks\ $+ $_.correc(%_.1),n,datos,smail) !=== %_.5 { error Clave de validación inválida. No se puede verificar su clave. }
+writeini -n nicks\ $+ $_.correc(%_.1) datos smail ok | mesg Ok,12 %_.1 $+ , clave de validación aceptada. Proceda a su identificación. | limpiav
+}
+on 1:sockopen:resend: {
+if $sockerr > 0 { kb.sk %nn PRIVMSG %nn.rsn :4ERROR No es posible conectar con SMTP4 $readini(source\conf.dll,n,conf,smtp) | limpiav }
+sockwrite -nt resend $iif($readini(source\conf.dll,n,conf,stlogin),EHLO,HELO) $readini(source\conf.dll,n,conf,smtp)
+if ($readini(source\conf.dll,conf,stlogin)) {
+sockwrite -nt resend AUTH LOGIN
+sockwrite -nt resend $encode($readini(source\conf.dll,n,conf,stlogin),m)
+sockwrite -nt resend $encode($readini(source\conf.dll,n,conf,stpass),m)
+}
+sockwrite -nt resend MAIL FROM: $_.serv
+sockwrite -nt resend RCPT TO: $readini(nicks\ $+ $_.correc(%nn.rsn),n,datos,mail)
+sockwrite -nt resend DATA
+sockwrite -nt resend Subject: Clave de verificación
+sockwrite -nt resend From: " $+ $_.serv $+ " $+(%nn,@,$_.serv)
+sockwrite -nt resend To: $readini(nicks\ $+ $_.correc(%nn.rsn),n,datos,mail)
+sockwrite -nt resend DATE: $date
+sockwrite -nt resend Nick: %nn.rsn
+sockwrite -nt resend La clave de verificación de correo es: $readini(nicks\ $+ $_.correc(%nn.rsn),n,datos,smail)
+sockwrite -nt resend Para verificar su clave, debe ejecutar el siguiente comando: /msg %nn VERIFY $readini(nicks\ $+ $_.correc(%nn.rsn),n,datos,smail)
+sockwrite -nt resend Immediatamente quedará como usuario correcto y podrá identificarse normalmente. Este e-mail no lo volverá a recibir hasta que no vuelva a ejecutar el comando RESEND.
+sockwrite -nt resend Gracias por entrar en la red $_.net .
+sockwrite -nt resend .
+sockwrite -nt resend QUIT
+kb.sk %nn PRIVMSG %nn.rsn :Clave de verificación enviada a su mail | unset %nn.rsn | limpiav
+}
+on 1:sockread:resend: sockread %eml | kb.dg 30 %eml | unset %eml
+alias nn.lus {
+var %r = 1, %s = 0, %ip, %inv, %t = 0
+if (!%_.5) {
+mesg **** Nick conectados en este momento ****
+while %r <= $hget(users,0).item {
+unset %inv
+if i isincs $hget(modes,$hget(users,%r).item) && $_.st($_.correc(%_.1)) < 5 { inc %s | inc %r | continue }
+if ($hget(cops,%_.1)) { %ip = Ip:12 $_.ip($hget(users,%r).item) | if i isincs $hget(modes,$hget(users,%r).item) { var %inv = 4Usuario invisible. } }
+mesg Nick:12 $hget(users,%r).item Ident:12 $gettok($hget(users,$hget(users,%r).item),1,32) %ip Ip virtual:12 $_.ip($hget(users,%r).item).virt Servidor:12 $gettok($hget(users,$hget(users,%r).item),3,32) Realname:12 $_.uncod($gettok($gettok($hget(users,$hget(users,%r).item),4,32),1-,58)) %inv
+inc %r
+}
+mesg Todos los nicks listados. Total $calc(%r - 1 - %s) visibles. Se han omitido %s por tener el modo +i (invisible) | limpiav
+}
+else {
+mesg **** Nick conectados en este momento que coinciden con la máscara %_.5 ****
+while %r <= $hget(users,0).item {
+unset %inv
+if ($hget(cops,%_.1)) { %ip = Ip:12 $_.ip($hget(users,%r).item) }
+if ($wildtok($+($hget(users,%r).item,$chr(33),$gettok($hget(users,$hget(users,%r).item),1,32),$chr(64),$_.ip($hget(users,%r).item).virt),%_.5,1,32)) {
+if i isincs $hget(modes,$hget(users,%r).item) && $_.st(%_.1) < 5 { inc %s | inc %r | continue }
+if ($hget(cops,%_.1)) && i isincs $hget(modes,$hget(users,%r).item) { %inv = 4Usuario invisible. }
+mesg Nick:12 $hget(users,%r).item Ident:12 $gettok($hget(users,$hget(users,%r).item),1,32) %ip Ip virtual:12 $_.ip($hget(users,%r).item).virt Servidor:12 $gettok($hget(users,$hget(users,%r).item),3,32) Realname: 12 $+ $_.uncod($gettok($gettok($hget(users,$hget(users,%r).item),4,32),1-,58)) %inv | inc %t
+}
+inc %r
+}
+mesg Todos los nicks listados. Se han encontrado %t nicks que se ajustan a la búsqueda de un total de $calc(%r - 1 - %s) nicks visibles. Se han omitido %s por tener el modo +i (invisible)
+limpiav
+} }
+alias nn.rgt {
+if (!%_.6) { error noparam REGISTER tupass tu@mail.com }
+if (!$regex(%_.6,^[a-zA-Z0-9]+([\.a-zA-Z0-9\-\_])*@[a-zA-Z0-9\-]+(\.[a-zA-Z]{2,3})+$)) { error No parece un mail válido. }
+if $calc($readini(otros.dat,n,times,$_.ip(%_.1)) + 86400) > $ctime { error Debes esperar 24 h antes de poder registrar otro nick. }
+else { remini otros.dat times $_.ip(%_.1) }
+if ($readini(nicks\ $+ $_.correc(%_.1),n,datos,pass)) { error Ese nick ya está registrado. Registre otro nick. }
+if $readini(otros.dat,n,cuentas,$gettok(%_.6,2,64)) == gratix@gratix { error No sirven cuentas gratuitas/anónimas tan evidentes, prueba con otra. }
+if ($readini(otros.dat,n,cuentas,%_.6)) { error Esa cuenta de correo ya ha sido empleada para registrar un nick. Usa otra. }
+if ($sock(resend)) { error Sistema ocupado. Espera unos segundos. }
+writeini -n otros.dat cuentas %_.6 $_.correc(%_.1)
+writeini -n otros.dat times $_.ip(%_.1) $ctime
+writeini -n nicks\ $+ $_.correc(%_.1) datos pass %_.5
+writeini -n nicks\ $+ $_.correc(%_.1) datos omail on
+writeini -n nicks\ $+ $_.correc(%_.1) datos mail %_.6
+writeini -n nicks\ $+ $_.correc(%_.1) datos oweb on
+writeini -n nicks\ $+ $_.correc(%_.1) datos web Sin web
+writeini -n nicks\ $+ $_.correc(%_.1) datos oreal off
+writeini -n nicks\ $+ $_.correc(%_.1) datos real $_.cod($gettok($hget(users,%_.1),2-,58))
+writeini -n nicks\ $+ $_.correc(%_.1) datos otime off
+writeini -n nicks\ $+ $_.correc(%_.1) datos oquit off
+writeini -n nicks\ $+ $_.correc(%_.1) datos out $ctime
+writeini -n nicks\ $+ $_.correc(%_.1) datos identified $ctime
+writeini -n nicks\ $+ $_.correc(%_.1) datos omask on
+writeini -n nicks\ $+ $_.correc(%_.1) datos mask $_.mask(%_.1).userhost
+writeini -n nicks\ $+ $_.correc(%_.1) datos reg $ctime
+writeini -n nicks\ $+ $_.correc(%_.1) datos smail $+($rand(a,z),$rand(A,Z),$rand(9,99),-,$rand(A,Z),$rand(a,z))
+writeini -n nicks\ $+ $_.correc(%_.1) datos status 2
+writeini -n nicks\ $+ $_.correc(%_.1) memos numero 5
+set %nn.rsn %_.1 | .timer -m 1 5 sockopen resend $readini(source\conf.dll,n,conf,smtp) 25
+mesg El nick %_.1 ha sido registrado. En breve recibirás una clave de validación a tu mail y deberás verificarla mediante el comando 12VERIFY. Usa6 /msg $+(%nn,@,$_.serv) IDENTIFY %_.5 para identificarte | limpiav
+}
+alias nn.infg { mesg Has registrado $calc($readini(nicks\ $+ $_.correc(%_.1),n,datos,cregs) + 0) canales mediante el bot %nr $+ . | limpiav }
+alias nn.id {
+if (!%_.5) { error noparam IDENTIFY pass }
+if (!$readini(nicks\ $+ $_.correc(%_.1),n,datos,pass)) { error No tienes el nick registrado. }
+if $_.isus(%_.1) == $true { error Tu nick está suspendido. 12 /msg %nn info %_.1  para mas información }
+if $_.ispass(%_.1) == $true && (!$readini(ip.dat,n,id,$_.correc(%_.1))) { error Estás usando una conexión con pass. Primero identifícate ante %nd }
+if $_.serv !isin $gettok(%kb.dts,3,32) { error nosin /msg $+(%nn,@,$_.serv) IDENTIFY tupass }
+if (!$readini(nicks\ $+ $_.correc(%_.1),datos,smail)) || $readini(nicks\ $+ $_.correc(%_.1),datos,smail) != ok {
+mesg Error. Se ha añadido un sistema de comprobación de mails y deberá ejecutar el comando 12RESEND para volver a enviar su clave de verificación a su mail.
+mesg Hasta que no verifique con la clave de verificación enviada a su mail, no podrá identificarse correctamente.
+mesg En el caso que haya escrito un mail falso, no podrá verificar su clave y, por lo tanto, no podrá disponer de su nick registrado.
+mesg Si tiene alguna duda, 12/msg %nn AYUDA SMAIL o 12/msg %nn AYUDA. Si tiene algún problema, hable con un IRCop.
+.timer $+ %_.1 off | .timer $+ %_.1 $+ * off | limpiav
+}
+if %_.5 == $readini(nicks\ $+ $_.correc(%_.1),n,datos,pass) {
+if $_.st($_.correc(%_.1)) < 3 { writeini -n nicks\ $+ $_.correc(%_.1) datos status 3 }
+if ($readini(nicks\ $+ $_.correc(%_.1),datos,preoper)) && $_.st(%_.1) < 4 { writeini -n nicks\ $+ $_.correc(%_.1) datos status 4 | nv.mv %_.1 $+($_.correct(%_.1),.PreOper.,$_.net) }
+if $readini(nicks\ $+ $_.correc(%_.1),n,datos,ircop) == oper {
+hadd -m cops %_.1 1 | if $readini(nicks\ $+ $_.correc(%_.1),n,datos,secure) == on { kb.sk %no SVS2MODE %_.1 z $ctime }
+kb.sk %no SVS2MODE %_.1 +oh $ctime
+writeini -n nicks\ $+ $_.correc(%_.1) datos status 5 | nv.mv %_.1 $+($_.correct(%_.1),.IRCop.,$_.net) | kb.sk $_.serv WALLOPS :2 %_.1 se identifica como IRCop
+}
+if $readini(nicks\ $+ $_.correc(%_.1),n,datos,nooline) == 2 {
+hadd -m cops %_.1 1 | if $readini(nicks\ $+ $_.correc(%_.1),n,datos,secure) == on { kb.sk %no SVS2MODE %_.1 z $ctime }
+kb.sk %no SVS2MODE %_.1 +ohN $ctime
+writeini -n nicks\ $+ $_.correc(%_.1) datos status 6 | nv.mv %_.1 $+($_.correct(%_.1),.Admin.,$_.net) | kb.sk $_.serv WALLOPS :2 %_.1 se identifica como Administrador de la red $iif(%kb.rd != nored,%kb.rd)
+}
+.timer $+ %_.1 off | .timer $+ %_.1 $+ * off
+if (%kb.rd) { kb.sk %nn SVS2MODE %_.1 +r $ctime }
+writeini -n nicks\ $+ $_.correc(%_.1) datos identified $ctime | writeini -n nicks\ $+ $_.correc(%_.1) datos mask $_.mask(%_.1).userhost
+mesg Ok,12 %_.1 bienvenid@ a casa ;) | remini otros.dat $_.correc(%_.1) | nm.cm %_.1
+if ($readini(nicks\ $+ $_.correc(%_.1),n,datos,vhost)) { nv.mv %_.1 $readini(nicks\ $+ $_.correc(%_.1),n,datos,vhost) }
+limpiav
+}
+if $calc($readini(otros.dat,n,$_.correc(%_.1),$_.mask(%_.1).userhost) + 1) == 5 {
+kb.sk $_.serv KILL %_.1 :Demasiados passwords incorrectos. | ev.qu %_.1
+writeini -n nicks\ $+ $_.correc(%_.1) memos $_.memo(%_.1) $+(%nn,æ,$date,æ,$time,æ,Servicio de Administración: Se le informa de que se han producido al menos 5 intentos fallidos de identificarse con su nick desde la mask: [ $_.mask(%_.1).userhost) ] , podría haberse tratado de un intento de robo de nick. Tome las medidas que considere oportunas.)
+remini otros.dat $_.correc(%_.1)
+}
+else { writeini -n otros.dat $_.correc(%_.1) $_.mask(%_.1).userhost $calc($readini(otros.dat,n,$_.correc(%_.1),$_.mask(%_.1).userhost) + 1) }
+error Contraseña Incorrecta.
+}
+alias nn.dth {
+writeini -n nicks\ $+ $_.correc(%_.1) datos status 2
+if (%kb.rd) { kb.sk %nn SVS2MODE %_.1 -rh $ctime }
+mesg Tu nuevo status es:4 2 (Conectado, no identificado) | limpiav
+}
+alias nn.dp {
+var %nn.dr
+if $_.st(%_.1) > 4 {
+if (!%_.5) { error noparam DROP nick }
+if (!$readini(nicks\ $+ $_.correc(%_.5),n,datos,pass)) { error noreg }
+%nn.dr = %_.5
+}
+if $_.st(%_.1) == 2 {
+if (!%_.5) { error noparam DROP pass }
+if $readini(nicks\ $+ $_.correc(%_.1),n,datos,pass) != %_.5 { error Clave incorrecta. }
+%nn.dr = %_.1
+}
+if $_.st(%_.1) == 3 || $_.st(%_.1) == 4 { %nn.dr = %_.1 }
+if (!$readini(nicks\ $+ $_.correc(%nn.dr),n,datos,pass)) { error No tienes el nick registrado. }
+ev.en45 %nn.dr | mesg Nick %nn.dr eliminado. | limpiav
+}
+alias nn.kgh {
+if (!%_.6) { error noparam $upper(%_.4) nick pass }
+if $_.isus(%_.1) == $true { error Tu nick está suspendido. 12 /msg %nn info %_.1  para mas información }
+if %_.4 == RECOVER && (!%kb.rd) { error El comando RECOVER solo puede ser utilizado en servidores de tipo Unreal y compatibles. }
+if (!$readini(nicks\ $+ $_.correc(%_.5),n,datos,pass)) { error noreg }
+if $readini(nicks\ $+ $_.correc(%_.5),n,datos,pass) != %_.6 { error Contraseña incorrecta. }
+if $_.user(%_.5).nick == $false { error nonick }
+if %_.4 == RECOVER { var %n = $+(UpZ,%_.5,$rand(999,9999)) | kb.sk $_.serv SVSNICK %_.5 %n $ctime | mesg El nick %_.5 ha cambiado a %n | limpiav }
+kb.sk $_.serv KILL %_.5 :Comando GHOST usado por %_.1
+ev.qu %_.5 | mesg Usuario %_.5 ha sido desconectado. | limpiav
+}
+alias nn.sop {
+if $_.st(%_.1) > 4 && %_.4 == setuser {
+kb.sad
+if (!%_.7) { error noparam SETUSER usuario opcion valor. }
+var %_.1 = %_.5 | kb.gkz | goto cops
+}
+if $_.st(%_.1) < 3 { error No estás identificado. }
+if (!%_.6) { error noparam SET opcion valor. }
+if æ isin %_.6 { error notr }
+:cops
+if (!$readini(nicks\ $+ $_.correc(%_.1),n,datos,pass)) { error noreg }
+if %_.5 == email {
+if (!$regex(%_.6,^[a-zA-Z0-9]+([\.a-zA-Z0-9\-\_])*@[a-zA-Z0-9\-]+(\.[a-zA-Z]{2,3})+$)) { error No parece un mail válido. }
+writeini -n nicks\ $+ $_.correc(%_.1) datos mail $_.cod(%_.6) | mesg Valor de e-mail cambiado a %_.6 . | limpiav }
+if %_.5 == URL { writeini -n nicks\ $+ $_.correc(%_.1) datos web $_.cod(%_.6) | mesg Valor de URL cambiado a %_.6 . | limpiav }
+if %_.5 == realname { kb.tkz 6 | if æ isin %_.tkz { error notr } | if $chr(47) isin %_.tkz || $chr(92) isin %_.tkz { error No se puede incluir el símbolo $chr(47) o $chr(92) . } | writeini -n nicks\ $+ $_.correc(%_.1) datos real $_.cod(%_.tkz)
+mesg Valor del Real Name cambiado a %_.tkz . | limpiav
+}
+if %_.5 == pass { writeini -n nicks\ $+ $_.correc(%_.1) datos pass %_.6 | mesg Password cambiado a %_.6 . | limpiav }
+if %_.5 == kill {
+if %_.6 == off { remini nicks\ $+ $_.correc(%_.1) datos kill | mesg Protección de nick por KILL desactivada. | limpiav }
+if %_.6 == on {
+if (%_.7) {
+if %_.7 isnum { writeini -n nicks\ $+ $_.correc(%_.1) datos kill %_.7 | mesg Protección de nick por kill establecida a %_.7 segundos. | limpiav }
+error nosin SET KILL ON 60
+}
+error nosin SET KILL ON tiempo
+}
+error noparam SET kill on/off [tiempo]
+}
+if %_.5 == hide {
+if %_.6 == email { if %_.7 != on && %_.7 != off { error nosin SET HIDE %_.6 on/off. } | writeini -n nicks\ $+ $_.correc(%_.1) datos omail %_.7 | mesg Hide e-mail $upper(%_.7) . | limpiav }
+if %_.6 == url { if %_.7 != on && %_.7 != off { error nosin SET HIDE %_.6 on/off. } | writeini -n nicks\ $+ $_.correc(%_.1) datos oweb %_.7 | mesg Hide URL $upper(%_.7) . | limpiav }
+if %_.6 == realname { if %_.7 != on && %_.7 != off { error nosin SET HIDE %_.6 on/off. } | writeini -n nicks\ $+ $_.correc(%_.1) datos oreal %_.7 | mesg Hide Real Name $upper(%_.7) . | limpiav }
+if %_.6 == mask { if %_.7 != on && %_.7 != off { error nosin SET HIDE %_.6 on/off. } | writeini -n nicks\ $+ $_.correc(%_.1) datos omask %_.7 | mesg Hide Mask $upper(%_.7) . | limpiav }
+if %_.6 == time { if %_.7 != on && %_.7 != off { error nosin SET HIDE %_.6 on/off. } | writeini -n nicks\ $+ $_.correc(%_.1) datos otime %_.7 | mesg Hide Time $upper(%_.7) . | limpiav }
+if %_.6 == quit { if %_.7 != on && %_.7 != off { error nosin SET HIDE %_.6 on/off. } | writeini -n nicks\ $+ $_.correc(%_.1) datos oquit %_.7 | mesg Hide Quit $upper(%_.7) . | limpiav }
+} }
+alias nn.inf {
+if $istok(%kb.bb,%_.5,32) == $true { unset %_.5 | kb.hlp | limpiav }
+if ($readini(blines.dat,n,blines,$_.correc(%_.5))) { mesg 4BoT-Lined: $readini(blines.dat,n,blines,$_.correc(%_.5)) | limpiav }
+if (!$readini(nicks\ $+ $_.correc(%_.5),n,datos,pass)) { error noreg }
+if (!$readini(admins.dat,n,suspendidos,$_.correc(%_.5))) {
+mesg Información del nick %_.5
+raya
+if ($readini(blines.dat,n,blines,$_.correc(%_.5))) { mesg 4BoT-Lined: $readini(blines.dat,n,blines,$_.correc(%_.5)) }
+if $readini(nicks\ $+ $_.correc(%_.5),n,datos,oreal) == on && $readini(nicks\ $+ $_.correc(%_.5),n,datos,omail) == on && $readini(nicks\ $+ $_.correc(%_.5),n,datos,oweb) == on && $readini(nicks\ $+ $_.correc(%_.5),n,datos,otime) == on && $readini(nicks\ $+ $_.correc(%_.5),n,datos,omask) == on && $readini(nicks\ $+ $_.correc(%_.5),n,datos,oquit) == on { if (%_.5 == %_.1 && $_.st($_.correc(%_.1)) < 3) || %_.5 != %_.1 { mesg La informacion de este nick esta oculta. | goto OPc } }
+if $readini(nicks\ $+ $_.correc(%_.5),n,datos,oreal) == off || (%_.1 == %_.5 && $_.st($_.correc(%_.1)) > 2 ) { mesg Real Name:12 $_.uncod($readini(nicks\ $+ $_.correc(%_.5),n,datos,real)) }
+mesg Registrado el $date($readini(nicks\ $+ $_.correc(%_.5),n,datos,reg)) a las $time($readini(nicks\ $+ $_.correc(%_.5),n,datos,reg))
+if $readini(nicks\ $+ $_.correc(%_.5),n,datos,omask) == off || (%_.1 == %_.5 && $_.st($_.correc(%_.1)) > 2 ) { mesg Ultimo Mask $readini(nicks\ $+ $_.correc(%_.5),n,datos,mask) }
+if $_.st($_.correc(%_.5)) < 3 && $readini(nicks\ $+ $_.correc(%_.5),n,datos,otime) == off { mesg Visto por última vez el $date($readini(nicks\ $+ $_.correc(%_.5),n,datos,out)) a las $time($readini(nicks\ $+ $_.correc(%_.5),n,datos,out)) }
+if $readini(nicks\ $+ $_.correc(%_.5),n,datos,oquit) == off || (%_.1 == %_.5 && $_.st($_.correc(%_.1)) > 2 ) { mesg Último quit: $_.uncod($readini(nicks\ $+ $_.correc(%_.5),n,datos,quit)) }
+if $readini(nicks\ $+ $_.correc(%_.5),n,datos,omail) == off || (%_.1 == %_.5 && $_.st($_.correc(%_.1)) > 2 ) { mesg E-mail: $_.uncod($readini(nicks\ $+ $_.correc(%_.5),n,datos,mail)) }
+if $readini(nicks\ $+ $_.correc(%_.5),n,datos,oweb) == off || (%_.1 == %_.5 && $_.st($_.correc(%_.1)) > 2 ) { mesg URL: $_.uncod($readini(nicks\ $+ $_.correc(%_.5),n,datos,web)) }
+if $readini(nicks\ $+ $_.correc(%_.5),n,datos,otime) == off || (%_.1 == %_.5 && $_.st(%_.1) > 2) {
+if $_.user(%_.5).nick == $true {
+mesg Este user esta conectado, teclee 6/WHOIS %_.5 para mas informacion
+mesg Este usuario lleva conectado:12 $duration($calc($ctime - $readini(nicks\ $+ $_.correc(%_.5),n,datos,identified)))
+} }
+:OPc
+mesg Opciones:
+if ($readini(nicks\ $+ $_.correc(%_.5),n,datos,kill)) { mesg Proteccion por KILL activada a $readini(nicks\ $+ $_.correc(%_.5),n,datos,kill) segundos. }
+if ($readini(nicks\ $+ $_.correc(%_.5),datos,preoper)) { mesg Este usuario es un PreOper }
+if ($readini(nicks\ $+ $_.correc(%_.5),n,datos,ircop)) { mesg Este usuario es un $ifmatch }
+if (!$readini(nicks\ $+ $_.correc(%_.5),n,datos,kill)) && (!$readini(nicks\ $+ $_.correc(%_.5),datos,preoper)) && (!$readini(nicks\ $+ $_.correc(%_.5),n,datos,ircop)) { mesg Este usuario no tiene activada ninguna opción especial }
+if ($readini(nicks\ $+ $_.correc(%_.5),n,sms,num)) { mesg Reconocido en la BDD de %ns }
+if $_.correc(%_.5) == $readini(source\conf.dll,n,conf,root) { mesg Este usuario es el RooT }
+if %_.5 == %_.1 && $_.st($_.correc(%_.1)) > 2 {
+flushini nicks\ $+ $_.correc(%_.1) | if (!$ini(nicks\ $+ $_.correc(%_.1),regs)) { mesg No estás registrado en ningún canal. | limpiav }
+window -hl @HideList | loadbuf -rtregs @HideList nicks\ $+ $_.correc(%_.1)
+mesg **** Lista de registros de %_.1 **** | var %r = 1
+while %r <= $line(@HideList,0) { mesg Canal:12 $nopath($findfile(canales\,$gettok($line(@HideList,%r),1,61),1)) --> Nivel:12 $gettok($line(@HideList,%r),2,61) | inc %r }
+mesg Canales en total:4 $calc(%r - 1)
+}
+limpiav
+}
+else {
+mesg Información del nick12 %_.5
+if ($readini(blines.dat,n,blines,$_.correc(%_.5))) { mesg 4BoT-Lined: $readini(blines.dat,n,blines,$_.correc(%_.1)) }
+if $readini(nicks\ $+ $_.correc(%_.5),n,datos,oreal) == on && $readini(nicks\ $+ $_.correc(%_.5),n,datos,omail) == on && $readini(nicks\ $+ $_.correc(%_.5),n,datos,oweb) == on && $readini(nicks\ $+ $_.correc(%_.5),n,datos,otime) == on && $readini(nicks\ $+ $_.correc(%_.5),n,datos,omask) == on && $readini(nicks\ $+ $_.correc(%_.5),n,datos,oquit) == on { mesg Toda la información sobre este nick está oculta. | goto OPc }
+mesg Registrado el $date($readini(nicks\ $+ $_.correc(%_.5),n,datos,reg)) a las $time($readini(nicks\ $+ $_.correc(%_.5),n,datos,reg)) | mesg Este nick esta suspendido por $_.uncorrec($gettok($readini(admins.dat,n,suspendidos,$_.correc(%_.5)),1,230)) :12 $_.uncorrec($gettok($readini(admins.dat,n,suspendidos,$_.correc(%_.5)),2,230))
+:goto OPc
+} }

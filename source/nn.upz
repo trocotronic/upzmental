@@ -1,0 +1,135 @@
+alias ev.cln {
+if (!$readini(ip.dat,n,especial,%_.6)) { var %_.mx = $readini(source\conf.dll,n,conf,clons) }
+else { var %_.mx = $readini(ip.dat,n,especial,%_.6) }
+hadd -m ip %_.6 $calc($hget(ip,%_.6) + 1)
+if $readini(source\conf.dll,n,conf,status) == off { return }
+if $hget(ip,%_.6) == $calc(%_.mx + 1) { kb.sk $_.serv KILL %_.2 :Demasiados clones. Máximo %_.mx clon(es). | ev.qu %_.2 | limpiav }
+}
+alias nn.as {
+if (!%_.6) { error noparam SUSPENDER nick motivo }
+if (!$readini(nicks\ $+ $_.correc(%_.5),n,datos,pass)) { error noreg }
+kb.tkz 6 | writeini -n admins.dat suspendidos $_.correc(%_.5) $+($_.correc(%_.1),æ,%_.tkz) | no.kll | mesg El nick %_.5 ha sido suspendido. | limpiav
+}
+alias nn.ds {
+if (!%_.5) { error noparam LIBERAR nick }
+if (!$readini(admins.dat,n,suspendidos,$_.correc(%_.5))) { error Ese nick no esta suspendido. }
+remini admins.dat suspendidos $_.correc(%_.5)
+mesg El nick %_.5 ha sido liberado | limpiav
+}
+alias nn.ls {
+flushini admins.dat | if (!$ini(admins.dat,suspendidos)) { mesg No hay nicks suspendidos. | limpiav }
+window -hl @HideList | loadbuf -rtsuspendidos @HideList admins.dat
+mesg **** Lista de nicks suspendidos **** | var %r = 1
+while %r <= $line(@HideList,0) { mesg Nick:12 $_.uncorrec($gettok($line(@HideList,%r),1,61)) --> Motivo:12 $gettok($line(@HideList,%r),2,61) | inc %r }
+mesg Nicks en total:4 $calc(%r - 1) | limpiav
+}
+alias nn.nwh {
+if $_.user(%_.3).nick == $false { limpiav }
+ev.qu %_.3
+}
+alias kb.mtd {
+if ($readini(source\conf.dll,n,conf,motd)) && (%_.5) {
+kb.sk %nç PRIVMSG %_.2 :<Noticias> Noticia del día (NOTD)
+kb.sk %nç PRIVMSG %_.2 : $+ $replace($_.uncod($readini(source\conf.dll,n,conf,motd)),$chr(160),$chr(32))
+}
+limpiav
+}
+alias sv.ju { if ($readini(source\conf.dll,n,conf,sajoin)) { kb.sk $_.serv SVSJOIN %_.2 : $+ $readini(source\conf.dll,n,conf,sajoin) } }
+alias kb.bjp {
+var %r = 1, %s, %t
+while %r <= $findfile(canales\,#*,0) {
+if (!$ini($findfile(canales\,#*,%r),datos)) { inc %r | continue }
+if $readini($findfile(canales\,#*,%r),n,datos,especial) == 0 { goto BJp2 }
+if $readini($findfile(canales\,#*,%r),n,datos,especial) !isnum { goto BJp1 }
+if - isin $readini($findfile(canales\,#*,%r),n,datos,especial) { writeini -n $findfile(canales\,#*,%r) datos especial $remove($readini($findfile(canales\,#*,%r),n,datos,especial),-) }
+%s = 1
+while %s <= $readini($findfile(canales\,#*,%r),n,datos,especial) { kb.sk $gettok(%kb.bb,%s,32) JOIN $nopath($findfile(canales\,#*,%r)) | inc %s }
+kb.sk $_.serv MODE $nopath($findfile(canales\,#*,%r)) + $+ $str(o,12) $gettok(%kb.bb,1- $iif($readini($findfile(canales\,#*,%r),n,datos,especial) < 13,$ifmatch,12),32)
+kb.sk $_.serv MODE $nopath($findfile(canales\,#*,%r)) + $+ $str(o,12) $gettok(%kb.bb,13- $+ $readini($findfile(canales\,#*,%r),n,datos,especial),32)
+goto BJp2
+:BJp1
+%t = 1
+while %t <= $numtok($readini($findfile(canales\,#*,%r),n,datos,especial),32) { kb.sk $gettok($readini($findfile(canales\,#*,%r),n,datos,especial),%t,32) JOIN $nopath($findfile(canales\,#*,%r)) | inc %t }
+kb.sk $_.serv MODE $nopath($findfile(canales\,#*,%r)) + $+ $str(o,12) $readini($findfile(canales\,#*,%r),n,datos,especial)
+:BJp2
+if k isincs $readini($findfile(canales\,#*,%r),n,datos,modos) { set %_.4 $readini($findfile(canales\,#*,%r),n,datos,modos) | set %_.3 $nopath($findfile(canales\,#*,%r)) | ev.wk }
+if s isincs $readini($findfile(canales\,#*,%r),n,datos,modos) { set %_.4 $readini($findfile(canales\,#*,%r),n,datos,modos) | set %_.3 $nopath($findfile(canales\,#*,%r)) | ev.ws }
+if $readini($findfile(canales\,#*,%r),n,datos,rmodos) == on {
+var %mc = $gettok($readini($findfile(canales\,#*,%r),n,datos,modos),1,32)
+nw.jw %mc $nopath($findfile(canales\,#*,%r))
+if m isincs %mc || i isincs %mc || p isincs %mc || s isincs %mc || k isincs %mc { kb.sk %nc MODE $nopath($findfile(canales\,#*,%r)) $readini($findfile(canales\,#*,%r),n,datos,modos) }
+}
+inc %r
+}
+if ($readini(otros.dat,n,stats,canales)) {
+%r = 1
+while %r <= $numtok($readini(otros.dat,n,stats,canales),230) {
+kb.sk %nt JOIN $gettok($readini(otros.dat,n,stats,canales),%r,230) | kb.sk $_.serv MODE $gettok($readini(otros.dat,n,stats,canales),%r,230) +o %nt | inc %r
+} }
+kb.sk %nw JOIN $readini(source\conf.dll,n,conf,shadow)
+kb.sk %nw MODE $readini(source\conf.dll,n,conf,shadow) +o %nw
+kb.sk %nw MODE $readini(source\conf.dll,n,conf,shadow) +simnt
+kb.sk %nw TOPIC $readini(source\conf.dll,n,conf,shadow) :En este canal se muestran todas las entradas en los canales con el bot %nw
+hadd -m modes $readini(source\conf.dll,n,conf,shadow) $hget(modes,$readini(source\conf.dll,n,conf,shadow)) $+ sim
+}
+alias sv.jp {
+if $isfile(admins.dat) == $true {
+flushini admins.dat | if (!$ini(admins.dat,links)) { return }
+window -hl @HideList | loadbuf -rtlinks @HideList admins.dat
+var %r = 1 | while %r <= $line(@HideList,0) { kb.sk $_.serv SERVER $gettok($line(@HideList,%r),1,61) 2 : $+ $gettok($line(@HideList,%r),2,61) | inc %r }
+} }
+alias no.jps {
+if (!%_.6) { error noparam LINK nombreservidor Info-comentario }
+if . !isin %_.5 { error El nombre del server debe llevar un punto. }
+kb.tkz 6 | kb.sk $_.serv SERVER %_.5 2 : $+ %_.tkz
+if %_.4 == linkp { writeini -n admins.dat links %_.5 %_.tkz }
+mesg Servidor %_.5 linkado. | limpiav
+}
+alias no.dps {
+if (!%_.5) { error noparam UNLINK nombreservidor }
+if ($readini(admins.dat,n,links,%_.5)) { remini admins.dat links %_.5 | mesg %_.5 Servidor borrado y desconectado. | limpiav }
+else { error No existe un LINK permanente para %_.5 }
+}
+alias no.sqs {
+if (!%_.6) { error noparam SQUIT servidor motivo }
+kb.tkz 6 | kb.sk $_.serv SQUIT %_.5 0 : $+ %_.tkz | mesg El servidor ha sido desconectado | set %_.2 %_.5
+}
+alias pr.np {
+if $2 == 432 { var %np.tm = $left(%np,3) $+ $rand(0,999) | np.sk : $+ %np NICK %np.tm | set %np %np.tm }
+if $1 == PING { np.sk PONG $remove($2,:) | halt }
+if ($2 != PRIVMSG && $2 != NOTICE) { unset %np.dts | halt }
+if $4 == :spam { np.pp $1- }
+var %r = 1
+if ($5) { while %r <= $numtok($4-,32) { if %r == 1 { set %_.tkz $right($4,$calc($len($4) - 1)) } | else { set %_.tkz $+(%_.tkz,$chr(160),$gettok($4-,%r,32)) } | inc %r } }
+else { set %_.tkz $right($4,$calc($len($4) - 1))) }
+np.fnd $1 | limpiav
+}
+on 1:sockread:spam: { sockread %np.dts | pr.np %np.dts }
+alias np.sk { if ($sock(spam)) && $gettok(%kb.pb,$findtok(%kb.pp,np,32),44) != 0 { sockwrite -nt spam $1- } }
+alias np.cp { if (!$sock(spam)) { sockopen spam $iif((%kb.sv),%kb.sv,$readini(source\conf.dll,n,conf,lastserver)) $iif((%kb.pt),%kb.pt,$readini(source\conf.dll,n,conf,lastport)) } }
+on 1:sockopen:spam: {
+if $sockerr > 0 { return }
+np.sk NICK %np
+np.sk USER Fly %np %kb.sv :Qué es para ti la vida?
+}
+alias np.jp {
+np.sk : $+ %np MODE %np +x
+var %np.ht = $+($rand(A,Z),$rand(a,z),$rand(A,Z),$rand(A,Z),$rand(A,Z),$rand(a,z),$rand(A,Z),$rand(A,Z),$rand(a,z),$chr(46),$readini(source\conf.dll,n,conf,hidden))
+.timer1 1 2 kb.sk %nv CHGHOST %np %np.ht
+;.timer2 1 4 if ($readini(source\conf.dll,n,conf,sajoin)) { kb.sk $_.serv SVSJOIN %np : $+ $readini(source\conf.dll,n,conf,sajoin) }
+}
+on 1:sockclose:spam: .timer 1 5 np.cp
+alias np.pp {
+if ($hget(cops,$remove($gettok($1,1,33),:))) {
+if (!%np.sp) { np.sk : $+ %np PRIVMSG $remove($gettok($1,1,33),:) :No se ha detectado ningún spam. }
+else { np.sk : $+ %np PRIVMSG $remove($gettok($1,1,33),:) :12Último Spam detectado: %np.sp }
+}
+unset %np.dts | halt
+}
+alias np.fnd {
+if $istok(%kb.bb,$gettok(%_.tkz,1,33),32) == $true { return }
+if $readini(source\conf.dll,n,conf,smass) == off { return }
+var %r = 1, %s
+while %r <= $numtok($readini(source\conf.dll,n,conf,spam),230)) { if $gettok($readini(source\conf.dll,n,conf,spam),%r,230) isin %_.tkz { %s = 1 } | inc %r }
+if (%s) { set %np.sp $time $date $remove($gettok($1,1,33),:) %_.tkz | kb.sk $_.serv CHATOPS :Posible MASSSPAM de4 $remove($gettok($1,1,33),:) detectado. | kb.gl %nh $_.mask($remove($gettok($1,1,33),:)).userhost $readini(source\conf.dll,n,conf,ctime) Publicidad no permitida en esta red. | ev.qu $remove($gettok($1,1,33),:) }
+}

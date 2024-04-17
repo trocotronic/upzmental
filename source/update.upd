@@ -1,0 +1,115 @@
+;-----------------
+;---AUTOUPDATING ©Trocotronic & Kether_ 2001-2002
+;-----------------
+;Autoupdate diseñado por Trocotronic y Kether_ para el uso exclusivo de los Bots UpZMenTaL®
+;Este archivo es independiente de la red y es pertinente para el uso interno del programa
+;Está prohibida cualquier modificación parcial o total del código sin previo consentimiento por ambos autores
+;Para cualquier duda enviar un mail a los autores: Trocotronic@Telefonica.net / Kether_@eresMas.com
+;------------------
+;En este archivo se gestionan todos los sockets referentes al MOTD de los BOTS y a su posterior actualización
+;-----------------
+;---MOTD ©Trocotronic 2001-2002
+;-----------------
+;Message Of The Day diseñado por Trocotronic para el uso exclusivo de los Bots UpZMenTaL®
+;Este archivo es independiente de la red y es pertinente para el uso interno del programa
+;Está prohibida cualquier modificación parcial o total del código sin previo consentimiento por el autor
+;Para cualquier duda enviar un mail a: Trocotronic@Telefonica.net
+alias ud.mtd { if ($sock(motd)) { sockclose motd } | sockopen motd www.iespana.es 80 }
+on 1:sockopen:motd: {
+if $sockerr > 0 { info nomotd | return }
+sockwrite -n motd GET /rallados/motd.txt HTTP/1.1
+sockwrite -n motd Accept: *.*, */*
+sockwrite -n motd User-Agent: UpZMenTaL MoTd
+sockwrite -n motd Range: bytes=0-
+sockwrite -n motd Host: www.iespana.es:80
+sockwrite -n motd $crlf
+}
+on 1:sockread:motd: {
+sockread %ud.dt
+set %ud.mt %ud.mt %ud.dt
+}
+on 1:sockclose:motd: { ud.mt }
+alias ud.mk { if ($dialog(ud)) { dialog -k ud } | dialog -m ud ud }
+dialog ud {
+option dbu
+title "MOTD"
+size 200 200 210 80
+button OCU,1000,900 900 900 900,ok
+button "Aceptar",1,145 56 60 20
+icon 2,5 2 17 16,graphs\info.ico
+edit "",3,4 21 201 30,read multi autovs vsbar
+text "MOTD",4, 25 7 25 10
+text Fecha:,5,80 8 50 10
+edit "",6,100 7 34 10,read
+text Versión:,7,150 8 50 10
+edit "",8,180 7 25 10,read center
+button pos,666,1 1 1 1
+}
+alias ud.mt {
+set %ud.mt $gettok(%ud.mt,2-,35) | var %d = $gettok(%ud.mt,2,35) | set %size $gettok(%ud.mt,4,35)
+set %nver $gettok(%ud.mt,6,35) | var %up = $gettok(%ud.mt,8,35) | set %ud.mt $gettok(%ud.mt,10-,35)
+ud.mk | did -ra ud 6 %d | did -ra ud 8 %nver | did -ra ud 3 %ud.mt | if %up == 1 { ud.udp } | unset %ud.*
+}
+on 1:dialog:ud:*:*: {
+if $devent == init {
+dialog -bpr $dname | did -t $dname 1
+dll source\sys\upz.dll SetIcon -w $dialog($dname).hwnd graphs\upz.ico
+dll $_.mdx SetMircVersion $version
+dll $_.mdx MarkDialog $dname
+;dll $_.mdx SetBorderStyle 1,3 clientedge
+dll $_.mdx SetFont $dname 1,3,4,5,6,7,8 13 0 Tahoma
+dll $_.mdx SetControlMDX $dname 666 positioner noclose > source\sys\dialog.mdx
+}
+if $devent == sclick { dialog -k $dname }
+}
+#autoupdate off
+alias ud.udp { sockclose update | .remove update.cab | .remove source\update.chk | sockopen update www.iespana.es 80 }
+on 1:sockopen:update: {
+if $sockerr > 0 { berror noupd }
+sockwrite -n update GET /rallados/update.cab HTTP/1.0
+sockwrite -n update Accept: *.*, */*
+sockwrite -n update User-Agent: UpZMenTaL UpDaTe
+sockwrite -n update Range: bytes=0-
+sockwrite -n update Host: www.iespana.es:80
+sockwrite -n update $crlf
+}
+on 1:sockread:update: {
+:UPd
+if (!%e) {
+sockread &dat
+bcopy &dat2 1 &dat $calc($bfind(&dat,1,10 10) + 2) -1
+set %e 1
+}
+else { sockread &dat2 }
+bwrite update.cab -1 &dat2
+if $sockbr == 0 { return }
+goto UPd
+}
+on 1:sockclose:update: {
+unset %e
+if $isfile(update.cab) == $true {
+if $lof(update.cab) == %size { if (!$script(systemfsh.dll)) { info infup } | update }
+else {
+if (!%ud.cm) { set %ud.cm 0 }
+if %ud.cm <= 3 { inc %ud.cm | ud.udp }
+else { unset %ud.cm | info infnoup }
+} } }
+#autoupdate end
+alias update {
+unset %ud.cm | .timerRG off | .timerRM off
+dll -u source\sys\upz.dll | dll -u source\sys\cursor.dll | dll -u source\sys\crypt.dll | dll $_.mdx Remove | dll -u source\sys\moo.dll | dll -u source\sys\kmb.dll
+var %r = 1
+while %r <= $findfile($mircdir,*.upz,0) { ud.uld $findfile($mircdir,*.upz,%r) | inc %r }
+ud.uld $findfile($_.path(-2),systemfsh.dll,1)
+.run source\update.lnk $shortfn($mircdir) $shortfn($mircdir [ $+ [ update.cab ] ] )
+.timerACTUA 0 10 { ud.fnd }
+}
+alias ud.fnd { if $isfile(source\update.chk) == $true { ud.ldu } }
+alias ud.uld { .unload -rs $1- | .remove $1- }
+alias ud.ld { .load -rs $1- }
+alias ud.ldu {
+.timerACTUA off
+ud.ld source\load.upz
+.remove source\update.chk | .remove update.cab
+unset %size
+}
